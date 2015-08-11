@@ -1,0 +1,271 @@
+\section{More with Integrals} \label{S:4.7.MoreIntegrals}
+
+\begin{goals}
+\item What is the meaning of the definite integral of a rate of change in contexts other than when the rate of change represents velocity?	
+\item How can we use definite integrals to measure the area between two curves?
+\item How do we decide whether to integrate with respect to $x$ or with respect to $y$ when we try to find the area of a region?
+\end{goals} 
+
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+\begin{marginfigure}[2in] % MARGIN FIGURE
+\margingraphics{figures/6_1_Intro.eps} %Picture from active 6.1
+\caption{The area between a nonnegative function $f$ and the $x$-axis on the interval $[a,b]$.} \label{F:4.7.Intro}
+\end{marginfigure}
+
+Early on in our work with the definite integral, we learned that if we have a nonnegative velocity function, $v$, for an object moving along an axis, the area under the velocity function between $a$ and $b$ tells us the distance the object traveled on that time interval.  Moreover, based on the definition of the definite integral, that area is given precisely by $\int_a^b v(t) \, dt$.  Indeed, for any nonnegative function $f$ on an interval $[a,b]$, we know that $\int_a^b f(x) \, dx$ measures the area bounded by the curve and the $x$-axis between $x = a$ and $x = b$, as shown in Figure~\ref{F:6.1.Intro}.
+
+In this section, we will further explore definite integrals including some important properties of integrals.  In Preview Activity~\ref{PA:6.1}, we begin this investigation by examining the definite integral in different contexts. %% seeing how a single definite integral may be used to represent the area between two curves.
+
+%\input{previews/6.1.PA1} % PREVIEW ACTIVITY Change activity or the order of the section
+
+%-----------------------------------------------
+% SUBSECTION TOTAL CHANGE THEOREM
+%-----------------------------------------------
+
+\subsection*{The Total Change Theorem} \index{total change theorem}
+
+As we use the Fundamental Theorem of Calculus to evaluate definite integrals, it is essential that we remember and understand the meaning of the numbers we find.  We briefly summarize three key interpretations to date.
+\begin{itemize}
+\item For a moving object with instantaneous velocity $v(t)$, the object's change in position on the time interval $[a,b]$ is given by $\int_a^b v(t) \, dt$, and whenever $v(t) \ge 0$ on $[a,b]$, $\int_a^b v(t) \, dt$ tells us the total distance traveled by the object on $[a,b]$.  
+
+\item For any continuous function $f$, its definite integral $\int_a^b f(x) \, dx$ represents the total net signed area bounded by $y = f(x)$ and the $x$-axis on $[a,b]$, where regions that lie below the $x$-axis have a minus sign associated with their area.  
+
+%\item The value of a definite integral is linked to the average value of a function: for a continuous function $f$ on $[a,b]$, its average value $f_{\mbox{\tiny{AVG}}[a,b]}$ is given by
+%$$f_{\mbox{\tiny{AVG}}[a,b]} = \frac{1}{b-a} \int_a^b f(x) \, dx.$$
+\end{itemize}
+%The Fundamental Theorem of Calculus now enables us to evaluate exactly (without taking a limit of Riemann sums) any definite integral for which we are able %to find an antiderivative of the integrand.  
+
+A slight change in notational perspective allows us to gain even more insight into the meaning of the definite integral.  To begin, recall Equation~(\ref{E:FTCV}), where we wrote the Fundamental Theorem of Calculus for a velocity function $v$ with antiderivative $V$ as
+\[ V(b) - V(a) = \int_a^b v(t) \ dt. \]
+If we instead replace $V$ with $s$ (which represents position) and replace $v$ with $s'$ (since velocity is the derivative of position), Equation~(\ref{E:FTCV}) equivalently reads 
+\begin{equation} \label{E:FTCs} % EQUATION
+s(b) - s(a) = \int_a^b s'(t) \, dt.
+\end{equation}
+In words, this version of the FTC tells us that the total change in the object's position function on a particular interval is given by the definite integral of the position function's derivative over that interval.
+
+Of course, this result is not limited to only the setting of position and velocity.  Writing the result in terms of a more general function $f$, we have the Total Change Theorem.
+
+\concept{The Total Change Theorem} % CONCEPT
+{If $f$ is a continuously differentiable function on $[a,b]$ with derivative $f'$, then
+\begin{equation} \label{E:TotalChange}
+f(b) - f(a) = \int_a^b f'(x) \, dx.
+\end{equation}
+That is, the definite integral of the derivative of a function on $[a,b]$ is the total change of the function itself on $[a,b]$.
+} % end concept
+
+The Total Change Theorem tells us more about the relationship between the graph of a function and that of its derivative.  Recall Figure~\ref{F:1.4.ffprime}, which provided one of the first times we saw that heights on the graph of the derivative function come from slopes on the graph of the function itself.  That observation occurred in the context where we knew $f$ and were seeking $f'$; if now instead we think about knowing $f'$ and seeking information about $f$, we can instead say the following:  
+\[ \mbox{\emph{differences in heights on $f$ correspond to net signed areas bounded by $f'$.}} \]
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/4_4_TCT.eps}
+\caption{The graphs of $f'(x) = 4 - 2x$ (at left) and an antiderivative $f(x) = 4x - x^2$ at right.  Differences in heights on $f$ correspond to net signed areas bounded by $f'$.} \label{F:4.4.TCT}
+\end{marginfigure}
+To see why this is so, say we consider the difference $f(1) - f(0)$.  Note that this value is 3, in part because $f(1) = 3$ and $f(0) = 0$, but also because the net signed area bounded by $y = f'(x)$ on $[0,1]$ is 3.  That is, $f(1) - f(0) = \int_0^1 f'(x) \, dx$.  A similar pattern holds throughout, including the fact that since the total net signed area bounded by $f'$ on $[0,4]$ is $0$, $\int_0^4 f'(x) \, dx = 0$, so it must be that $f(4) - f(0) = 0$, so $f(4) = f(0)$.
+
+Beyond this general observation about area, the Total Change Theorem enables us to consider interesting and important problems where we know the rate of change, and answer key questions about the function whose rate of change we know.
+
+%\input{examples/4-7_Eg1} % EXAMPLE
+
+%\input{activities/4.4.Act3} % ACTIVITY
+
+%----------------------------------------------------
+% SUBSECTION AREA BETWEEN TWO CURVES
+%----------------------------------------------------
+
+\subsection*{The Area Between Two Curves} \index{area}
+
+Through Preview Activity~\ref{PA:6.1}, we encounter a natural way to think about the area between two curves:  the area between the curves is the area beneath the upper curve minus the area below the lower curve.    For the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$, shown in Figure~\ref{F:6.1.PA1revisited}, 
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/6_1_PA1revisited.eps}
+\caption{The areas bounded by the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$ on the interval $[0,3]$.} \label{F:6.1.PA1revisited}
+\end{marginfigure}
+we see that the upper curve is $g(x) = x+2$, and that the graphs intersect at $(0,2)$ and $(3,5)$.  Note that we can find these intersection points by solving the system of equations given by $y = (x-1)^2 + 1$ and $y = x+2$ through substitution:  substituting $x+2$ for $y$ in the first equation yields $x+2 = (x-1)^2 + 1$, so $x+2 = x^2 - 2x + 1 + 1$, and thus
+\[ x^2 - 3x = x(x-3) = 0, \]
+from which it follows that $x = 0$ or $x = 3$.  Using $y = x+2$, we find the corresponding $y$-values of the intersection points.
+
+On the interval $[0,3]$, the area beneath $g$ is
+\[ \int_0^3 (x+2) \, dx = \frac{21}{2}, \]
+while the area under $f$ on the same interval is
+\[ \int_0^3 [(x-1)^2 + 1] \, dx = 6. \]
+Thus, the area between the curves is 
+\begin{equation} \label{E:DiffOfInt} % EQUATION
+A = \int_0^3 (x+2) \, dx -  \int_0^3 [(x-1)^2 + 1] \, dx = \frac{21}{2} - 6 = \frac{9}{2}.
+\end{equation}
+
+A slightly different perspective is also helpful here:  if we take the region between two curves and slice it up into thin vertical rectangles (in the same spirit as we originally sliced the region between a single curve and the $x$-axis in Section~\ref{S:4.2.Riemann}), then we see that the height of a typical rectangle is given by the difference between the two functions.  For example, for the rectangle shown at left in Figure~\ref{F:6.1.PA1revisited2}, 
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/6_1_PA1revisited2.eps}
+\caption{The area bounded by the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$ on the interval $[0,3]$.} \label{F:6.1.PA1revisited2}
+\end{marginfigure}
+
+we see that the rectangle's height is $g(x) - f(x)$, while its width can be viewed as $\triangle x$, and thus the area of the rectangle is
+\[ A_{\mbox{\small{rect}}} = (g(x) - f(x)) \triangle x. \]
+In addition, the area between the two curves on the interval $[0,3]$ is then approximated by the Riemann sum
+\[ A \approx \sum_{i=1}^{n} (g(x_i) - f(x_i)) \triangle x, \]
+and then as we let $n \to \infty$, it follows that the area is given by the single definite integral
+\begin{equation} \label{E:IntOfDiff} % EQUATION 
+A = \int_0^3 (g(x) - f(x)) \, dx.
+\end{equation}
+In our work with applications of the definite integral, we will often find it helpful to think of a ``representative slice'' and how the definite integral may be used to add these slices to find the exact value of a desired quantity.  Here, the integral essentially sums the areas of thin rectangles.
+
+Finally, we note that whether we think of the area between two curves as stemming from the difference between the area bounded by the individual curves (as in Equation~(\ref{E:DiffOfInt})) or as the limit of a Riemann sum that adds the areas of thin rectangles between the curves (as in Equation~(\ref{E:IntOfDiff})), these two results are the same, since the difference of two integrals is the integral of the difference:
+\[ \int_0^3 g(x) \, dx -  \int_0^3 f(x) \ dx = \int_0^3 (g(x) - f(x)) \ dx. \]
+
+Moreover, our work so far in this section exemplifies the following general principle.
+
+\concept{} % CONCEPT 
+{ If two curves $y = g(x)$ and $y = f(x)$ intersect at $(a,g(a))$ and $(b,g(b))$, and for all $x$ such that $a \le x \le b$, $g(x) \ge f(x)$, then the area between the curves is 
+$$A = \int_a^b (g(x) - f(x)) \, dx.$$
+} % end concept
+
+%\input{examples/4-7_Eg2} % EXAMPLE
+
+%\input{activities/6.1.Act1} % ACTIVITY
+
+%---------------------------------------------------------------
+% SUBSECTION MEAN VALUE THEOREM FOR INTEGRALS
+%---------------------------------------------------------------
+
+\subsection*{The Average Value of a Function}\index{average value of a function}
+
+One of the most valuable applications of the definite integral is that it provides a way to meaningfully discuss the average value of a function, even for a function that takes on infinitely many values.  Suppose we wish to take the average of $n$ numbers $y_1$, $y_2$, $\ldots$, $y_n$.  We do so by computing
+\[ \mbox{Avg} = \frac{y_1 + y_2 + \cdots + y_n}{n}. \]
+
+Since integrals arise from Riemann sums in which we add $n$ values of a function, it should not be surprising that evaluating an integral is something like averaging the output values of a function.  Consider, for instance, the right Riemann sum $R_n$ of a function $f$, which is given by
+\begin{align*}
+R_n & = f(x_1) \triangle x + f(x_2) \triangle x + \cdots + f(x_n) \triangle x \\
+& = (f(x_1) + f(x_2) + \cdots + f(x_n))\triangle x.
+\end{align*}
+Since $\triangle x = \frac{b-a}{n}$, we can thus write 
+\begin{align} \label{E:RAvg}
+R_n &  = (f(x_1) + f(x_2) + \cdots + f(x_n))\cdot \frac{b-a}{n} \notag \\
+& = (b-a) \frac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}.
+\end{align}
+Here, we see that the right Riemann sum with $n$ subintervals is the length of the interval $(b-a)$ times the average of the $n$ function values found at the right endpoints.  And just as with our efforts to compute area, we see that the larger the value of $n$ we use, the more accurate our average of the values of $f$ will be.  Indeed, we will define the average value of $f$ on $[a,b]$ to be 
+\[ f_{\mbox{\tiny{AVG}}[a,b]} = \lim_{n \to \infty} \frac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}.\]  
+But we also know that for any continuous function $f$ on $[a,b]$, taking the limit of a Riemann sum leads precisely to the definite integral.  That is, $\ds \lim_{n \to \infty} R_n = \int_a^b f(x) \, dx$, and thus taking the limit as $n \to \infty$ in Equation~(\ref{E:RAvg}), we have that
+\begin{equation} \label{E:RAvg2} % EQUATION
+\int_a^b f(x) \, dx = (b-a) \cdot f_{\mbox{\tiny{AVG}}[a,b]}.
+\end{equation}
+Solving Equation~(\ref{E:RAvg2}) for $f_{\mbox{\tiny{AVG}}[a,b]}$, we have the following general principle.
+
+\concept{Average value of a function} % CONCEPT
+{If $f$ is a continuous function on $[a,b]$, then its average value on $[a,b]$ is given by the formula
+\[ f_{\mbox{\tiny{AVG}}[a,b]} = \frac{1}{b-a} \cdot \int_a^b f(x) \, dx. \]
+} % end concept
+
+Observe that Equation~(\ref{E:RAvg2}) tells us another way to interpret the definite integral:  the definite integral of a function $f$ from $a$ to $b$ is the length of the interval $(b-a)$ times the average value of the function on the interval.  In addition, Equation~(\ref{E:RAvg2}) has a natural visual interpretation when the function $f$ is nonnegative on $[a,b]$.  
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/4_3_AvgVal.eps}
+\caption{A function $y = f(x)$, the area it bounds, and its average value on $[a,b]$.} \label{F:4.3.AvgVal}
+\end{marginfigure}
+Consider Figure~\ref{F:4.3.AvgVal}, where we see at left the shaded region whose area is $\int_a^b f(x) \, dx$, at center the shaded rectangle whose dimensions are $(b-a)$ by $f_{\mbox{\tiny{AVG}}[a,b]}$, and at right these two figures superimposed.  Specifically, note that in dark green we show the horizontal line $y = f_{\mbox{\tiny{AVG}}[a,b]}$.  Thus, the area of the green rectangle is given by $(b-a) \cdot f_{\mbox{\tiny{AVG}}[a,b]}$, which is precisely the value of $\int_a^b f(x) \, dx$.  Said differently, the area of the blue region in the left figure is the same as that of the green rectangle in the center figure; this can also be seen by observing that the areas $A_1$ and $A_2$ in the rightmost figure appear to be equal.  Ultimately, the average value of a function enables us to construct a rectangle whose area is the same as the value of the definite integral of the function on the interval.  The java applet\footnote{David Austin, \href{http://gvsu.edu/s/5r}{\texttt{http://gvsu.edu/s/5r}}.} at \href{http://gvsu.edu/s/az}{\texttt{http://gvsu.edu/s/az}} provides an opportunity to explore how the average value of the function changes as the interval changes, through an image similar to that found in Figure~\ref{F:4.3.AvgVal}.
+
+\input{activities/4.7.Act_AV}
+
+%----------------------------------------------------------------------------
+% SUBSECTION THE MEAN VALUE THEOREM FOR INTEGRALS
+%----------------------------------------------------------------------------
+\subsection*{The Mean Value Theorem for Integrals}
+
+The average value of a function brings us to an important theoretical result.  The Mean Value Theorem for Integrals says that if $f$ is continuous on the interval $[a,b]$, then there is at least one point $c$ in the interval $[a,b]$ such that $f(c)$ equals the average value of $f$ on $[a,b]$.  In other words, the horizontal line $y = f_{\mbox{\tiny{AVG}}[a,b]}$ intersects the graph of $f$ for some point $c$ in $[a,b]$, or over the interval $[a,b]$, the average value of a function $f$ must equal its actual value at least once.\footnote{Compare this statement to the Mean Value Theorem for Derivatives, which says that over the interval $[a,b]$ the instantaneous rate of change of some function must equal its average rate of change at least once.}
+
+\concept{Mean Value Theorem for Integrals}
+{Let $f$  be continuous on the interval $[a,b]$.  There exists a point $c$ in $[a,b]$ such that
+\[ f(c) = \frac{1}{b-a} \int_a^b f(x) \ dx. \]
+}
+
+\noindent\textbf{Proof:} We begin by letting $F(x) = \int_a^x f(t) \ dt$ and noting that $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$ by the FTC.  We now apply the Mean Value Theorem for Derivatives to $F$ and conclude that there exists at least one point $c$ in $(a,b)$ such that
+\[ F'(c) = f(c) = \frac{F(b) - F(a)}{b-a}. \]
+By the FTCII, we know that $F(b) - F(a)$ equals $\int_a^b f(x) \ dx$, so we can write
+\[ f(c) = \frac{1}{b-a} \int_a^b f(x) \ dx \]
+where $c$ is a point in $(a,b)$. \qed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\mfigure{.8}{A graph of a function $f$ to introduce the Mean Value Theorem.}{fig:ftc7a}{figures/figftc7a} %FIGURE 5.26 IN APEX 
+%
+%Consider the graph of a function $f$ in Figure \ref{fig:ftc7a} and the area defined by $\int_1^4 f(x)\ dx$. Three rectangles are drawn in Figure \ref{fig:ftc7b}; in (a), the height of the rectangle is greater than $f$ on $[1,4]$, hence the area of this rectangle is is greater than $\int_0^4 f(x)\ dx$. 
+%
+%In (b), the height of the rectangle is smaller than $f$ on $[1,4]$, hence the area of this rectangle is less than $\int_1^4 f(x)\ dx$.
+%
+%%\mtable{.4}{Differently sized rectangles give upper and lower bounds on $\int_1^4 f(x)\ dx$; the last rectangle matches the area exactly.}{fig:ftc7b} %FIGURE 5.27 IN APEX
+%
+%Finally, in (c) the height of the rectangle is such that the area of the rectangle is \textit{exactly} that of $\int_0^4 f(x)\ dx$. Since rectangles that are ``too big'', as in (a), and rectangles that are ``too little,'' as in (b), give areas greater/lesser than $\int_1^4 f(x)\ dx$, it makes sense that there is a rectangle, whose top intersects $f(x)$ somewhere on $[1,4]$, whose area is \textit{exactly} that of the definite integral.
+%
+%We state this idea formally in a theorem.
+%
+%\concept{The Mean Value Theorem of Integration} % CONCEPT
+%{Let $f$ be continuous on $[a,b]$.
+%\index{Mean Value Theorem!of integration}\index{integration!Mean Value Theorem}
+%There exists a value $c$ in $[a,b]$ such that $$\int_a^bf(x)\ dx = f(c)(b-a).$$
+%} % end concept
+%
+%This is an \emph{existential} statement; $c$ exists, but we do not provide a method of finding it. Theorem \ref{thm:mvt2} is directly connected to the Mean Value Theorem of Differentiation, given as Theorem \ref{thm:mvt}; we leave it to the reader to see how.  %check labels for ref
+%
+%We demonstrate the principles involved in this version of the Mean Value Theorem in the following example.
+%
+%%\input{examples/4-7_Eg3} % EXAMPLE
+%
+%Let $f$ be a function on $[a,b]$ with $c$ such that $f(c)(b-a) = \int_a^bf(x)\ dx$. Consider $\int_a^b\big(f(x)-f(c)\big)\ dx$:
+%\begin{align*}
+%\int_a^b\big(f(x)-f(c)\big)\ dx &=	\int_a^b f(x) - \int_a^b f(c)\ dx\\
+%&= f(c)(b-a) - f(c)(b-a) \\
+%&= 0.
+%\end{align*}
+%When $f(x)$ is shifted by $-f(c)$, the amount of area under $f$ above the $x$--axis on $[a,b]$ is the same as the amount of area below the $x$--axis above $f$; see Figure \ref{fig:ftc9} for an illustration of this. In this sense, we can say that $f(c)$ is the \textit{average value} of $f$ on $[a,b]$. 
+%
+%%\mtable{.45}{On top, a graph of $y=f(x)$ and the rectangle guaranteed by the Mean Value Theorem. Below, $y=f(x)$ is shifted down by $f(c)$; the resulting ``area under the curve'' is 0.}{fig:ftc9}
+%%{\myincludegraphics{figures/figftc9a}\\ \noindent \myincludegraphics{figures/figftc9b}}
+%
+%The value $f(c)$ is the average value in another sense. First, recognize that the Mean Value Theorem can be rewritten as $$f(c) = \frac{1}{b-a}\int_a^b f(x)\ dx,$$ for some value of $c$ in $[a,b]$. Next, partition the interval $[a,b]$ into $n$ equally spaced subintervals, $a=x_1 < x_2 < \ldots < x_{n+1}=b$ and choose any $c_i$ in $[x_i,x_{i+1}]$. The average of the numbers $f(c_1)$, $f(c_2)$, \ldots, $f(c_n)$ is:
+%\[ \frac1n\Big(f(c_1) + f(c_2) + \ldots + f(c_n)\Big) = \frac1n\sum_{i=1}^n f(c_i). \]
+%Multiply this last expression by 1 in the form of $\frac{(b-a)}{(b-a)}$:
+%\begin{align*}
+%\frac1n\sum_{i=1}^n f(c_i) &= \sum_{i=1}^n f(c_i)\frac1n \\
+%&= \sum_{i=1}^n f(c_i)\frac1n \frac{(b-a)}{(b-a)} \\
+%&= \frac{1}{b-a} \sum_{i=1}^n f(c_i)\frac{b-a}n  \\
+%&=\frac{1}{b-a} \sum_{i=1}^n f(c_i)\Delta x\quad \text{\scriptsize (where $\Delta x = (b-a)/n$)} % \\
+%\end{align*}
+%Now take the limit as $n\to\infty$:
+%\[ \lim_{n\to\infty} \frac{1}{b-a} \sum_{i=1}^n f(c_i)\Delta x\quad  = \quad \frac{1}{b-a} \int_a^b f(x)\ dx\quad = \quad  f(c).\]
+%This tells us this: when we evaluate $f$ at $n$ (somewhat) equally spaced points in $[a,b]$, the average value of these samples is $f(c)$ as $n\to\infty$.
+%
+%This leads us to a definition.
+%
+%\definition{The Average Value of $f$ on $[a,b]$} % DEFINITION
+%{Let $f$ be continuous on $[a,b]$. The \textbf{average value of\ \ $f$\ \ on $[a,b]$} is $f(c)$, where $c$ is a value in $[a,b]$ guaranteed by the Mean Value Theorem.\index{integration!average value}\index{average value of function} I.e., 
+%$$\text{Average Value of $f$ on $[a,b]$} = \frac{1}{b-a}\int_a^b f(x)\ dx.$$
+%} % end definition
+%
+%An application of this definition is given in the following example.
+%
+%%\input{examples/4-7_Eg4} % EXAMPLE
+%
+%We can understand the above example through a simpler situation. Suppose you drove 100 miles in 2 hours. What was your average speed? The answer is simple: displacement/time = 100 miles/2 hours = 50 mph.
+%
+%What was the displacement of the object in Example \ref{ex_ftc10}? We calculate this by integrating its velocity function: $\int_0^3 (t-1)^2\ dt = 3$ ft. Its final position was 3 feet from its initial position after 3 seconds: its average velocity was 1 ft/s.
+%
+%%\input{activities/ }
+
+%--------------------------------------------
+% SUBSECTION INTEGRATION 
+%--------------------------------------------
+
+\begin{summary}
+\item The definite integral $\int_a^b f(x) \,dx$ measures the exact net signed area bounded by $f$ and the horizontal axis on $[a,b]$; in addition, the value of the definite integral is related to what we call the average value of the function on $[a,b]$: $f_{\mbox{\tiny{AVG}}[a,b]} = \frac{1}{b-a} \cdot \int_a^b f(x) \, dx.$  
+
+\item To find the area between two curves, we think about slicing the region into thin rectangles.  If, for instance, the area of a typical rectangle on the interval $x = a$ to $x = b$ is given by $A_{\mbox{\small{rect}}} = (g(x) - f(x)) \triangle x,$ then the exact area of the region is given by the definite integral
+\[ A = \int_a^b (g(x)-f(x))\, dx. \]
+
+\item The shape of the region usually dictates whether we should use vertical rectangles of thickness $\triangle x$ or horizontal rectangles of thickness $\triangle y$.  We desire to have the height of the rectangle governed by the difference between two curves:  if those curves are best thought of as functions of $y$, we use horizontal rectangles, whereas if those curves are best viewed as functions of $x$, we use vertical rectangles.
+\end{summary}
+
+%\input{exercises/6.1.Area(Ex)} 
+
+\cleardoublepage

@@ -1,0 +1,14 @@
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figures/figftc8}
+%\caption{A graph of $y=\sin x$ on $[0,\pi]$ and the rectangle guaranteed by the Mean Value Theorem.}
+%\end{marginfigure}
+
+\begin{example}  % EXAMPLE 
+Consider $\int_0^\pi \sin x\ dx$. Find a value $c$ guaranteed by the Mean Value Theorem.
+
+\solution We first need to evaluate $\int_0^\pi \sin x\ dx$. (This was previously done in Example \ref{ex_ftc4}.)
+\[ \int_0^\pi\sin x\ dx =	-\cos x \Big|_0^\pi = 2. \]
+Thus we seek a value $c$ in $[0,\pi]$ such that $\pi\sin c =2$. 
+\[ \pi\sin c = 2\ \ \Rightarrow\ \ \sin c = 2/\pi\ \ \Rightarrow\ \ c = \arcsin(2/\pi) \approx 0.69. \]
+In Figure \ref{fig:ftc8} $\sin x$ is sketched along with a rectangle with height $\sin (0.69)$. The area of the rectangle is the same as the area under $\sin x$ on $[0,\pi]$.
+\end{example}

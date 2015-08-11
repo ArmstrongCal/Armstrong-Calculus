@@ -1,0 +1,186 @@
+\section{Using derivatives to identify extreme values of a function} \label{S:3.2.Tests}
+
+\begin{goals}
+\item What are the critical values of a function $f$ and how are they connected to identifying the most extreme values the function achieves?
+\item How does the first derivative of a function reveal important information about the behavior of the function, including the function's extreme values?
+\item How can the second derivative of a function be used to help identify extreme values of the function?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+In many different settings, we are interested in knowing where a function achieves its least and greatest values.  These can be important in applications -- say to identify a point at which maximum profit or minimum cost occurs -- or in theory to understand how to characterize the behavior of a function or a family of related functions.  Consider the simple and familiar example of a parabolic function such as $s(t) = -16t^2 + 32t + 48$ (shown at left in Figure~\ref{fig:3.2.Intro}) that represents the height of an object tossed vertically:  its maximum value occurs at the vertex of the parabola and represents the highest value that the object reaches.  Moreover, this maximum value identifies an especially important point on the graph, the point at which the curve changes from increasing to decreasing.
+
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\margingraphics{figures/3_1_Intro.eps}
+\caption{At left, $s(t) = -16t^2 + 24t + 32$ whose vertex is $(\frac{3}{4}, 41)$; at right, a function $g$ that demonstrates several high and low points.} \label{fig:3.2.Intro}
+\end{marginfigure}
+
+More generally, for any function we consider, we can investigate where its lowest and highest points occur in comparison to points nearby or to all possible points on the graph.  Given a function $f$, we say that $f(c)$ is a \emph{global} or \emph{absolute maximum}  \index{maximum!global} \index{maximum!absolute} provided that $f(c) \ge f(x)$ for all $x$ in the domain of $f$, and similarly call $f(c)$ a \emph{global} \index{minimum!global} or \emph{absolute minimum} \index{minimum!absolute} whenever $f(c) \le f(x)$ for all $x$ in the domain of $f$.  For instance, for the function $g$ given at right in Figure~\ref{fig:3.2.Intro}, $g$ has a global maximum of $g(c)$, but $g$ does not appear to have a global minimum, as the graph of $g$ seems to decrease without bound.  We note that the point $(c,g(c))$ marks a fundamental change in the behavior of $g$, where $g$ changes from increasing to decreasing; similar things happen at both $(a,g(a))$ and $(b,g(b))$, although these points are not global mins or maxes.  
+
+For any function $f$, we say that $f(c)$ is a \emph{local maximum} \index{maximum!local} or \emph{relative maximum} \index{maximum!relative} provided that $f(c) \ge f(x)$ for all $x$ near $c$, while $f(c)$ is called a \emph{local} \index{minimum!local} or \emph{relative minimum} \index{minimum!relative} whenever $f(c) \le f(x)$ for all $x$ near $c$.  Any maximum or minimum may be called an \emph{extreme value} \index{extreme value} of $f$.  For example, in Figure~\ref{fig:3.2.Intro}, $g$ has a relative minimum of $g(b)$ at the point $(b,g(b))$ and a relative maximum of $g(a)$ at $(a,g(a))$.  We have already identified the global maximum of $g$ as $g(c)$; this global maximum can also be considered a relative maximum.  
+
+We would like to use fundamental calculus ideas to help us identify and classify key function behavior, including the location of relative extremes.  Of course, if we are given a graph of a function, it is often straightforward to locate these important behaviors visually.  We investigate this situation in the following preview activity.
+
+\input{previews/3.2.PA1} % PREVIEW ACTIVITY
+
+%-------------------------------------------------------
+% SUBSECTION INCREASING/DECREASING TEST
+%-------------------------------------------------------
+\subsection*{Increasing/Decreasing test}
+
+Before we continue examining extreme values of a function, let's recall a topic we discussed that we will use throughout this section.
+In Section~\ref{S:2.3.SecondD}, we discussed that whether a function is increasing or decreasing depends precisely on the value of the derivative at a point. Repeating the idea here, a function is increasing at $x=a$ if and only if $f'(a)>0$ and decreasing at $x=a$ if and only if $f'(a)<0$. This can be expanded to intervals in the domain of the function which we state in the following concept.
+
+\concept{Test for Increasing/Decreasing Functions} % CONCEPT
+{Let $f$ be a continuous function on $[a,b]$ and differentiable on $(a,b)$.
+\begin{enumerate}
+\item If $f'(c) > 0$ for all $c$ in $(a,b)$, then $f$ is increasing on $[a,b]$.
+\item If $f'(c) <0$ for all $c$ in $(a,b)$, then $f$ is decreasing on $[a,b]$.
+\item If $f'(c) =0$ for all $c$ in $(a,b)$, then $f$ is constant on $[a,b]$.
+\end{enumerate}
+} %end concept
+
+If $f'(x)=0$ for a finite number of $x$ values as oppossed to the entire interval $(a,b)$\footnote{If $f$ is constant on $[a,b]$, then the graph of $f$ is a horizontal line and therefore its rate of change is $0$ for values in $(a,b)$.}, the function is neither increasing or decreasing at those values.  The values where $f'(x)= 0$ are very important in identifying extreme values and require more examination.
+
+%-----------------------------------------------------------------------------------
+% SUBSECTION CRITICAL VALUES AND THE FIRST DERIVATIVE TEST
+%-----------------------------------------------------------------------------------
+\subsection*{Critical values and the first derivative test}
+ 
+If a function has a relative extreme value at a point $(c,f(c))$, the function must change its behavior at $c$ regarding whether it is increasing or decreasing before or after the point.
+
+\begin{figure*} % FIGURE
+\includegraphics{figures/3_1_extremes.eps}
+\caption{From left to right, a function with a relative maximum where its derivative is zero; a function with a relative maximum where its derivative is undefined; a function with neither a maximum nor a minimum at a point where its derivative is zero; a function with a relative minimum where its derivative is zero; and a function with a relative minimum where its derivative is undefined.} \label{fig:3.2.extremes}
+\end{figure*} 
+
+For example, if a continuous function has a relative maximum at $c$, such as those pictured in the two leftmost functions in Figure~\ref{fig:3.2.extremes}, then it is both necessary and sufficient that the function change from being increasing just before $c$ to decreasing just after $c$.  In the same way, a continuous function has a relative minimum at $c$ if and only if the function changes from decreasing to increasing at $c$.  See, for instance, the two functions pictured at right in Figure~\ref{fig:3.2.extremes}.  There are only two possible ways for these changes in behavior to occur:  either $f'(c) = 0$ or $f'(c)$ is undefined.  
+
+Because these values of $c$ are so important, we call them \emph{critical values}.  More specifically, we say that a function $f$ has a \emph{critical value} \index{critical value} at  $x = c$ provided that $f'(c) = 0$ or $f'(c)$ is undefined.   Critical values provide us with the only possible locations where the function $f$ may have relative extremes.  Note that not every critical value produces a maximum or minimum; in the middle graph of Figure~\ref{fig:3.2.extremes}, the function pictured there has a horizontal tangent line at the noted point, but the function is increasing before and increasing after, so the critical value does not yield a location where the function is greater than every value nearby, nor less than every value nearby.
+
+The \emph{first derivative test} \index{first derivative test} summarizes how sign changes in the first derivative indicate the presence of a local maximum or minimum for a given function.
+
+\concept{First Derivative Test\index{first derivative test}} { % CONCEPT
+If $p$ is a critical value of a continuous function $f$ that is differentiable near $p$ (except possibly at $x = p$), then $f$ has a relative maximum at $p$ if and only if $f'$ changes sign from positive to negative at $p$, and $f$ has a relative minimum at $p$ if and only if $f'$ changes sign from negative to positive at $p$.
+} % end concept
+
+We consider an example to show one way the first derivative test can be used to identify the relative extreme values of a function.
+
+\input{examples/3-2_Eg1} % EXAMPLE
+
+\input{examples/3-2_Eg2} % EXAMPLE
+
+\input{activities/3.2.Act1} % ACTIVITY
+
+%---------------------------------------------------------
+% SUBSECTION THE SECOND DERIVATIVE TEST
+%---------------------------------------------------------
+\subsection*{The second derivative test}
+
+Recall that the second derivative of a function tells us several important things about the behavior of the function itself.  For instance, if $f''$ is positive on an interval, then we know that $f'$ is increasing on that interval and, consequently, that $f$ is concave up,\footnote{See Section~\ref{S:2.3.SecondD} for the definition of concavity.} which also tells us that throughout the interval the tangent line to $y = f(x)$ lies below the curve at every point.  In this situation where we know that $f'(p) = 0$, it turns out that the sign of the second derivative determines whether $f$ has a local minimum or local maximum at the critical value $p$.
+
+In Figure~\ref{fig:3.2.2Dtest}, we see the four possibilities for a function $f$ that has a critical point $p$ at which $f'(p) = 0$, provided $f''(p)$ is not zero on an interval including $p$ (except possibly at $p$).  On either side of the critical point, $f''$ can be either positive or negative, and hence $f$ can be either concave up or concave down.  In the first two graphs, $f$ does not change concavity at $p$, and in those situations, $f$ has either a local minimum or local maximum.  In particular, if $f'(p) = 0$ and $f''(p) < 0$, then we know $f$ is concave down at $p$ with a horizontal tangent line, and this guarantees $f$ has a local maximum there.  This fact, along with the corresponding statement for when $f''(p)$ is positive, is stated in the \emph{second derivative test}. 
+
+\begin{figure*} % FIGURE
+\includegraphics{figures/3_1_2Dtest.eps} %active p156
+\caption{Four possible graphs of a function $f$ with a horizontal tangent line at a critical value.} \label{fig:3.2.2Dtest}
+\end{figure*}
+
+\concept{Second Derivative Test\index{second derivative test}} { %CONCEPT 
+If $p$ is a critical value of a continuous function $f$ such that $f'(p) = 0$ and $f''(p) \ne 0$, then $f$ has a relative maximum at $p$ if and only if $f''(p) < 0$, and $f$ has a relative minimum at $p$ if and only if $f''(p) > 0$.
+} % end concept
+
+In the event that $f''(p) = 0$, the second derivative test is inconclusive.  That is, the test doesn't provide us any information.  This is because if $f''(p) = 0$, it is possible that $f$ has a local minimum, local maximum, or neither.\footnote{Consider the functions $f(x) = x^4$, $g(x) = -x^4$, and $h(x) = x^3$ at the critical point $p = 0$.}
+
+Just as a first derivative sign chart reveals all of the increasing and decreasing behavior of a function, we can construct a second derivative sign chart that demonstrates all of the important information involving concavity.
+
+\input{examples/3-2_Eg3} % EXAMPLE
+
+Points $B$, $C$, and $D$ in Figure~\ref{F:3.2.Eg3} are locations at which the concavity of $f$ changes.  We give a special name to any such point:  if $p$ is a value in the domain of a continuous function $f$ at which $f$ changes concavity, then we say that $(p,f(p))$ is an \emph{inflection point} \index{inflection point} of $f$.  Just as we look for locations where $f$ changes from increasing to decreasing at points where $f'(p) = 0$ or $f'(p)$ is undefined, so too we find where $f''(p) = 0$ or $f''(p)$ is undefined to see if there are points of inflection at these locations.
+
+It is important at this point in our study to remind ourselves of the big picture that derivatives help to paint:  the sign of the first derivative $f'$ tells us \emph{whether} the function $f$ is increasing or decreasing, while the sign of the second derivative $f''$ tells us \emph{how} the function $f$ is increasing or decreasing. \pagebreak
+
+\input{activities/3.2.Act2} % ACTIVITY
+
+We end this section with an application problem to help us better understand inflection points.
+
+\input{examples/3-2_Eg4} % EXAMPLE
+
+%-----------------------------------------
+% SUBSECTION CURVE SKETCHING
+%-----------------------------------------
+\subsection{Curve Sketching}
+
+We have been learning how we can understand the behavior of a function based on its first and second derivatives. While we have been treating the properties of a function separately (increasing and decreasing, concave up and concave down, etc.), we combine them here to produce an accurate graph of the function without plotting lots of extraneous points.
+
+Why bother? Graphing utilities are very accessible, whether on a computer, a hand--held calculator, or a smartphone. These resources are usually very fast and accurate. We will see that our method is not particularly fast -- it will require time (but it is not \textit{hard}). So again: why bother?
+
+We are attempting to understand the behavior of a function $f$ based on the information given by its derivatives. While all of a function's derivatives relay information about it, it turns out that ``most'' of the behavior we care about is explained by $f'$ and $f''$. Understanding the interactions between the graph of $f$ and $f'$ and $f''$ is important. To gain this understanding, one might argue that all that is needed is to look at lots of graphs. This is true to a point, but is somewhat similar to stating that one understands how an engine works after looking only at pictures. It is true that the basic ideas will be conveyed, but ``hands--on'' access increases understanding.
+
+The following concept summarizes what we have learned so far that is applicable to sketching function graphs and gives a framework for putting that information together. It is followed by several examples.
+
+\concept{Curve Sketching\index{curve sketching}} % CONCEPT
+{To produce an accurate sketch for a given function $f$, consider the following steps.
+\begin{enumerate}[1)]
+\item Find the domain of $f$. %Generally, we assume that the domain is the entire real line then find restrictions, such as where a denominator is 0 or where negatives appear under the radical.
+\item Find the critical values of $f$.
+\item Find the possible points of inflection of $f$.
+\item Find the location of any vertical asymptotes of $f$--those values of $a$ such that $\ds \lim_{x \to a^{\pm}} f(x) = \pm \infty$ (usually done in conjunction with item $1$ above).
+\item Consider the limits $\ds\lim_{x\to-\infty}f(x)$ and $\ds\lim_{x\to\infty}f(x)$ to determine the end behavior/horizontal asymptotes of the function.
+%\item		Create a number line that includes all critical points, possible points of inflection, and locations of vertical asymptotes. For each interval created, determine whether $f$ is increasing or decreasing, concave up or down.
+%\item		Evaluate $f$ at each critical point and possible point of inflection. Plot these points on a set of axes. Connect these points with curves exhibiting the proper concavity. Sketch asymptotes and $x$ and $y$ intercepts were applicable.
+%\item		Find the domain of $f$. Generally, we assume that the domain is the entire real line then find restrictions, such as where a denominator is 0 or where negatives appear under the radical.
+%\item		Find the critical values of $f$.
+%\item		Find the possible points of inflection of $f$.
+%\item		Find the location of any vertical asymptotes of $f$ (usually done in conjunction with item 1 above).
+%\item		Consider the limits $\lim_{x\to-\infty}f(x)$ and $\lim_{x\to\infty}f(x)$ to determine the end behavior of the function.
+\item Determine the intervals for which $f$ is increasing or decreasing and concave up or down.
+\item Evaluate $f$ at each critical point and possible point of inflection. Plot these points on a set of axes, and connect them with curves exhibiting the proper behavior. Sketch asymptotes and $x$ and $y$ intercepts where applicable.
+\end{enumerate}
+} % end concept
+
+\pagebreak
+
+\vspace*{-.25cm}
+
+\input{examples/3-2_Eg6.tex} % EXAMPLE
+
+\input{examples/3-2_Eg5.tex} % EXAMPLE
+
+\input{examples/3-2_Eg7.tex} % EXAMPLE
+
+In each of our examples, we found significant points on the graph of $f$ that corresponding to changes in increasing/decreasing or concavity. We connected these points with straight lines, then adjusted for concavity, and finished by showing a very accurate, computer generated graph.
+
+Why are computer graphics so good? It is not because computers are ``smarter'' than we are. Rather, it is largely because computers are much faster at computing than we are. In general, computers graph functions much like most students do when first learning to draw graphs: they plot equally spaced points, then connect the dots using lines. By using lots of points, the connecting lines are short and the graph looks smooth. 
+
+This does a fine job of graphing in most cases (in fact, this is the method used for many graphs in this text). However, in regions where the graph is very ``curvy,'' this can generate noticeable sharp edges on the graph unless a large number of points are used. High quality computer algebra systems, such as \textit{Mathematica}, use special algorithms to plot lots of points only where the graph is ``curvy.''
+
+In Figure~\ref{fig:mathematica_sinx}, a graph of $y=\sin(x)$ is given, generated by \textit{Mathematica}. The small points represent each of the places \textit{Mathematica} sampled the function. Notice how at the ``bends'' of $\sin(x)$, lots of points are used; where $\sin(x)$ is relatively straight, fewer points are used. (Many points are also used at the endpoints to ensure the ``end behavior'' is accurate.) 
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/figmathematica_sinx}
+\caption{A graph of $y=\sin(x)$ generated by \textit{Mathematica}.}\label{fig:mathematica_sinx}
+\end{marginfigure}
+
+How does \textit{Mathematica} know where the graph is ``curvy''? Calculus. When we study \textit{curvature} in multivariate calculus, we will see how the first and second derivatives of a function work together to provide a measurement of ``curviness.'' \textit{Mathematica} employs algorithms to determine regions of ``high curvature'' and plots extra points there.
+
+%-------------------------------------------------------
+% SUMMARY
+%-------------------------------------------------------
+\begin{summary}
+\item The critical values of a continuous function $f$ are the values of $p$ for which $f'(p) = 0$ or $f'(p)$ does not exist.  These values are important because they identify horizontal tangent lines or corner points on the graph, which are the only possible locations at which a local maximum or local minimum can occur.
+\item Given a differentiable function $f$, whenever $f'$ is positive, $f$ is increasing; whenever $f'$ is negative, $f$ is decreasing.  The first derivative test tells us that at any point where $f$ changes from increasing to decreasing, $f$ has a local maximum, while conversely at any point where $f$ changes from decreasing to increasing $f$ has a local minimum.
+\item Given a twice differentiable function $f$, if we have a horizontal tangent line at $x = p$ and $f''(p)$ is nonzero, then the fact that $f''$ tells us the concavity of $f$ will determine whether $f$ has a maximum or minimum at $x = p$.  In particular, if $f'(p) = 0$ and $f''(p) < 0$, then $f$ is concave down at $p$ and $f$ has a local maximum there, while if $f'(p) = 0$ and $f''(p) > 0$, then $f$ has a local minimum at $p$.  If $f'(p) = 0$ and $f''(p) = 0$, then the second derivative does not tell us whether $f$ has a local extreme at $p$ or not.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/3-2.Tests(Ex)} 
+
+\cleardoublepage

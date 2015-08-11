@@ -1,0 +1,19 @@
+\begin{example} \label{eg:5.2.5} % EXAMPLE
+Evaluate $\ds\int\tan^6(x)\ dx$.
+
+\solution
+We employ rule $4$). 
+\begin{align*}
+\int \tan^6(x)\ dx &= \int \tan^4(x)\tan^2(x)\ dx \\
+			&= \int\tan^4(x)\big(\sec^2(x)-1\big)\ dx\\
+			&= \int\tan^4(x)\sec^2(x)\ dx - \int\tan^4(x)\ dx \\
+\intertext{Integrate the first integral with substitution, $u=\tan(x)$; integrate the second by employing rule $4$) again.}
+			&=	\frac15\tan^5(x)-\int\tan^2(x)\tan^2(x)\ dx\\
+			&=	\frac15\tan^5(x)-\int\tan^2(x)\big(\sec^2(x)-1\big)\ dx \\
+			&= \frac15\tan^5(x) -\int\tan^2(x)\sec^2(x)\ dx + \int\tan^2(x)\ dx\\
+\intertext{Again, use substitution for the first integral and rule $4$) for the second.}
+			&= \frac15\tan^5(x)-\frac13\tan^3(x)+\int\big(\sec^2(x)-1\big)\ dx \\
+			&= \frac15\tan^5(x)-\frac13\tan^3(x)+\tan(x) - x+C
+\end{align*}
+
+\end{example}

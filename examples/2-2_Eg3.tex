@@ -1,0 +1,56 @@
+\begin{marginfigure}[1.5cm] % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figures/figabsolutevalue}}
+
+\subfloat{\margingraphics{figures/figabsolutevalueprime}}
+\caption{Above: The absolute value function, $f(x) = |x|$. Notice how the slope of the lines (and hence the tangent lines) abruptly changes at $x=0$. Below: A graph of the derivative of $f(x) = |x|$.}\label{fig:2-2_Eg3.1}
+\end{marginfigure}
+
+\begin{example} \label{Ex:2.2.Eg3}
+Find the derivative of the absolute value function---see Figure~\ref{fig:2-2_Eg3.1}.
+\[ f(x) = |x| = \left\{\begin{array}{cc} -x & x<0 \\ x & x\geq 0\end{array}.\right. \]
+
+\solution We need to evaluate $\ds \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}.$ As $f$ is piecewise--defined, we need to consider separately the limits when $x<0$ and when $x>0$. 
+
+When $x<0$:
+\begin{align*}
+\frac{d}{dx}\big(-x\big) 	&= \lim_{h\to 0}\frac{-(x+h) - (-x)}{h} \\
+&=	\lim_{h \to 0}\frac{-h}{h}\\
+&=	\lim_{h \to 0}-1 \\
+&=	-1.
+\end{align*}
+When $x>0$, a similar computation shows that $\ds \frac{d}{dx}\big( x \big) = 1$. \\
+
+We need to also find the derivative at $x=0$. By the definition of the derivative at a point, we have 
+\[ f'(0) = \lim_{h \to 0}\frac{f(0+h)-f(0)}{h}.\]
+Since $x=0$ is the point where our function's definition switches from one piece to other, we need to consider left and right-hand limits. Consider the following, where we compute the left and right hand limits side by side.
+
+\noindent\begin{minipage}[b]{.5\linewidth}
+\begin{align*}
+\lim_{h \to 0^-} \frac{f(0+h)-f(0)}{h} &= \\
+\lim_{h \to 0^-} \frac{-h-0}{h} &= \\
+\lim_{h \to 0^-} -1 & =-1
+\end{align*}
+\end{minipage}\rule{.5pt}{70pt}
+\begin{minipage}[b]{.5\linewidth}
+\begin{align*}
+\lim_{h \to 0^+} \frac{f(0+h)-f(0)}{h} &= \\
+\lim_{h \to 0^+} \frac{h-0}{h} &= \\
+\lim_{h \to 0^+} 1 & =1
+\end{align*}
+\end{minipage}
+%		
+%		$$\begin{array}{ccccc}
+%		\displaystyle \lim_{h\to0}\frac{f(0+h)-f(0)}{h} & = & \displaystyle\lim_{h\to0^-}\frac{f(0+h)-f(0)}{h} &=&\displaystyle\lim_{h\to0^+}\frac{f(0+h)-f(0)}{h}\\
+%	\rule{0pt}{20pt}	&= & \displaystyle\lim_{h\to0^-}\frac{-h-0}{h} &=&\displaystyle\lim_{h\to0^+}\frac{h-0}{h}\\
+%	\rule{0pt}{15pt}	&= & \displaystyle\lim_{h\to0^-}-1 &=&\displaystyle\lim_{h\to0^+}1\\
+%	\rule{0pt}{12pt}	&= & -1 &=& 1\ !\\
+%		\end{array}$$
+%		
+		
+The last lines of each column tell the story: the left and right hand limits are not equal. Therefore the limit does not exist at $0$, and $f$ is not differentiable at $0$.
+So we have 
+\[ f'(x) = \left\{\begin{array}{cc} -1 & x<0 \\ 1 & x>0\end{array}.\right.\] 
+At $x=0$, $f'(x)$ does not exist; there is a jump discontinuity at $0$; see Figure~\ref{fig:2-2_Eg3.1}. So $f(x) = |x|$ is differentiable everywhere except at $0$. 
+\end{example}
+

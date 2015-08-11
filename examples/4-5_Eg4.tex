@@ -1,0 +1,23 @@
+\begin{example}
+The acceleration due to gravity of a falling object is $-32$ ft/s$^2$. At time $t=3$, a falling object had a velocity of $-10$ ft/s. Find the equation of the object's velocity.
+We want to know a velocity function, $v(t)$. We know two things:
+\begin{itemize}
+\item The acceleration, i.e., $v'(t)= -32$, and
+\item the velocity at a specific time, i.e., $v(3) = -10$.
+\end{itemize}
+Using the first piece of information, we know that $v(t)$ is an antiderivative of $v'(t)=-32$. So we begin by finding the indefinite integral of $-32$:
+\[ \int (-32)\ dt = -32t+C=v(t). \]
+Now we use the fact that $v(3)=-10$ to find $C$:
+\begin{align*}
+v(t) &= -32t+C \\
+v(3) &= -10 \\
+-32(3)+C &= -10\\
+C &= 86
+\end{align*}
+
+Thus $v(t)= -32t+86$. We can use this equation to understand the motion of the object: when $t=0$, the object had a velocity of $v(0) = 86$ ft/s. Since the velocity is positive, the object was moving upward.
+
+When did the object begin moving down? Immediately after $v(t) = 0$:
+\[ -32t+86 = 0 \quad \Rightarrow \quad  t = \frac{43}{16}  \approx 2.69\text{ s}. \]
+Recognize that we are able to determine quite a bit about the path of the object knowing just its acceleration and its velocity at a single point in time.
+\end{example}

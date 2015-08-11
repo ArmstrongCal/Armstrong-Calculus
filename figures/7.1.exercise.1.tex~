@@ -1,0 +1,27 @@
+from figures import *
+
+dx = 15
+rtmargin = 5
+lbmargin = 15
+width = 8*dx + rtmargin + lbmargin
+height = 8*dx +  rtmargin + lbmargin
+
+beginfigure("7_1_exericse.1", width, height)
+setupcoordinates([lbmargin, lbmargin, width-rtmargin, height-rtmargin],
+                 [-3,0, 120, 5])
+
+xrange = [0, 15, 120]
+yrange = [-3,1,3]
+Grid(xrange, yrange, color=lightgray).draw()
+
+axes = Axes()
+axes.draw()
+axes.setticks(xrange, yrange)
+axes.drawticks()
+axes.setlabels(xrange, yrange)
+axes.drawlabels()
+
+Label(r"$v$", [5,0], offset=[-3,3], alignment="rb").draw()
+Label(r"$\displaystyle\frac{dv}{dt}$", [0,1.5], offset=[3,-3], alignment="lt").draw()
+
+endfigure()

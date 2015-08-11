@@ -1,0 +1,194 @@
+\section{Integration by Substitution} \label{S:5.3.Substitution}
+
+\begin{goals}
+\item How can we begin to find algebraic formulas for antiderivatives of more complicated algebraic functions?
+\item How does the technique of $u$-substitution work to help us evaluate certain indefinite integrals, and how does this process rely on identifying function-derivative pairs?
+\end{goals}
+
+%----------------------------------
+% SUBSECTION INTRODUCTION
+%----------------------------------
+\subsection*{Introduction}
+
+In Section~\ref{S:4.4.FTC}, we learned the key role that antiderivatives play in the the process of evaluating definite integrals exactly.  In particular, we know that if $F$ is any antiderivative of $f$, then
+\[ \int_a^b f(x) \ dx = F(b) - F(a). \]
+Furthermore, we realized that each elementary derivative rule developed in Chapter~\ref{C:2} leads to a corresponding elementary antiderivative, as summarized in Table~\ref{T:4.4.Act2}.  Thus, if we wish to evaluate an integral such as 
+\[ \int_0^1 \left(x^3 - \sqrt{x} + 5^x \right) \ dx, \]
+it is straightforward to do so, since we can easily antidifferentiate $f(x) = x^3 - \sqrt{x} + 5^x.$ 
+
+%In particular, since a function $F$ whose derivative is $f$ is given by $F(x) = \frac{1}{4}x^4 - \frac{2}{3}x^{3/2} + \frac{1}{\ln(5)}5^x$, the Fundamental Theorem of Calculus tells us that
+%\begin{eqnarray*}
+%\int_0^1 \left(x^3 - \sqrt{x} + 5^x\right) \,dx & = & \left. \frac{1}{4}x^4 - \frac{2}{3}x^{3/2} + \frac{1}{\ln(5)}5^x\right|_0^1 \\
+%& = & \left( \frac{1}{4}(1)^4 - \frac{2}{3}(1)^{3/2} + \frac{1}{\ln(5)}5^1 \right) - \left( \frac{1}{4}(0)^4 - \frac{2}{3}(0)^{3/2} + \frac{1}{\ln(5)}5^0 \right) \\
+%& = & \frac{1}{4} - \frac{2}{3} + \frac{5}{\ln(5)} - \frac{1}{\ln(5)} \\
+%& = & -\frac{5}{12} + \frac{4}{\ln(5)}.
+%\end{eqnarray*}
+
+Because an algebraic formula for an antiderivative of $f$ enables us to evaluate the definite integral $\int_a^b f(x) \, dx$ exactly, we have a natural interest in being able to find such algebraic antiderivatives.\sidenote{Note that we emphasize \emph{algebraic} antiderivatives, as opposed to any antiderivative, since we know by the Fundamental Theorem of Calculus that $G(x) = \int_a^x f(t) \, dt$ is indeed an antiderivative of the given function $f$, but one that still involves a definite integral.}  One of our main goals in this section is to develop understanding, in select circumstances, of how to ``undo'' the process of differentiation in order to find an algebraic antiderivative for a given function.
+
+%\input{previews/5.3.PA1} % Change number to 4.6, change references % PREVIEW ACTIVITY
+
+%-----------------------------------------
+% SUBSECTION reversing chain rule
+%-----------------------------------------
+\subsection*{Reversing the Chain Rule: First Steps} 
+
+In Preview Activity~\ref{PA:5.3}, we saw that it is usually straightforward to antidifferentiate a function of the form
+\[ h(x) = f(u(x)), \]
+whenever $f$ is a familiar function whose antiderivative is known and $u(x)$ is a linear function.  For example, if we consider
+\[ h(x) = (5x-3)^6, \]
+in this context the outer function $f$ is $f(u) = u^6$, while the inner function is $u(x) = 5x - 3$.  Since the antiderivative of $f$ is $F(u) = \frac{1}{7}u^7+C$, we 
+see that the antiderivative of $h$ is
+\[ H(x) = \frac{1}{7} (5x-3)^7 \cdot \frac{1}{5} + C = \frac{1}{35} (5x-3)^7 + C. \]
+The inclusion of the constant $\frac{1}{5}$ is essential precisely because the derivative of the inner function is $u'(x) = 5$.  Indeed, if we now compute $H'(x)$, we find by the Chain Rule (and Constant Multiple Rule) that
+\[ H'(x) = \frac{1}{35} \cdot 7(5x-3)^6 \cdot 5 = (5x-3)^6 = h(x), \]
+and thus $H$ is indeed the general antiderivative of $h$.
+
+% removed the part on linear special case 
+
+\input{activities/5.3.Act1} % change to function/derivative pairs some being composition functions
+ 
+%----------------------------------------
+% SUBSECTION U-SUBSTITUTION
+%---------------------------------------
+
+\subsection*{Reversing the Chain Rule: $u$-substitution} \index{$u$-substitution}
+
+Of course, a natural question  arises from our recent work: what happens when the inner function is not a linear function?  For example, can we find antiderivatives of such functions as 
+\[ g(x) = x e^{x^2} \ \mbox{and} \ h(x) = e^{x^2}? \]
+
+It is important to explicitly remember that differentiation and antidifferentiation are essentially inverse processes; that they are not quite inverse processes is due to the $+C$ that arises when antidifferentiating.  This close relationship enables us to take any known derivative rule and translate it to a corresponding rule for an indefinite integral.  For example, since
+\[ \frac{d}{dx} \left[x^5\right] = 5x^4, \]
+we can equivalently write
+\[ \int 5x^4 \, dx = x^5 + C. \]
+
+Recall that the Chain Rule states that
+\[ \frac{d}{dx} \left[ f(g(x)) \right] = f'(g(x)) \cdot g'(x). \]
+Restating this relationship in terms of an indefinite integral,
+\begin{equation} \label{E:usubst} % EQUATION
+\int f'(g(x)) g'(x) \, dx = f(g(x))+C.
+\end{equation}
+Hence, Equation~(\ref{E:usubst}) tells us that if we can take a given function and view its algebraic structure as $f'(g(x)) g'(x)$ for some appropriate choices of $f$ and $g$, then we can antidifferentiate the function by reversing the Chain Rule.  It is especially notable that both $g(x)$ and $g'(x)$ appear in the form of $f'(g(x)) g'(x)$; we will sometimes say that we seek to \emph{identify a function-derivative pair}\index{function-derivative pair} when trying to apply the rule in Equation~(\ref{E:usubst}).
+
+In the situation where we can identify a function-derivative pair, we will introduce a new variable $u$ to represent the function $g(x)$.  Observing that with $u = g(x)$, it follows in Leibniz notation that $\frac{du}{dx} = g'(x)$, so that in terms of differentials\footnote{If we recall from the definition of the derivative that $\frac{du}{dx} \approx \frac{\triangle{u}}{\triangle{x}}$ and use the fact that $\frac{du}{dx} = g'(x)$, then we see that $g'(x) \approx \frac{\triangle{u}}{\triangle{x}}$.  Solving for $\triangle u$, $\triangle u \approx g'(x) \triangle x$.  It is this last relationship that, when expressed in ``differential'' notation enables us to write $du = g'(x) \, dx$ in the change of variable formula.}, $du = g'(x)\, dx$.  Now converting the indefinite integral of interest to a new one in terms of $u$, we have  
+\[ \int f'(g(x)) g'(x) \ dx = \int f'(u) \ du. \]
+To emphasize the importance of this concept, we restate it.
+ 
+\concept{Integration by Substitution} %CONCEPT	
+{Let $F$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ and the domain of $F$ is contained in $I$. Then \index{integration!by substitution}
+\[ \int F'(g(x))g'(x)\ dx = F(g(x)) + C. \]
+If $u = g(x)$, then $du = g'(x)dx$ and 
+\[ \int F'(g(x))g'(x)\ dx = \int F'(u)\ du = F(u)+C = F(g(x))+C. \]
+} % end concept
+
+When $f'$ is an elementary function whose antiderivative is known, we can easily evaluate the indefinite integral in $u$, and then go on to determine the desired overall antiderivative of $f'(g(x)) g'(x)$.  We call this process \textbf{$u$-substitution}.  To see $u$-substitution at work, we consider the following example.
+
+\input{examples/4-6_Eg1} % EXAMPLE
+
+An essential observation about our work in Example~\ref{Ex:4.6.usub1} is that the $u$-substitution only worked because the function multiplying $\sin (7x^4 + 3)$ was $x^3$.  If instead that function was $x^2$ or $x^4$, the substitution process may not (and likely would not) have worked.  This is one of the primary challenges of antidifferentiation: slight changes in the integrand make tremendous differences.  For instance, we can use $u$-substitution with $u = x^2$ and $du = 2xdx$ to find that
+\begin{eqnarray*}
+\int xe^{x^2} \ dx & = & \int e^u \cdot \frac{1}{2} \ du \\
+& = & \frac{1}{2} \int e^u \, du \\
+& = & \frac{1}{2} e^u + C \\
+& = & \frac{1}{2} e^{x^2} + C.
+\end{eqnarray*}
+If, however, we consider the similar indefinite integral
+\[ \int e^{x^2} \ dx, \]
+the missing $x$ to multiply $e^{x^2}$ makes the $u$-substitution $u = x^2$ no longer possible.  Hence, part of the lesson of $u$-substitution is just how specialized the process is: it only applies to situations where, up to a missing constant, the integrand that is present is the result of applying the Chain Rule to a different, related function.
+
+Let's look at some more examples of $u$-substitution.
+
+\input{examples/4-6_Eg2} % EXAMPLE
+
+Not all integrals that benefit from substitution have a clear ``inside'' function. Several of the following examples will demonstrate ways in which this occurs.
+
+\input{examples/4-6_Eg3} % EXAMPLE
+
+Do not be afraid to experiment; when given an integral to evaluate, it is often beneficial to think ``If I let $u$ be \textit{this}, then $du$ must be \textit{that} \ldots'' and see if this helps simplify the integral at all.
+
+\input{examples/4-6_Eg4} % EXAMPLE
+
+The next two examples will help fill in some missing pieces of our antiderivative knowledge. We know the antiderivatives of the sine and cosine functions; what about the other standard functions tangent, cotangent, secant and cosecant? We discover these next.
+
+\input{examples/4-6_Eg5} % EXAMPLE
+
+\input{examples/4-6_Eg6} % EXAMPLE
+
+We can use similar techniques to those used in Examples \ref{ex_sub6} and \ref{ex_sub7} to find antiderivatives of $\cot x$ and $\csc x$ (which the reader can explore in the exercises.) We summarize our results here.
+
+%\concept{Antiderivatives of Trigonometric Functions}
+%{\begin{minipage}{.45\specialboxlength}\small\index{integration!of trig. functions}
+%\begin{enumerate}
+%\item $\ds \int \sin x \ dx = -\cos x +C$
+%\item $\ds\int \cos x\ dx = \sin x + C$
+%\item $\ds \int \tan x\ dx = -\ln|\cos x|+C$
+%\end{enumerate}
+%\end{minipage}
+%\begin{minipage}{.55\specialboxlength}\small
+%\begin{enumerate}\addtocounter{enumi}{3}
+%\item $\ds \int \csc x \ dx = -\ln|\csc x+\cot x| +C$
+%\item $\ds\int \sec x\ dx = \ln|\sec x+\tan x| + C$
+%\item $\ds \int \cot x\ dx = \ln|\sin x|+C$
+%\end{enumerate}
+%\end{minipage}
+%}
+
+%%\input{activities/5.3.Act2} % ACTIVITY
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%***In the same way that definite integrals are linear operators, so are indefinite integrals ***
+
+%-----------------------------------------------------
+% SUBSECTION U-SUBSTITUTION WITH DEFINITE INTEGRALS
+%-----------------------------------------------------
+
+\subsection*{Evaluating Definite Integrals via $u$-substitution}
+
+This section has focused on $u$-substitution as a means to evaluate indefinite integrals of functions that can be written, up to a constant multiple, in the form $f(g(x))g'(x)$.  However, much of the time integration is used in the context of definite integrals involving such functions. We need to be careful with the corresponding limits of integration.  Consider, for instance, the definite integral
+\[ \int_2^5 xe^{x^2} \ dx. \]
+Whenever we write a definite integral, it is implicit that the limits of integration correspond to the variable of integration.  To be more explicit, observe that
+\[ \int_2^5 xe^{x^2} \ dx = \int_{x=2}^{x=5} xe^{x^2} \ dx. \]
+When we execute a $u$-substitution, we change the \emph{variable} of integration; it is essential to note that this also changes the \emph{limits} of integration.  For instance, with the substitution $u = x^2$ and $du = 2x \, dx$, it also follows that when $x = 2$, $u = (2)^2 = 4$, and when $x = 5$, $u = (5)^2 = 25.$  Thus, under the change of variables of $u$-substitution, we now have
+\begin{eqnarray*}
+\int_{x=2}^{x=5} xe^{x^2} \ dx & = & \int_{u=4}^{u=25} e^{u} \cdot \frac{1}{2} \ du \\
+& = & \left. \frac{1}{2}e^u \right|_{u=4}^{u=25} \\
+& = & \frac{1}{2}e^{25} - \frac{1}{2}e^4.
+\end{eqnarray*}
+
+Alternatively, we could consider the related indefinite integral $\int_2^5 xe^{x^2} \, dx,$ find the antiderivative $\frac{1}{2}e^{x^2}$ through $u$-substitution, and then evaluate the original definite integral.  From that perspective, we'd have
+\begin{eqnarray*}
+\int_{2}^{5} xe^{x^2} \, dx & = & \left. \frac{1}{2}e^{x^2} \right|_{2}^{5} \\
+& = & \frac{1}{2}e^{25} - \frac{1}{2}e^4,
+\end{eqnarray*}
+which is, of course, the same result.
+
+Using the notation of \ref{usub}, we can restate this as the following concept.
+
+\concept{Substitution with Definite Integrals} %CONCEPT
+{Let $f$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ that contains the domain of $F$. Then \index{integration!definite!and substitution}\index{definite integral!and substitution}
+\[ \int_a^b F'\big(g(x)\big)g'(x)\ dx = \int_{g(a)}^{g(b)} F'(u)\ du. \]
+} % end concept
+
+Let's look at more examples.
+
+\input{examples/4-6_Eg7} % EXAMPLE
+
+\input{examples/4-6_Eg8} % EXAMPLE
+
+%%\input{activities/5.3.Act3} % ACTIVITY
+
+\begin{summary}
+\item To begin to find algebraic formulas for antiderivatives of more complicated algebraic functions, we need to think carefully about how we can reverse known differentiation rules.  To that end, it is essential that we understand and recall known derivatives of basic functions, as well as the standard derivative rules.
+
+\item The indefinite integral provides notation for antiderivatives.  When we write ``$\int f(x) \, dx$,'' we mean ``the general antiderivative of $f$.''  In particular, if we have functions $f$ and $F$ such that $F' = f$, the following two statements say the exact thing:
+\[ \frac{d}{dx}[F(x)] = f(x) \ \mbox{and} \ \int f(x) \, dx = F(x) + C. \]
+That is, $f$ is the derivative of $F$, and $F$ is an antiderivative of $f$.
+
+\item The technique of $u$-substitution helps us evaluate indefinite integrals of the form $\int f(g(x))g'(x) \, dx$ through the substitutions $u = g(x)$ and $du = g'(x) \, dx$, so that
+\[ \int f(g(x))g'(x) \, dx = \int f(u) \, du. \]
+A key part of choosing the expression in $x$ to let be represented by $u$ is the identification of a function-derivative pair.  To do so, we often look for an ``inner'' function $g(x)$ that is part of a composite function, while investigating whether $g'(x)$ (or a constant multiple of $g'(x)$) is present as a multiplying factor of the integrand.
+\end{summary}
+
+%\input{exercises/5.3.Substitution(Ex)} 
+
+\cleardoublepage

@@ -1,0 +1,23 @@
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figures/ex_spring1}
+%\caption{Illustrating the important aspects of stretching a spring in computing work in Example \ref{eg:6.5.4}.} \label{F:6.4.HookeEx}
+%\end{marginfigure}
+
+\begin{example} \label{eg:6.5.4} % EXAMPLE
+Hooke's Law states that the force required to compress or stretch a spring $x$ units from its natural length is proportional to $x$; that is, this force is $F(x) = kx$ for some constant $k$.
+
+A force of 20 lb stretches a spring from a length of 7 inches to a length of 12 inches. How much work was performed in stretching the spring to this length?
+
+\solution
+In many ways, we are not at all concerned with the actual length of the spring, only with the amount of its change. Hence, we do not care that 20 lb of force stretches the spring to a length of 12 inches, but rather that a force of 20 lb stretches the spring by 5 in. This is illustrated in Figure \ref{F:6.4.HookeEx}; we only measure the change in the spring's length, not the overall length of the spring.
+
+Converting the units of length to feet, we have $$F(5/12) = 5/12k = 20\ \text{lb}.$$ Thus $k = 48$ lb/ft and $F(x) = 48x$. 
+
+We compute the total work performed by integrating $F(x)$ from $x=0$ to $x=5/12$:
+\begin{align*}
+W 	&= 	\int_0^{5/12} 48x \ dx \\
+&=	24x^2\Big|_0^{5/12} \\
+&=  25/6 \approx 4.1667\ \text{ft--lb.}
+\end{align*}
+
+\end{example}

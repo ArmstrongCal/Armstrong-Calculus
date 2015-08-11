@@ -1,0 +1,44 @@
+\begin{activity} \label{A:2.2.3}  Answer each of the following questions.  Where a derivative is requested, be sure to label the derivative function with its name using proper notation.
+\ba
+	\item Determine the derivative of $h(t) = 3\cos(t) - 4\sin(t)$.
+	\item Find the exact slope of the tangent line to $y = f(x) = 2x + \frac{\sin(x)}{2}$ at the point where $x = \frac{\pi}{6}$.
+	\item Find the equation of the tangent line to $y = g(x) = x^2 + 2\cos(x)$ at the point where $x = \frac{\pi}{2}$.
+	\item Determine the derivative of $p(z) = z^4 + 4^z + 4\cos(z) - \sin(\frac{\pi}{2})$.
+	\item The function $P(t) = 24 + 8\sin(t)$ represents a population of a particular kind of animal that lives on a small island, where $P$ is measured in hundreds and $t$ is measured in decades since January 1, 2010.  What is the instantaneous rate of change of $P$ on January 1, 2030?  What are the units of this quantity?  Write a sentence in everyday language that explains how the population is behaving at this point in time.
+\ea
+
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Recall the constant multiple and sum rules.
+	\item $f'(\frac{\pi}{6})$ tells us the slope of the tangent line at $(\frac{\pi}{6},\frac{\pi}{6})$.
+	\item Find both $(\frac{\pi}{2}, g(\frac{\pi}{2}))$ and $g'(\frac{\pi}{2})$.
+	\item $\sin(\frac{\pi}{2})$ is a constant.
+	\item $P'(a)$ tells us the instantaneous rate of change of $P$ with respect to time at the instant $t = a$, and its units are ``units of $P$ per unit of time.''
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Recall the constant multiple and sum rules.
+	\item $f'(a)$ tells us the slope of the tangent line at $(a,f(a))$.
+	\item Find both a point on the tangent line and the slope of the tangent line.
+	\item $\sin(\frac{\pi}{2})$ is a constant.
+	\item $P'(a)$ tells us the instantaneous rate of change of $P$ with respect to time at the instant $t = a$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item By the sum and constant multiple rules, $\frac{dh}{dt} = 3(-\sin(t)) - 4(\cos(t)) = -3\sin(t) - 4\cos(t)$.
+	\item The exact slope of the tangent line to $y = f(x) = 2x + \frac{\sin(x)}{2}$ at $x = \frac{\pi}{6}$ is given by $f'(\frac{\pi}{6})$.  So, we first compute $f'(x)$.  Using the sum and constant multiple rules, $f'(x) = 2 + \frac{1}{2}\cos(x)$, and thus $f'(\frac{\pi}{6}) = 2 + \frac{1}{2} \cos(\frac{\pi}{6}) = 2 + \frac{\sqrt{3}}{4}.$
+	\item The tangent line passes through the point $(\frac{\pi}{2}, g(\frac{\pi}{2}))$ with slope $g'(\frac{\pi}{2})$.  We observe first that $g(\frac{\pi}{2}) = (\frac{\pi}{2})^2 + 2\cos(\frac{\pi}{2}) = \frac{\pi^2}{4}$.  Next, we compute the derivative function, $g'(x)$, and find that
+	$$g'(x) = 2x - 2\sin(x).$$
+	Thus, $g(\frac{\pi}{2}) = 2 \cdot \frac{\pi}{2} - 2 \sin(\frac{\pi}{2}) = \pi - 1$.
+	
+	Hence the equation of the tangent line (in point-slope form) is given by 
+	$$y - \frac{\pi^2}{4} = (\pi-1)(x-\frac{\pi}{2}).$$
+	\item Noting that $\sin(\frac{\pi}{2})$ is a constant, we have $p'(z) = 4z^3 + 4^z \ln(4) - 4\sin(z)$.
+	
+	\item The value of $P'(2)$ will tell us the instantaneous rate of change of $P$ at the instant two decades have elapsed.  Observe that $P'(t) = 8\cos(t)$, and thus $P'(2) = 8\cos(2) \approx -3.329$ hundred animals per decade.  This tells us that the instantaneous rate of change of $P$ on January 1, 2030 is about $-3329$ animals per decade, which tells us that the animal population is shrinking considerably at this point in time.  We might say that for whatever the population is on January 1, 2030, we expect that population to drop by about 3300 animals over the next ten years, provided the current population trend continues.
+\ea
+\end{activitySolution}
+\aftera

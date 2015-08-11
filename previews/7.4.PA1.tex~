@@ -1,0 +1,25 @@
+\begin{pa} \label{PA:7.4}
+  \ba
+\item Which of the following differential equations are separable?
+  \begin{enumerate}
+    \item $\displaystyle \frac{dy}{dt} = -3y$.
+    \item $\displaystyle \frac{dy}{dt} = ty - y$.
+    \item $\displaystyle \frac{dy}{dt} = t + 1$.
+    \item $\displaystyle \frac{dy}{dt} = t^2 - y^2$.
+  \end{enumerate}
+\item Consider the initial value problem
+  \begin{eqnarray*}
+  \frac{dy}{dt} &=& -\frac{3t}{y}\\
+  \y(0) &=& 4
+  \end{eqnarray*}
+  Separate this differential equation.
+
+\item We now have the equality
+  $$y\frac{dy}{dt} = -3t.$$
+  If we antidifferentiate both sides with respect to $t$, we obtain:
+  $$\int y\frac{dy}{dt}~dt = \int -3t~dt.$$
+  How may we use a substitution to rewrite the 
+  
+\ea
+\end{pa} 
+\afterpa

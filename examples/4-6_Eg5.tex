@@ -1,0 +1,22 @@
+\begin{example} \label{eg:4.6.usub5} % EXAMPLE
+Evaluate $\ds \int \tan(x) \ dx.$
+
+\solution
+The previous paragraph established that we did not know the antiderivatives of tangent, hence we must assume that we have learned something in this section that  can help us evaluate this indefinite integral. 
+
+Rewrite $\tan(x)$ as $\frac{\sin(x)}{\cos(x)}$. While the presence of a composition of functions may not be immediately obvious, recognize that $\cos(x)$ is ``inside'' the $\frac{1}{x}$ function. Therefore, we see if setting $u = \cos(x)$ returns usable results. We have that $du = -\sin(x) \ dx$, hence $-du = \sin(x) \ dx$. We can integrate:
+\begin{align*}
+\int \tan(x) \ dx &= \int \frac{\sin(x)}{\cos(x)}\ dx \\
+&= \int \frac1{\underbrace{\cos(x)}_u}\underbrace{\sin(x) \ dx}_{-du} \\
+&= \int \frac {-1}u \ du\\
+&= -\ln |u| + C \\
+&= -\ln |\cos(x)| + C.
+\end{align*}
+Some texts prefer to bring the $-1$ inside the logarithm as a power of $\cos(x)$, as in:
+\begin{align*}
+-\ln |\cos(x)| + C &= \ln |(\cos(x))^{-1}| + C\\
+&= \ln \left| \frac{1}{\cos(x)}\right| + C\\
+&= \ln |\sec(x)| + C.
+\end{align*}
+Thus the result they give is $\int \tan x \ dx = \ln|\sec(x)| + C$. These two answers are equivalent.
+\end{example}

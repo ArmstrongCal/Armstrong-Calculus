@@ -1,0 +1,20 @@
+\begin{example} \label{eg:6.2.1} % EXAMPLE
+Find the volume of the solid formed by rotating the region bounded by $y=0$, $y=1/(1+x^2)$, $x=0$ and $x=1$ about the $y$-axis.
+
+\solution This is the region used to introduce the Shell Method in Figure~\ref{fig:6.2.shell}, but is sketched again in Figure~\ref{F:6.2.Ex1} for closer reference. A line is drawn in the region parallel to the axis of rotation representing a shell that will be carved out as the region is rotated about the $y$-axis. (This is the differential element.)
+
+The distance this line is from the axis of rotation determines $r(x)$; as the distance from $x$ to the $y$-axis is $x$, we have $r(x)=x$. The height of this line determines $h(x)$; the top of the line is at $y=1/(1+x^2)$, whereas the bottom of the line is at $y=0$. Thus $h(x) = 1/(1+x^2)-0 = 1/(1+x^2)$. The region is bounded from $x=0$ to $x=1$, so the volume is 
+\begin{align*}
+V 	&= 2\pi\int_0^1 \frac{x}{1+x^2}\ dx. \\
+\intertext{This requires substitution. Let $u=1+x^2$, so $du = 2x\ dx$. We also change the bounds: $u(0) = 1$ and $u(1) = 2$. Thus we have:}
+&= \pi\int_1^2 \frac{1}{u}\ du \\
+&= \pi\ln u\Big|_1^2\\
+&= \pi\ln 2 \approx 2.178 \ \text{units}^3.
+\end{align*}
+Note: in order to find this volume using the Disk Method, two integrals would be needed to account for the regions above and below $y=1/2$.
+\end{example}
+
+\begin{marginfigure}[-14cm] %MARGIN FIGURE
+\margingraphics{figures/figshell1}
+\caption{Graphing a region in Example~\ref{eg:6.2.1}.} \label{F:6.2.Ex1}
+\end{marginfigure}

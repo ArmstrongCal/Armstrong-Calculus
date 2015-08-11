@@ -1,0 +1,32 @@
+\begin{activity}  \label{A:1.2.2}
+Consider a moving object whose position function is given by $s(t) = t^2$, where $s$ is measured in meters and $t$ is measured in minutes.  
+\ba
+	\item Determine the most simplified expression for the average velocity of the object on the interval $[3, 3+h]$, where $h > 0$.
+	\item Determine the average velocity of the object on the interval $[3,3.2]$.  Include units on your answer.
+	\item Determine the instantaneous velocity of the object when $t = 3$.  Include units on your answer.
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item $s(3+h) = (3+h)^2$.
+	\item Recall that $AV_{[a,b]} = \frac{s(b)-s(a)}{b-a}$.
+	\item Consider $\lim_{h \to 0} \frac{s(3+h)-s(3)}{h}$ and use your work in (a).
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item $s(3+h) = (3+h)^2 = 9 + 6h + h^2$; show that $s(3+h) - s(3) = 6h + h^2$.
+	\item Compute $AV_{[3,3.2]} = \frac{s(3.2)-s(3)}{3.2-3}$.
+	\item Consider $\lim_{h \to 0} \frac{s(3+h)-s(3)}{h} = \lim_{h \to 0} \frac{6h + h^2}{h}$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Observe that $AV_{[3, 3+h]} =  \frac{s(3+h)-s(3)}{h} = \frac{(3+h)^2 - 3^2}{h} = \frac{9 + 6h + h^2 - 9}{h} = \frac{6h + h^2}{h} = \frac{h(6 + h)}{h} = 6 + h.$
+	\item Using the expression just found in (a) with $h = 0.2$, $AV_{[3,3.2]} = 6 + 0.2 = 6.2$ meters/min.
+	\item Taking the limit of average velocity and using our work from (a), we find that
+	$$IV_{t = 3} = \lim_{h \to 0} AV_{[3, 3+h]} = \lim_{h \to 0} 6+h = 6,$$
+	so the instantaneous velocity of the object when $t = 3$ is 6 meters per minute.
+\ea
+\end{activitySolution}
+\aftera

@@ -1,0 +1,30 @@
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figures/6_4_DamEx.eps}
+%\caption{A trapezoidal dam that is 25 feet tall, 60 feet wide at its base, 90 feet wide at its top, with the water line 5 feet down from the top of its face.} \label{F:6.4.DamEx}
+%\end{marginfigure}
+
+\begin{example} \label{eg:6.5.3} % EXAMPLE
+A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft over 1 minute. The sand is leaking from the box at a rate of 1 lb/s. The box itself weighs 5 lb and is pulled by a rope weighing .2 lb/ft. 
+	\begin{enumerate}
+	\item		How much work is done lifting just the rope?
+	\item		How much work is done lifting just the box and sand?
+	\item		What is the total amount of work performed?
+	\end{enumerate}
+
+\solution
+\begin{enumerate}
+	\item		We start by forming the force function $F_r(x)$ for the rope (where the subscript denotes we are considering the rope). As in the previous example, let $x$ denote the amount of rope, in feet, pulled in. (This is the same as saying $x$ denotes the height of the box.) The weight of the rope with $x$ feet pulled in is $F_r(x) = 0.2(50-x) = 10-0.2x$. (Note that we do not have to include the acceleration of gravity here, for the \textit{weight} of the rope per foot is given, not its \textit{mass} per meter as before.) The work performed lifting the rope is 
+	$$W_r = \int_0^{50} (10-0.2x)\ dx = 250\ \text{ft--lb}.$$
+	
+	\item	The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting $x$ represent the height of the box, we have two points on the line that describes the weight of the sand: when $x=0$, the sand weight is 100 lb, producing the point $(0,100)$; when $x=50$, the sand in the box weighs 40 lb, producing the point $(50,40)$. The slope of this line is $\frac{100-40}{0-50} = -1.2$, giving the equation of the weight of the sand at height $x$ as $w(x) = -1.2x+100$. The box itself weighs a constant 5 lb, so the total force function is $F_b(x) = -1.2x+105$. Integrating from $x=0$ to $x=50$ gives the work performed in lifting box and sand:
+	$$W_b = \int_0^{50} (-1.2x+105)\ dx = 3750\ \text{ft--lb.}$$
+	
+	\item	The total work is the sum of $W_r$ and $W_b$: $250+3750=4000$ ft--lb. We can also arrive at this via integration:
+	\begin{align*} W &= \int_0^{50} (F_r(x)+F_b(x))\ dx \\
+									&= \int_0^{50} (10-0.2x-1.2x+105)\ dx \\
+									&= \int_0^{50} (-1.4x+115) \ dx \\
+									&= 4000 \ \text{ft--lb.}
+	\end{align*}	
+\end{enumerate}
+
+\end{example}

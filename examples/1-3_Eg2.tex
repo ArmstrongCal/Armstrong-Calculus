@@ -1,0 +1,24 @@
+\begin{example}  % Determining intervals on which a function is continuous.
+For each of the following functions, give the domain of the function and the interval(s) on which it is continuous.
+
+\begin{enumerate}[1)]
+\item $f(x) = 1/x$			
+\item $f(x) = \sin(x)$
+\item $f(x) = \sqrt{x}$
+\item $f(x) = \sqrt{1-x^2}$
+\item $f(x) = |x|$		
+\end{enumerate}
+
+\solution We examine each in turn.	
+\begin{enumerate}[1)]
+\item The domain of $f(x) = 1/x$ is $(-\infty,0) \cup (0,\infty)$. As it is a rational function, we apply the limit laws to recognize that $f$ is continuous on all of its domain.
+
+\item The domain of $f(x) = \sin(x)$ is all real numbers, or $(-\infty,\infty)$. Applying the limit laws shows that $\sin x$ is continuous everywhere.
+
+\item The domain of $f(x) = \sqrt{x}$ is $[0,\infty)$. Applying the limit laws shows that $f(x) = \sqrt{x}$ is continuous on its domain of $[0,\infty)$.
+
+\item The domain of $f(x) = \sqrt{1-x^2}$ is $[-1,1]$. Applying the limit laws shows that $f$ is continuous on all of its domain, $[-1,1]$.
+
+\item The domain of $f(x) = |x|$ is $(-\infty,\infty)$. We can define the absolute value function as $\ds f(x) = \left\{\begin{array}{cc} -x & x<0 \\ x & x\geq 0\end{array}\right.$. Each ``piece'' of this piece-wise defined function is continuous on all of its domain, giving that $f$ is continuous on $(-\infty,0)$ and $[0,\infty)$. As we saw before, we cannot assume this implies that $f$ is continuous on $(-\infty,\infty)$; we need to check that $\ds \lim_{x \to 0}f(x) = f(0)$, as $x=0$ is the point where $f$ transitions from one ``piece'' of its definition to the other. It is easy to verify that this is indeed true, hence we conclude that $f(x) = |x|$ is continuous everywhere.
+\end{enumerate}
+\end{example}

@@ -1,0 +1,35 @@
+\begin{example} \label{eg:5.2.3} % EXAMPLE
+Evaluate $\ds\int\cos^4(x)\sin^2(x)\ dx$.
+
+\solution The powers of sine and cosine are both even, so we employ the power--reducing formulas and algebra as follows.
+\begin{align*}
+\int \cos^4(x)\sin^2(x)\ dx &= \int\left(\frac{1+\cos(2x)}{2}\right)^2\left(\frac{1-\cos(2x)}2\right)\ dx \\
+				&= \int\frac{1+2\cos(2x)+\cos^2(2x)}4\cdot\frac{1-\cos(2x)}2\ dx\\
+				&=	\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx
+\end{align*}
+The $\cos(2x)$ term is easy to integrate. The $\cos^2(2x)$ term is another trigonometric integral with an even power, requiring the power--reducing formula again. The $\cos^3(2x)$ term is a cosine function with an odd power, requiring a substitution as done before. We integrate each in turn below.
+
+$$\int\cos(2x)\ dx = \frac12\sin(2x)+C.$$
+
+$$\int\cos^2(2x)\ dx = \int \frac{1+\cos(4x)}2\ dx = \frac12\left(x+\frac14\sin(4x)\right)+C.$$
+
+Finally, we rewrite $\cos^3(2x)$ as $$\cos^3(2x) = \cos^2(2x)\cos(2x) = \big(1-\sin^2(2x)\big)\cos(2x).$$
+Letting $u=\sin(2x)$, we have $du = 2\cos(2x)\ dx$, hence
+\begin{align*}
+\int \cos^3(2x)\ dx &= \int\big(1-\sin^2(2x)\big)\cos(2x)\ dx\\
+							&= \int \frac12(1-u^2)\ du\\
+							&= \frac12\Big(u-\frac13u^3\Big)+C\\
+							&=	\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)+C
+\end{align*}
+
+Putting all the pieces together, we have
+
+\noindent
+$\ds \int \cos^4x\sin^2x\ dx =\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx$
+
+\noindent
+$\ds = \frac18\Big[x+\frac12\sin(2x)-\frac12\big(x+\frac14\sin(4x)\big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C $
+
+\noindent 
+$\ds =\frac18\Big[\frac12x-\frac18\sin(4x)+\frac16\sin^3(2x)\Big]+C$
+\end{example}

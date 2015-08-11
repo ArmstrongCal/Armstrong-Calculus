@@ -1,0 +1,43 @@
+\begin{activity} \label{A:2.8.1}  
+For each function given below, find its derivative.
+\ba
+	   \item $h(x) = x^2\ln(x)$
+	   \item  $p(t) = \ds \frac{\ln(t)}{e^t + 1}$
+           \item $s(y) = \ln(\cos(y) + 2)$
+           \item $z(x) = \tan(\ln(x))$
+           \item $m(z) = \ln(\ln(z))$
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	   \item Is $h$ a product, quotient, or composition of basic functions?
+	   \item Is $p$ a product, quotient, or composition of basic functions?
+	   \item Is $s$ a product, quotient, or composition of basic functions?
+	   \item Is $z$ a product, quotient, or composition of basic functions?
+	   \item Is $m$ a product, quotient, or composition of basic functions?
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	   \item Try using the product rule.
+	   \item Note that $p$ is a quotient of basic functions.
+	   \item Observe that $s$ is a composite function with $f(y) = \ln(y)$ as the outer function.
+	   \item What is the outer function in this composite function?  The inner function?
+	   \item The natural log function is being composed with itself.  What are the inner and outer functions?
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	   \item By the product rule, 
+	   $$h'(x) = x^2\cdot \frac{1}{x} + \ln(x) \cdot 2x = x + 2x\ln(x).$$
+	   \item By the quotient rule, 
+	   $$p'(t) = \frac{(e^t + 1) \frac{1}{t} - \ln(t) \cdot e^t}{(e^t + 1)^2}.$$
+           \item The chain rule tells us that
+           $$s'(y) = \frac{1}{\cos(y) + 2)} \cdot (-\sin(y)).$$
+           \item Again using the chain rule,
+           $$z'(x) = \sec^2(\ln(x)) \cdot \frac{1}{x}.$$
+           \item Noting that $m$ is composite with the natural logarithm function serving as both the inner and outer function, we find that
+           $$m'(z) = \frac{1}{\ln(z)} \cdot \frac{1}{z}.$$
+\ea
+\end{activitySolution}
+\aftera

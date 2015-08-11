@@ -1,0 +1,107 @@
+\section{Volume by The Shell Method} \label{S:6.2.ShellMethod}
+
+\begin{goals}
+\item Is there other methods to use a definite integral to find the volume of a three-dimensional solid  or a solid of revolution that results from revolving a two-dimensional region about a particular axis? 
+\item In what circumstances do we integrate with respect to $y$ instead of integrating with respect to $x$?
+\item When is it better to use the Shell Method as oppossed to the Washer Method? 
+\end{goals}
+
+%-------------------------------
+% SUBSECTION INTRODUCTION
+%-------------------------------
+\subsection*{Introduction}
+
+Often a given problem can be solved in more than one way. A particular method may be chosen out of convenience, personal preference, or perhaps necessity. Ultimately, it is good to have options.
+
+The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross-sectional area of the solid. This section develops another method of computing volume, the \textbf{Shell Method.} Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating ``shells.''
+
+The Preview Activity \ref{PA:6.2} introduces a situation where using the Washer Method from Section \ref{S:6.1.Volume} becomes very tedious. 
+
+\input{previews/6.2.PA1} % PREVIEW need use f=x^2-x^3 and have do disk method
+
+Consider Figure~\ref{fig:6.2.shell}-(a), where the region shown rotated around the $y$-axis forming the solid shown in Figure~\ref{fig:6.2.shell}-(b). A small slice of the region is drawn in Figure~\ref{fig:6.2.shell}-(a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a \textbf{cylindrical shell}, as pictured in Figure~\ref{fig:6.2.shell}-(c). The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells. 
+
+To compute the volume of one shell, first consider the paper label on a soup can with radius $r$ and height $h$. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height $h$ and length $2\pi r$. Thus the area is $A = 2\pi rh$; see Figure~\ref{F:6.2.soupcan}-(a).
+
+\begin{marginfigure}[-1cm] % MARGIN FIGURE
+\begin{center}
+\subfloat[]{\includegraphics[scale=.95]{figures/figshell_intro_b}}
+
+\subfloat[]{\includegraphics[scale=.95]{figures/figshell_intro_a}}
+
+\subfloat[]{\includegraphics[scale=.95]{figures/figshell_intro_d}}
+\caption{Introducing the Shell Method.}\label{fig:6.2.shell}
+\end{center}
+\end{marginfigure}
+
+Do a similar process with a cylindrical shell, with height $h$, thickness $\Delta x$, and approximate radius $r$. Cutting the shell and laying it flat forms a rectangular solid with length $2\pi r$, height $h$ and depth $\dx$. Thus the volume is $V \approx 2\pi rh\dx$; see Figure~\ref{F:6.2.soupcan}-(b). (We say ``approximately'' since our radius was an approximation.)
+
+By breaking the solid into $n$ cylindrical shells, we can approximate the volume of the solid as
+$$V = \sum_{i=1}^n 2\pi r_ih_i\dx_i,$$ where $r_i$, $h_i$ and $\dx_i$ are the radius, height and thickness of the $i\,^\text{th}$ shell, respectively. 
+
+This is a Riemann Sum. Taking a limit as the thickness of the shells approaches $0$ leads to a definite integral.
+
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figshell_soupcan}}
+
+\subfloat[]{\margingraphics{figures/figshell_unwrapshell}}
+\caption{Determining the volume of a thin cylindrical shell.}\label{F:6.2.soupcan}
+\end{marginfigure}
+
+\concept{The Shell Method} % CONCEPT
+{Let a solid be formed by revolving a region $R$, bounded by $x=a$ and $x=b$, around a vertical axis. Let $r(x)$ represent the distance from the axis of rotation to $x$ (i.e., the radius of a sample shell) and let $h(x)$ represent the height of the solid at $x$ (i.e., the height of the shell). The volume of the solid is 
+\index{integration!volume!Shell Method}\index{Shell Method}
+$$V = 2\pi\int_a^b r(x)h(x)\ dx.$$
+} %end CONCEPT
+
+\textbf{Special Cases:}
+\begin{enumerate}[1)]
+\item When the region $R$ is bounded above by $y=f(x)$ and below by $y=g(x)$, then $h(x) = f(x)-g(x)$.
+\item	When the axis of rotation is the $y$-axis (i.e., $x=0$) then $r(x) = x$.
+\end{enumerate}
+	
+Let's practice using the Shell Method.
+
+\input{examples/6-2_Eg1.tex} % EXAMPLE
+
+With the Shell Method, nothing special needs to be accounted for to compute the volume of a solid that has a hole in the middle, as demonstrated next.
+
+\input{examples/6-2_Eg2.tex} % EXAMPLE
+
+\input{activities/6.2.Act1.tex} % ACTIVITY
+
+When revolving a region around a horizontal axis, we must consider the radius and height functions in terms of $y$, not $x$.
+
+\input{examples/6-2_Eg3.tex} % EXAMPLE
+
+\input{activities/6.2.Act2.tex} % ACTIVITY
+
+At the beginning of this section it was stated that ``it is good to have options.'' The next example finds the volume of a solid rather easily with the Shell Method, but using the Washer Method would be quite a chore.
+
+\input{examples/6-2_Eg4.tex} % EXAMPLE
+
+%--------------------------------------------
+% SUMMARY
+%--------------------------------------------
+\begin{summary}
+  \item We can use a definite integral to find the volume of a three-dimensional solid of revolution that results from revolving a two-dimensional region about a particular axis by taking  slices parallel to the axis of revolution which will then be cylindrical shells.
+  \item If we revolve about a vertical line and slice perpendicular to that line, then our shells are vertical and of thickness $\triangle x$. This leads us to integrate with respect to $x$.
+	\item If we revolve about a horizontal line and slice parallel to that line, then our shells are horizontal and of thickness $\triangle y$. This leads us to integrate with respect to $y$, as opposed to with respect to $x$ when we slice a solid vertically.
+	\item Let a region $R$ be given with $x$-bounds $x=a$ and $x=b$ and $y$-bounds $y=c$ and $y=d$.
+\vskip 5pt
+\begin{tabular}{cccc}
+ 		& Washer Method & & Shell Method \rule[-10pt]{0pt}{10pt} \\
+ \parbox{50pt}{\centering Horizontal Axis}  & $\ds \pi\int_a^b \big(R(x)^2-r(x)^2\big)\ dx$ & & $\ds 2\pi\int_c^d r(y)h(y)\ dy$ \\ \\
+ \parbox{40pt}{\centering Vertical Axis} &  $\ds\pi \int_c^d\big(R(y)^2-r(y)^2\big)\ dy$ & & $\ds 2\pi\int_a^b r(x)h(x)\ dx$
+ \end{tabular}
+\index{integration!volume!Washer Method}\index{Washer Method}\index{integration!volume!Shell Method}\index{Shell Method}
+\end{summary} 
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/6-2.Shell(Ex)} 
+
+\cleardoublepage

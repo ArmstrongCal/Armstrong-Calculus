@@ -1,0 +1,23 @@
+\begin{example} \label{Ex:1.1.Eg3}
+Let $\ds \lim_{x\to 2} f(x)=2$, $\ds  \lim_{x\to 2} g(x) = 3$ and $\ds p(x) = 3x^2-5x+7$. Find the following limits:
+
+\begin{enumerate}[1)]
+\item $\ds \lim_{x\to 2} \big(f(x) + g(x)\big)$
+\item $\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big)$
+\item $\ds \lim_{x\to 2} p(x)$
+\end{enumerate}
+
+\solution
+
+\begin{enumerate}[1)]
+\item Using the Sum/Difference rule, we know that \newline $\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5$.
+\item Using the Scalar Multiple, Sum/Difference, and Power rules, we find that $\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.$
+\item Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+\begin{align*}
+\lim_{x\to 2} p(x) &= \lim_{x\to 2} (3x^2-5x+7) \\
+&= \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7 \\
+&= 3\cdot 2^2 - 5\cdot 2+7 \\
+&= 9
+\end{align*}
+\end{enumerate}
+\end{example}

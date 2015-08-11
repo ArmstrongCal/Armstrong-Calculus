@@ -1,0 +1,17 @@
+\begin{example} % EXAMPLE
+Approximate the net area of $f(x)=4x-x^2$ on $[0,4]$ again using $R_n$ with $n$ rectangles. 
+
+\solution We have 
+\[ \Delta x = \frac{4-0}{n} = \frac{4}{n} \quad \mbox{and} \quad x_i = 0 + i \Delta x = \frac{4}{n}i,\]
+and we approximate the area as
+\begin{align*}
+A &\approx \sum_{i=1}^n f(x_i) \Delta x \\
+&= \sum_{i=1}^n f \left( \frac{4}{n}i \right) \Delta x \\
+&= \Delta x \sum_{i=1}^n \left[ 4 \cdot \frac{4}{n}i - \left( \frac{4}{n}i \right)^2 \right]  \\
+&= \Delta x \left[ \sum_{i=1}^n \left(\frac{16}{n}\right)i - \sum_{i=1}^n \left(\frac{16}{n^2}\right)i^2 \right] \\
+&= \frac{16\Delta x}{n} \left[ \sum_{i=1}^n i - \frac{1}{n} \sum_{i=1}^n i^2 \right]  \\
+&= \frac{64}{n^2} \left[ \frac{n(n+1)}{2} - \frac{1}{n} \cdot \frac{n(n+1)(2n+1)}{6} \right] \\
+&= \frac{32(n+1)}{n} - \frac{32(n+1)(2n+1)}{3n^2} \\
+&= \frac{32}{3}\left(1-\frac{1}{n^2}\right)
+\end{align*}
+\end{example}

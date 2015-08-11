@@ -1,0 +1,27 @@
+\begin{activity} \label{8.3.Act7} Use the Limit Comparison Test to determine the convergence or divergence of the series
+\[\sum \frac{3k^2+1}{5k^4+2k+2}.\]
+by comparing it to the series $\ds \sum \frac{1}{k^2}$.
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+Let $b_k = \frac{k^2+1}{k^4+2k+2}$ and $a_k = \frac{1}{k^2}$. Then
+\begin{align*}
+\lim_{k \to \infty} \frac{b_k}{a_k} &= \lim_{k \to \infty} \frac{\frac{k^2+1}{k^4+2k+2}}{\frac{1}{k^2}} \\
+    &= \lim_{k \to \infty} \frac{k^4+k^2}{k^4+2k+2} \\
+    &= \lim_{k \to \infty} \frac{1+\frac{1}{k^2}}{1+\frac{2}{k^3}+\frac{2}{k^4}} \\
+    &= 1.
+\end{align*}
+ Since $\ds \lim_{k \to \infty} \frac{b_k}{a_k}$ is a finite positive constant, the Limit Comparison Test shows that $\ds \sum \frac{1}{k^2}$ and $\ds \sum \frac{k^2+1}{k^4+2k+2}$ either both converge or both diverge. We know that $\ds \sum \frac{1}{k^2}$ is a $p$-series with $p > 1$ and so $\ds \sum \frac{1}{k^2}$  converges. Therefore, the series $\ds \sum \frac{k^2+1}{k^4+2k+2}$ also converges.
+\end{activitySolution}
+\aftera 

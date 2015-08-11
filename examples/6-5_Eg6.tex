@@ -1,0 +1,22 @@
+\begin{marginfigure}[6cm] % MARGIN FIGURE
+\margingraphics{figures/figwork_pump3}
+\caption{A graph of the conical water tankt in Example \ref{eg:6.5.6}.} \label{F:6.5.Cone}
+\end{marginfigure}
+
+\begin{example} \label{eg:6.5.6} % EXAMPLE
+A conical water tank has its top at ground level and its base 10 feet below ground. The radius of the cone at ground level is 2 ft. It is filled with water weighing 62.4 lb/ft$^3$ and is to be emptied by pumping the water to a spigot 3 feet above ground level. Find the total amount of work performed in emptying the tank.
+
+\solution
+The conical tank is sketched in Figure \ref{F:6.5.Cone}. We can orient the tank in a variety of ways; we could let $y=0$ represent the base of the tank and $y=10$ represent the top of the tank, but we choose to keep the convention of the wording given in the problem and let $y=0$ represent ground level and hence $y=-10$ represents the bottom of the tank. The actual ``height'' of the water does not matter; rather, we are concerned with the distance the water travels. 
+
+The figure also sketches a differential element, a cross--sectional circle. The radius of this circle is variable, depending on $y$. When $y=-10$, the circle has radius 0; when $y=0$, the circle has radius 2. These two points, $(-10,0)$ and $(0,2)$, allow us to find the equation of the line that gives the radius of the cross--sectional circle, which is $r(y) = 1/5y+2$. Hence the volume of water at this height is $V(y)=\pi(1/5y+2)^2dy$, where $dy$ represents a very small height of the differential element. The force required to move the water at height $y$ is $F(y) = 62.4\times V(y)$.
+
+The distance the water at height $y$ travels is given by $h(y)=3-y$. Thus the total work done in pumping the water from the tank is 
+\begin{align*}
+%W &= 		\int_{-10}^0 F(y)h(y)\ dy \\
+W	&=	\int_{-10}^0 62.4\pi(1/5y+2)^2(3-y)\ dy\\
+	&=	62.4\pi\int_{-10}^0\left(-\frac1{25}y^3-\frac{17}{25}y^2-\frac85y+12\right)\ dy\\
+	&=  62.2\pi\cdot\frac{220}{3} \approx 14,376 \text{ ft--lb.}	
+\end{align*}
+
+\end{example}

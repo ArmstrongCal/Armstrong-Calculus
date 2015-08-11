@@ -1,0 +1,44 @@
+\begin{marginfigure}[4cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseries1a}}
+
+\subfloat[]{\margingraphics{figures/figseries1b}}
+
+\subfloat[]{\margingraphics{figures/figseq1c}}
+\caption{Scatter plots relating to Example \ref{eg:7.2.1}.} \label{F:eg:7.2.1}
+\end{marginfigure}
+
+\begin{example} \label{eg:7.2.1} % EXAMPLE
+\begin{enumerate}
+\item		Let $\{a_n\} = \{n^2\}$. Show $\ds \sum_{n=1}^\infty a_n$ diverges.
+\item		Let $\{b_n\} = \{(-1)^{n+1}\}$. Show $\ds \sum_{n=1}^\infty b_n$ diverges.
+\end{enumerate}
+
+\solution
+\begin{enumerate}
+\item	Consider $S_n$, the $n^\text{th}$ partial sum.
+\begin{align*} S_n &= a_1+a_2+a_3+\cdots+a_n \\		
+						&= 1^2+2^2+3^2\cdots + n^2.
+\intertext{By Theorem \ref{thm:summation}, this is}
+						&= \frac{n(n+1)(2n+1)}{6}.
+\end{align*}
+Since $\ds \lim_{n\to\infty}S_n = \infty$, we conclude that the series $\ds \sum_{n=1}^\infty n^2$ diverges. It is instructive to write $\ds \sum_{n=1}^\infty n^2=\infty$ for this tells us \emph{how} the series diverges: it grows without bound.
+
+A scatter plot of the sequences $\{a_n\}$ and $\{S_n\}$ is given in Figure \ref{F:eg:7.2.1}(a). The terms of $\{a_n\}$ are growing, so the terms of the partial sums $\{S_n\}$ are growing even faster, illustrating that the series diverges.
+
+
+\item		Consider some of the partial sums $S_n$ of $\{b_n\}$:
+\begin{align*}
+S_1 &= 1\\
+S_2 &= 0\\
+S_3 &= 1\\
+S_4 &= 0
+\end{align*}
+This pattern repeats; we find that $S_n = \left\{\begin{array}{cc} 1  & n\ \text{ is odd}\\
+																																		0  & n\  \text{ is even}
+																								\end{array}\right..$
+As $\{S_n\}$ oscillates, repeating 1, 0, 1, 0, $\ldots$, we conclude that $\ds\lim_{n\to\infty}S_n$ does not exist, hence $\ds\sum_{n=1}^\infty (-1)^{n+1}$ diverges.		
+
+A scatter plot of the sequence $\{b_n\}$ and the partial sums $\{S_n\}$ is given in Figure \ref{F:eg:7.2.1}(b). When $n$ is odd, $b_n = S_n$ so the marks for $b_n$ are drawn oversized to show they coincide.	
+																					
+\end{enumerate}
+\end{example}

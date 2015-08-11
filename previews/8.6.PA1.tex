@@ -1,0 +1,82 @@
+\begin{pa} \label{PA:8.6}
+In Chapter~\ref{C:7}, we learned some of the many important applications of differential equations, and learned some approaches to solve or analyze them.  Here, we consider an important approach that will allow us to solve a wider variety of differential equations.
+
+Let's consider the familiar differential equation from exponential population growth given by
+\begin{equation} \label{eq:PA8.6_Resistance_ode}
+y' = ky,
+\end{equation}
+where $k$ is the constant of proportionality. While we can solve this differential equation using methods we have already learned, we take a different approach now that can be applied to a much larger set of differential equations. For the rest of this activity, let's assume that $k=1$. We will use our knowledge of Taylor series to find a solution to the differential equation (\ref{eq:PA8.6_Resistance_ode}). 
+
+To do so, we assume that we have a solution $y=f(x)$ and that $f(x)$ has a Taylor series that can be written in the form
+\[y = f(x) = \sum_{k=0}^{\infty} a_kx^k,\]
+where the coefficients $a_k$ are undetermined. Our task is to find the coefficients.
+\ba
+    \item Assume that we can differentiate a power series term by term.  By taking the derivative of $f(x)$ with respect to $x$ and substituting the result into the differential equation (\ref{eq:PA8.6_Resistance_ode}), show that the equation
+\[\sum_{k=1}^{\infty} ka_kx^{k-1} = \sum_{n=0}^{\infty} a_kx^{k}\]
+must be satisfied in order for $f(x) = \sum_{k=0}^{\infty} a_kx^k$ to be a solution of the DE.
+\begin{activitySolution}
+
+Differentiation term by term gives
+\[y' = \sum_{k=1}^{\infty} ka_kx_{k-1}.\]
+We then substitute this series into the differential equation (\ref{eq:PA8.6_Resistance_ode}) to obtain the equation
+
+\end{activitySolution}
+
+\item Two series are equal if and only if they have the same coefficients on like power terms. Use this fact to find a relationship between $a_1$ and $a_0$.
+
+\begin{activitySolution}
+
+When we write the first few terms of the series on either side of our differential equation we obtain
+\[a_1 + (2)a_2x + (3)a_3x^2 + (4)a_4x^3 + \cdots + (k+1)a_{k+1}x^{k} + \cdots = a_0 + a_1x + a_2x^2 + \cdots + a_kx^k + \cdots.\]
+Equating the constant terms gives us $a_1 = a_0$.
+
+\end{activitySolution}
+
+    \item Now write $a_2$ in terms of $a_1$. Then write $a_2$ in terms of $a_0$.
+
+\begin{activitySolution}
+
+Equating the degree 1 terms gives us $2a_2 = a_1$ or $a_2 = \frac{a_1}{2}$. Since $a_1 = a_0$, we have $a_2 = \frac{a_0}{2}$.
+
+\end{activitySolution}
+
+   \item Write $a_3$ in terms of $a_2$. Then write $a_3$ in terms of $a_0$.
+
+\begin{activitySolution}
+
+Equating the degree 2 terms gives us $3a_3 = a_2$ or $a_3 = \frac{a_2}{3}$. Since $a_2 = \frac{a_0}{2}$, we have $a_3 = \frac{a_0}{3!}$.
+
+\end{activitySolution}
+
+   \item Write $a_4$ in terms of $a_3$. Then write $a_4$ in terms of $a_0$.
+
+\begin{activitySolution}
+
+Equating the degree 3 terms gives us $4a_4 = a_3$ or $a_4 = \frac{a_3}{4}$. Since $a_3 = \frac{a_0}{3!}$, we have $a_4 = \frac{a_0}{4!}$.
+
+\end{activitySolution}
+
+    \item Observe that there is a pattern in (b)-(e). Find a general formula for $a_k$ in terms of $a_0$.
+
+\begin{activitySolution}
+
+Equating the degree $k-1$ terms gives us $ka_k = a_{k-1}$ or $a_k = \frac{a_{k-1}}{k}$. It appears that $a_{k-1} = \frac{a_0}{(k-1)!}$, so we have
+\[a_k = \frac{a_0}{k!}.\]
+
+\end{activitySolution}
+
+\item Write the series expansion for $y$ using only the unknown coefficient $a_0$. From this, determine what familiar functions satisfy the differential equation (\ref{eq:PA8.6_Resistance_ode}). ({\bf Hint}: Compare to a familiar Taylor series.)
+
+\begin{activitySolution}
+
+Since $a_k = \frac{a_0}{k!}$ we have
+\[y = a_0 \sum_{k=0}^{\infty} \frac{x^k}{k!}.\]
+So the functions that satisfy the differential equation (\ref{eq:PA8.6_Resistance_ode}) are the exponential functions of the form $y = a_0e^x$.
+
+\end{activitySolution}
+
+\ea
+
+
+\end{pa}
+\afterpa 

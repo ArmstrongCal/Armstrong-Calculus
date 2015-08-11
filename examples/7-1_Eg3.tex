@@ -1,0 +1,27 @@
+\begin{example} \label{eg:7.1.3} % EXAMPLE
+Determine the convergence or divergence of the following sequences.
+
+\begin{enumerate}[1)]
+\item $\ds\{a_n\} = \left\{\frac{3n^2-2n+1}{n^2-1000}\right\}$
+\item $\{a_n\} = \{\cos n \}$
+\item  $\ds\{a_n\} = \left\{\frac{(-1)^n}{n}\right\}$
+\end{enumerate}
+
+\solution
+\begin{enumerate}[1)]
+\item We can state that $\ds\lim_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3$. (We could have also directly applied l'H\^opital's Rule.) Thus the sequence $\{a_n\}$ converges, and its limit is $3$. A scatter plot of every $5$ values of $a_n$ is given in Figure \ref{fig:eg:7.1.3}-(a). The values of $a_n$ vary widely near $n=30$, ranging from about $-73$ to $125$, but as $n$ grows, the values approach $3$.
+
+\item The limit $\ds\lim_{x\to\infty}\cos x$ does not exist, as the function oscillates (and takes on every value in $[-1,1]$ infinitely many times). Thus we conclude that the sequence $\{\cos n\}$ diverges. (And in this particular case, since the domain is restricted to $\mathbb{N}$, no value of $\cos n$ is repeated!) This sequence is plotted in Figure \ref{fig:eg:7.1.3}-(b); because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
+
+\item The function $f(x) = (-1)^x/x$ is not well defined. (What does $(-1)^{\sqrt{2}}$ mean? In actuality, there is an answer, but it involves \emph{complex analysis}, beyond the scope of this text.) So for now we say that we cannot determine the limit. (But we will be able to very soon.) By looking at the plot in Figure \ref{fig:eg:7.1.3}-(c), we would like to conclude that the sequence converges to $0$. That is true, but at this point we are unable to decisively say so.
+\end{enumerate}
+\end{example}
+
+\begin{marginfigure}[-4CM] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseq4a}}
+
+\subfloat[]{\margingraphics{figures/figseq4b}}
+
+\subfloat[]{\margingraphics{figures/figseq4c}}
+\caption{Scatter plots of the sequences in Example \ref{eg:7.1.3}.}\label{fig:eg:7.1.3}
+\end{marginfigure}

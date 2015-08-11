@@ -1,0 +1,49 @@
+\begin{activity} \label{A:7.2.2}  
+Let $a$ and $r$ be real numbers (with $r \ne 0$) and let
+\[S_n = a+ar+ar^2 + \cdots + ar^{n-1}.\]
+In this activity we will find a shortcut formula for $S_n$ that does not involve a sum of $n$ terms.
+\ba
+\item Multiply $S_n$ by $r$. What does the resulting sum look like?
+
+
+\item Subtract $rS_n$ from $S_n$ and explain why
+\begin{equation} \label{eq:7.2.1_partial_geometric_sum}
+S_n - rS_n = a - ar^n.
+\end{equation}
+
+
+\item Solve equation (\ref{eq:7.2.1_partial_geometric_sum}) for $S_n$ to find a simple formula for $S_n$ that does not involve adding $n$ terms.
+
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Note that
+\[rS_n = ar+ar^2+ar^3 + \cdots + ar^n.\]
+    \item When we subtract $rS_n$ from $S_n$ the middle terms all cancel and we are left with
+\begin{align*}
+S_n - rS_n &= \left(a+ar+ar^2 + \cdots + ar^{n-1}\right) - \left(ar+ar^2+ar^3 + \cdots + ar^n\right) \\
+    &=a + (ar-ar) + \left(ar^2-ar^2\right) + \cdots + \left(ar^{n-1}-ar^{n-1}\right) - ar^n \\
+    &= a - ar^n.
+    \end{align*}
+    \item Factoring $S_n$ from left hand side and dividing gives us a formula for $S_n$:
+\begin{align*}
+S_n(1-r) &= a - ar^n \\
+S_n &= a\frac{1-r^n}{1-r}.
+\end{align*}
+
+\ea
+\end{activitySolution}
+\aftera

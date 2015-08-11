@@ -1,0 +1,131 @@
+\section{Related rates} \label{S:3.1.RelatedRates}
+
+\begin{goals}
+\item If two quantities that are related, such as the radius and volume of a spherical balloon, are both changing as implicit functions of time, how are their rates of change related?  That is, how does the relationship between the values of the quantities affect the relationship between their respective derivatives with respect to time?
+\end{goals} 
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+In most of our study of derivatives so far, we have worked in settings where one quantity (often called $y$) depends explicitly on another (say $x$), and in some way we have been interested in the instantaneous rate at which $y$ changes with respect to $x$, leading us to compute $\frac{dy}{dx}$.  These settings emphasize how the derivative enables us to quantify how the quantity $y$ is changing as $x$ changes at a given $x$-value.
+
+We are next going to consider situations where multiple quantities are related to one another and changing, but where each quantity can be considered an implicit function of the variable $t$, which represents time.  Through knowing how the quantities are related, we will be interested in determining how their respective rates of change with respect to time are related.  For example, suppose that air is being pumped into a spherical balloon in such a way that its volume increases at a constant rate of $20$ cubic inches per second.  It makes sense that since the balloon's volume and radius are related, by knowing how fast the volume is changing, we ought to be able to relate this rate to how fast the radius is changing.  More specifically, can we find how fast the radius of the balloon is increasing at the moment the balloon's diameter is $12$ inches?
+
+The following preview activity leads you through the steps to answer this question.
+
+\input{previews/3.1.PA1} % PREVIEW
+
+%----------------------------------------------------
+% SUBSECTION RELATED RATES PROBLEMS
+%----------------------------------------------------
+\subsection*{Related Rates Problems}
+
+In problems where two or more quantities can be related to one another, and all of the variables involved can be viewed as implicit functions of time, $t$, we are often interested in how the rates of change of the individual quantities with respect to time are themselves related; we call these \emph{related rates} problems.\index{related rates}  Often these problems involve identifying one or more key underlying geometric relationships to relate the variables involved.  Once we have an equation establishing the fundamental relationship among variables, we differentiate implicitly with respect to time to find connections among the rates of change.
+
+For example, consider the situation where sand is being dumped by a conveyor belt on a pile so that the sand forms a right circular cone, as pictured in Figure~\ref{F:3.1.ConeEx}.
+
+\begin{marginfigure}[-2cm] % MARGIN FIGURE
+\margingraphics{figures/3_5_ConeEx.eps}
+\caption{A conical pile of sand.} \label{F:3.1.ConeEx}
+\end{marginfigure}
+
+As sand falls from the conveyor belt onto the top of the pile, obviously several features of the sand pile will change:  the volume of the pile will grow, the height will increase, and the radius will get bigger, too.  All of these quantities are related to one another, and the rate at which each is changing is related to the rate at which sand falls from the conveyor.
+
+The first key steps in any related rates problem involve identifying which variables are changing and how they are related.  In the current problem involving a conical pile of sand, we observe that the radius and height of the pile are related to the volume of the pile by the standard equation for the volume of a cone,
+$$V = \frac{1}{3} \pi r^2 h.$$
+Viewing each of $V$, $r$, and $h$ as functions of $t$, we can differentiate implicitly to determine an equation that relates their respective rates of change.  Taking the derivative of each side of the equation with respect to $t$, 
+$$\frac{d}{dt}[V] = \frac{d}{dt}\left[\frac{1}{3} \pi r^2 h\right].$$
+On the left, $\frac{d}{dt}[V]$ is simply $\frac{dV}{dt}$.  On the right, the situation is more complicated, as both $r$ and $h$ are implicit functions of $t$, hence we have to use the product and chain rules.  Doing so, we find that
+\begin{align*}
+\frac{dV}{dt} & =  \frac{d}{dt}\left[\frac{1}{3} \pi r^2 h\right] \\
+& = \frac{1}{3} \pi r^2 \frac{d}{dt}[h] + \frac{1}{3} \pi h \frac{d}{dt}[r^2] \\
+& =  \frac{1}{3} \pi r^2 \frac{dh}{dt} + \frac{1}{3} \pi h 2r \frac{dr}{dt}
+\end{align*}
+Note particularly how we are using ideas from Section~\ref{S:2.7.Implicit} on implicit differentiation.  There we found that when $y$ is an implicit function of $x$, $\frac{d}{dx}[y^2] = 2y \frac{dy}{dx}$.  The exact same thing is occurring here when we compute $\frac{d}{dt}[r^2] = 2r \frac{dr}{dt}$.
+
+With our arrival at the equation
+$$
+\frac{dV}{dt} = \frac{1}{3} \pi r^2 \frac{dh}{dt} + \frac{2}{3} \pi rh \frac{dr}{dt},
+$$
+we have now related the rates of change of $V$, $h$, and $r$.  If we are given sufficient information, we may then find the value of one or more of these rates of change at one or more points in time.  Say, for instance, that we know the following:  (a) sand falls from the conveyor in such a way that the height of the pile is always half the radius, and (b) sand falls from the conveyor belt at a constant rate of $10$ cubic feet per minute.  With this information given, we can answer questions such as: how fast is the height of the sandpile changing at the moment the radius is $4$ feet?
+
+The information that the height is always half the radius tells us that for all values of $t$, $h = \frac{1}{2}r$.  Differentiating with respect to $t$, it follows that $\frac{dh}{dt} = \frac{1}{2} \frac{dr}{dt}$.  These relationships enable us to relate $\frac{dV}{dt}$ exclusively to just one of $r$ or $h$.  Substituting the expressions involving $r$ and $\frac{dr}{dt}$ for $h$ and $\frac{dh}{dt}$, we now have that 
+\begin{equation} \label{E:ConeRR}
+\frac{dV}{dt} = \frac{1}{3} \pi r^2 \cdot \frac{1}{2} \frac{dr}{dt} + \frac{2}{3} \pi r \cdot \frac{1}{2}r \cdot \frac{dr}{dt}.
+\end{equation}
+Since sand falls from the conveyor at the constant rate of $10$ cubic feet per minute, this tells us the value of $\frac{dV}{dt}$, the rate at which the volume of the sand pile changes.  In particular, $\frac{dV}{dt} = 10$ ft$^3$/min.  Furthermore, since we are interested in how fast the height of the pile is changing at the instant $r = 4$, we use the value $r = 4$ along with $\frac{dV}{dt} = 10$ in Equation~(\ref{E:ConeRR}), and hence find that \small
+$$10 = \frac{1}{3} \pi 4^2 \cdot \frac{1}{2}  \left. \frac{dr}{dt} \right|_{r=4} + \frac{2}{3} \pi 4 \cdot \frac{1}{2}4 \cdot \left. \frac{dr}{dt} \right|_{r=4} = \frac{8}{3}\pi \left. \frac{dr}{dt} \right|_{r=4} + \frac{16}{3} \pi \left. \frac{dr}{dt} \right|_{r=4}.$$ \normalsize
+With only the value of $\left. \frac{dr}{dt} \right|_{r=4}$ remaining unknown, we solve for $\left. \frac{dr}{dt} \right|_{r=4}$ and find that $10 = 8 \pi \left. \frac{dr}{dt} \right|_{r=4}$, so that
+$$\left. \frac{dr}{dt} \right|_{r=4} = \frac{10}{8\pi} \approx 0.39789$$
+feet per second.  Because we were interested in how fast the height of the pile was changing at this instant, we want to know $\frac{dh}{dt}$ when $r = 4$.  Since $\frac{dh}{dt} = \frac{1}{2} \frac{dr}{dt}$ for all values of $t$, it follows 
+$$\left. \frac{dh}{dt} \right|_{r=4} = \frac{5}{8\pi} \approx 0.19894 \ \mbox{ft/min}.$$
+
+Note particularly how we distinguish between the notations $\frac{dr}{dt}$ and $\left. \frac{dr}{dt} \right|_{r=4}$.  The former represents the rate of change of $r$ with respect to $t$ at an arbitrary value of $t$, while the latter is the rate of change of $r$ with respect to $t$ at a particular moment, in fact the moment $r = 4$.  While we don't know the exact value of $t$, because information is provided about the value of $r$, it is important to distinguish that we are using this more specific data.
+
+The relationship between $h$ and $r$, with $h = \frac{1}{2}r$ for all values of $t$, enables us to transition easily between questions involving $r$ and $h$.  Indeed, had we known this information at the problem's outset, we could have immediately simplified our work.  Using $h = \frac{1}{2}r$, it follows that since $V = \frac{1}{3} \pi r^2 h$, we can write $V$ solely in terms of $r$ to have
+$$V = \frac{1}{3} \pi r^2 \left(\frac{1}{2}h\right) = \frac{1}{6} \pi r^3.$$
+From this last equation, differentiating with respect to $t$ implies
+$$\frac{dV}{dt} = \frac{1}{2} \pi r^2,$$
+from which the same conclusions made earlier about $\frac{dr}{dt}$ and $\frac{dh}{dt}$ can be made.
+
+Our work with the sandpile problem above is similar in many ways to our approach in Preview Activity~\ref{PA:3.5}, and these steps are typical of most related rates problems.  In certain ways, they also resemble work we will do in Applied Optimization problems in Section~\ref{S:3.4.Applied}, and here we summarize the main approach for consideration in subsequent problems.
+\begin{itemize}
+\item Identify the quantities in the problem that are changing and choose clearly defined variable names for them.  Draw one or more figures that clearly represent the situation.
+\item Determine all rates of change that are known or given and identify the rate(s) of change to be found.
+\item Find an equation that relates the variables whose rates of change are known to those variables whose rates of change are to be found.
+\item Differentiate implicitly with respect to $t$ to relate the rates of change of the involved quantities. 
+\item Evaluate the derivatives and variables at the information relevant to the instant at which a certain rate of change is sought.  Use proper notation to identify when a derivative is being evaluated at a particular instant, such as $\left. \frac{dr}{dt} \right|_{r=4}$.
+\end{itemize}
+
+In the first step of identifying changing quantities and drawing a picture, it is important to think about the dynamic ways in which the involved quantities change.  Sometimes a sequence of pictures can be helpful; for some already-drawn pictures that can be easily modified as applets built in Geogebra, see the following links\footnote{We again refer to the work of Prof.~Marc Renault of Shippensburg University, found at \href{http://gvsu.edu/s/5p}{\texttt{http://gvsu.edu/s/5p}}.} which represent 
+\begin{itemize}
+\item how a circular oil slick's area grows as its radius increases: \href{http://gvsu.edu/s/9n}{\texttt{http://gvsu.edu/s/9n}};
+\item how the location of the base of a ladder and its height along a wall change as the ladder slides: \href{http://gvsu.edu/s/9o}{\texttt{http://gvsu.edu/s/9o}};
+\item how the water level changes in a conical tank as it fills with water at a constant rate \href{http://gvsu.edu/s/9p}{\texttt{http://gvsu.edu/s/9p}} (compare the problem in Activity~\ref{A:3.1.1}); and
+\item how a skateboarder's shadow changes as he moves past a lamppost: \href{http://gvsu.edu/s/9q}{\texttt{http://gvsu.edu/s/9q}}.
+\end{itemize}
+Drawing well-labeled diagrams and envisioning how different parts of the figure change is a key part of understanding related rates problems and being successful at solving them.
+
+\input{examples/3-1_Eg2} % EXAMPLE
+
+\input{examples/3-1_Eg1} % EXAMPLE
+
+\input{examples/3-1_Eg3} % EXAMPLE
+
+\input{activities/3.1.Act1} % ACTIVITY
+
+Recognizing familiar geometric configurations is one way that we relate the changing quantities in a given problem.  For instance, while the problem in Activity~\ref{A:3.1.1} is centered on a conical tank, one of the most important observations is that there are two key right triangles present.  In another setting, a right triangle might be indicative of an opportunity to take advantage of the Pythagorean Theorem to relate the legs of the triangle.  But in the conical tank, the fact that the water at any time fills a portion of the tank in such a way that the ratio of radius to depth is constant turns out to be the most important relationship with which to work.  That enables us to write $r$ in terms of $h$ and reduce the overall problem to one where the volume of water depends simply on $h$, and hence to subsequently relate $\frac{dV}{dt}$ and $\frac{dh}{dt}$.  In other situations where a changing angle is involved, a right triangle may offer the opportunity to find relationships among various parts of the triangle using trigonometric functions.
+
+\input{activities/3.1.Act2} % ACTIVITY
+
+In addition to being able to find instantaneous rates of change at particular points in time, we are often able to make more general observations about how particular rates themselves will change over time.  For instance, when a conical tank (point down) is filling with water at a constant rate, we naturally intuit that the depth of the water should increase more slowly over time.  Note how carefully we need to speak:  we mean to say that while the depth, $h$, of the water is increasing, its rate of change $\frac{dh}{dt}$ is decreasing (both as a function of $t$ and as a function of $h$).  These observations may often be made by taking the general equation that relates the various rates and solving for one of them, and doing this without substituting any particular values for known variables or rates.  For instance, in the conical tank problem in Activity~\ref{A:3.1.1}, we established that 
+$$\frac{dV}{dt} = \frac{1}{16} \pi h^2 \frac{dh}{dt},$$
+and hence
+$$\frac{dh}{dt} = \frac{16}{\pi h^2} \frac{dV}{dt}.$$
+Provided that $\frac{dV}{dt}$ is constant, it is immediately apparent that as $h$ gets larger, $\frac{dh}{dt}$ will get smaller, while always remaining positive.  Hence, the depth of the water is increasing at a decreasing rate.
+
+\input{activities/3.1.Act3} % ACTIVITY
+
+As we progress further into related rates problems, less direction will be provided.  In the first three activities of this section, we have been provided with guided instruction to build a solution in a step by step way.  For the closing activity and the following exercises, most of the detailed work is left to the reader.
+
+\input{activities/3.1.Act4} % ACTIVITY
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item When two or more related quantities are changing as implicit functions of time, their rates of change can be related by implicitly differentiating the equation that relates the quantities themselves.  For instance, if the sides of a right triangle are all changing as functions of time, say having lengths $x$, $y$, and $z$, then these quantities are related by the Pythagorean Theorem: $x^2 + y^2 = z^2$.  It follows by implicitly differentiating with respect to $t$ that their rates are related by the equation
+$$2x \frac{dx}{dt} + 2y\frac{dy}{dt} = 2z \frac{dz}{dt},$$ 
+so that if we know the values of $x$, $y$, and $z$ at a particular time, as well as two of the three rates, we can deduce the value of the third.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/3-1.RelatedRates(Ex)} 
+
+\cleardoublepage

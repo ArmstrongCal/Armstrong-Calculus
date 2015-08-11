@@ -1,0 +1,10 @@
+\begin{example} \label{Ex:2.5.Eg4}
+Use the Quotient Rule to compute the derivative of $Q(t) = \sin(t)/2^t$. 
+
+\solution We can identify the top function as $\sin(t)$ and the bottom function as $2^t$.  By the quotient rule, we then have that $Q'$ will be given by the bottom, $2^t$, times the derivative of the top, $\cos(t)$, minus the top, $\sin(t)$, times the derivative of the bottom, $2^t \ln(2)$, all over the bottom squared, $(2^t)^2$.  That is,
+\[ Q'(t) = \frac{2^t \cos(t) - \sin(t) 2^t \ln(2)}{(2^t)^2}.\]
+
+In this particular example, it is possible to simplify $Q'(t)$ by removing a factor of $2^t$ from both the numerator and denominator, hence finding that
+\[ Q'(t) = \frac{\cos(t) - \sin(t) \ln(2)}{2^t}. \]
+In general, we must be careful in doing any such simplification, as we don't want to correctly execute the quotient rule but then find an incorrect overall derivative due to an algebra error.  As such, we will often place more emphasis on correctly using derivative rules than we will on simplifying the result that follows.
+\end{example}

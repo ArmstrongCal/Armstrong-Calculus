@@ -1,0 +1,38 @@
+\begin{example} \label{eg:5.4.4} % EXAMPLE
+Use partial fraction decomposition to evaluate $\ds \int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx.$
+
+\solution The degree of the numerator is less than the degree of the denominator so we have:
+\begin{align*}
+\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)} &= \frac{A}{x+1} + \frac{Bx+C}{x^2+6x+11}. \\
+\intertext{Now clear the denominators.}
+7x^2+31x+54 &= A(x^2+6x+11) + (Bx+C)(x+1)\\
+					&= (A+B)x^2 + (6A+B+C)x + (11A+C).\\
+\intertext{This implies that:}
+				7&=A+B\\
+				31 &= 6A+B+C\\
+				54 &= 11A+C.
+\end{align*}
+Solving this system of linear equations gives the nice result of $A=5$, $B = 2$ and $C=-1$. Thus
+$$\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx = \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\ dx.$$
+
+The first term of this new integrand is easy to evaluate; it leads to a $5\ln|x+1|$ term. The second term is not hard, but takes several steps and uses substitution techniques.
+
+The integrand $\ds \frac{2x-1}{x^2+6x+11}$ has a quadratic in the denominator and a linear term in the numerator. This leads us to try substitution. Let $u = x^2+6x+11$, so $du = (2x+6)\ dx$. The numerator is $2x-1$, not $2x+6$, but we can get a $2x+6$ term in the numerator by adding $0$ in the form of ``$7-7$.''
+\begin{align*}
+\frac{2x-1}{x^2+6x+11} &= \frac{2x-1+7-7}{x^2+6x+11} \\
+					&= \frac{2x+6}{x^2+6x+11} - \frac{7}{x^2+6x+11}.
+\end{align*}
+We can now integrate the first term with substitution, leading to a $\ln|x^2+6x+11|$ term. The final term can be integrated using arctangent. First, complete the square in the denominator:
+$$\frac{7}{x^2+6x+11} = \frac{7}{(x+3)^2+2}.$$
+An antiderivative of the latter term is
+$$\int \frac{7}{x^2+6x+11}\ dx = \frac{7}{\sqrt{2}}\arctan\left(\frac{x+3}{\sqrt{2}}\right)+C.$$
+
+Let's start at the beginning and put all of the steps together.
+\begin{align*}
+\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx &= \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\ dx \\
+\end{align*}
+\vspace*{-.75cm}
+$$= \int\frac{5}{x+1}\ dx  + \int\frac{2x+6}{x^2+6x+11}\ dx -\int\frac{7}{x^2+6x+11}\ dx$$
+$$= 5\ln|x+1|+ \ln|x^2+6x+11| -\frac{7}{\sqrt{2}}\arctan\left(\frac{x+3}{\sqrt{2}}\right)+C.$$
+As with many other problems in calculus, it is important to remember that one is not expected to ``see'' the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.
+\end{example}

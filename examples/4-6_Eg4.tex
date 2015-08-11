@@ -1,0 +1,19 @@
+\begin{example} \label{Ex:4.6.ussub4} % EXAMPLE
+Evaluate $\ds \int \frac{1}{x \ln(x)} \ dx$.
+
+\solution
+This is another example where there does not seem to be an obvious composition of functions. Again: choose something for $u$ and consider what this implies $du$ must be. If $u$ can be chosen such that $du$ also appears in the integrand, then we have chosen well.
+
+Suppose
+\[ u = \frac{1}{x} \quad \mbox{which implies} \quad du = -\frac{1}{x^2} \ dx;\]
+however, that does not seem helpful. Suppose we let
+\[ u = \ln x \quad \mbox{which implies} \quad du = \frac{1}{x} \ dx;\]
+now that is part of the integrand. Thus:
+\begin{align*}
+\int \frac1{x\ln x}\ dx 	&=	\int \frac{1}{\underbrace{\ln x}_{1/u}}\underbrace{\frac1x\ dx}_{du} \\
+&= \int \frac1u\ du \\
+&= \ln |u| + C \\
+&= \ln | \ln x| + C.
+\end{align*}
+The final answer is interesting; the natural log of the natural log. Take the derivative to confirm this answer is indeed correct.
+\end{example}

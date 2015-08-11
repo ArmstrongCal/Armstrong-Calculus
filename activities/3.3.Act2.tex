@@ -1,0 +1,55 @@
+\begin{activity} \label{A:3.3.2}  Find the \emph{exact} absolute maximum and minimum of each function on the stated interval.
+	\ba
+	\item $h(x) = xe^{-x}$, $[0,3]$
+	\item $p(t) = \sin(t) + \cos(t)$, $[-\frac{\pi}{2}, \frac{\pi}{2}]$
+	\item $q(x) = \frac{x^2}{x-2}$, $[3,7]$
+	\item $f(x) = 4 - e^{-(x-2)^2}$, $(-\infty, \infty)$
+	\item $h(x) =  xe^{-ax}$, $[0, \frac{2}{a}]$ ($a > 0$)
+	\item $f(x) = b - e^{-(x-a)^2}$, $(-\infty, \infty)$, $a, b > 0$
+	\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item After computing $h'(x)$, factor to write the derivative as a product.
+	\item The sine and cosine functions have the same value at $\frac{\pi}{4} \pm k\pi$ for any integer $k$.
+	\item Upon finding $q'(x)$, factor its numerator.
+	\item Remember that $e^{-(x-2)^2}$ is never zero.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item After computing $h'(x)$, factor to write the derivative as a product.  Remember that $e^{-x} \ne 0$ for all $x$.
+	\item The sine and cosine functions have the same value at $\frac{\pi}{4} \pm k\pi$ for any integer $k$.  Which of these occur within the given interval?
+	\item Upon finding $q'(x)$, factor its numerator.  Observe that even though $q'(2)$ is not defined, $2$ is not a critical number because $q(2)$ is not defined; moreover, $2$ is not in the interval under consideration.
+	\item Remember that $e^{-(x-2)^2}$ is never zero.  Note that the domain being considered is all real numbers.
+\ea
+\end{bighint}
+\begin{activitySolution}
+	\ba
+	\item For $h(x) = xe^{-x}$, we know that $h'(x) = xe^{-x}(-1) + e^{-x} = e^{-x}(-x+1)$.  Therefore, the only critical value of $h$ is $x = 1$.  Next, we compute $h(1)$, $h(0)$, and $h(3)$.  Observe that 
+	\begin{itemize}
+	\item	$h(1) = e^{-1} \approx 0.36788$
+	\item  $h(0) = 0$
+	\item  $h(3) = 3e^{-3} \approx 0.14936$
+	\end{itemize}
+	Thus, on $[0,3]$, the absolute maximum of $h$ is $e^{-1}$ and the absolute minimum is $0$.
+	\item Given $p(t) = \sin(t) + \cos(t)$, it follows $p'(t) = \cos(t) - \sin(t)$, so $p'(t) = 0$ implies that $\cos(t) =\sin(t)$.   The sine and cosine functions have the same value at $\frac{\pi}{4} \pm k\pi$ for any integer $k$.  The only time this occurs in $[-\frac{\pi}{2}, \frac{\pi}{2}]$ is for $x = \frac{\pi}{4}$, and thus this is the only critical value of $p$ in the given interval.  Now,
+	\begin{itemize}
+	\item	$p(\frac{\pi}{4}) = \sin(\frac{\pi}{4}) + \cos(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} = \sqrt{2} \approx 1.41421$
+	\item $p(-\frac{\pi}{2}) = \sin(-\frac{\pi}{2}) + \cos(-\frac{\pi}{2}) = -1 + 0 = -1$
+	\item  $p(\frac{\pi}{2}) = \sin(\frac{\pi}{2}) + \cos(\frac{\pi}{2}) = 1 + 0 = 1$
+	\end{itemize}	
+	Therefore, on $[-\frac{\pi}{2},\frac{\pi}{2}]$, the absolute maximum of $p$ is $\sqrt{2}$ and the absolute minimum is $-1$. 
+	\item With $q(x) = \frac{x^2}{x-2}$, we have 
+	$$q'(x) = \frac{(x-2)(2x) - x^2(1)}{(x-2)^2} = \frac{2x^2 - 4x - x^2}{(x-2)^2} = \frac{x^2-4x}{(x-2)^2} = \frac{x(x-4)}{(x-2)^2}.$$
+	Hence, the critical values of $q$ are $x = 0$ and $x = 4$.  Only the latter critical value lies in the interval $[3,7]$, and thus we evaluate $q$ and find
+	\begin{itemize}
+	\item $q(4) = \frac{16}{2} = 8$
+	\item $q(3) = \frac{9}{1} = 9$
+	\item $q(7) = \frac{49}{5} = 9.8$
+	\end{itemize} 
+	We now see that on $[3,7]$ the absolute maximum of $q$ is 9.8 and the absolute minimum is 8.
+	\item Here, we first observe that we are working on the domain of all real numbers, not a closed bounded interval.  Hence, we need to think about the overall behavior of the function.  First, since $f(x) = 4 - e^{-(x-2)^2}$, by the chain rule we see that $f'(x) = -e^{-(x-2)^2}(-2(x-2)) = 2(x-2)e^{-(x-2)^2}.$  Since $e^{-(x-2)^2}$ is always positive (in particular, never zero), it follows that the only critical value of $f$ is $x = 2$.  Furthermore, with $f'(x) = 2(x-2)e^{-(x-2)^2}$, we see that for $x < 2$, $f'(x) < 0$, while for $x > 2$, $f'(x) > 0$.  This tells us by the first derivative test that $f$ is decreasing for $x < 2$ and increasing for $x > 2$, which tells us that $f$ has an absolute minimum at $x = 2$, and $f$ does not have an absolute maximum.
+	\ea
+\end{activitySolution}
+\aftera

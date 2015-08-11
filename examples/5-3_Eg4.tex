@@ -1,0 +1,27 @@
+\begin{example} \label{eg:5.3.4} % EXAMPLE
+
+Evaluate $\ds\int\frac1{(x^2+6x+10)^2}\ dx.$
+
+\solution
+We start by completing the square, then make the substitution $u=x+3$, followed by the trigonometric substitution of $u=\tan(\theta)$:
+\begin{align}
+\int \frac1{(x^2+6x+10)^2}\ dx &= \int \frac1{(u^2+1)^2}\ du. \notag
+\intertext{Now make the substitution $u=\tan(\theta)$, $du=\sec^2(\theta)\ d\theta$:}
+   &=	\int \frac1{(\tan^2(\theta)+1)^2}\sec^2(\theta)\ d\theta\notag\\
+	&= \int\frac 1{(\sec^2(\theta))^2}\sec^2(\theta)\ d\theta\notag\\
+	&= \int \cos^2(\theta)\ d\theta.\notag
+	\intertext{Applying a power reducing formula, we have}
+	&= \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta \notag\\
+	&= \frac12\theta + \frac14\sin(2\theta) + C.\label{eq:extrigsub7}
+\end{align}
+We need to return to the variable $x$. As $u=\tan(\theta)$, $\theta = \arctan(u)$. Using the identity $\sin(2\theta) = 2\sin(\theta)\cos(\theta)$ and using the reference triangle found in Figure~\ref{fig:trigsub}-(b), we have 
+$$\frac14\sin(2\theta) = \frac12\frac u{\sqrt{u^2+1}}\cdot\frac 1{\sqrt{u^2+1}} = \frac12\frac u{u^2+1}.$$
+Finally, we return to $x$ with the substitution $u=x+3$. We start with the expression in Equation \eqref{eq:extrigsub7}:
+\begin{align*}
+\frac12\theta + \frac14\sin(2\theta) + C &= \frac12\arctan(u) + \frac12\frac{u}{u^2+1}+C\\
+				&= \frac12\arctan(x+3) + \frac{x+3}{2(x^2+6x+10)}+C.
+\end{align*}
+Stating our final result in one line,
+$$\int\frac1{(x^2+6x+10)^2}\ dx=\frac12\arctan(x+3) + \frac{x+3}{2(x^2+6x+10)}+C.$$
+
+\end{example}

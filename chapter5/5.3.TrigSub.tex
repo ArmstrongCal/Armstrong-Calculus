@@ -1,0 +1,97 @@
+\section{Trigonometric Substitution} \label{S:5.3.TrigSub}
+
+\begin{goals}
+\item What techniques should we use when encountering integras involving expressions containing $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ and $\sqrt{x^2-a^2}$?
+\end{goals}
+
+%-----------------------------------
+%SUBSECTION: INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+In Section~\ref{S:4.3.DefiniteIntegral} we defined the definite integral as the ``signed area under the curve.'' In that section we had not yet learned the Fundamental Theorem of Calculus, so we evaluated special definite integrals which described nice, geometric shapes. For instance, we were able to evaluate
+\begin{equation}
+\int_{-3}^3\sqrt{9-x^2}\ dx = \frac{9\pi}{2}\label{eq:trigsub1}
+\end{equation}
+ as we recognized that $f(x) = \sqrt{9-x^2}$ described the upper half of a circle with radius $3$. 
+ 
+ We have since learned a number of integration techniques, including Substitution and Integration by Parts, yet we are still unable to evaluate the above integral without resorting to a geometric interpretation. This section introduces Trigonometric Substitution, a method of integration that fills this gap in our integration skill. This technique works on the same principle as Substitution as found in Section~\ref{S:4.6.Substitution}, though it can feel ``backward.'' In Section~\ref{S:4.6.Substitution}, we set $u=f(x)$, for some function $f$, and replaced $f(x)$ with $u$. In this section, we will set $x=f(\theta)$, where $f$ is a trigonometric function, then replace $x$ with $f(\theta)$. 
+
+
+\input{previews/5.3.PA1} % PREVIEW 
+
+%-----------------------------------------------------------
+% SUBSECTION TRIGONOMETRIC SUBSTITUTION
+%-----------------------------------------------------------
+\subsection*{Trigonometric Substitution}
+
+We now describe in detail Trigonometric Substitution. This \newline method excels when dealing with integrands that contain \newline $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ and $\sqrt{x^2+a^2}$. The following Concept outlines the procedure for each case.
+
+\concept{Trigonometric Substitution} % CONCEPT
+{\begin{enumerate}[1)]
+\item For integrands containing $\sqrt{a^2-x^2}$:\index{integration!trig. subst.} \label{C.5.3-sin}\\[5pt]
+	Let $x=a\sin(\theta)$, and $dx = a\cos(\theta)\ d\theta$\\[5pt]	
+	Thus $\theta = \arcsin(x/a)$, for $-\pi/2\leq \theta\leq \pi/2$. \\[5pt]	
+	On this interval, $\cos(\theta)\geq 0$, so\\[5pt]	
+	$\sqrt{a^2-x^2} = a\cos(\theta)$.
+		
+\item For integrands containing $\sqrt{x^2+a^2}$: \label{C.5.3-tan} \\[5pt]
+	Let $x=a\tan(\theta)$, and $dx = a\sec^2(\theta)\ d\theta$\\[5pt]	
+	Thus $\theta = \arctan(x/a)$, for $-\pi/2 < \theta < \pi/2$. \\[5pt]	
+	On this interval, $\sec(\theta)> 0$, so\\[5pt]	
+	$\sqrt{x^2+a^2} = a\sec(\theta)$.
+		
+\item For integrands containing $\sqrt{x^2-a^2}$: \label{C.5.3-sec} \\[5pt]
+	Let $x=a\sec(\theta)$, and $dx = a\sec(\theta)\tan(\theta)\ d\theta$\\[5pt]	
+	Thus $\theta = \arcsec(x/a)$. If $x/a\geq 1$, then $0\leq\theta<\pi/2$; if $x/a \leq -1$, then $\pi/2<\theta\leq \pi$.\\[5pt]	
+	We restrict our work to where $x\geq a$, so $x/a\geq 1$, and $0\leq\theta<\pi/2$.
+	On this interval, $\tan(\theta)\geq 0$, so\\[5pt]	
+	$\sqrt{x^2-a^2} = a\tan(\theta)$.
+\end{enumerate}
+} % end concept
+
+\begin{marginfigure}[-12cm] % MARGIN FIGURE
+\subfloat[For integrands containing $\sqrt{a^2-x^2}$.]{\includegraphics[scale=1.25]{figures/figtrigsub_intro1}}
+
+\subfloat[For integrands containing $\sqrt{x^2+a^2}$.]{\includegraphics[scale=1.25]{figures/figtrigsub_intro3}}
+
+\subfloat[For integrands containing $\sqrt{x^2-a^2}$.]{\includegraphics[scale=1.25]{figures/figtrigsub_intro2}}
+\caption{The right triangles that correspond to the various trigonometric substitutions.}
+\label{fig:trigsub}
+\end{marginfigure}
+
+\input{examples/5-3_Eg1.tex} % EXAMPLE
+
+\input{examples/5-3_Eg2.tex} % EXAMPLE
+
+\input{examples/5-3_Eg3.tex} % EXAMPLE
+
+\input{activities/5.3.Act1.tex} %ACTIVITY
+
+Trigonometric Substitution can be applied in many situations, even those not of the form $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ or $\sqrt{x^2+a^2}$. In the following example, we apply it to an integral that does not involve a square--root. It also shows how several techniques and identities can be combined to obtain a solution.
+
+\input{examples/5-3_Eg4.tex} % EXAMPLE
+
+Our last example returns us to definite integrals, as seen in our first example. Given a definite integral that can be evaluated using Trigonometric Substitution, we could first evaluate the corresponding indefinite integral (by changing from an integral in terms of $x$ to one in terms of $\theta$, then converting back to $x$) and then evaluate using the original bounds. It is much more straightforward, though, to change the bounds as we substitute.
+
+\input{examples/5-3_Eg5.tex} % EXAMPLE
+
+\input{activities/5.3.Act2.tex} %ACTIVITY
+
+%----------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------
+\begin{summary}
+\item When evaluating integrals involving the expression $\sqrt{a^2-x^2}$, we use the substitution $x=a\sin \theta$.
+\item When evaluating integrals involving the expression $\sqrt{a^2+x^2}$, we use the substitution $x=a\tan \theta$.
+\item When evaluating integrals involving the expression $\sqrt{x^2-a^2}$, we use the substitution $x=a\sec \theta$.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/5-3.TrigSub(Ex)} 
+
+\cleardoublepage

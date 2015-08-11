@@ -1,0 +1,45 @@
+\begin{example} \label{eg:6.3.5} % EXAMPLE
+Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,1]$ about:
+\begin{enumerate}[1)]
+\item the $x$-axis
+\item	 the $y$-axis.
+\end{enumerate}
+
+\solution
+\begin{enumerate}[1)]
+\item The integral is straightforward to setup:
+\begin{align*}
+SA &= 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\ dx.
+\intertext{Like the integral in Example \ref{eg:6.3.4}, this requires Trigonometric Substitution.}
+&= \left.\frac{\pi}{32}\left(2(8x^3+x)\sqrt{1+4x^2}-\sinh^{-1}(2x)\right)\right|_0^1\\
+&=\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}2\right)\\
+&\approx 3.81\ \text{units}^2.
+\end{align*}
+The solid formed by revolving $y=x^2$ around the $x$-axis is graphed in Figure \ref{F:6.3.Ex5}-(a).
+	
+\item	 Since we are revolving around the $y$-axis, the ``radius'' of the solid is not $f(x)$ but rather $x$. Thus the integral to compute the surface area is:
+\begin{align*}
+SA &= 2\pi\int_0^1x\sqrt{1+(2x)^2}\ dx.
+\intertext{This integral can be solved using substitution. Set $u=1+4x^2$; the new bounds are $u=1$ to $u=5$. We then have }
+&=	\frac{\pi}4\int_1^5 \sqrt{u}\ du \\
+&= \left.\frac{\pi}{4}\frac23 u^{3/2}\right|_1^5\\
+&= \frac{\pi}6\left(5\sqrt{5}-1\right)\\
+&\approx 5.33\ \text{units}^2.
+\end{align*}
+ The solid formed by revolving $y=x^2$ about the $y$-axis is graphed in Figure \ref{F:6.3.Ex5}-(b).	
+\end{enumerate}
+\end{example}
+
+\begin{marginfigure}[-15cm] %MARGIN FIGURE
+%\captionsetup[subfigure]{labelformat=empty}
+\subfloat[]{\margingraphics{figures/figsa2a}}
+
+\vspace{1cm}
+
+\subfloat[]{\margingraphics{figures/figsa2b}}
+
+\caption{The solids used in Example \ref{eg:6.3.5}} \label{F:6.3.Ex5}
+\end{marginfigure}
+
+
+

@@ -1,0 +1,76 @@
+\section{Sequences} \label{S:7.1.Sequences}
+
+\begin{goals}
+\item What is a sequence?
+\item What does it mean for a sequence to converge?
+\item What does it mean for a sequence to diverge?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+We encounter sequences every day. Your monthly rent payments, the annual interest you earn on investments, a list of your car's miles per gallon every time you fill up; all are examples of sequences. Other sequences with which you may be familiar include the Fibonacci sequence\index{Fibonacci sequence}
+\[1, 1, 2, 3, 5, 8, \ldots\]
+in which each entry is the sum of the two preceding entries and the triangular numbers\index{triangular numbers}
+\[1, 3, 6, 10, 15, 21, 28, 36, 45, 55, \ldots\]
+which are numbers that correspond to the number of vertices seen in the triangles in Figure \ref{F:8.1.Triangular_numbers}.
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/8_1_Triangular_Numbers.eps}
+\caption{Triangular numbers}
+\label{F:8.1.Triangular_numbers}
+\end{marginfigure}
+Sequences of integers are of such interest to mathematicians and others that they have a journal\footnote{\emph{The Journal of Integer Sequences} at \url{http://www.cs.uwaterloo.ca/journals/JIS/}} devoted to them and an on-line encyclopedia\footnote{The On-Line Encyclopedia of Integer Sequences at \url{http://oeis.org/}} that catalogs a huge number of integer sequences and their connections. Sequences are also used in digital recordings and digital images. 
+
+To this point, most of our studies in calculus have dealt with continuous information (e.g., continuous functions). The major difference we will see now is that sequences model \emph{discrete} instead of continuous information. We will study ways to represent and work with discrete information in this chapter as we investigate \emph{sequences} and \emph{series}, and ultimately see key connections between the discrete and continuous.
+
+\input{previews/7.1.PA1} % PREVIEW ACTIVITY
+
+%-------------------------------
+% SUBSECTION SEQUENCES
+%-------------------------------
+\subsection*{Sequences} \index{sequence}
+
+As our discussion in the introduction and Preview Activity \ref{PA:8.1} illustrate, many discrete phenomena can be represented as lists of numbers (like the amount of money in an account over a period of months). We call these any such list a \emph{sequence}. In other words, a sequence is nothing more than list of terms in some order. To be able to refer to a sequence in a general sense, we often list the entries of the sequence with subscripts,
+\[s_1, s_2, \ldots, s_n \ldots,\]
+where the subscript denotes the position of the entry in the sequence. More formally,
+
+\definition{Sequence}{ % DEFINITION
+A sequence is a list of terms $s_1, s_2, s_3, \ldots$ in a specified order. 
+} % end definition
+
+As an alternative to the above definition, we can also consider a sequence to be a function $f$ whose domain is the set of positive integers. In this context, the sequence $s_1$, $s_2$, $s_3$, $\ldots$ would correspond to the function $f$ satisfying $f(n) = s_n$ for each positive integer $n$. This alternative view will be be useful in many situations. 
+
+We will often write the sequence
+\[s_1, s_2, s_3, \ldots\]
+using the shorthand notation $\{s_n\}$. The value $s_n$ (alternatively $s(n)$) is called the $n$th \emph{term}\index{sequence!term} in the sequence. If the terms are all 0 after some fixed value of $n$, we say the sequence is finite. Otherwise the sequence is infinite. We will work with both finite and infinite sequences, but focus more on the infinite sequences. With infinite sequences, we are often interested in their end behavior and the idea of \emph{convergent} sequences.
+
+\input{activities/7.1.Act1} % ACTIVITY
+
+Next we formalize the ideas from Activity~\ref{7.1.Act1}.
+
+\input{activities/7.1.Act2} % ACTIVITY
+
+In Activities \ref{7.1.Act1} and \ref{7.1.Act2} we investigated the notion of a sequence $\{s_n\}$ having a limit as $n$ goes to infinity. If a sequence $\{s_n\}$ has a limit as $n$ goes to infinity, we say that the sequence \emph{converges}\index{converge!sequence} or is a \emph{convergent sequence}\index{convergent sequence}. If the limit of a convergent sequence is the number $L$, we use the same notation as we did for continuous functions and write
+\[\lim_{n \to \infty} s_n = L.\]
+If a sequence $\{s_n\}$ does not converge then we say that the sequence $\{s_n\}$ \emph{diverges}\index{diverge!sequence}. Convergence of sequences is a major idea in this section and we describe it more formally as follows.
+
+\concept{Convergence of a Sequence}{ % CONCEPT
+A sequence $\{s_n\}$ of real numbers converges to a number $L$ if we can make all value of $s_k$ for $k \ge n$ as close to $L$ as we want by choosing $n$ to be sufficiently large.
+} % end concept
+
+Remember, the idea of sequence having a limit as $n \to \infty$ is the same as the idea of a continuous function having a limit as $x \to \infty$. The only new wrinkle here is that our sequences are discrete instead of continuous.
+
+We conclude this section with a few more examples in the following activity.
+
+\input{activities/7.1.Act3} % ACTIVITY
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item A sequence is a list of objects in a specified order. We will typically work with sequences of real numbers and can also think of a sequence as a function from the positive integers to the set of real numbers.
+\item A sequence $\{s_n\}$ of real numbers converges to a number $L$ if we can make every value of  $s_k$ for $k \ge n$ as close as we want to $L$ by choosing $n$ sufficiently large.
+\item A sequence diverges if it does not converge.
+\end{summary}

@@ -1,0 +1,67 @@
+
+\begin{example} \label{eg:6.8.1} % EXAMPLE
+Use the definitions of the hyperbolic functions to rewrite the following expressions.
+\bmtwo
+\begin{enumerate}[1)]
+\item	 $\cosh^2 (x)-\sinh^2(x)$
+\item	 $\tanh^2 (x)+\sech^2 (x)$
+\item	 $2\cosh (x)\sinh (x)$
+\item	 $\frac{d}{dx}\big(\cosh (x)\big)$
+\item	 $\frac{d}{dx}\big(\sinh (x)\big)$
+\item	 $\frac{d}{dx}\big(\tanh (x)\big)$
+\end{enumerate}
+\emtwo
+
+\solution
+\begin{enumerate}[1)]
+\item	 $\begin{aligned}[t]
+ \cosh^2(x)-\sinh^2(x) &= \left(\frac{e^x+e^{-x}}2\right)^2 -\left(\frac{e^x-e^{-x}}2\right)^2\\
+ 						&= \frac{e^{2x}+2e^xe^{-x} + e^{-2x}}4 - \frac{e^{2x}-2e^xe^{-x} + e^{-2x}}4\\
+ 						&= \frac44=1.
+\end{aligned}$\hfill
+
+So $\cosh^2 (x)-\sinh^2(x)=1$.
+
+\item	 $\begin{aligned}[t]
+\tanh^2 (x)+\sech^2 (x) &=\frac{\sinh^2(x)}{\cosh^2 (x)} + \frac{1}{\cosh^2 (x)} \\
+&= \frac{\sinh^2(x)+1}{\cosh^2 (x)}\qquad \text{\small Now use identity from \#1)}\\
+&= \frac{\cosh^2 (x)}{\cosh^2 (x)} = 1
+\end{aligned}$\hfill
+
+So $\tanh^2 (x)+\sech^2 (x)=1$.
+
+\item $\begin{aligned}[t]
+2\cosh (x)\sinh (x) &= 2\left(\frac{e^x+e^{-x}}2\right)\left(\frac{e^x-e^{-x}}2\right) \\
+&= 2 \cdot\frac{e^{2x} - e^{-2x}}4\\
+&= \frac{e^{2x} - e^{-2x}}2 = \sinh (2x).\\
+\end{aligned}$ \hfill
+			
+Thus $2\cosh (x)\sinh (x) = \sinh (2x)$.
+
+\item  $\begin{aligned}[t]
+\frac{d}{dx}\big(\cosh (x)\big) &= \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right) \\
+&= \frac{e^x-e^{-x}}2\\
+&= \sinh (x)
+\end{aligned}\hfill$
+
+So $\frac{d}{dx}\big(\cosh (x)\big) = \sinh (x).$
+	
+\item  $\begin{aligned}[t]
+\frac{d}{dx}\big(\sinh (x)\big) &= \frac{d}{dx}\left(\frac{e^x-e^{-x}}2\right) \\
+&= \frac{e^x+e^{-x}}2\\
+&= \cosh (x)
+\end{aligned}\hfill$
+
+So $\frac{d}{dx}\big(\sinh (x)\big) = \cosh (x).$
+	
+\item  $\begin{aligned}[t]
+\frac{d}{dx}\big(\tanh (x)\big) &= \frac{d}{dx}\left(\frac{\sinh (x)}{\cosh (x)}\right) \\
+&= \frac{\cosh (x) \cosh (x) - \sinh (x) \sinh (x)}{\cosh^2 (x)}\\
+&= \frac{1}{\cosh^2 (x)}\\
+&= \sech^2 (x)
+\end{aligned}\hfill$
+
+So $\frac{d}{dx}\big(\tanh (x)\big) = \sech^2 (x).$	
+\end{enumerate}
+
+\end{example}

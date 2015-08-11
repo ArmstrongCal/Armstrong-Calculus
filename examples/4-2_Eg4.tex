@@ -1,0 +1,24 @@
+\begin{marginfigure}[7cm] % MARGIN FIGURE
+\margingraphics{figs/4/apex_5-3_Area2M.pdf}
+\caption{Approximating net signed area of $f(x)=5x+2$ using the Midpoint Rule and $10$ evenly spaced subintervals.} \label{fig:apex_5-3_Area2M}
+\end{marginfigure}
+
+\begin{example}\label{eg:NetAreaM10} % EXAMPLE
+Approximate the net area between $f(x)= 5x+2$ and the $x$-axis on $[-2,3]$ using the Midpoint Rule and 10 equally spaced intervals.
+
+\solution Beginning with $\Delta x$ and $x_i$, we have
+\[ \Delta x = \frac{3 - (-2)}{10} = \frac{1}{2} \quad \text{and} \quad x_i = -2 + \frac{1}{2} \cdot i = \frac{i}{2} - 2.\]
+As we are using the Midpoint Rule, we will also need $x_{i-1}$ and $\ds \frac{x_{i-1}+x_i}{2}$. Since $\ds x_i = \frac{i}{2} - 2$,  $\ds x_{i-1} =\frac{i-1}{2} - 2 = \frac{i}{2} - \frac{5}{2}$.
+Then 
+\[ \frac{x_{i-1}+x_i}{2} = \frac{\ds\frac{i}{2} - \frac{5}{2} +\frac{i}{2} - 2}{2} = \frac{\ds i-\frac{9}{2}}{2} = \frac{i}{2} - \frac{9}{4}.\]
+We now construct the Riemann sum and compute its value using summation formulas.
+\begin{align*}
+\mbox{Area} & \approx M_{10} = \sum_{i=1}^{10} f\left( \frac{x_{i-1}+x_i}{2} \right) \Delta x \\
+&=	\sum_{i=1}^{10} f \left( \frac{i}{2} - \frac{9}{4} \right) \Delta x \\
+&=	\sum_{i=1}^{10} \left( 5 \left( \frac{i}{2} - \frac{9}{4} \right) + 2 \right) \Delta x \\
+&=	\Delta x\sum_{i=1}^{10}\left[\left(\frac{5}{2}\right)i - \frac{37}{4}\right]\\
+&=	\Delta x\left(\frac{5}2\sum_{i=1}^{10} (i) - \sum_{i=1}^{10}\left(\frac{37}{4}\right)\right) \\
+&= \frac12\left(\frac52\cdot\frac{10(11)}{2} - 10\cdot\frac{37}4\right)  \\
+&= \frac{45}2 = 22.5.
+\end{align*}
+\end{example}

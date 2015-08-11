@@ -1,0 +1,17 @@
+\begin{example} \label{Ex:2.7.Eg4}
+Given $x^2+y^2=1$, find $\ds\frac{d^2y}{dx^2} = y''$. 
+
+\solution
+Taking derivatives, we get $2x+2yy'=0$.  Solving for $y'$  gives: $$\ds y' = \frac{-x}{y}.$$ 
+To find $y''$, we apply implicit differentiation to $y'$.
+\begin{align*}
+y'' &= \frac{d}{dx}\big(y'\big) \\
+		&= \frac{d}{dx}\left(-\frac xy\right) \\
+		&= -\frac{y(1) - x(y')}{y^2} 
+\intertext{Replace $y'$ with $-x/y$:}
+		&= -\frac{y-x(-x/y)}{y^2}\\
+		&= -\frac{y+x^2/y}{y^2}\\
+		&= -\frac{y^2 + x^2}{y^3}
+\end{align*}
+We can see that $y''>0$ when $y<0$ and $y''<0$ when $y>0$. In Section~\ref{S:3.2.Tests}, we will see how this relates to the shape of the graph.
+\end{example}

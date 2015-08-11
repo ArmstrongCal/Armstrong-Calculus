@@ -1,0 +1,42 @@
+\begin{marginfigure}[6cm]
+\margingraphics{figures/figimplicit5} %APEX Example 68
+\caption{A graph of the implicitly defined function $\sin(x^2y^2)+y^3=x+y$.}\label{fig:2.7.eg3-1}
+\end{marginfigure}
+
+\begin{marginfigure}
+\margingraphics{figures/figimplicit6} %APEX Example 68
+\caption{A graph of the implicitly defined function $\sin(x^2y^2)+y^3=x+y$ and certain tangent lines.}\label{fig:2.7.eg3-2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:2.7.Eg3}
+Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$.
+
+\solution
+Differentiating term by term, we find the most difficulty in the first term.  It requires both the Chain and Product Rules.
+		\begin{align*}
+		\frac{d}{dx}\Big(\sin(x^2y^2)\Big) &= \cos(x^2y^2)\cdot\frac{d}{dx}\Big(x^2y^2\Big) \\
+																				&= \cos(x^2y^2)\cdot\big(x^2(2yy')+2xy^2\big)\\
+																				&= 2(x^2yy'+xy^2)\cos(x^2y^2).
+		\end{align*}  
+
+We leave the derivatives of the other terms to the reader. After taking the derivatives of both sides, we have
+$$2(x^2yy'+xy^2)\cos(x^2y^2) + 3y^2y' = 1 + y'.$$
+
+We now have to be careful to properly solve for $y'$, particularly because of the product on the left.  It is best to multiply out the product.  Doing this, we get
+$$2x^2y\cos(x^2y^2)y' + 2xy^2\cos(x^2y^2) + 3y^2y' = 1 + y'.$$
+From here we can safely move around terms to get the following:
+$$2x^2y\cos(x^2y^2)y' + 3y^2y' - y' = 1 - 2xy^2\cos(x^2y^2).$$
+Then we can solve for $y'$ to get
+$$y' = \frac{1 - 2xy^2\cos(x^2y^2)}{2x^2y\cos(x^2y^2)+3y^2-1}.$$
+
+A graph of this implicit function is given in Figure \ref{fig:2.7.eg3-1}. It is easy to verify that the points $(0,0)$, $(0,1)$ and $(0,-1)$ all lie on the graph. We can find the slopes of the tangent lines at each of these points using our formula for $y'$. 
+
+At $(0,0)$, the slope is $-1$.
+
+At $(0,1)$, the slope is $1/2$.
+
+At $(0,-1)$, the slope is also $1/2$.
+
+The tangent lines have been added to the graph of the function in Figure \ref{fig:2.7.eg3-2}.
+	
+\end{example}

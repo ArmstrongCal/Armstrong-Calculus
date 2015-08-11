@@ -1,0 +1,128 @@
+\section{Arc Length and Surface Area} \label{S:6.3.ArcLength}
+
+\begin{goals}
+\item How can a definite integral be used to measure the length of a curve?
+\item How can a definite integral be used to measure the surface area of a solid of revolution?
+\end{goals}
+
+%-------------------------------
+% SUBSECTION INTRODUCTION
+%-------------------------------
+\subsection*{Introduction}
+
+\begin{marginfigure}[6cm] % MARGIN FIGURE
+\margingraphics{figures/6_1_Intro.eps}
+\caption{The area between a nonnegative function $f$ and the $x$-axis on the interval $[a,b]$.} \label{F:6.1.Intro}
+\end{marginfigure}
+
+Early on in our work with the definite integral, we learned that if we have a nonnegative velocity function, $v$, for an object moving along an axis, the area under the velocity function between $a$ and $b$ tells us the distance the object traveled on that time interval.  Moreover, based on the definition of the definite integral, that area is given precisely by $\int_a^b v(t) \, dt$.  Indeed, for any nonnegative function $f$ on an interval $[a,b]$, we know that $\int_a^b f(x) \, dx$ measures the area bounded by the curve and the $x$-axis between $x = a$ and $x = b$, as shown in Figure~\ref{F:6.1.Intro}.
+
+Through our upcoming work in the present section and chapter, we will explore how definite integrals can be used to represent a variety of different physically important properties.  In Preview Activity~\ref{PA:6.1}, we begin this investigation by seeing how a single definite integral may be used to represent the area between two curves.
+
+\input{previews/6.3.PA1} % PREVIEW 
+
+%------------------------------------------
+% SUBSECTION FINDING THE LENGTH OF A CURVE
+%------------------------------------------
+\subsection*{Finding the length of a curve} \index{arc length}
+
+In addition to being able to use definite integrals to find the volumes of solids of revolution, we can also use the definite integral to find the length of a portion of a curve.  We use the same fundamental principle:  we take a curve whose length we cannot easily find, and slice it up into small pieces whose lengths we can easily approximate.  In particular, we take a given curve and subdivide it into small approximating line segments, as shown at left in Figure~\ref{F:6.3.ArcLength}.
+  
+\begin{marginfigure}[2cm] % MARGIN FIGURE
+\margingraphics{figures/6_1_ArcLength.eps}
+\caption{At left, a continuous function $y = f(x)$ whose length we seek on the interval $a = x_0$ to $b = x_3$.  At right, a close up view of a portion of the curve.} \label{F:6.3.ArcLength}
+\end{marginfigure}
+
+To see how we find such a definite integral that measures arc length on the curve $y = f(x)$ from $x = a$ to $x = b$, we think about the portion of length, $L_{\mbox{\small{slice}}}$, that lies along the curve on a small interval of length $\triangle x$, and estimate the value of $L{\mbox{\small{slice}}}$ using a well-chosen triangle.  In particular, if we consider the right triangle with legs parallel to the coordinate axes and hypotenuse connecting two points on the curve, as seen at right in Figure~\ref{F:6.3.ArcLength}, we see that the length, $h$, of the hypotenuse approximates the length, $L_{\mbox{\small{slice}}}$, of the curve between the two selected points.  Thus,
+$$L_{\mbox{\small{slice}}} \approx h = \sqrt{ (\triangle x)^2 + (\triangle y)^2 }.$$
+By algebraically rearranging the expression for the length of the hypotenuse, we see how a definite integral can be used to compute the length of a curve.  In particular, observe that by removing a factor of $(\triangle x)^2$, we find that
+\begin{eqnarray*}
+L_{\mbox{\small{slice}}} & \approx & \sqrt{ (\triangle x)^2 + (\triangle y)^2 } \\
+& = & \sqrt{ (\triangle x)^2\left(1 + \frac{(\triangle y)^2}{(\triangle x)^2} \right)} \\
+& = & \sqrt{1 + \frac{(\triangle y)^2}{(\triangle x)^2} } \cdot \triangle x.
+\end{eqnarray*}
+Furthermore, as $n \to \infty$ and $\triangle x \to 0$, it follows that $\frac{\triangle y}{\triangle x} \to \frac{dy}{dx} = f'(x)$.  Thus, we can say that
+$$L_{\mbox{\small{slice}}} \approx \sqrt{1 + f'(x)^2} \triangle x.$$
+Taking a Riemann sum of all of these slices and letting $n \to \infty$, we arrive at the following fact.
+
+\concept{Arc Length}{ %CONCEPT
+Given a differentiable function $f$ on an interval $[a,b]$, the total arc length\index{arc length}, $L$, along the curve $y = f(x)$ from $x = a$ to $x = b$ is given by
+$$L = \int_a^b \sqrt{1+f'(x)^2} \, dx.$$
+} %end CONCEPT
+
+\input{examples/6-3_Eg1} % EXAMPLE
+
+\input{examples/6-3_Eg2} % EXAMPLE
+
+\input{examples/6-3_Eg3} % EXAMPLE
+
+\input{activities/6.3.Act1} % ACTIVITY
+
+%-------------------------------------------------
+% SUBSECTION SURFACE AREA OF SOLIDS OF REVOLUTION
+%-------------------------------------------------
+\subsection*{Surface Area of Solids of Revolution}
+
+We have already seen how a curve $y=f(x)$ on $[a,b]$ can be revolved around an axis to form a solid. Instead of computing its volume, we now consider its surface area.
+
+\begin{marginfigure}[6cm] % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figures/figarc4b}}
+
+\subfloat{\margingraphics{figures/figarc4}}
+
+\caption{Establishing the formula for surface area.} \label{F:6-3_SurfArea}
+\end{marginfigure}
+
+We begin as we have in the previous sections: we partition the interval $[a,b]$ with $n$ subintervals, where the $i\,^{\text{th}}$ subinterval is $[x_i,x_{i+1}]$. On each subinterval, we can approximate the curve $y=f(x)$ with a straight line that connects $f(x_i)$ and $f(x_{i+1})$ as shown in Figure \ref{F:6-3_SurfArea} (a). Revolving this line segment about the $x$-axis creates part of a cone (called the \textit{frustum} of a cone) as shown in Figure \ref{F:6-3_SurfArea} (b). The surface area of a frustum of a cone is $$2\pi\cdot\text{ length }\cdot\text{average of the two radii $R$ and $r$}.$$
+
+The length is given by $L$; we use the material just covered by arc length to state that $$L\approx \sqrt{1+\fp(c_i)}\dx_i$$ for some $c_i$ in the $i\,^\text{th}$ subinterval. The radii are just the function evaluated at the endpoints of the interval. That is, $$R = f(x_{i+1})\quad \text{and}\quad r = f(x_i).$$
+
+Thus the surface area of this sample frustum of the cone is approximately 
+$$2\pi\frac{f(x_i)+f(x_{i+1})}2\sqrt{1+\fp(c_i)^2}\dx_i.$$
+
+Since $f$ is a continuous function, the Intermediate Value Theorem states there is some $d_i$ in $[x_i,x_{i+1}]$ such that \newline $\ds f(d_i) = \frac{f(x_i)+f(x_{i+1})}2$; we can use this to rewrite the above equation as
+$$2\pi f(d_i)\sqrt{1+\fp(c_i)^2}\dx_i.$$
+Summing over all the subintervals we get the total surface area to be approximately 
+$$\text{Surface Area}\approx \sum_{i=1}^n 2\pi f(d_i)\sqrt{1+\fp(c_i)^2}\dx_i,$$
+which is a Riemann Sum. Taking the limit as the subinterval lengths go to zero gives us the exact surface area, given in the following Key Idea.
+
+\concept{Surface Area of a Solid of Revolution} %CONCEPT
+{Let $f$ be differentiable on an open interval containing $[a,b]$ where $\fp$ is also continuous on $[a,b]$. \index{integration!surface area}\index{surface area!solid of revolution}
+	\begin{enumerate}[1)]
+	\item	The surface area of the solid formed by revolving the graph of $y=f(x)$, where $f(x)\geq0$, about the $x$-axis is
+	$$\text{Surface Area} = 2\pi\int_a^b f(x)\sqrt{1+\fp(x)^2}\ dx.$$
+	\item	The surface area of the solid formed by revolving the graph of $y=f(x)$ about the $y$-axis, where $a,b\geq0$, is
+	$$\text{Surface Area} = 2\pi\int_a^b x\sqrt{1+\fp(x)^2}\ dx.$$
+	\end{enumerate}
+} %end CONCEPT
+
+\marginnote{When revolving $y=f(x)$ about the $y$-axis, the radii of the resulting frustum are $x_i$ and $x_{i+1}$; their average value is simply the midpoint of the interval. In the limit, this midpoint is just $x$. }
+
+\input{examples/6-3_Eg4} % EXAMPLE
+
+\input{examples/6-3_Eg5} % EXAMPLE
+
+This last example is a famous mathematical ``paradox.''
+
+\input{examples/6-3_Eg6} % EXAMPLE
+
+%--------------------------------------------
+% SUMMARY
+%--------------------------------------------
+\begin{summary}
+  \item To find the area between two curves, we think about slicing the region into thin rectangles.  If, for instance, the area of a typical rectangle on the interval $x = a$ to $x = b$ is given by $A_{\mbox{\small{rect}}} = (g(x) - f(x)) \triangle x,$ then the exact area of the region is given by the definite integral
+  $$A = \int_a^b (g(x)-f(x))\, dx.$$
+  \item The shape of the region usually dictates whether we should use vertical rectangles of thickness $\triangle x$ or horizontal rectangles of thickness $\triangle y$.  We desire to have the height of the rectangle governed by the difference between two curves:  if those curves are best thought of as functions of $y$, we use horizontal rectangles, whereas if those curves are best viewed as functions of $x$, we use vertical rectangles.
+  \item The arc length, $L$, along the curve $y = f(x)$ from $x = a$ to $x = b$ is given by
+$$L = \int_a^b \sqrt{1 + f'(x)^2} \, dx.$$
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/6-3.LengthSA(Ex)} 
+
+\cleardoublepage

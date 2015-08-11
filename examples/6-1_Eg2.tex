@@ -1,0 +1,22 @@
+\begin{example} \label{eg:6.1.2} % EXAMPLE
+Find the volume of the solid formed by revolving the region $R$ bounded by the curves $y=1/x$, $y=1/2$, and $y=1$ about the $y$-axis.
+
+\solution Since the axis of rotation is vertical, we need to convert the function into a function of $y$ and use horizontal representative slices. Since $y=1/x$ defines the curve, we rewrite it as $x=1/y$. %The bound $x=1$ corresponds to the $y$-bound $y=1$, and the bound $x=2$ corresponds to the $y$-bound $y=1/2$. 
+
+Thus we are rotating the curve $x=1/y$, from $y=1/2$ to $y=1$ about the $y$-axis to form a solid. The curve and sample differential element are sketched in Figure~\ref{F:6-1-EG2}-(a), with a full sketch of the solid in Figure~\ref{F:6-1-EG2}-(b).
+
+We integrate to find the volume:
+\begin{align*}
+V &= \pi\int_{1/2}^1 \frac{1}{y^2}\ dy \\
+	&= -\frac{\pi}y\Big|_{1/2}^1 \\
+	&= \pi\ \text{units}^3.
+\end{align*}		
+\end{example}
+
+\begin{marginfigure}[0cm] %MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figdisk1a}}
+
+\subfloat[]{\margingraphics{figures/figdisk2a}}
+\caption{Sketching the solid in Example \ref{eg:6.1.2}.}
+\label{F:6-1-EG2}
+\end{marginfigure}

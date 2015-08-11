@@ -1,0 +1,19 @@
+\begin{example} \label{Ex:2.5.Eg5}
+Find the derivative of $\ds f(x) = \frac{5x^2}{\sin(x)}$ using the Quotient Rule. Rewrite $f$ as $f(x) = 5x^2\csc(x)$, find $f'$ using the Product Rule and verify the two answers are the same.
+
+\solution Directly applying the Quotient Rule gives:
+\begin{align*}
+\frac{d}{dx}\left(\frac{5x^2}{\sin(x)}\right) &= \frac{\sin(x) \cdot 10x - 5x^2\cdot \cos(x)}{\sin^2(x)} \\
+&=	\frac{10x\sin(x) - 5x^2\cos(x)}{\sin^2(x)}.
+\end{align*}
+
+We now find $\fp$ using the Product Rule, considering $f$ as $f(x) = 5x^2\csc(x)$.
+\begin{align*}
+\fp(x) &= \frac{d}{dx}\Big(5x^2\csc(x)\Big) \\
+&=	\parbox{140pt}{$5x^2(-\csc(x) \cot(x)) + \csc(x) 10x$} \text{\small (now rewrite trig functions)}\\
+&= 5x^2\cdot \frac{-1}{\sin(x)}\cdot \frac{\cos(x)}{\sin(x)} + \frac{10x}{\sin(x)}\\
+&=	\parbox{140pt}{$\ds\frac{-5x^2\cos(x)}{\sin ^2(x)}+\frac{10x}{\sin(x)}$} \text{\small (get common denominator)}\\
+&= \frac{10x\sin(x) - 5x^2\cos(x)}{\sin^2(x)}
+\end{align*}
+Finding $f'$ using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to "simplify" your results into a form that is most readable and useful to you.
+\end{example}

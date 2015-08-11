@@ -1,0 +1,25 @@
+\begin{example} \label{eg:5.4.1} % EXAMPLE
+Perform the partial fraction decomposition of $\ds \frac{1}{x^2-1}$.
+
+\solution The denominator factors into two linear terms: $x^2-1 = (x-1)(x+1)$. Thus 
+$$\frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.$$
+To solve for $A$ and $B$, first multiply through by $x^2-1 = (x-1)(x+1)$:
+\begin{align*}
+1 &= \frac{A(x-1)(x+1)}{x-1}+\frac{B(x-1)(x+)}{x+1} \\
+	&= A(x+1) + B(x-1)\\
+	&= Ax+A + Bx-B \\
+	\intertext{Now collect like terms.}
+	&= (A+B)x + (A-B).
+\end{align*}
+The next step is key. Note the equality we have:
+$$1 = (A+B)x+(A-B).$$
+For clarity's sake, rewrite the left hand side as
+$$0x+1 = (A+B)x+(A-B).$$
+On the left, the coefficient of the $x$ term is $0$; on the right, it is $(A+B)$. Since both sides are equal, we must have that $0=A+B$. 
+
+Likewise, on the left, we have a constant term of $1$; on the right, the constant term is $(A-B)$. Therefore we have $1=A-B$.
+
+We have two linear equations with two unknowns. This one is easy to solve by hand, leading to 
+$$\begin{array}{c} A+B = 0 \\ A-B = 1 \end{array} \Rightarrow \begin{array}{c} A=1/2 \\ B = -1/2\end{array}.$$
+Thus $$\frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}.$$
+\end{example}

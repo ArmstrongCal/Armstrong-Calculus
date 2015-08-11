@@ -1,0 +1,24 @@
+\begin{example} \label{eg:5.3.5} % EXAMPLE
+
+Evaluate $\ds\int_0^5\frac{x^2}{\sqrt{x^2+25}}\ dx$.
+
+\solution
+Using \ref{C.5.3-tan}, we set $x=5\tan(\theta)$, $dx = 5\sec^2(\theta)\ d\theta$, and note that $\sqrt{x^2+25} = 5\sec(\theta)$. As we substitute, we can also change the bounds of integration.
+
+The lower bound of the original integral is $x=0$. As $x=5\tan(\theta)$, we solve for $\theta$ and find $\theta = \arctan(x/5)$. Thus the new lower bound is $\theta = \arctan(0) = 0$. The original upper bound is $x=5$, thus the new upper bound is $\theta = \arctan(5/5) = \pi/4$. 
+
+Thus we have 
+\begin{align*}
+\int_0^5\frac{x^2}{\sqrt{x^2+25}}\ dx &= \int_0^{\pi/4} \frac{25\tan^2(\theta)}{5\sec(\theta)}5\sec^2(\theta)\ d\theta\\
+		&= 25\int_0^{\pi/4} \tan^2(\theta)\sec(\theta)\ d\theta.
+\end{align*}
+We encountered this indefinite integral in Example~\ref{eg:5.3.3} where we found 
+$$\int \tan^2(\theta)\sec(\theta) \ d\theta = \frac12\big(\sec(\theta)\tan(\theta)-\ln|\sec(\theta)+\tan(\theta)|\big).$$
+So
+\begin{align*}
+25\int_0^{\pi/4} \tan^2(\theta)\sec(\theta)\ d\theta &= \frac{25}2\big(\sec(\theta)\tan(\theta)-\ln|\sec(\theta)+\tan(\theta)|\big)\Bigg|_0^{\pi/4}\\
+&= \frac{25}2\big(\sqrt2-\ln(\sqrt2+1)\big)
+%&\approx 6.661.
+\end{align*}
+
+\end{example}

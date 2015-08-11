@@ -1,0 +1,56 @@
+%----------------------------------------------------------------------------------------
+%	COMMANDS
+%----------------------------------------------------------------------------------------
+
+\graphicspath{{figs/}}
+
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc} 
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\dx}{\Delta x}
+
+\newcommand{\dy}{\Delta y}
+
+\newcommand{\solution}{ \mbox{}\newline\noindent{\bf Solution.~~} }
+
+\renewcommand{\proof}{ \noindent\textbf{Proof:~} }
+
+\newcommand{\myrule}{ \noindent\rule{1.5\textwidth}{0.4pt} }
+
+\newcommand{\nin}{\noindent}
+
+\newcommand{\fp}{f'}
+\newcommand{\fpp}{f''}
+
+\newcommand{\margingraphics}[1]{\includegraphics[width=\marginparwidth]{#1}}
+
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+\def\qed{\hfill\rule{2.1mm}{2.1mm}} % end of proof symbol
+
+\newcommand{\afterexercises}{}
+
+% The following code should be used *after* any changes to the margins and
+% page layout are made (e.g., after the geometry package has been loaded).
+\newlength{\fullwidthlen}
+\setlength{\fullwidthlen}{\marginparwidth}
+\addtolength{\fullwidthlen}{\marginparsep}
+
+\newenvironment{exercisewide}{%
+  \begin{adjustwidth*}{}{-\fullwidthlen}%
+}{%
+  \end{adjustwidth*}%
+}
+
+\newcommand{\apex}{A\kern -2pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt X $\ $}
+
+%----------------------------------------------------------------------------------------
+%	END COMMANDS
+%----------------------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+\begin{example} \label{eg:6.8.2} % EXAMPLE
+Evaluate the following derivatives and integrals.
+
+\begin{enumerate*}[1)]
+\item	 $\ds\frac{d}{dx}\big(\cosh (2x)\big)$\hspace{.5cm}
+\item	 $\ds\int \sech^2(7t-3)\ dt$\hspace{.5cm}
+\item	 $\ds \int_0^{\ln (2)} \cosh (x)\ dx$
+\end{enumerate*}
+
+\solution
+\begin{enumerate}[1)]
+\item Using the Chain Rule directly, we have $\frac{d}{dx} \big(\cosh (2x)\big) = 2\sinh (2x)$.
+
+Just to demonstrate that it works, let's also use the Basic Identity $\cosh (2x) = \cosh^2(x)+\sinh^2(x)$.
+\begin{align*}
+\frac{d}{dx}\big(\cosh (2x)\big) &= \frac{d}{dx}\big(\cosh^2(x)+\sinh^2(x)\big) \\
+&= 2\cosh (x)\sinh (x)+ 2\sinh (x)\cosh (x)\\ 
+&= 4\cosh (x)\sinh (x).
+\end{align*}
+Using another Basic Identity, we can see that $4\cosh (x)\sinh (x) = 2\sinh (2x)$. We get the same answer either way.
+
+\item	  We employ substitution, with $u = 7t-3$ and $du = 7dt$. Then we have:
+$$ \int \sech^2 (7t-3)\ dt = \frac17\tanh (7t-3) + C.$$
+
+\item	 $\ds \int_0^{\ln (2)} \cosh (x)\ dx = \sinh (x)\Big|_0^{\ln (2)} = \sinh (\ln (2)) - \sinh (0) = \sinh(\ln (2)).$
+\noindent We can simplify this last expression as $\sinh x$ is based on exponentials:
+$$\sinh(\ln (2)) = \frac{e^{\ln (2)}-e^{-\ln (2)}}2 = \frac{2-1/2}{2} = \frac34.$$
+\end{enumerate}
+
+\end{example}

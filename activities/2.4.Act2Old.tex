@@ -1,0 +1,36 @@
+\begin{activity} \label{A:2.4.2}  
+Let $p(x) = \csc(x)$ and recall that $\csc(x) = \frac{1}{\sin(x)}$.
+\ba
+	\item What is the domain of $p$?
+	\item Use the quotient rule to develop a formula for $p'(x)$ that is expressed completely in terms of $\sin(x)$ and $\cos(x)$.
+	\item How can you use other relationships among trigonometric functions to write $p'(x)$ only in terms of $\cot(x)$ and $\csc(x)$?
+	\item What is the domain of $p'$?  How does this compare to the domain of $p$? 
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item For what values of $x$ is $\sin(x) = 0$?
+	\item Don't forget that $\frac{d}{dx}[1] = 0$.
+	\item Consider rewriting $\frac{\cos(x)}{\sin^2(x)}$ as $\frac{1}{\sin(x)} \cdot \frac{\cos(x)}{\sin(x)}$.
+	\item Observe that $\sin(x)$ is still present in the denominator of $h'(x)$. 
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Remember that one value of $x$ for which $\sin(x) = 0$ is $x = \pi$.  What are the others?
+	\item Don't forget that $\frac{d}{dx}[1] = 0$, and be careful with your signs.
+	\item Consider rewriting $\frac{\cos(x)}{\sin^2(x)}$ as $\frac{1}{\sin(x)} \cdot \frac{\cos(x)}{\sin(x)}$.
+	\item Observe that $\sin(x)$ is still present in the denominator of $h'(x)$. 
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item $p(x) = \csc(x)$ is defined for all $x$ for which $\sin(x) \ne 0$.  Hence the domain of $h$ is all real numbers $x$ such that $x k\pi$, where $k = 0, \pm 1, \pm 2, \ldots$.
+	\item By the quotient rule,
+	$$h'(x) = \frac{0 - 1 \cdot (\cos(x))}{\sin^2(x)} = -\frac{\cos(x)}{\sin^2(x)}.$$
+	\item Observe that $h'(x) = -\frac{\cos(x)}{\sin^2(x)} = -\frac{1}{\sin(x)} \cdot \frac{\cos(x)}{\sin(x)},$ so
+	$$h'(x) = -\csc(x) \cot(x).$$
+	\item The derivative $p'(x)$ is, like $p(x)$, defined for all values of $x$ for which $\sin(x) \ne 0$.  Therefore, $p$ and $p'$ have the same domain:  all real numbers $x$ such that $x \ne k\pi$, where $k = 0, \pm 1, \pm 2, \ldots$.
+\ea
+\end{activitySolution}
+\aftera

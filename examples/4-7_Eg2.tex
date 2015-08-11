@@ -1,0 +1,18 @@
+\begin{example} % EXAMPLE
+Find the area of the region bounded by $y=x^2+x-5$ and $y=3x-2$.
+
+\solution We begin by finding the $x$-values at which the functions intersect. 
+\begin{align*} x^2+x-5 &= 3x-2 \\
+(x^2+x-5) - (3x-2) &= 0\\
+x^2-2x-3 &= 0\\
+(x-3)(x+1) &= 0\\
+x&=-1,\ 3.
+\end{align*}
+Therefore, the area is 
+\begin{align*}
+\int_{-1}^3\big(3x-2 -(x^2+x-5)\big)\ dx &= \int_{-1}^3 (-x^2+2x+3)\ dx \\
+&=\left.\left(-\frac13x^3+x^2+3x\right)\right|_{-1}^3 \\
+&=-\frac{27}{3}+9+9-\left(\frac13+1-3\right)\\
+&= \frac{32}{3}.
+\end{align*}
+\end{example}

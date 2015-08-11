@@ -1,0 +1,33 @@
+\begin{marginfigure}[8cm] % MARGIN FIGURE
+\margingraphics{figs/4/apex_5-3_Area1Rn16.pdf}
+\caption{Approximating the area under $y~=~4x-x^2$ on $[0,4]$ using $R_n$ with $n=16$.} \label{fig:apex_5-3_Area1Rn16}
+\end{marginfigure}
+
+\begin{example} % EXAMPLE
+Approximate the area under $y=4x-x^2$ on $[0,4]$ using $R_n$ and summation formulas with $16$ and $1000$ equally spaced intervals.
+
+\solution Using $16$ rectangles, we can approximate the area as 
+\[ \sum_{i=1}^{16} f(x_i) \Delta x \]
+where $\Delta x = 4/16 = 1/4$ and $x_i = 0 + i \Delta x = i \Delta x$. Using the properties of summations, we have
+\begin{eqnarray}
+\mbox{Area} & \approx & R_{16}  = \sum_{i=1}^{16} f(x_i) \Delta x \notag \\
+&=& \sum_{i=1}^{16} f( i\Delta x ) \Delta x \notag \\
+&=& \sum_{i=1}^{16} \left( 4i \Delta x - (i \Delta x)^2 \right) \Delta x \notag \\
+&=& \sum_{i=1}^{16} \left( 4i \Delta x^2 - i^2 \Delta x^3 \right) \notag \\		
+&=& \left( 4\Delta x^2 \right) \sum_{i=1}^{16} i - \left( \Delta x^3 \right) \sum_{i=1}^{16} i^2 \label{eq:rie7} \\ %\label{eq:rie7}
+&=& (4\Delta x^2)\frac{16\cdot 17}{2} - \left( \Delta x^3 \right) \frac{16(17)(33)}6 \notag \\
+&=&	4 \cdot \left( \frac{1}{4} \right)^2 \cdot \frac{16\cdot 17}{2} - \left( \frac{1}{4} \right)^3 \cdot \frac{16(17)(33)}{6} \notag \\
+&=&	2 \cdot 17 - \frac{17 \cdot 11}{8} \notag \\
+&=& \frac{85}{8} = 10.625 \notag
+\end{eqnarray}
+We were able to sum up the areas of $16$ rectangles with very little computation. Notice  Equation \eqref{eq:rie7}; by changing the $16$'s to $1,000$'s (and appropriately changing the value of $\Delta x$ to $4/1000$), we can use that equation to sum up $1000$ rectangles!
+\begin{align*}
+\mbox{Area} & \approx R_{1000} = \sum_{i=1}^{1000} f(x_i) \Delta x \\
+&= \left( 4 \Delta x^2 \right) \sum_{i=1}^{1000} i - \left(\Delta x^3 \right) \sum_{i=1}^{1000} i^2 \\
+&= \left( 4 \Delta x^2 \right) \frac{1000 \cdot 1001}{2} - \left( \Delta x^3 \right) \frac{1000(1001)(2001)}6 \\
+&= 4 \cdot (0.004)^2 \cdot 500500 - (0.004)^3\cdot 333,833,500\\
+&= 10.666656
+\end{align*}
+
+Using this many rectangles, it's likely that we have a good approximation of the area under $y=4x-x^2$ on $[0,4]$. That is, the area is approximately $10.666656$.
+\end{example}

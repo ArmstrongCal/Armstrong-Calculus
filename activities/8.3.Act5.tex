@@ -1,0 +1,67 @@
+\begin{activity} \label{8.3.Act5} The series $\sum \frac{1}{k^p}$ are special series called $p$-series. We have already seen that the $p$-series with $p=1$ (the harmonic series) diverges. We investigate the behavior of other $p$-series in this activity.
+\ba
+    \item Evaluate the improper integral $\ds \int_1^{\infty} \frac{1}{x^2} \ dx$. Does the series $\ds \sum_{k=1}^{\infty} \frac{1}{k^2}$
+converge or diverge? Explain.
+
+
+    \item Evaluate the improper integral $\ds \int_1^{\infty} \frac{1}{x^p} \ dx$ where $p > 1$. For which values of $p$ can we conclude that the series $\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$
+converges? 
+
+    \item Evaluate the improper integral $\ds \int_1^{\infty} \frac{1}{x^p} \ dx$ where $p < 1$. What does this tell us about the corresponding $p$-series
+$\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$?
+
+\item Summarize your work in this activity by completing the following statement.
+\begin{quote}
+The $p$-series $\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$ converges if and only if \underline{\hspace{2in}}.
+\end{quote}
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item We evaluate the improper integral:
+\begin{align*}
+\int_{1}^{\infty} \frac{1}{x^2} \ dx &= \lim_{t \to \infty} \int_{1}^{t} \frac{1}{x^2} \ dx \\
+    &= \lim_{t \to \infty} -\frac{1}{x} \biggm|_{1}^{t} \\
+    &= \lim_{t \to \infty} \left(-\frac{1}{t} + \frac{1}{1} \right) \\
+    &= 1.
+\end{align*}
+So the improper integral converges. The Integral Test then shows that the series $\ds \sum_{k=1}^{\infty} \frac{1}{k^2}$ converges.
+    \item Assume $p > 1$. Then $p-1 > 0$ and so $x^{-p+1} = \frac{1}{x^{p-1}}$ and
+\[\ds \lim_{x \to \infty} x^{-p+1} = \lim_{x \to \infty} \frac{1}{x^{p-1}} = 0.\]
+Thus,
+\begin{align*}
+\int_{1}^{\infty} \frac{1}{x^p} \ dx &= \lim_{t \to \infty} \int_{1}^{t} \frac{1}{x^p} \ dx \\
+    &= \lim_{t \to \infty} \frac{x^{-p+1}}{-p+1} \biggm|_{1}^{t} \\
+    &= \frac{1}{1-p} \lim_{t \to \infty} \left(t^{-p+1} -  1 \right) \\
+    &= \frac{1}{p-1}.
+\end{align*}
+So the improper integral $\ds \int_1^{\infty} \frac{1}{x^p} \ dx$ converges when $p > 1$. The Integral Test then shows that the series $\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$ converges when $p > 1$.
+    \item Assume $p < 1$. Then $1-p > 0$ and so
+\[\ds \lim_{x \to \infty} x^{-p+1} = \infty.\]
+Thus,
+\begin{align*}
+\int_{1}^{\infty} \frac{1}{x^p} \ dx &= \lim_{t \to \infty} \int_{1}^{t} \frac{1}{x^p} \ dx \\
+    &= \lim_{t \to \infty} \frac{x^{-p+1}}{-p+1} \biggm|_{1}^{t} \\
+    &= \frac{1}{1-p} \lim_{t \to \infty} \left(t^{-p+1} -  1 \right) \\
+    &= \infty.
+\end{align*}
+So the improper integral $\ds \int_1^{\infty} \frac{1}{x^p} \ dx$ diverges when $p < 1$. The Integral Test then shows that the series $\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$ also diverges when $p < 1$.
+    \item We complete the statement as
+\begin{quote}
+The $p$-series $\ds \sum_{k=1}^{\infty} \frac{1}{k^p}$ converges if and only if $p > 1$.
+\end{quote}
+\ea
+\end{activitySolution}
+\aftera 

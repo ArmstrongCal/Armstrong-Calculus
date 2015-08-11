@@ -1,0 +1,59 @@
+\begin{activity} \label{A:2.3.3} Use relevant derivative rules to answer each of the questions below.  Throughout, be sure to use proper notation and carefully label any derivative you find by name.  
+\ba
+	\item Let $\ds f(r) = (5r^3 + \sin(r))(4^r - 2\cos(r))$.  Find $f'(r)$.  
+	\item Let $\displaystyle p(t) = \frac{\cos(t)}{t^6 \cdot 6^t}$.  Find $p'(t)$.
+	\item Let $\ds g(z) = 3z^7 e^z - 2z^2 \sin(z) + \frac{z}{z^2 + 1}.$  Find $g'(z)$.
+	\item A moving particle has its position in feet at time $t$ in seconds given by the function $\ds s(t) = \frac{3\cos(t) - \sin(t)}{e^t}$.  Find the particle's instantaneous velocity at the moment $t = 1$.
+	\item Suppose that $f(x)$ and $g(x)$ are differentiable functions and it is known that $f(3) = -2$, $f'(3) = 7$, $g(3) = 4$, and  $g'(3) = -1$.  If $p(x) = f(x) \cdot g(x)$ and $\displaystyle q(x) = \frac{f(x)}{g(x)}$, calculate $p'(3)$ and $q'(3)$.
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Observe that $f$ is fundamentally a product.  Which is the first function?  The second?  
+	\item Note that $p$ has the overall structure of a quotient.
+	\item Think about how $g$ is a sum of three functions.  What is the structure of each of the three functions in the sum?
+	\item How is the velocity of a moving object related to its position?
+	\item Since we know $p(x) = f(x) \cdot g(x)$, it follows $p'(x) = f(x) g'(x) + g(x) f'(x).$
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Observe that $f$ is fundamentally a product.  Which is the first function?  The second?  What rule(s) are needed to differentiate the first function?  The second? 
+	\item Note that $p$ has the overall structure of a quotient.  What is the structure of the bottom function?
+	\item Think about how $g$ is a sum of three functions.  What is the structure of each of the three functions in the sum?
+	\item How is the velocity of a moving object related to its position?  What is the structure of $s(t)$?
+	\item Since we know $p(x) = f(x) \cdot g(x)$, it follows $p'(x) = f(x) g'(x) + g(x) f'(x)$ for any value of $x$.  How can you use the given information?
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Using the product rule, followed by the sum and constant multiple rule, observe that
+	\begin{eqnarray*}
+	f'(r) & = & (5r^3 + \sin(r))\frac{d}{dr}[4^r - 2\cos(r)] +  (4^r - 2\cos(r))\frac{d}{dr}[5r^3 + \sin(r)] \\
+	      & = &  (5r^3 + \sin(r))[4^r \ln(4) + 2\sin(r)] +  (4^r - 2\cos(r))[15r^2 + \cos(r)]
+	\end{eqnarray*}
+	\item We use the quotient rule on $p$, followed by the product rule to differentiate the denominator, finding that
+	\begin{eqnarray*}
+	  p'(t) & = & \frac{t^6 \cdot 6^t \frac{d}{dt}[\cos(t)] - \cos(t) \frac{d}{dt}[t^6 \cdot 6^t]}{(t^6 \cdot 6^t)^2} \\
+	         & = & \frac{t^6 \cdot 6^t [-\sin(t)] - \cos(t) [t^6 \cdot 6^t \ln(6) + 6^t \cdot 6t^5]}{(t^6 \cdot 6^t)^2}
+	\end{eqnarray*}
+		
+	\item Using the sum and constant multiple rules, it follows first that
+	$$g'(z) = 3 \frac{d}{dz}[z^7 e^z] - 2\frac{d}{dz}[z^2 \sin(z)] + \frac{d}{dz}\left[ \frac{z}{z^2 + 1} \right].$$  
+	Applying the product rule in the first two terms and the quotient rule in the third, we find that
+	$$g'(z) = 3 [z^7 e^z +  7z^6e^z] - 2[z^2 \cos(z) + 2z\sin(z)] + \frac{(z^2+1) 1 - z(2z)}{(z^2 + 1)^2}.$$  
+
+	\item The particle's instantaneous velocity at the moment $t = 1$ is given by $s'(1)$.  We use the quotient rule to find $s'(t)$, and simplify by removing a common factor of $e^t$ to get
+	$$s'(t) = \frac{e^t(-3\sin(t) - \cos(t))-(3\cos(t) - \sin(t))e^t}{(e^t)^2} = \frac{-2\sin(t)-4\cos(t)}{e^t}.$$
+	Thus, $s'(1) = \frac{-2\sin(1)-4\cos(1)}{e^1} \approx -1.414$, which is the particle's instantaneous velocity in feet per second at the moment $t = 1$.
+	\item Since $p(x) = f(x) \cdot g(x)$, the product rule tells us
+	$$p'(x) = f(x)g'(x) + g(x)f'(x),$$
+	and since $\displaystyle q(x) = \frac{f(x)}{g(x)}$, by the quotient rule we know
+	$$q'(x) = \frac{g(x)f'(x)-f(x)g'(x)}{g(x)^2}.$$
+	Using the given information ($f(3) = -2$, $f'(3) = 7$, $g(3) = 4$, and  $g'(3) = -1$) we now see that
+	$$p'(3) = f(3)g'(3) + g(3)f'(3) = (-2)(-1) + (4)(7) = 30$$
+	and
+	$$q'(x) = \frac{g(3)f'(3)-f(3)g'(3)}{g(3)^2} = \frac{(4)(7) - (-2)(-1)}{4^2} = \frac{13}{8}.$$
+\ea
+\end{activitySolution}
+\aftera

@@ -1,0 +1,159 @@
+\section{The Fundamental Theorem of Calculus, Part I} \label{S:4.4.FTCI}
+
+\begin{goals}
+\item Given a function $f$, how does the rule $\ds A(x) = \int_a^x f(t) \, dt$ define a new function $A$?
+\item What is the statement of the Fundamental Theorem of Calculus, and how do we apply the theorem?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+\begin{marginfigure}[2.5in] % MARGIN FIGURE
+\margingraphics{figs/4/4-4_Areafb.pdf}
+\caption{A function $f$ and its corresponding area function $A(x) = \int_0^x f(t) \ dt$.} \label{fig:4-4_Areaf}
+\end{marginfigure}
+
+Given a continuous function $f$ defined on $[a,b]$, we define the corresponding integral, or area, function $A$ according to the rule 
+\begin{equation} \label{E:intfxn}
+A(x) = \int_a^x f(t) \, dt.
+\end{equation}
+Note particularly that because we are using the variable $x$ as the independent variable in the function $A$, and $x$ determines the other endpoint of the interval over which we integrate (starting from $a$), we need to use a variable other than $x$ as the variable of integration.  A standard choice is $t$, but any variable other than $x$ is acceptable.
+
+One way to think of the function $A$ is as the ``net-signed area from $a$ up to $x$'' function, where we consider the region bounded by $y = f(t)$ on the relevant interval.  For example, in Figure~\ref{fig:4-4_Areaf}, we see a given function $f$ and its corresponding area function (choosing $a = 0$), $A(x) = \int_0^x f(t) \ dt$.
+
+\begin{marginfigure} % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figs/4/4-4_Areaf2a.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-4_Areaf2b.pdf}}
+\caption{The area under $f$ and the height of $A(x)$.} \label{fig:4-4_Areaf2a}
+\end{marginfigure}
+
+Note particularly that the function $A$ measures the net-signed area from $t = 0$ to $t = x$ bounded by the curve $y = f(t)$; this value is then reported as the corresponding height on the graph of $y = A(x)$---see Figure~\ref{fig:4-4_Areaf2a}.  It is even more natural to think of this relationship between $f$ and $A$ dynamically.  At \href{http://gvsu.edu/s/cz}{\texttt{http://gvsu.edu/s/cz}}, we find a java applet that brings this relationship to life.  There, the user can move the red point on the function $f$ and see how the corresponding height changes at the light blue point on the graph of $A$.
+
+\input{previews/4.4.PA1} % PREVIEW ACTIVITY
+
+The choice of the lower bournd of integration $a$ is somewhat arbitrary.  In the activity that follows, we explore how the value of $a$ affects the graph of the integral function, as well as some additional related issues.
+
+\input{activities/4.4.Act2} % ACTIVITY %change to not do FTCII
+
+%--------------------------------------------------------------------
+% SUBSECTION THE FUNDAMENTAL THEOREM OF CALCULUS
+%--------------------------------------------------------------------
+\subsection*{The Fundamental Theorem of Calculus} \index{fundamental theorem of calculus}
+
+We can also apply calculus ideas to $A(x)$; in particular, we can compute its derivative. While this may seem like an innocuous thing to do, it has far--reaching implications, as demonstrated by the fact that the result is given as an important theorem.
+
+\concept{Fundamental Theorem of Calculus, Part 1} % CONCEPT
+{Let $f$ be continuous on $[a,b]$ and let $\ds A(x) = \int_a^x f(t)\ dt$. Then $A$ is a differentiable function on $(a,b)$, and\index{Fundamental Theorem of Calculus}\index{integration!Fun. Thm. of Calc.}
+\[ A'(x)=f(x). \]
+} % end concept
+
+\proof In general, if $f$ is any continuous function, and we define the function $A$ by the rule 
+\[ A(x) = \int_a^x f(t) \ dt, \]
+where $a$ is an arbitrary constant, then we can show that $A$ is an antiderivative of $f$.  To see why, let's demonstrate that $A'(x) = f(x)$ by using the limit definition of the derivative.  Doing so, we observe that
+\begin{align}
+A'(x) &= \lim_{h \to 0} \frac{A(x+h) - A(x)}{h} \notag \\
+&= \lim_{h \to 0} \frac{\int_a^{x+h} f(t) \, dt - \int_a^x f(t) \, dt}{h} \notag \\
+&= \lim_{h \to 0} \frac{\int_x^{x+h} f(t) \, dt}{h}, \label{E:FTC2limdef}
+\end{align}
+where Equation~(\ref{E:FTC2limdef}) in the preceding chain follows from the fact that $\int_a^x f(t) \,dt + \int_x^{x+h} f(t) \, dt = \int_a^{x+h} f(t) \, dt$.  Now, observe that for small values of $h$,
+\[ \int_x^{x+h} f(t) \ dt \approx f(x) \cdot h, \]
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-4_FTCh.pdf}
+\caption{Approximating the area under $f$ from $x$ to $x+h$.} \label{fig:4-4_FTCh}
+\end{marginfigure}
+\noindent by a simple left-hand approximation of the integral. Thus, as we take the limit in Equation~(\ref{E:FTC2limdef}) as $h$ approaches $0$, it follows that
+\[ A'(x) =  \lim_{h \to 0} \frac{\int_x^{x+h} f(t) \, dt}{h} = \lim_{h \to 0} \frac{f(x) \cdot h}{h} = f(x). \]
+\qed
+
+\input{examples/4-4_Eg1} % EXAMPLE
+
+\input{examples/4-4_Eg4} % EXAMPLE
+
+\input{activities/5.2.Act3} % ACTIVITY 
+
+%-------------------------------------------------------------------------------------------
+% SUBSECTION THE FUNDAMENT THEOREM AND THE CHAIN RULE
+%-------------------------------------------------------------------------------------------
+\subsection{The Fundamental Theorem and the Chain Rule}
+
+The Fundamental Theorem of Calculus states that given $A(x) = \int_a^x f(t)\ dt$,  $A'(x) = f(x)$, or we can use other notation to write $\frac{d}{dx}\left[ A(x) \right] = f(x)$. It may be of further use to compose such a function with another. As an example, we may compose $A(x)$ with $g(x)$ to get 
+\[ (A \circ g)(x) = \int_a^{g(x)} f(t) \ dt.\]
+What is the derivative of such a function?\index{Fundamental Theorem of Calculus!and Chain Rule} Since it is a composition, the Chain Rule can be employed.  We decompose the composition as
+\[ y = \int_a^u f(t) \ dt \quad \mbox{where} \quad u = g(x). \]
+Using the Leibniz version of the Chain Rule, we have
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}, \] 
+where
+\[ \frac{dy}{du} = f(u) \quad \mbox{and} \quad \frac{du}{dx} = g'(x). \]
+Therefore,
+\[ \frac{dy}{dx} = f(u) \cdot g'(x) = f \left( g(x) \right) \cdot g'(x). \]
+
+\input{examples/4-4_Eg2} % EXAMPLE
+
+\input{examples/4-4_Eg3} % EXAMPLE
+
+\input{activities/5.2.Act4} % ACTIVITY
+
+%--------------------------------------------------------------------
+% SUBSECTION UNDERSTANDING INTEGRAL FUNCTIONS
+%--------------------------------------------------------------------
+\subsection*{Understanding Integral Functions}%\index{}\index{}
+
+The FTC provides us with a means to construct an antiderivative of any continuous function.  In particular, if we are given a continuous function $g$ and wish to find an antiderivative of $G$, we can now say that 
+\[ G(x) = \int_c^x g(t) \ dt \]
+provides the rule for such an antiderivative, and moreover that $G(c) = 0$.  Note especially that we know that $G'(x) = g(x)$.  We sometimes want to write this relationship between $G$ and $g$ from a different notational perspective.  In particular, observe that
+\begin{equation} \label{E:diffint}
+\frac{d}{dx} \left[ \int_c^x g(t) \, dt \right] = g(x).
+\end{equation}
+This result can be particularly useful when we're given an integral function such as $G$ and wish to understand properties of its graph by recognizing that $G'(x) = g(x)$, while not necessarily being able to exactly evaluate the definite integral $\int_c^x g(t) \ dt$.  
+
+To see how this is the case, let's investigate the behavior of the integral function 
+\[ E(x) = \int_0^x e^{-t^2} \ dt. \]
+$E$ is closely related to the well known \emph{error function}\index{error functin}\footnote{The error function is defined by the rule $\ds \mbox{erf}(x)~=~\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} \,dt$ and has the key property that $0 \le \mbox{erf}(x) < 1$ for all $x \ge 0$ and moreover that $\ds \lim_{x \to \infty} \mbox{erf}(x) = 1$.}, a function that is particularly important in probability and statistics.  It turns out that the function $e^{-t^2}$ does not have an elementary antiderivative that we can express without integrals.  That is, whereas a function such as $f(t) = 4-2t$ has elementary antiderivative $F(t) = 4t - t^2$, we are unable to find a simple formula for an antiderivative of $e^{-t^2}$ that does not involve a definite integral.  We will learn more about finding (complicated) algebraic formulas for antiderivatives without definite integrals in the chapter on infinite series.
+
+Returning our attention to the function $E$, while we cannot evaluate $E$ exactly for any value other than $x = 0$, 
+we still can gain a tremendous amount of information about the function $E$.  To begin, applying the rule in Equation~(\ref{E:diffint}) to $E$, it follows that
+\[ E'(x) = \frac{d}{dx} \left[ \int_0^x e^{-t^2} \ dt \right] = e^{-x^2}, \]
+so we know a formula for the derivative of $E$.  Moreover, we know that $E(0) = 0$.  This information is precisely the type we were given in problems such as the one in Activity~\ref{A:3.2.1} and others in Section~\ref{S:3.2.Tests}, where we were given information about the derivative of a function, but lacked a formula for the function itself.  
+
+Here, using the first and second derivatives of $E$, along with the fact that $E(0) = 0$, we can determine more information about the behavior of $E$.  First, with $E'(x) = e^{-x^2}$, we note that for all real numbers $x$, $e^{-x^2} > 0$, and thus $E'(x) > 0$ for all $x$.  Thus $E$ is an always increasing function.  Further, we note that as $x \to \infty$, $E'(x) = e^{-x^2} \to 0$, hence the slope of the function $E$ tends to zero as $x \to \infty$ (and similarly as $x \to -\infty$).  This tells us that $E$ has horizontal asymptotes as $x$ increases or decreases without bound. 
+
+In addition, we can observe that $E''(x) = -2xe^{-x^2}$, and that $E''(0) = 0$, while $E''(x) < 0$ for $x > 0$ and $E''(x) > 0$ for $x < 0$.  This information tells us that $E$ is concave up for $x<0$ and concave down for $x > 0$ with a point of inflection at $x = 0$.  
+
+The only thing we lack at this point is a sense of how big $E$ can get as $x$ increases.  If we use a midpoint Riemann sum with 10 subintervals to estimate $E(2)$, we see that $E(2) \approx 0.8822$; a similar calculation to estimate $E(3)$ shows little change ($E(3) \approx 0.8862$), so it appears that as $x$ increases without bound, $E$ approaches a value just larger than $0.886$.  Putting all of this information together (and using the symmetry of $f(t) = e^{-t^2}$), we see the results shown in Figure~\ref{fig:4-4_erfa}.
+
+\begin{marginfigure}[-4cm] % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figs/4/4-4_erfa.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-4_erfb.pdf}}
+\caption{At top, the graph of $f(t) = e^{-t^2}$.  At bottom, the integral function $E(x) = \int_0^x e^{-t^2} \,dt$, which is the unique antiderivative of $f$ that satisfies $E(0) = 0$.} \label{fig:4-4_erfa}
+\end{marginfigure}
+
+Again, $E$ is the antiderivative of $f(t) = e^{-t^2}$ that satisfies $E(0) = 0$.  Moreover, the values on the graph of $y = E(x)$ represent the net-signed area of the region bounded by $f(t) = e^{-t^2}$ from $0$ up to $x$.  We see that the value of $E$ increases rapidly near zero but then levels off $x$ increases since there is less and less additional accumulated area bounded by $f(t) = e^{-t^2}$ as $x$ increases.
+
+\input{activities/5.2.Act2}
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary} 
+\item Given a function $f$, the rule $A(x) = \int_a^x f(t) \ dt$ defines a new function $A$ that measures the net-signed area bounded by $f$ on the interval $[a,x]$.  We call the function $A$ the integral function corresponding to $f$.
+
+\item The Fundamental Theorem of Calculus part I is the following:  if $f$ is a continuous function and $a$ is any constant, then $A(x) = \int_a^x f(t) \ dt$ is the unique antiderivative of $f$ that satisfies $A(c) = 0$.
+
+\item The Chain Rule can be applied to functions of the form: $F\big( g(x) \big) = \int_a^{g(x)} f(t) \ dt$.   
+\[ \frac{d}{dx} \Big( F \big( g(x) \big) \Big) = F' \big( g(x) \big) g'(x) = f \big( g(x) \big) g'(x).\]
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/4-4.FTC(Ex)} 
+
+\cleardoublepage

@@ -1,0 +1,17 @@
+\begin{example} \label{eg:5.3.1} % EXAMPLE
+Evaluate $\ds \int_{-3}^3\sqrt{9-x^2}\ dx$.
+
+\solution We begin by noting that $9\sin^2(\theta) + 9\cos^2(\theta) = 9$, and hence $9\cos^2(\theta) = 9-9\sin^2(\theta)$. If we let $x=3\sin(\theta)$, then $9-x^2 = 9-9\sin^2(\theta) = 9\cos^2(\theta)$. 
+
+Setting $x=3\sin(\theta)$ gives  $dx = 3\cos(\theta)\ d\theta$. We are almost ready to substitute. We also wish to change our bounds of integration. The bound $x=-3$ corresponds to $\theta = -\pi/2$ (for when $\theta = -\pi/2$, $x=3\sin(\theta) = -3$). Likewise, the bound of $x=3$ is replaced by the bound $\theta = \pi/2$. Thus
+\begin{align*}
+\int_{-3}^3\sqrt{9-x^2}\ dx &= \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2(\theta)} (3\cos(\theta))\ d\theta \\
+		&= \int_{-\pi/2}^{\pi/2} 3\sqrt{9\cos^2(\theta)} \cos(\theta)\ d\theta \\
+		&=\int_{-\pi/2}^{\pi/2} 3|3\cos(\theta)| \cos(\theta)\ d\theta.
+		\intertext{On $[-\pi/2,\pi/2]$, $\cos(\theta)$ is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:}
+			&= \int_{-\pi/2}^{\pi/2} 9\cos^2(\theta)\ d\theta\\
+			&= \int_{-\pi/2}^{\pi/2} \frac{9}{2}\big(1+\cos(2\theta)\big)\ d\theta\\
+			& = \frac92 \left(\theta +\frac12\sin(2\theta)\right)\Bigg|_{-\pi/2}^{\pi/2}= \frac92\pi.
+\end{align*}
+This matches our answer from before.
+\end{example}

@@ -1,0 +1,63 @@
+\begin{margintable}[8cm]
+\begin{center}
+\scalebox{1.5}{
+\begin{tabular}{| l || l |}
+\hline
+$t$ & $F(t)$ \\ \hline \hline
+$0$ & $70$\\ \hline
+$15$ & $180.5$ \\ \hline
+$30$ & $251$ \\ \hline
+$45$ & $296$ \\ \hline
+$60$ & $324.5$ \\ \hline
+$75$ & $342.8$ \\ \hline
+$90$ & $354.5$  \\ \hline
+\end{tabular}
+} % end scalebox 
+\caption{The temperature of a potato in an oven at various times.} \label{T:2.1.5}
+\end{center}
+\end{margintable}
+
+\begin{activity} \label{A:2.1.5}
+A potato is placed in an oven, and the potato's temperature $F$ (in degrees Fahrenheit) at various points in time is taken and recorded in Table~\ref{T:2.1.5}. Time $t$ is measured in minutes.
+
+\ba
+	\item Use a central difference to estimate the instantaneous rate of change of the temperature of the potato at $t= 30$. Include units on your answer. 
+	\item Use a central difference to estimate the instantaneous rate of change of the temperature of the potato at $t= 60$. Include units on your answer. 
+	\item Without doing any calculation, which do you expect to be greater: $F'(75)$ or $F'(90)$?  Why?
+	\item Suppose it is given that $F(64) = 330.28$ and $F'(64) = 1.341$.  What are the units on these two quantities?  What do you expect the temperature of the potato to be when $t = 65$?  when $t = 66$?  Why?
+	\item Write a couple of careful sentences that describe the behavior of the temperature of the potato on the time interval $[0,90]$, as well as the behavior of the instantaneous rate of change of the temperature of the potato on the same time interval.
+\ea
+
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Think about quantities such as $\frac{F(45)-F(30)}{45-30}$.
+	\item See the note in (a).
+	\item Is $F$ changing faster at $t = 75$ or at $t = 90$?
+	\item Remember that the units on $F'$ will be ``degrees Fahrenheit per minute.''
+	\item Be careful to distinguish between the temperature, $F$, and the rate of change of temperature, $F'$, in your commentary.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Think about quantities such as $\frac{F(45)-F(30)}{45-30}$ and $\frac{F(15)-F(30)}{15-30}$.
+	\item See the note in (a).
+	\item What overall trend do you observe in the instantaneous rate of change of $F$, based on the overall trend in temperature $F$?
+	\item Remember that the units on $F'$ will be ``degrees Fahrenheit per minute.''
+	\item Be careful to distinguish between the temperature, $F$, and the rate of change of temperature, $F'$, in your commentary.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Using the central difference, we find that 
+	$$F'(30) \approx \frac{F(45)-F(15)}{45-15} = \frac{296-180.5}{30} = 3.85$$
+	degrees per minute.
+	\item Using the central difference, we find that 
+	$$F'(60) \approx \frac{F(75)-F(45)}{45-15} = \frac{342.8-296}{30} = 1.56$$
+	degrees per minute.
+	\item Over each subsequent time interval, we see that the amount of increase in the potato's temperature gets less and less, thus we expect the value of $F'(t)$ to get smaller and smaller as time goes on.  We therefore expect $F'(75) > F'(90)$.
+	\item The value $F(64) = 330.28$ is the temperature of the potato in degrees Fahrenheit at time 64, while $F'(64) = 1.341$ measures the instantaneous rate of change of the potato's temperature with respect to time at the instant $t = 64$, and its units are degrees per minute.  Because at time $t = 64$ the potato's temperature is increasing at 1.341 degrees per minute, we expect that at $t = 65$, the temperature will be about 1.341 degrees greater than at $t = 64$, or in other words $F(65) \approx 330.28 + 1.341 = 331.621$.  Similarly, at $t = 66$, two minutes have elapsed from $t = 64$, so we expect an increase of $2 \dot 1.341$ degrees:  $F(66) \approx 330.28 + 2 \cdot 1.341 = 332.962$. 
+	\item Throughout the time interval $[0,90]$, the temperature $F$ of the potato is increasing.  But as time goes on, the rate at which the temperature is rising appears to be decreasing.  That is, while the values of $F$ continue to get larger as time progresses, the values of $F'$ are getting smaller (while still remaining positive). We thus might say that ``the temperature of the potato is increasing, but at a decreasing rate.''
+\ea
+\end{activitySolution}
+\aftera

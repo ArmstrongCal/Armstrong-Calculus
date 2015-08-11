@@ -1,0 +1,27 @@
+\begin{marginfigure}[4cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseries2a}}
+\subfloat[]{\margingraphics{figures/figseries2b}}
+\subfloat[]{\margingraphics{figures/figseries2c}}
+\caption{Scatter plots relating to Example \ref{eg:7.2.2}.} \label{F:eg:7.2.2}
+\end{marginfigure}
+
+\begin{example} \label{eg:7.2.1} % EXAMPLE
+Check the convergence of the following series. If the series converges, find its sum.\\
+
+\noindent 1. $\ds \sum_{n=2}^\infty \left(\frac34\right)^n$\qquad 2. $\ds \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n$ \qquad 3. $\ds \sum_{n=0}^\infty 3^n$ 
+
+\solution
+\begin{enumerate}
+\item		Since $r=3/4<1$, this series converges. By Theorem \ref{thm:geom_series}, we have that
+$$\sum_{n=0}^\infty \left(\frac34\right)^n = \frac{1}{1-3/4} = 4.$$ However, note the subscript of the summation in the given series: we are to start with $n=2$. Therefore we subtract off the first two terms, giving:
+$$\sum_{n=2}^\infty \left(\frac34\right)^n = 4 - 1 - \frac34 = \frac94.$$
+This is illustrated in Figure \ref{F:eg:7.2.2}(a).
+
+\item	Since $|r| = 1/2 < 1$, this series converges, and by Theorem \ref{thm:geom_series},
+$$\sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac{1}{1-(-1/2)} = \frac23.$$
+The partial sums of this series are plotted in Figure \ref{fig:series2}(b). Note how the partial sums are not purely increasing as some of the terms of the sequence $\{(-1/2)^n\}$ are negative.
+
+\item		Since $r>1$, the series diverges. (This makes ``common sense''; we expect the sum $$1+3+9+27 + 81+243+\cdots$$ to diverge.) This is illustrated in Figure \ref{fig:series2}(c).
+
+\end{enumerate}
+\end{example}

@@ -1,0 +1,29 @@
+\begin{example} \label{eg:5.1.4} % EXAMPLE
+Evaluate $\displaystyle \int x^2\cos(x) \ dx$.
+
+\solution The mnemonic suggests letting $u=x^2$ instead of the trigonometric function, hence $dv=\cos(x) \ dx$.  Then $du=2x\,dx$ and $v=\sin(x)$ as shown below. 
+
+\begin{tabular}{llcll} \\
+$u= x^2$ & $v=\text{?}$ & & $u= x^2$ & $v=\sin(x)$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=\cos(x)\ dx$ & &  $du= 2x\ dx$ & $dv=\cos(x) \ dx$ \\
+\end{tabular}
+
+\vspace{.25cm}
+
+The Integration by Parts formula gives
+$$\int x^2\cos(x) \ dx = x^2\sin(x) - \int 2x\sin(x)\,dx.$$
+At this point, the integral on the right is indeed simpler than the one we started with, but to evaluate it, we need to do Integration by Parts again. Here we choose $u=2x$ and $dv=\sin(x)$ and fill in the rest below.\\
+
+\begin{tabular}{llcll} \\
+$u= 2x$ & $v=\text{?}$ & & $u= 2x$ & $v=-\cos(x)$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=\sin(x)\ dx$ & &  $du= 2\ dx$ & $dv=\sin(x)\ dx$ \\
+\end{tabular}
+
+%%%%%%.  Then $du=2\,dx$ and $v=-\cos x$.  We then get
+$$\int x^2\cos(x)\,dx = x^2\sin(x) - \left(-2x\cos(x) - \int -2\cos(x)\,dx\right).$$
+The integral all the way on the right is now something we can evaluate.  It evaluates to $-2\sin(x)$.  Then going through and simplifying, being careful to keep all the signs straight, our answer is
+$$\int x^2\cos(x)\ dx = x^2\sin(x)  + 2x\cos(x) - 2\sin(x) + C.$$
+
+\end{example}

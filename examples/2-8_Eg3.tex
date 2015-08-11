@@ -1,0 +1,25 @@
+\begin{example} \label{Ex:2.8.Eg3}
+Given $y=x^x$, use logarithmic differentiation to find $y'$.
+
+\solution As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.
+\begin{align*}
+y &= x^x \\
+\ln (y) &= \parbox{50pt}{$\ln (x^x)$} \text{\small (apply logarithm rule)}\\
+\ln (y) &= \parbox{50pt}{$x\ln(x)$}  \text{\small (now use implicit differentiation)}\\
+\frac{d}{dx}\Big(\ln (y)\Big) &= \frac{d}{dx}\Big(x\ln(x)\Big) \\
+\frac{y'}{y} &= \ln(x) + x\cdot\frac1x\\
+\frac{y'}{y} &= \ln(x) + 1\\
+y' &= \parbox{50pt}{$y\big(\ln(x)+1\big)$} \text{\small (now substitute $y=x^x$)}\\
+y' &= x^x\big(\ln(x)+1\big).
+\end{align*} 
+
+To ``test'' our answer, let's use it to find the equation of the tangent line at $x=1.5$. The point on the graph our tangent line must pass through is $(1.5, 1.5^{1.5}) \approx (1.5, 1.837)$. Using the equation for $y'$, we find the slope as
+$$y' = 1.5^{1.5}\big(\ln(1.5)+1\big) \approx 1.837(1.405) \approx 2.582.$$
+Thus the equation of the tangent line is $y = 1.6833(x-1.5)+1.837$. Figure \ref{fig:logdiffb} graphs $y=x^x$ along with this tangent line.
+\end{example}
+
+\begin{marginfigure}[-7cm] % MARGIN FIGURE
+\margingraphics{figures/figimplicit10.pdf}
+\caption{A plot of $y=x^x$.} \label{fig:logdiffb}
+\end{marginfigure}
+%\mfigure{.8}{A graph of $y=x^x$ and its tangent line at $x=1.5$.}{fig:implicit10}{figures/figimplicit10}

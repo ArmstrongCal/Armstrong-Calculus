@@ -1,0 +1,26 @@
+\begin{activity} \label{8.4.Act2}  Which series converge and which diverge? Justify your answers.
+\ba
+\item $\ds \sum_{k=1}^{\infty} \frac{(-1)^k}{k^2+2}$
+\item $\ds \sum_{k=1}^{\infty} \frac{(-1)^{k+1}2k}{k+5}$
+\item $\ds \sum_{k=2}^{\infty} \frac{(-1)^{k}}{\ln(k)}$
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Since $(k+1)^2 + 2 > k^2+2$ it follows that $\frac{1}{(k+1)^2+2} < \frac{1}{k^2+2}$ and the sequence $\frac{1}{k^2+2}$ decreases to 0. The Alternating Series Test shows then that the series $\ds \sum_{k=1}^{\infty} \frac{(-1)^k}{k^2+2}$ converges. 
+    \item In this case we have that $\lim_{k \to \infty} \frac{2k}{k+5} = 2$ and so the sequence of $k$th terms does not even converge to 0. So the series $\ds \sum_{k=1}^{\infty} \frac{2(-1)^{k+1}k}{k+5}$ diverges by the Divergence Test. 
+    \item We know that the natural log is an increasing function, so $\frac{1}{\ln(k)}$ is a decreasing function. It is also true that $\lim_{k \to \infty} \frac{1}{\ln(k)} = 0$ and so the series $\ds \sum_{k=2}^{\infty} \frac{(-1)^{k}}{\ln(k)}$ converges by the Alternating Series Test. 
+\ea
+\end{activitySolution}
+\aftera 

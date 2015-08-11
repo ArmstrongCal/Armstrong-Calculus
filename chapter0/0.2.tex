@@ -1,0 +1,85 @@
+\section{How do we measure velocity?} \label{S:0.2.Velocity}
+
+\begin{goals}
+\item How is the average velocity of a moving object connected to the values of its position function?
+\item How do we interpret the average velocity of an object geometrically with regard to the graph of its position function?
+\item How is the notion of instantaneous velocity connected to average velocity?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+
+\subsection*{Introduction}
+
+We begin with a familiar problem:  a ball being tossed straight up in the air from an initial height.  From this elementary scenario, we will ask questions about how the ball is moving.  These questions will lead us to begin investigating ideas that will be central throughout our study of differential calculus and that have wide-ranging consequences.  In a great deal of our thinking about calculus, we will be well-served by remembering this first example and asking ourselves how the various (sometimes abstract) ideas we are considering are related to the simple act of tossing a ball straight up in the air.  
+
+\input{previews/0.2.PA1} %Preview ACTIVITY 
+
+%-----------------------------------------------------------------
+% SUBSECTION POSITION AND AVERAGE VELOCITY
+%-----------------------------------------------------------------
+\subsection*{Position and average velocity}
+
+Any moving object has a \emph{position}\index{position} that can be considered a function of \emph{time}.  When this motion is along a straight line, the position is given by a single variable, and we usually let this position be denoted by $s(t)$, which reflects the fact that position is a function of time.  For example, we might view $s(t)$ as telling the mile marker of a car traveling on a straight highway at time $t$ in hours; similarly, the function $s$ described in Preview Activity \ref{PA:0.2} is a position function, where position is measured vertically relative to the ground.
+
+Not only does such a moving object have a position associated with its motion, but on any time interval, the object has an \emph{average velocity}\index{average velocity}.   Think, for example, about driving from one location to another:  the vehicle travels some number of miles over a certain time interval (measured in hours), from which we can compute the vehicle's average velocity.  In this situation, average velocity is the number of miles traveled divided by the time elapsed, which of course is given in \emph{miles per hour}. Similarly, the calculation of $A_{[0.5,1]}$ in Preview Activity \ref{PA:0.2} found the average velocity of the ball on the time interval $[0.5,1]$, measured in feet per second.
+
+In general, we make the following definition:  for an object moving in a straight line whose position at time $t$ is given by the function $s(t)$, the \emph{average velocity\index{average velocity} of the object on the interval from $t = a$ to $t = b$}, denoted $AV_{[a,b]}$, is given by the formula
+\[ AV_{[a,b]} = \frac{s(b)-s(a)}{b-a}. \]
+Note well: the units on $AV_{[a,b]}$ are 
+``units of $s$ per unit of $t$,'' such as ``miles per hour'' or ``feet per second.''
+
+\input{activities/0.2.Act1} %ACTIVITY 
+
+%-----------------------------------------------------
+% SUBSECTION INSTANTANEOUS VELOCITY
+%-----------------------------------------------------
+\subsection*{Instantaneous Velocity}
+
+Whether driving a car, riding a bike, or throwing a ball, we have an intuitive sense that any moving object has a velocity at any given moment -- a number that measures how fast the object is moving \emph{right now}.  For instance, a car's speedometer tells the driver what appears to be the car's velocity at any given instant.  In fact, the posted velocity on a speedometer is really an average velocity that is computed over a very small time interval (by computing how many revolutions the tires have undergone to compute distance traveled), since velocity fundamentally comes from considering a change in position divided by a change in time.  But if we let the time interval over which average velocity is computed become shorter and shorter, then we can progress from average velocity to \emph{instantaneous} velocity.  
+
+Informally, we define the \emph{instantaneous velocity}\index{instantaneous velocity} of a moving object at time $t = a$ to be the value that the average velocity approaches as we take smaller and smaller intervals of time containing $t = a$ to compute the average velocity.  We will develop a more formal definition of this momentarily, one that will end up being the foundation of much of our work in first semester calculus.  For now, it is fine to think of instantaneous velocity this way:  take average velocities on smaller and smaller time intervals, and if those average velocities approach a single number, then that number will be the instantaneous velocity at that point.
+
+\input{activities/0.2.Act2} %ACTIVITY 
+
+At this point we have started to see a close connection between average velocity and instantaneous velocity, as well as how each is connected not only to the physical behavior of the moving object but also to the geometric behavior of the graph of the position function.  In order to make the link between average and instantaneous velocity more formal, we will introduce the notion of \emph{limit} in Section~\ref{S:1.1.Limits}.  As a preview of that concept, we look at a way to consider the limiting value of average velocity through the introduction of a parameter.  Note that if we desire to know the instantaneous velocity at $t = a$ of a moving object with position function $s$, we are interested in computing average velocities on the interval $[a,b]$ for smaller and smaller intervals.  One way to visualize this is to think of the value $b$ as being $b = a + h$, where $h$ is a small number that is allowed to vary.  Thus, we observe that the average velocity of the object on the interval $[a,a+h]$ is
+\[ AV_{[a,a+h]} = \frac{s(a+h)-s(a)}{h}, \]
+with the denominator being simply $h$ because $(a+h) - a = h$.  Initially, it is fine to think of $h$ being a small positive real number; but it is important to note that we allow $h$ to be a small negative number, too, as this enables us to investigate the average velocity of the moving object on intervals prior to $t = a$, as well as following $t = a$.  When $h < 0$, $AV_{[a,a+h]}$ measures the average velocity on the interval $[a+h,a]$.  
+
+To attempt to find the instantaneous velocity at $t = a$, we investigate what happens as the value of $h$ approaches zero.  We consider this further in the following example.
+
+\input{examples/0-2_Eg1} % EXAMPLE
+
+\input{activities/0.2.Act3} % ACTIVITY
+
+\clearpage
+
+%--------------
+% SUMMARY
+%--------------
+%\begin{marginfigure}[-3.5in] % MARGIN FIGURE
+%\margingraphics{figs/0/0-2_Summary.pdf} 
+%\caption{The graph of position function $s$ together with the line through $(a,s(a))$ and $(b,s(b))$ whose slope is $m = \frac{s(b)-s(a)}{b-a}$.  The line's slope is the average rate of change of $s$ on the interval $[a,b]$.} \label{F:0.2.Summary}
+%\end{marginfigure}
+\vspace*{-1cm}
+\begin{summary}
+\item The average velocity on $[a,b]$ can be viewed geometrically as the slope of the line between the points $(a,s(a))$ and $(b,s(b))$ on the graph of $y = s(t)$, as shown below.% in Figure~\ref{F:0.2.Summary}.
+
+\begin{center}
+\includegraphics[scale=.35]{figs/0/0-2_Summary.pdf}
+\end{center}
+
+\item Given a moving object whose position at time $t$ is given by a function $s$, the average velocity of the object on the time interval $[a,b]$ is given by $AV_{[a,b]} = \frac{s(b) - s(a)}{b-a}$.  Viewing the interval $[a,b]$ as having the form $[a,a+h]$, we equivalently compute average velocity by the formula $AV_{[a,a+h]} = \frac{s(a+h) - s(a)}{h}$.
+
+\item The instantaneous velocity of a moving object at a fixed time is estimated by considering average velocities on shorter and shorter time intervals that contain the instant of interest.
+\end{summary}
+
+\clearpage
+
+%-------------------------------
+% SUBSECTION EXERCISES
+%-------------------------------
+\input{exercises/0-2.Velocity(Ex)} 
+
+\cleardoublepage

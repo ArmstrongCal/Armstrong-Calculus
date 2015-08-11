@@ -1,0 +1,286 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Activities.sty package,           2011-8-17        
+% Copyright (C) 2011 Clark Wells - wellsc@gvsu.edu                                    
+%                                                      
+% This program can redistributed and/or modified under 
+% the terms of the LaTeX Project Public License       
+% Distributed from CTAN archives in directory          
+% macros/latex/base/lppl.txt; either version 1 of the  
+% License, or (at your option) any later version.      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ouractivities}
+ [2011/08/17 v1.00 Activities with optional small hints, big hints, full
+ solutions, and author's notes for LaTeX/PDF package]
+
+\RequirePackage{mdframed}
+
+\DeclareOption{smallhints}{\act@show@smallhintstrue\act@show@bighintsfalse\act@show@activitysolutionsfalse}
+\DeclareOption{bighints}{\act@show@smallhintsfalse\act@show@bighintstrue\act@show@activitysolutionsfalse}
+\DeclareOption{activitysolutions}{\act@show@smallhintsfalse\act@show@bighintsfalse\act@show@activitysolutionstrue}
+\DeclareOption{exercisesolutions}{\act@show@exercisesolutionstrue}
+\DeclareOption{authornotes}{\act@show@authornotestrue}
+
+\newif\ifact@show@smallhints \act@show@smallhintsfalse
+\newif\ifact@show@bighints \act@show@bighintsfalse
+\newif\ifact@show@activitysolutions \act@show@activitysolutionsfalse
+\newif\ifact@show@exercisesolutions \act@show@exercisesolutionsfalse
+\newif\ifact@show@authornotes \act@show@authornotesfalse
+
+\ProcessOptions
+
+\newcounter{acti}[section]
+\renewcommand{\theacti}{\thesection--\arabic{acti}}
+
+\newcounter{eg}[section]
+\renewcommand{\theeg}{\arabic{eg}}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+
+\mdfdefinestyle{examplestyle}
+{
+	innerleftmargin=10,
+	innerrightmargin=10,
+	linecolor=black!50,
+	linewidth=1.5pt,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	frametitlerule=true,
+	frametitlerulecolor=black!50,
+	frametitlerulewidth=1.5pt
+}
+
+% This activity environment uses mdframed.
+\newenvironment{activity}[1][]
+{% before
+\begin{mdframed}
+[
+	style=examplestyle,
+	settings={\global\refstepcounter{acti}},
+	frametitle={\large Activity \theacti}
+]
+}% end before
+{% after
+\end{mdframed}
+} % end after
+
+\newenvironment{pa}[1][]
+{
+\begin{mdframed}
+[
+	style=examplestyle,
+	frametitle={\large Preview Activity \thesection} 
+]
+}
+{
+\end{mdframed}
+}
+
+\newenvironment{example}[1][]
+{
+\begin{mdframed}
+[
+	style=examplestyle,
+	settings={\global\refstepcounter{eg}},
+	frametitle={\large Example \theeg}
+]
+}
+{
+\end{mdframed}
+}
+
+\newcommand{\ba}{\begin{enumerate}[(a),leftmargin=20pt]}
+\newcommand{\ea}{\end{enumerate}}
+
+\newcommand{\bex}{\begin{example}}
+\newcommand{\eex}{\par \mbox{} \par \noindent{\bf Solution.}~~}
+\newcommand{\afterex}{\end{example}}
+
+\newcommand{\afterpa}{}
+\newcommand{\aftera}{}
+
+\newcounter{exeri}
+\newenvironment{exercises}[1][]
+{\par\noindent{\normalfont\large\bfseries{}Exercises
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}
+\begin{list}{\bfseries\arabic{exeri}.}{\usecounter{exeri}\setlength{\leftmargin}{0.5cm}\setlength{\topsep}{\z@}}}
+{\end{list}}
+
+\ifact@show@activitysolutions
+\newenvironment{activitySolution}[1][]
+{\unskip\par\noindent{\bfseries{}Solution
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}
+\newline}
+{\unskip\par}
+\else
+\newenvironment{activitySolution}[1][]
+{\setbox\z@\vbox\bgroup}
+{\egroup}
+\fi
+
+\ifact@show@exercisesolutions
+\newenvironment{exerciseSolution}[1][]
+{\unskip\par\noindent{\bfseries{}Solution
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}
+\newline}
+{\unskip\par}
+\else
+\newenvironment{exerciseSolution}[1][]
+{\setbox\z@\vbox\bgroup}
+{\egroup}
+\fi
+
+\ifact@show@smallhints
+\newenvironment{smallhint}[1][]
+{\unskip\par\noindent{\bfseries{}Hint(s):
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}}
+{\unskip\par}
+\else
+\newenvironment{smallhint}[1][]
+{\setbox\z@\vbox\bgroup}
+{\egroup}
+\fi
+
+\ifact@show@bighints
+\newenvironment{bighint}[1][]
+{\unskip\par\noindent{\bfseries{}Hint(s):
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}}
+{\unskip\par}
+\else
+\newenvironment{bighint}[1][]
+{\setbox\z@\vbox\bgroup}
+{\egroup}
+\fi
+
+\ifact@show@authornotes
+\newenvironment{authornote}[1][]
+{\noindent\itshape{}{Note:
+\if\relax\detokenize{#1}\relax\else{ (#1)}\fi%
+}
+\newline}
+{}
+\else
+\newenvironment{authornote}[1][]
+{\setbox\z@\vbox\bgroup}
+{\egroup}
+\fi
+
+%--------------------------------
+% DEFINITIONS & CONCEPTS
+%--------------------------------
+
+\mdfdefinestyle{definitionstyle}
+{
+	linecolor=blue!50,
+	backgroundcolor=blue!15,
+	linewidth=1pt,
+	leftmargin=1cm,
+	rightmargin=1cm,
+	frametitleaboveskip=8pt,
+	frametitlebelowskip=10pt
+}
+
+\newcommand{\definition}[2]
+{
+\begin{mdframed}
+[
+	style=definitionstyle,
+	frametitle={\Large \begin{center}#1\end{center}}
+]
+#2
+\end{mdframed}
+}
+
+\mdfdefinestyle{conceptstyle}
+{
+	linecolor=green!50,
+	backgroundcolor=green!15,
+	linewidth=1pt,
+	leftmargin=1cm,
+	rightmargin=1cm,
+	frametitleaboveskip=8pt,
+	frametitlebelowskip=10pt
+}
+
+\newcommand{\concept}[2]
+{
+\begin{mdframed}
+[
+	style=conceptstyle,
+	frametitle={\Large \begin{center}#1\end{center}}
+]
+#2
+\end{mdframed}
+}
+
+%--------------------------
+% GOALS & SUMMARIES
+%--------------------------
+
+\mdfdefinestyle{goalsummarystyle}
+{
+	skipabove=12pt,
+	skipbelow=15pt,
+	innerbottommargin=10pt,
+	innertopmargin=0pt,
+	linewidth=1pt,
+	innerleftmargin=10,
+	innerrightmargin=10,
+	linecolor=black,
+	linewidth=1pt,
+	frametitlerulecolor=black,
+	innermargin=0in,
+	outermargin=-2in
+}
+
+\newenvironment{goals}[1][]
+{ % before
+\begin{mdframed}
+[
+	style=goalsummarystyle,
+	frametitle={\large Motivating Questions},
+	frametitleaboveskip=10pt
+]
+~\hrule~ \vspace*{2 pt}\\
+{\em In this section, we strive to understand the ideas 
+generated by the following important questions:}
+\vspace*{-5 pt} \\ ~\hrule~ \vspace*{-2 pt}
+\begin{itemize}[leftmargin=12pt]
+} % end before
+{ % after
+\end{itemize}
+\end{mdframed}
+} % end after
+
+\newenvironment{summary}[1][]
+{ % before
+\vspace*{10pt}
+\begin{mdframed}
+[
+	style=goalsummarystyle,
+	frametitle={\large Summary},
+	frametitleaboveskip=10pt
+]
+~\hrule~ \vspace*{2 pt}\\
+{ \em In this section, we encountered the following important ideas: }
+\vspace*{-5 pt} \\ ~\hrule~ \vspace*{-2 pt}
+\begin{itemize}[leftmargin=12pt]
+} % end before
+{ % after
+\end{itemize}
+\end{mdframed}
+\vspace*{5pt}
+} %end after
+
+\endinput
+
+%------------------------------------
+% END OF FILE 'ACTIVITIES.STY'
+%------------------------------------

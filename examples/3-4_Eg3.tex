@@ -1,0 +1,53 @@
+\begin{marginfigure}[4cm]
+\margingraphics{figures/figopt3b} %APEX ex102 
+\caption{Running a power line from the power station to an offshore facility with minimal cost in Example~\ref{Ex:3.4.Eg3} } \label{F:3.4.Ex3}
+\end{marginfigure}
+
+\begin{marginfigure}[4cm]
+\margingraphics{figures/figopt3c} %APEX ex102 
+\caption{Labeling unknown distances in Example \ref{Ex:3.4.Eg3} } \label{F:3.4.Ex3-2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.4.Eg3}
+A power line needs to be run from a power station located on the beach to an offshore facility. Figure~\ref{F:3.4.Ex3} shows the distances between the power station to the facility.
+
+It costs \$$50$/ft. to run a power line along the land, and \$$130$/ft. to run a power line under water. How much of the power line should be run along the land to minimize the overall cost? What is the minimal cost?
+
+\solution
+We will follow the strategy implicitly, without specifically numbering steps.
+
+There are two immediate solutions that we could consider, each of which we will reject through ``common sense.'' First, we could minimize the distance by directly connecting the two locations with a straight line. However, this requires that all the wire be laid underwater, which is likely the most costly option because of the expense to protect the line from seawater. Second, we could minimize the underwater length by running a wire all $5000$ ft. along the beach, directly across from the offshore facility. This has the undesired effect of having the longest distance of all, probably ensuring a non--minimal cost.
+
+The optimal solution likely has the line being run along the ground for a while, then underwater, as the figure implies. We need to label our unknown distances -- the distance run along the ground and the distance run underwater. Recognizing that the underwater distance can be measured as the hypotenuse of a right triangle, we choose to label the distances as shown in Figure \ref{F:3.4.Ex3-2}.
+
+By choosing $x$ as we did, we make the expression under the square root simple. We now create the cost function. 
+
+$$
+\begin{array}{ccccc}
+\text{Cost} &=&  \text{land cost} &+ & \text{water cost} \\
+&	& \text{\$$50$}\times \text{land distance} &+& \text{\$$130$}\times \text{water distance} \\
+&	& 50(5000-x) &+& 130\sqrt{x^2+1000^2}.\\
+\end{array}
+$$
+
+So we have $C(x) = 50(5000-x)+ 130\sqrt{x^2+1000^2}$. This function only makes sense on the interval $[0,5000]$. While we are fairly certain the endpoints will not give a minimal cost, we still evaluate $C(x)$ at each to verify.
+$$C(0) = 380,000 \quad\quad C(5000) \approx 662,873.$$
+
+We now find the critical values of $C(x)$. We compute $C'(x)$ as 
+$$C'(x) = -50+\frac{130x}{\sqrt{x^2+1000^2}}.$$
+
+Recognize that this is never undefined. Setting $C'(x)=0$ and solving for $x$, we have:
+\begin{align*}
+-50+\frac{130x}{\sqrt{x^2+1000^2}} &= 0 \\
+\frac{130x}{\sqrt{x^2+1000^2}}  &= 50\\
+\frac{130^2x^2}{x^2+1000^2} &= 50^2\\
+130^2x^2 &= 50^2(x^2+1000^2) \\
+130^2x^2-50^2x^2 &= 50^2\cdot1000^2\\
+14400 x^2 &= 50,000^2\\
+x^2 &= \frac{50,000^2}{14400}\\
+x & = \frac{50,000}{120} =416\frac23
+\end{align*}
+
+Evaluating $C(x)$ at $x=416.67$ gives a cost of about \$$370,000$. The distance the power line is laid along land is $5000-416.67 = 4583.33$ ft., and the underwater distance is $\sqrt{416.67^2+1000^2} \approx 1083$ ft.
+
+\end{example}

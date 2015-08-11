@@ -1,0 +1,16 @@
+\begin{example} \label{eg:5.2.1} % EXAMPLE
+Evaluate $\ds\int\sin^5(x)\cos^8(x)\ dx$.
+
+\solution The power of the sine term is odd, so we rewrite $\sin^5(x)$ as 
+$$\sin^5(x) = \sin^4(x)\sin(x) = (\sin^2(x))^2\sin(x) = (1-\cos^2(x))^2\sin(x).$$
+Our integral is now $\ds \int (1-\cos^2(x))^2\cos^8(x)\sin(x)\ dx$. Let $u = \cos(x)$, hence $du = -\sin(x)\ dx$. Making the substitution and expanding the integrand gives
+\begin{align*}
+\int (1-\cos^2(x))^2\cos^8(x)\sin(x)\ dx &= -\int (1-u^2)^2u^8\ du \\
+& = -\int \big(1-2u^2+u^4\big)u^8\ du \\
+&= -\int \big(u^8-2u^{10}+u^{12}\big)\ du.
+\end{align*}
+This final integral is not difficult to evaluate, giving 
+\begin{align*} -\int \big(u^8-2u^{10}+u^{12}\big)\ du &= -\frac19u^9 + \frac2{11}u^{11} - \frac1{13}u^{13} + C \\
+										&=-\frac19\cos^9(x) + \frac2{11}\cos^{11}(x) - \frac1{13}\cos^{13}(x) + C.
+\end{align*}
+\end{example}

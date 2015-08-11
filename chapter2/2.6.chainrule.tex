@@ -1,0 +1,212 @@
+\section{The chain rule} \label{S:2.6.Chain}
+
+\begin{goals}
+\item What is a composite function and how do we recognize its structure algebraically?
+\item Given a composite function $C(x) = f(g(x))$ that is built from differentiable functions $f$ and $g$, how do we compute $C'(x)$?  What is the statement of the Chain Rule?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+In addition to learning how to differentiate a variety of basic functions, we have also been developing our ability to understand how to use rules to differentiate certain algebraic combinations of them.  For example, we not only know how to take the derivative of $f(x) = \sin(x)$ and $g(x) = x^2$, but now we can quickly find the derivative of each of the following combinations of $f$ and $g$:
+$$s(x) = 3x^2 - 5\sin(x),$$
+$$p(x) = x^2 \sin(x), \mbox{and}$$
+$$q(x) = \frac{\sin(x)}{x^2}.$$
+Finding $s'$ uses the sum and constant multiple rules, determining $p'$ requires the product rule, and $q'$ can be attained with the quotient rule.  Again, we note the importance of recognizing the algebraic structure of a given function in order to find its derivative:  $s(x) = 3g(x) - 5f(x)$, $p(x) = g(x) \cdot f(x)$, and $q(x) =\frac{f(x)}{g(x)}.$
+
+There is one more natural way to algebraically combine basic functions, and that is by \emph{composing} them.  For instance, let's consider the function
+$$C(x) = \sin(x^2),$$
+and observe that any input $x$ passes through a \emph{chain} of functions.  In particular, in the process that defines the  function $C(x)$, $x$ is first squared, and then the sine of the result is taken.  Using an arrow diagram,
+$$x \longrightarrow x^2 \longrightarrow \sin(x^2).$$
+In terms of the elementary functions $f$ and $g$, we observe that $x$ is first input in the function $g$, and then the result is used as the input in $f$.  Said differently, we can write
+$$C(x) = f(g(x)) = \sin(x^2)$$
+and say that $C$ is the \emph{composition} \index{composition} of $f$ and $g$.  %We will refer to $g$, the function that is first applied to $x$, as the \emph{inner} function, while $f$, the function that is applied to the result, is the \emph{outer} function.
+
+The main question that we answer in the present section is: given a composite function $C(x) = f(g(x))$ that is built from differentiable functions $f$ and $g$, how do we compute $C'(x)$ in terms of $f$, $g$, $f'$, and $g'$?  In the same way that the rate of change of a product of two functions, $p(x) = f(x) \cdot g(x)$, depends on the behavior of both $f$ and $g$, it makes sense intuitively that the rate of change of a composite function $C(x) = f(g(x))$ will also depend on some combination of $f$ and $g$ and their derivatives.  The rule that describes how to compute $C'$ in terms of $f$ and $g$ and their derivatives will be called the \emph{chain rule}.
+
+But before we can learn what the chain rule says and why it works, we first need to be comfortable decomposing composite functions so that we can correctly identify the functions that produce the composition, as we did in the example above with $C(x) = \sin(x^2).$ 
+
+\input{previews/2.6.PA1} % PREVIEW ACTIVITY
+
+%----------------------------------------------------------------
+% SUBSECTION CHAINING TOGETHER RATES OF CHANGE
+%----------------------------------------------------------------
+\subsection{Chaining together rates of change}
+
+Before we continue our discussion of the chain rule, let's focus on how we can ``chain'' the rates of change of some quantity together to produce yet another rate of change.
+
+Suppose three friends $x$, $y$, and $u$ are chopping wood, and they each chop at different rates. If $y$ chops twice as fast as $u$, then we can notate the rate at which $y$ chops wood with respect to $u$, using one of the alternate notations for the derivative, as
+\[ \ds \frac{dy}{du} = 2. \]
+And the notation is read as ``The rate of change of $y$ with respect to $u$ is $2$.''
+
+If $u$ chops six times as fast as $x$, then we can notate the rate at which $u$ chops wood with respect to $x$ as
+\[ \ds \frac{du}{dx} = 6. \]
+This notation is read as ``The rate of change of $u$ with respect to $x$ is 6.''
+
+A natural question would then be ``How much faster is $y$ chopping wood than $x$?'' Or ``What is the rate of change of $y$ with respect to $x$?'' Or ``What is $\frac{dy}{dx}$?''
+
+We can find it by multiplying the rate at which $y$ chops wood with respect to $u$ times the rate at which $u$ chops wood with respect to $x$, yielding:
+\[ \ds \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} . \]
+So we have that $y$ chops $12 = 2 \cdot 6$ times faster than $x$.
+
+Now suppose there are $26$ friends $a$, $b$, $c$, $d$, ..., $x$, $y$, and $z$.  Again, they are all chopping wood and we know the following rates of change:
+\[ \frac{da}{db}, \ \frac{db}{dc}, \ \frac{dc}{dd}, \ ..., \ \frac{dx}{dy}, \ \mbox{and} \ \frac{dy}{dz}. \]
+How can we compute $\frac{da}{dz}$?  Once again we'll multiply the rates of change together, yielding
+\[ \frac{da}{dz} = \frac{da}{db} \cdot \frac{db}{dc} \cdot \frac{dc}{dd} \cdot \ \cdots \ \cdot \frac{dx}{dy} \cdot \frac{dy}{dz}. \]
+
+It is important to realize that we \textit{are not} canceling these terms; the derivative notation of $\frac{dy}{dx}$ or $\frac{db}{dc}$ is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the Chain Rule easy with multiple variables. For instance,
+\[ \frac{dy}{dt} = \frac{dy}{d\bigcirc} \cdot \frac{d\bigcirc}{d\triangle} \cdot \frac{d\triangle}{dt}. \]
+where $\bigcirc$ and $\triangle$ are any variables you'd like to use.
+
+\begin{marginfigure} % MARGIN FIGURE
+\begin{center}
+\includegraphics{figures/figchainrulegears.pdf}
+\end{center}
+\caption{A series of gears to demonstrate the Chain Rule. Note how $\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}$}
+\label{fig:chainrulegears}
+\end{marginfigure}
+
+One of the most common ways of ``visualizing'' the Chain Rule is to consider a set of gears, as shown in Figure~\ref{fig:chainrulegears}. The gears have $36$, $18$, and $6$ teeth, respectively. That means for every revolution of the $x$ gear, the $u$ gear revolves twice. That is: $\frac{du}{dx} = 2$. Likewise, every revolution of $u$ causes $3$ revolutions of $y$: $\frac{dy}{du} = 3$. How does $y$ change with respect to $x$? For each revolution of $x$, $y$ revolves $6$ times; that is, $$\frac{dy}{dx} = \frac{dy}{du}\cdot \frac{du}{dx} = 2\cdot 3 = 6.$$
+We can then extend the Chain Rule with more variables by adding more gears to the picture.
+
+%------------------------------------
+% SUBSECTION THE CHAIN RULE
+%------------------------------------
+\subsection*{The chain rule}
+
+Let's now return to the question of differentiating composite functions and the function $f(x) = \sin(x^2)$.  From Preview Activity~\ref{PA:2.6}, we know that we can ``decompose'' this composition by identifying the two functions that make up the composition.  For this function, that would be $\sin(x)$ and $x^2$, and we can rewrite our original function as
+\[ y = \sin(u) \quad \mbox{where} \quad u = x^2 \] 
+by introducing a simple substitution into the composition.
+
+We'd like to know $f'(x)$, or alternately $\frac{dy}{dx}$, and as we saw in the previous subsection, if we know $\frac{dy}{du}$ and $\frac{du}{dx}$, then we have
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}. \]
+Since we've rewritten $y = \sin(u)$ and $u = x^2$, then their individual respective derivatives are
+\[ \frac{dy}{du} = \cos(u) \quad \mbox{and} \quad \frac{du}{dx} = 2x, \]
+and we can compute the derivative of the original function as
+\begin{align*}
+\frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\
+&= \cos(u) \cdot 2x \\
+&= \cos(x^2) \cdot 2x
+\end{align*}
+where we write our computed derivative in terms of the variables with which we started.
+
+%One of the challenges of differentiating a composite function is that it often cannot be written in an alternate algebraic form.  For instance, the function $C(x) = \sin(x^2)$ cannot be expanded or otherwise rewritten, so it presents no alternate approaches to taking the derivative.  But other composite functions can be expanded or simplified, and these present a way to begin to explore how the chain rule might have to work.  To that end, we consider three examples of composite functions that present alternate means of finding the derivative.
+
+%\input{examples/2-6_Eg4.tex} %EXAMPLE
+
+%\input{examples/2-6_Eg1.tex} % EXAMPLE
+
+%From one perspective, Example~\ref{Ex:2.6.Eg1} may be too elementary.  Linear functions are the simplest of all functions, and perhaps composing linear functions (which yields another linear function) does not exemplify the true complexity that is involved with differentiating a composition of more complicated functions.  At the same time, we should remember the perspective that any differentiable function is \emph{locally} linear, so any function with a derivative behaves like a line when viewed up close.  From this point of view, the fact that the derivatives of $f$ and $g$ are multiplied to find the derivative of their composition turns out to be a key insight.
+
+We now consider a second example %involving a nonlinear function
+ to gain further understanding of how differentiating a composite function involves the basic functions that combine to form it.
+
+\input{examples/2-6_Eg2.tex} % EXAMPLE
+
+So from Example~\ref{Ex:2.6.Eg2}, we see that if $C(x) = \sin(2x)$, then $C'(x) = 2\cos(2x)$.  Letting $u(x) = 2x$ and $f(u) = \sin(u)$, we observe that $C(x) = f(u(x))$.  Moreover, with $\frac{du}{dx} = 2$ and $\frac{df}{du} = \cos(u)$, it follows that we can view the structure of $C'(x)$ as
+$$C'(x) = \dfrac{dC}{dx} = 2\cos(2x) =  \dfrac{du}{dx} \cdot \dfrac{df}{du}.$$
+In this example, we see that for the composite function $C(x) = f(u(x))$, the derivative $C'$ is constituted by multiplying the derivatives of $f$, $\frac{df}{du}$, and $u$, $\frac{du}{dx}$ but with the special condition that $f'$ is evaluated at $u(x)$.% rather than at $x$.
+
+It makes sense intuitively that these two quantities are involved in understanding the rate of change of a composite function:  if we are considering $C(x) = f(u(x))$ and asking how fast $C$ is changing at a given $x$ value as $x$ changes, it clearly matters how fast $u$ is changing with respect to $x$, as well as how fast $f$ is changing with respect to $u(x)$.  It turns out that this structure holds not only for the functions in Example~\ref{Ex:2.6.Eg2}, but indeed for all differentiable functions\footnote{Like other differentiation rules, the Chain Rule can be proved formally using the limit definition of the derivative.} as is stated in the Chain Rule.
+
+\concept{Chain Rule \index{chain rule}}{ % CONCEPT
+If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composite function $C$ defined by $C(x) = f(g(x))$ is differentiable at $x$ and  
+$$C'(x) = f'(g(x)) g'(x).$$
+
+Alternately, if $y$ can be written as a differentiable function of $u$ where $u$ is a differentiable function of $x$, then
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}. \]
+This version is know as the Leibniz notation of the Chain Rule.
+} % end concept
+
+As with the product and quotient rules, it is often helpful to think verbally about what the chain rule says: ``If $C$ is a composite function defined by an {\em outer} function $f$ and an {\em inner} function $g$, then $C'$ is given by the derivative of the outer function, evaluated at the inner function, times the derivative of the inner function.''  
+
+At least initially in working particular examples requiring the chain rule, it can be also be helpful to clearly identify the inner function $g$ and outer function $f$, compute their derivatives individually, and then put all of the pieces together to generate the derivative of the overall composite function.  To see what we mean by this, consider the function
+$$r(x) = (\tan(x))^2.$$
+The function $r$ is composite, with inner function $g(x) = \tan(x)$ and outer function $f(x) = x^2$.  Organizing the key information involving $f$, $g$, and their derivatives, we have
+
+\begin{center}
+\begin{tabular}{lcl}
+$f(x) = x^2$ & \hspace{0.5in} & $g(x) = \tan(x)$ \\
+$f'(x) = 2x$ & \hspace{0.5in} & $g'(x) = \sec^2(x)$ \\
+$f'(g(x)) = 2\tan(x)$ & \hspace{0.5in} & \ \\
+\end{tabular}
+\end{center}
+
+Applying the chain rule, which tells us that $r'(x) = f'(g(x)) g'(x)$, we find that for $r(x) = (\tan(x))^2$, its derivative is
+$$r'(x) = 2\tan(x) \sec^2(x).$$
+
+Using the Leibniz notation to differentiate this function, we first rewrite
+\[ r = u^2 \quad \mbox{where} \quad u = \tan(x). \]
+Their individual respective derivatives are
+\[ \frac{dr}{du} = 2u \quad \mbox{and} \quad \frac{du}{dx} = \sec^2(x); \]
+therefore,
+\begin{align*}
+\frac{dr}{dx} &= \frac{dr}{du} \cdot \frac{du}{dx} \\
+&= 2u \cdot \sec^2(x) \\
+&= 2 \tan(x) \sec^2(x).
+\end{align*}
+
+As a side note, we remark that another way to write $r(x)$ is $r(x) = \tan^2(x)$.  Observe that in this format, the composite nature of the function is more implicit, but this is common notation for powers of trigonometric functions:  $\cos^4(x)$, $\sin^5(x)$, and $\sec^2(x)$ are all composite functions, with the outer function a power function and the inner function a trigonometric one.
+
+\input{examples/2-6_Eg5.tex} %EXAMPLE
+
+The chain rule now substantially expands the library of functions we can differentiate, as the following activity demonstrates.
+
+\input{activities/2.6.Act1} % ACTIVITY
+
+%------------------------------------------------------------------
+% SUBSECTION USING MULTIPLE RULES SIMULTANEOUSLY
+%------------------------------------------------------------------
+\subsection*{Using multiple rules simultaneously}
+
+The chain rule now joins the sum, constant multiple, product, and quotient rules in our collection of the different techniques for finding the derivative of a function through understanding its algebraic structure and the basic functions that constitute it.  It takes substantial practice to get comfortable with navigating multiple rules in a single problem; using proper notation and taking a few extra steps can be particularly helpful as well.  We demonstrate with two examples and then provide further opportunity for practice in the following activity.
+
+\input{examples/2-6_Eg3.tex} % EXAMPLE
+
+\input{examples/2-6_Eg6.tex} % EXAMPLE the quotient rule along with the chain rule.
+
+\input{activities/2.6.Act2} % ACTIVITY
+
+The chain rule now adds substantially to our ability to do different familiar problems that involve derivatives.  Whether finding the equation of the tangent line to a curve, the instantaneous velocity of a moving particle, or the instantaneous rate of change of a certain quantity, if the function under consideration involves a composition of other functions, the chain rule is indispensable.
+
+\input{activities/2.6.Act3} % ACTIVITY
+
+%---------------------------------------------------------------------------------
+% SUBSECTION THE COMPOSITE VERSION OF BASIC FUNCTION RULES
+%---------------------------------------------------------------------------------
+\subsection*{The composite version of basic function rules}
+
+As we gain more experience with differentiating complicated functions, we will become more comfortable in the process of simply writing down the derivative without taking multiple steps.  We demonstrate part of this perspective here by showing how we can find a composite rule that corresponds to two of our basic functions.  For instance, we know that $\frac{d}{dx}[\sin(x)] = \cos(x)$.  If we instead want to know
+$$\frac{d}{dx}[\sin(u(x))],$$
+where $u$ is a differentiable function of $x$, then this requires the chain rule with the sine function as the outer function.  Applying the chain rule,
+$$\frac{d}{dx}[\sin(u(x))] = \cos(u(x)) \cdot u'(x).$$
+Similarly, since $\frac{d}{dx}[a^x] = a^x \ln(a)$, it follows by the chain rule that 
+$$\frac{d}{dx}[a^{u(x)}] = a^{u(x)} \ln(a).$$
+In the process of getting comfortable with derivative rules, an excellent exercise is to write down a list of all basic functions whose derivatives are known, list those derivatives, and then write the corresponding chain rule for the composite version with the inner function being an unknown function $u(x)$ and the outer function being the known basic function.  These versions of the chain rule are particularly simple when the inner function is linear, since the derivative of a linear function is a constant.  For instance,
+$$\frac{d}{dx} \left[ (5x+7)^{10} \right] = 10(5x+7)^9 \cdot 5,$$
+$$\frac{d}{dx} \left[ \tan(17x) \right] = 17\sec^2(17x), \ \mbox{and}$$
+$$\frac{d}{dx} \left[ e^{-3x} \right] = -3e^{-3x}.$$
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item A composite function is one where the input variable $x$ first passes through one function, and then the resulting output passes through another.  For example, the function $h(x) = 2^{\sin(x)}$ is composite since $x \longrightarrow \sin(x) \longrightarrow 2^{\sin(x)}.$
+
+\item Given a composite function $C(x) = f(g(x))$ that is built from differentiable functions $f$ and $g$, the chain rule tells us that we compute $C'(x)$ in terms of $f$, $g$, $f'$, and $g'$ according to the formula
+$$C'(x) = f'(g(x)) g'(x).$$  
+
+\item Given a composite function $y= f(g(x))$ that can be rewritten as $y = f(u)$ where $u = g(x)$, then the Leibniz version of the chain rule tells us that we compute $\frac{dy}{dx}$ according to the formula
+$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.$$  
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/2-6.ChainRule(Ex)} 
+
+\cleardoublepage

@@ -1,0 +1,30 @@
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/apex_5-2_Def1a.pdf}
+\caption{A graph of $f(x) = 2x-4$.} \label{fig:apex_5-2_Def1a}
+\end{marginfigure}
+
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\margingraphics{figs/4/apex_5-2_Def1b.pdf}
+\caption{A graph of $f(x) = \sqrt{9-x^2}$.} \label{fig:apex_5-2_Def1b}
+\end{marginfigure}
+
+\begin{example} % EXAMPLE
+Evaluate the following definite integrals using geometry.
+\begin{multicols}{2}
+\begin{enumerate}[1),leftmargin=*]
+\item $\ds \int_{-2}^5 (2x-4) \ dx$
+\item $\ds \int_{-3}^3 \sqrt{9-x^2} \ dx$
+\end{enumerate}
+\end{multicols}
+
+\solution
+\begin{enumerate}[1),leftmargin=*]
+\item It is useful to sketch the function in the integrand, as shown in Figure \ref{fig:apex_5-2_Def1a}. We see we need to compute the areas of two regions, which we have labeled $R_1$ and $R_2$. Both are triangles, so the area computation is straightforward:
+\[ R_1 = \frac{1}{2}(4)(8) = 16 \qquad R_2 = \frac{1}{2}(3)6 = 9.\]
+Region $R_1$ lies under the $x$-axis, hence it is counted as negative area (we can think of the height as being ``$-8$''), so 
+\[ \int_{-2}^5(2x-4)\ dx = 9-16 = -7. \]
+
+\item Recognize that the integrand of this definite integral is a half circle, as sketched in Figure \ref{fig:apex_5-2_Def1b}, with radius $3$. Thus the area is:
+\[ \int_{-3}^3 \sqrt{9-x^2}\ dx = \frac{1}{2}\pi r^2 = \frac{9}{2}\pi. \]
+\end{enumerate}
+\end{example}  

@@ -1,0 +1,47 @@
+\begin{marginfigure}[4cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseries4a}}
+\subfloat[]{\margingraphics{figures/figseries4b}}
+\caption{Scatter plots relating to the series in Example \ref{eg:7.2.5}.} \label{F:eg:7.2.5}
+\end{marginfigure}
+
+\begin{example} \label{eg:7.2.5} % EXAMPLE
+Evaluate each of the following infinite series.\\
+
+ 1. $\ds \sum_{n=1}^\infty \frac{2}{n^2+2n}$ \qquad 2. $\ds \sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)$
+
+\solution
+\begin{enumerate}
+\item		We can decompose the fraction $2/(n^2+2n)$ as $$\frac2{n^2+2n} = \frac1n-\frac1{n+2}.$$ (See Section \ref{sec:partial_fraction}, Partial Fraction Decomposition, to recall how  this is done, if necessary.)
+
+Expressing the terms of $\{S_n\}$ is now more instructive:
+\footnotesize
+\begin{align*}
+S_1 &= 1-\frac13 &&= 1-\frac13\\
+S_2 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right) &&= 1+\frac12-\frac13-\frac14\\
+S_3 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right) &&= 1+\frac12-\frac14-\frac15\\
+S_4 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right) &&= 1+\frac12-\frac15-\frac16\\
+S_5 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac15\right)+\left(\frac14-\frac16\right)+\left(\frac15-\frac17\right) &&= 1+\frac12-\frac16-\frac17\\
+\end{align*}
+\normalsize
+
+We again have a telescoping series. In each partial sum, most of the terms cancel and we obtain the formula $\ds S_n = 1+\frac12-\frac1{n+1}-\frac1{n+2}.$ Taking limits allows us to determine the convergence of the series:
+$$\lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32,\quad \text{so } \sum_{n=1}^\infty \frac1{n^2+2n} = \frac32.$$
+This is illustrated in Figure \ref{F:eg:7.2.5}(a).
+
+
+\item		We begin by writing the first few partial sums of the series:
+
+\begin{align*}
+S_1 &= \ln\left(2\right) \\
+S_2 &= \ln\left(2\right)+\ln\left(\frac32\right) \\
+S_3 &= \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right) \\
+S_4 &= \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right) 
+\end{align*}
+At first, this does not seem helpful, but recall the logarithmic identity: $\ln x+\ln y = \ln (xy).$ Applying this to $S_4$ gives:
+$$S_4 = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right) = \ln\left(\frac21\cdot\frac32\cdot\frac43\cdot\frac54\right) = \ln\left(5\right).$$
+
+We can conclude that $\{S_n\} = \big\{\ln (n+1)\big\}$. This sequence  does not converge, as $\ds \lim_{n\to\infty}S_n=\infty$. Therefore  $\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty$; the series diverges. Note in Figure \ref{F:eg:7.2.5}(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
+
+\end{enumerate}
+
+\end{example}

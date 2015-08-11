@@ -1,0 +1,33 @@
+\begin{example} \label{Ex:4.6.usub1} % EXAMPLE
+Evaluate the indefinite integral
+\[ \int 4x^3 \cdot \sin (x^4 + 3) \ dx \]
+and check the result by differentiating.
+
+\solution
+We can make several key algebraic observations regarding the integrand, $4x^3 \cdot \sin (x^4 + 3)$.  
+
+First, $\sin (x^4 + 3)$ is a composite function; as such, we know we'll need a more sophisticated approach to antidifferentiating.  
+
+Second, $4x^3$ is the derivative of $(x^4 + 3)$.  Thus, $4x^3$ and $(x^4 + 3)$ are a \emph{function-derivative} pair. 
+
+Furthermore, we know the antiderivative of $f(u) = \sin(u)$.  The combination of these observations suggests that we can evaluate the given indefinite integral by reversing the chain rule through $u$-substitution.
+
+Let $u = x^4 + 3$, hence $\frac{du}{dx} = 4x^3.$  In differential notation, it follows that 
+\[ du = 4x^3 \, dx. \]
+Observe the original indefinite integral may now be written 
+\[ \int \sin (x^4 + 3) \cdot 4x^3 \ dx, \]
+and by substituting the expressions in terms of $u$ for the expressions in terms of $x$ (specifically $u$ for $x^4 + 3$ and $du$ for $4x^3 \ dx$), it follows that
+\[ \int \sin (x^4 + 3) \cdot 4x^3 \ dx = \int \sin(u) \cdot \ du. \]
+Now we may evaluate the original integral by first evaluating the easier integral in $u$, followed by replacing $u$ by the expression $x^4 + 3$.  Doing so, we find
+\begin{eqnarray*}
+\int \sin (x^4 + 3) \cdot 4x^3 \, dx & = & \int \sin(u) \cdot \ du \\
+& = & -\cos(u) + C \\
+& = & -\cos(x^4 + 3) + C.
+\end{eqnarray*}
+To check our work, we observe by the Chain Rule that
+\begin{eqnarray*}
+\frac{d}{dx} \left[ -\cos(x^4 + 3) + C \right]  & = & -( -\sin(x^4 + 3) \cdot 4x^3) \\
+& = & \sin(x^4 + 3) \cdot 4x^3,
+\end{eqnarray*}
+which is indeed the original integrand.
+\end{example}

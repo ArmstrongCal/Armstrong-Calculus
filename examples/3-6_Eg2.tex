@@ -1,0 +1,9 @@
+\begin{example} \label{Ex:3.6.Eg2}
+Approximate $\sqrt{4.5}$.
+
+\solution We expect $\sqrt{4.5} \approx 2$, yet we can do better. Let $f(x) = \sqrt{x}$, and let $c=4$. Thus $f(4) = 2$. We can compute $\fp(x) = 1/(2\sqrt{x})$, so $\fp(4) = 1/4$. 
+
+We approximate the difference between $f(4.5)$ and $f(4)$ using differentials, with $dx = 0.5$:
+$$f(4.5)-f(4) = \dy \approx dy = \fp(4)\cdot dx = 1/4 \cdot 1/2 = 1/8 = 0.125.$$
+The approximate change in $f$ from $x=4$ to $x=4.5$ is $0.125$, so we approximate $\sqrt{4.5} \approx 2.125.$
+\end{example}

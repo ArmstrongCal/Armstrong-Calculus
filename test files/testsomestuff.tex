@@ -1,0 +1,32 @@
+\documentclass{tufte-book}
+
+\usepackage{changepage}% provides the adjustwidth environment
+\usepackage{multicol}% for multiple columns inside the fullwidth environment
+
+% The following code should be used *after* any changes to the margins and
+% page layout are made (e.g., after the geometry package has been loaded).
+\newlength{\fullwidthlen}
+\setlength{\fullwidthlen}{\marginparwidth}
+\addtolength{\fullwidthlen}{\marginparsep}
+
+\renewenvironment{fullwidth}{%
+  \begin{adjustwidth*}{}{-\fullwidthlen}%
+}{%
+  \end{adjustwidth*}%
+}
+
+\usepackage{lipsum}% provides dummy text
+
+\begin{document}
+
+\lipsum[1]
+
+\begin{fullwidth}
+  \begin{multicols}{2}
+    \lipsum[2]
+  \end{multicols}
+\end{fullwidth}
+
+\lipsum[3]
+
+\end{document}

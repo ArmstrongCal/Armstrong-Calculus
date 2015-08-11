@@ -1,0 +1,51 @@
+\begin{activity} \label{A:4.4.1}  Use the Fundamental Theorem of Calculus to evaluate each of the following integrals exactly.  For each, sketch a graph of the integrand on the relevant interval and write one sentence that explains the meaning of the value of the integral in terms of the (net signed) area bounded by the curve.
+\ba
+	\item $\ds \int_{-1}^4 (2-2x) \, dx$
+	\item $\ds \int_{0}^{\frac{\pi}{2}} \sin(x) \, dx$
+	\item $\ds \int_0^1 e^x \, dx$
+	\item $\ds \int_{-1}^{1} x^5 \, dx$
+	\item $\ds \int_0^2 (3x^3 - 2x^2 - e^x) \, dx$
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Find a function whose derivative is $2 - 2x$.
+	\item Which familiar function has derivative $\sin(x)$?
+	\item What is special about $e^x$ when it comes to differentiation?
+	\item Consider the derivative of $x^6$.
+	\item Find an antiderivative for each of the three individual terms in the integrand.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Find a function whose derivative is $2 - 2x$.
+	\item Recall that $\frac{d}{dx}[\cos(x)] = -\sin(x)$.
+	\item What is special about $e^x$ when it comes to differentiation?
+	\item Think about the derivative of $x^6$ and how you might choose an appropriate constant by which to multiply this function.
+	\item Find an antiderivative for each of the three individual terms in the integrand.  Note, for instance, that $\frac{d}{dx} [\frac{3}{4} x^4 ] = 3x^3.$
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Because $\frac{d}{dx}[2x - x^2] = 2-2x$, by the Fundamental Theorem of Calculus,
+	$$ \int_{-1}^4 (2-2x) \, dx = \left. 2x - x^2 \right|_{-1}^4,$$
+	and therefore 
+	$$ \int_{-1}^4 (2-2x) \, dx = (2 \cdot 4 - 4^2) - (2(-1) - (-1)^2) = -8 + 3 = -5.$$
+	\item Since $\frac{d}{dx} [\cos(x)] = -\sin(x)$, an antiderivative of $f(x) = \sin(x)$ is $F(x) = -\cos(x)$.  Therefore, by the FTC,  
+	$$\ds \int_{0}^{\frac{\pi}{2}} \sin(x) \, dx = \left. -\cos(x) \right|_{-\frac{\pi}{2}}^{\frac{\pi}{2}},$$
+	so
+	$$\ds \int_{0}^{\frac{\pi}{2}} \sin(x) \, dx = -\cos(\frac{\pi}{2}) - (-\cos(0)) = -0 + 1 = 1.$$
+	\item Since $e^x$ is its own derivative, it is also its own antiderivative.  Hence,
+	$$\int_0^1 e^x \, dx = \left. e^x \right|_0^1 = e^1 - e^0 = e-1.$$
+	\item Note that since $\frac{d}{dx} [x^6] = 6x^5$, it follows that $\frac{d}{dx} [\frac{1}{6}x^6] = x^5$, and thus 
+	$$\ds \int_{-1}^{1} x^5 \, dx = \left. \frac{1}{6}x^6 \right|_{-1}^1 = \frac{1}{6} (1)^6 - \frac{1}{6}(-1)^6 = 0.$$
+	\item Using the sum and constant multiple rules for differentiation, we can see that similar results hold for antidifferentiation, and thus that $F(x) = \frac{3}{4} x^4 - \frac{2}{3} x^3 - e^x$ is an antiderivative of $f(x) = 3x^3 - 2x^2 - e^x$.  Now, by the FTC,
+	\begin{eqnarray*}
+	\int_0^2 (3x^3 - 2x^2 - e^x) \, dx & = & \left. \frac{3}{4} x^4 - \frac{2}{3} x^3 - e^x \right|_0^2 \\
+				& = &   \frac{3}{4} (2)^4 - \frac{2}{3} (2)^3 - e^2 - (\frac{3}{4} (0)^4 - \frac{2}{3} (0)^3 - e^0) \\
+				& = & 12 - \frac{16}{3} - e^2 - (0 - 0 - 1) \\
+				& = & \frac{17}{3} - e^2.
+	\end{eqnarray*}  
+\ea
+\end{activitySolution}
+\aftera

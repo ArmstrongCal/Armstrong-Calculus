@@ -1,0 +1,16 @@
+\begin{example} % EXAMPLE
+We spent a great deal of time in the previous sections studying $\int_0^4(4x-x^2)\ dx$. Using the second part of the Fundamental Theorem of Calculus (FTCII), let's evaluate this definite integral.
+
+\solution We need an antiderivative of $f(x)=4x-x^2$, or a function whose derivative is $4x - x^2$.  Such a function, and hence antiderivative of $f(x)$, would be $F(x) = 2x^2 - \frac{1}{3}x^3$.
+
+By FTCII,
+\[ \int_a^b f(x) = F(b) - F(a); \] 
+therefore,
+\begin{align*}
+\int_0^4 \left( 4x - x^2 \right) \ dx & = F(4) - F(0) \\
+& = \left. 2x^2 - \frac{1}{3}x^3 \right|_0^4 \\
+& = \left( 2(4)^2-\frac{1}{3}4^3 \right) - \left( 0 - 0 \right) \\
+& =  32-\frac{64}{3} = \frac{32}{3}.
+\end{align*}
+Notice that this is the same answer we obtained using limits in the previous sections, just with much less work.
+\end{example}

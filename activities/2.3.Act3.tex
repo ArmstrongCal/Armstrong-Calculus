@@ -1,0 +1,76 @@
+\begin{margintable}[1cm]
+\begin{center}
+\scalebox{1.25}{
+\begin{tabular}{cc}
+\begin{tabular}{| l || l |}
+\hline
+$t$ & $F(t)$ \\ \hline \hline
+$0$ & $70$ \\ \hline
+$15$ & $180.5$ \\ \hline
+$30$ & $251$ \\ \hline
+$45$ & $296$ \\ \hline
+$60$ & $324.5$ \\ \hline
+$75$ & $342.8$ \\ \hline
+$90$ & $354.5$  \\ \hline
+\end{tabular}
+&
+\begin{tabular}{| l || l |}
+\hline
+$t$ & $F'(t)$ \\ \hline \hline
+$0$ & NA\\ \hline
+$15$ & $6.03$ \\ \hline
+$30$ & $3.85$ \\ \hline
+$45$ & $2.45$ \\ \hline
+$60$ & $1.56$ \\ \hline
+$75$ & $1.00$ \\ \hline
+$90$ & NA  \\ \hline
+\end{tabular}
+\end{tabular}
+
+} % end scalebox
+\end{center}
+\caption{The temperatures and rates of change of the temperature of a potato in an oven.}\label{T:2-3_Act2}
+\end{margintable}
+
+\begin{activity} \label{A:2.3.3}
+A potato is placed in an oven, and the potato's temperature $F$ (in degrees Fahrenheit) at various points in time is taken and recorded in Table~\ref{T:2-3_Act2}. Time $t$ is measured in minutes.  In Activity~\ref{A:2.1.5}, we computed approximations to $F'(30)$ and $F'(60)$ using central differences.  Those values and more are also provided in Table~\ref{T:2-3_Act2}, along with several others computed in the same way.
+
+\ba
+	\item What are the units on the values of $F'(t)$? 
+	\item Use a central difference to estimate the value of $F''(30)$.
+	\item What is the meaning of the value of $F''(30)$ that you have computed in (b) in terms of the potato's temperature?  Write several careful sentences that discuss, with appropriate units, the values of $F(30)$, $F'(30)$, and $F''(30)$, and explain the overall behavior of the potato's temperature at this point in time.
+	\item Overall, is the potato's temperature increasing at an increasing rate, increasing at a constant rate, or increasing at a decreasing rate?  Why?
+\ea
+
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Remember that the derivative's units are ``units of output per unit of input.'' 
+	\item To estimate $g'(a)$, we can use 
+	$$g'(a) \approx \frac{g(a+h)-g(a-h)}{2h}$$
+	for an appropriate choice of $h$.
+	\item For each of the values $F'(30)$ and $F''(30)$, think about what they tell you about expected upcoming behavior in $F(t)$ and $F'(t)$, respectively.
+	\item Think concavity.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Remember that the derivative's units are ``units of output per unit of input.'' 
+	\item To estimate $g'(a)$, we can use 
+	$$g'(a) \approx \frac{g(a+h)-g(a-h)}{2h}$$
+	for an appropriate choice of $h$.  So, observe that
+	$$F''(a) \approx \frac{F'(a+h)-F'(a-h)}{2h}$$
+	\item For each of the values $F'(30)$ and $F''(30)$, think about what they tell you about expected upcoming behavior in $F(t)$ and $F'(t)$, respectively.  What do you expect to be the values of $F(31)$ and $F'(31)$?  Why?
+	\item Examine the given data and think about how the graph of $y = F(t)$ will appear.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item $F'(t)$ has units measured in degrees Fahrenheit per minute. 
+	\item Using a central difference, 
+	$$F''(30) \approx \frac{F'(45)-F'(15)}{30} = \frac{2.45-6.03}{30} \approx -0.119.$$
+	\item The value $F''(30) \approx -0.119$, which is measured in degrees per minute per minute tells us, along with the other data, that at the moment $t = 30$, the temperature of the potato is 251 degrees, that its temperature is rising at a rate of 3.85 degrees per minute, and that the rate at which the temperature is rising is \emph{falling} at a rate of -0.119 degrees per minute per minute.  That is, while the temperature is rising, it is rising at a slower and slower rate.  At $t = 31$, we'd expect that the rate of increase of the potato's temperature would have dropped to about 3.73 degrees per minute.
+	\item The potato's temperature increasing at a decreasing rate because the values of the first derivative of $F$ are falling.  Equivalently, this is because the value of $F''(t)$ is negative throughout the given time interval.
+\ea
+\end{activitySolution}
+\aftera

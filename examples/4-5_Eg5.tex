@@ -1,0 +1,20 @@
+\begin{example}
+Find $f(t)$, given that $f''(t) = \cos t$, $f'(0) = 3$ and $f(0) = 5$.
+We start by finding $f'(t)$, which is an antiderivative of $f''(t)$:
+\[ \int f''(t)\ dt = \int \cos t\ dt = \sin t + C = f'(t). \]
+	
+So $f'(t) = \sin t+C$ for the correct value of $C$. We are given that $f'(0) = 3$, so:
+\[ f'(0) = 3 \quad \Rightarrow \quad \sin 0+C = 3 \quad \Rightarrow \quad C=3. \]
+Using the initial value, we have found $f'(t) = \sin t+ 3.$
+		
+We now find $f(t)$ by integrating again.
+
+\[ \int f'(t) \ dt = \int (\sin t+3)\ dt = -\cos t + 3t + C. \]
+We are given that $f(0) = 5$, so
+\begin{align*}
+-\cos 0 + 3(0) + C &= 5 \\
+-1 + C &= 5\\
+C &= 6
+\end{align*}
+Thus $f(t) = -\cos t + 3t + 6$.
+\end{example}

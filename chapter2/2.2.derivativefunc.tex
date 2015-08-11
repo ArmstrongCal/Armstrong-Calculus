@@ -1,0 +1,120 @@
+\section{The derivative function} \label{S:2.2.DerivativeFxn}
+
+\begin{goals}
+\item How does the limit definition of the derivative of a function $f$ lead to an entirely new (but related) function $f'$?
+\item What is the difference between writing $f'(a)$ and $f'(x)$?
+\item How is the graph of the derivative function $f'(x)$ connected to the graph of $f(x)$?
+\item What are some examples of functions $f$ for which $f'$ is not defined at one or more points?
+\item What does it mean graphically to say that a function $f$ is differentiable at $x = a$?  How is this connected to the function being locally linear? 
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+Given a function $y = f(x)$, we now know that if we are interested in the instantaneous rate of change of the function at $x = a$, or equivalently the slope of the tangent line to $y = f(x)$ at $x = a$, we can compute the value $f'(a)$.  In all of our examples to date, we have arbitrarily identified a particular value of $a$ as our point of interest: $a = 1$, $a = 3$, etc.  But it is not hard to imagine that we will often be interested in the derivative value for more than just one $a$-value, and possibly for many of them.  In this section, we explore how we can move from computing simply $f'(1)$ or $f'(3)$ to working more generally with $f'(a)$, and indeed $f'(x)$.  Said differently, we will work toward understanding how the so-called process of "taking the derivative" generates a new function that is derived from the original function $y = f(x)$.  The following preview activity starts us down this path.
+
+\input{previews/2.2.PA1} % PREVIEW ACTIVITY
+
+%-----------------------------------
+% SUBSECTION DERIVATIVE FUNCTION
+%-----------------------------------
+\subsection*{How the derivative is itself a function}
+
+In your work in Preview Activity~\ref{PA:1.4} with $f(x) = 4x - x^2$, you may have found several patterns.  One comes from observing that $f'(0) = 4$, $f'(1) = 2$, $f'(2) = 0$, and $f'(3) = -2$.  That sequence of values leads us naturally to conjecture that $f'(4) = -4$ and $f'(5) = -6.$  Even more than these individual numbers, if we consider the role of $0$, $1$, $2$, and $3$ in the process of computing the value of the derivative through the limit definition, we observe that the particular number has very little effect on our work.  To see this more clearly, we compute $f'(a)$, where $a$ represents a number to be named later.  Following the now standard process of using the limit definition of the derivative, 
+\begin{eqnarray*}
+f'(a) & = & \lim_{h \to 0} \frac{f(a + h) - f(a)}{h} \\
+& = & \lim_{h \to 0} \frac{4(a + h) - (a + h)^2 - (4a-a^2)}{h} \\
+& = & \lim_{h \to 0} \frac{4a + 4h - a^2 - 2ha - h^2 - 4a+a^2}{h} \\
+& = & \lim_{h \to 0} \frac{4h - 2ha - h^2}{h} \\
+& = & \lim_{h \to 0} \frac{h(4 - 2a - h)}{h} \\
+& = & \lim_{h \to 0} (4 - 2a - h).
+\end{eqnarray*}
+Here we observe that neither $4$ nor $2a$ depend on the value of $h$, so as $h \to 0$, $(4 - 2a - h) \to (4 - 2a)$.  Thus, $f'(a) = 4 - 2a$.
+
+This observation is consistent with the specific values we found above:  e.g., $f'(3) = 4 - 2(3) = -2$.  And indeed, our work with $a$ confirms that while the particular value of $a$ at which we evaluate the derivative affects the value of the derivative, that value has almost no bearing on the process of computing the derivative.   We note further that the letter being used is immaterial:  whether we call it $a$, $x$, or anything else, the derivative at a given value is simply given by ``$4$ minus $2$ times the value.''  We choose to use $x$ for consistency with the original function given by $y = f(x)$, as well as for the purpose of graphing the derivative function, and thus we have found that for the function $f(x) = 4x - x^2$, it follows that $f'(x) = 4 - 2x.$
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/1_4_ffprimeplot.eps} %figure 1.18 Active
+\caption{The graphs of $f(x) = 4x - x^2$ (at left) and $f'(x) = 4 - 2x$ (at right).  Slopes on the graph of $f$ correspond to heights on the graph of $f'$.}
+\label{fig:2-2_ffprime}
+\end{marginfigure}
+
+Because the value of the derivative function is so closely linked to the graphical behavior of the original function, it makes sense to look at both of these functions plotted on the same domain.  In Figure~\ref{fig:2-2_ffprime}, on the left we show a plot of $f(x) = 4x - x^2$ together with a selection of tangent lines at the points we've considered above.  On the right, we show a plot of $f'(x) = 4 - 2x$ with emphasis on the heights of the derivative graph at the same selection of points.  Notice the connection between colors in the left and right graph:  the green tangent line on the original graph is tied to the green point on the right graph in the following way:  \emph{the slope of the tangent line} at a point on the left-hand graph is the same as the \emph{height} at the corresponding point on the right-hand graph.  That is, at each respective value of $x$, the slope of the tangent line to the original function at that $x$-value is the same as the height of the derivative function at that $x$-value.  Do note, however, that the units on the vertical axes are different:  in the left graph, the vertical units are simply the output units of $f$.  On the right-hand graph of $y = f'(x)$, the units on the vertical axis are units of $f$ per unit of $x$.
+
+\marginnote{Of course, this relationship between the graph of a function $y = f(x)$ and its derivative is a dynamic one.  An excellent way to explore how the graph of $f(x)$ generates the graph of $f'(x)$ is through a java applet.  See, for instance, the applets at \href{http://gvsu.edu/s/5C}{\texttt{http://gvsu.edu/s/5C}} or \href{http://gvsu.edu/s/5D}{\texttt{http://gvsu.edu/s/5D}}, via the sites of David Austin(\href{http://gvsu.edu/s/5r}{\texttt{http://gvsu.edu/s/5r}}) and Marc Renault(\href{http://gvsu.edu/s/5p}{\texttt{http://gvsu.edu/s/5p}}).}
+
+In Section~\ref{S:2.1.DerivativePt} when we first defined the derivative, we wrote the definition in terms of a value $a$ to find $f'(a)$.  As we have seen above, the letter $a$ is merely a placeholder, and it often makes more sense to use $x$ instead.  For the record, here we restate the  definition of the derivative\index{derivative!definition}.
+
+\definition{Derivative as a Function}{ %DEFINITION
+Let $f$ be a function and $x$ a value in the function's domain.  We define the \emph{derivative of $f$ with respect to $x$ at the value $x$}, denoted $f'(x)$, by the formula
+$\ds f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h},$
+provided this limit exists. \\
+
+\noindent\textbf{Notation:} 
+Let $y = f(x)$. The following notation all represents the derivative:
+\[ f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx}(f) = \frac{d}{dx}(y). \]
+} % end definition
+
+\marginnote{\textbf{Important:} The notation $\ds \frac{dy}{dx}$ is one symbol; it is \textbf{not} the fraction ``$dy/dx$''. The notation, while somewhat confusing at first, was chosen with care. A fraction--looking symbol was chosen because the derivative has many fraction--like properties. Among other places, we see these properties at work when we talk about the units of the derivative, when we discuss the Chain Rule, and when we learn about integration (topics that appear in later sections and chapters)}
+
+We now may take two different perspectives on thinking about the derivative function:  given a graph of $y = f(x)$, how does this graph lead to the graph of the derivative function $y = f'(x)$?  and given a formula for $y = f(x)$, how does the limit definition of the derivative generate a formula for $y = f'(x)$?  We first explore the graphical relationship in the following activity. 
+
+\input{activities/2.2.Act1} % ACTIVITY 
+
+\marginnote{For a dynamic investigation that allows you to experiment with graphing $f'$ when given the graph of $f$, see \href{http://gvsu.edu/s/8y}{\texttt{http://gvsu.edu/s/8y}}.(Source: Marc Renault, Calculus Applets Using Geogebra.)} 
+
+Now, recall the opening example of this section:  we began with the function $y = f(x) = 4x - x^2$ and used the limit definition of the derivative to show that $f'(a) = 4 - 2a$, or equivalently that $f'(x) = 4 - 2x$.  We subsequently graphed the functions $f$ and $f'$ as shown in Figure~\ref{fig:2-2_ffprime}.  Following Activity~\ref{A:2.2.1}, we now understand that we could have constructed a fairly accurate graph of $f'(x)$ \emph{without} knowing a formula for either $f$ or $f'$.  At the same time, it is ideal to know a formula for the derivative function whenever it is possible to find one.
+
+\input{examples/2-2_Eg1} % EXAMPLE
+
+\input{examples/2-2_Eg2} %EXAMPLE
+
+In the next activity, we further explore the more algebraic approach to finding $f'(x)$:  given a formula for $y = f(x)$, the limit definition of the derivative will be used to develop a formula for $f'(x)$.  
+
+\input{activities/2.2.Act2} % ACTIVITY 
+
+%-------------------------------------------
+% SUBSECTION DIFFERENTIABILITY
+%-------------------------------------------
+\subsection*{Differentiability}
+
+We recall that a function $f$ is said to be differentiable at $x = a$ whenever $f'(a)$ exists.  Moreover, for $f'(a)$ to exist, we know that the function $y = f(x)$ must have a tangent line at the point $(a,f(a))$, since $f'(a)$ is precisely the slope of this line.  In order to even ask if $f$ has a tangent line at $(a,f(a))$, it is necessary that $f$ be continuous at $x = a$: if $f$ fails to have a limit at $x = a$, if $f(a)$ is not defined, or if $f(a)$ does not equal the value of $\ds \lim_{x \to a} f(x)$, then it doesn't even make sense to talk about a tangent line to the curve at this point.
+
+Indeed, it can be proved formally that if a function $f$ is differentiable at $x = a$, then it must be continuous at $x = a$.  So, if $f$ is not continuous at $x = a$, then it is automatically the case that $f$ is not differentiable there.  For example, in Figure~\ref{fig:1-3_Con} from our early discussion of continuity, both $f$ and $g$ fail to be differentiable at $x = 1$ because neither function is continuous at $x = 1$.  But can a function fail to be differentiable at a point where the function is continuous?
+
+In Figure~\ref{F:1.7.NotDiff}, we consider the situation where a function has a sharp corner at a point.  For the pictured function $f$, we observe that $f$ is clearly continuous at $a = 1$, since $\ds\lim_{x \to 1} f(x) = 1 = f(1).$
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/1_7_NotDiff.eps}
+\caption{A function $f$ that is continuous at $a = 1$ but not differentiable at $a = 1$; at right, we zoom in on the point $(1,1)$ in a magnified version of the box in the left-hand plot.} \label{F:1.7.NotDiff}
+\end{marginfigure}
+
+But the function $f$ in Figure~\ref{F:1.7.NotDiff} is not differentiable at $a = 1$ because $f'(1)$ fails to exist.  One way to see this is to observe that $f'(x) = -1$ for every value of $x$ that is less than $1$, while $f'(x) = +1$ for every value of $x$ that is greater than $1$.  That makes it seem that either $+1$ or $-1$ would be equally good candidates for the value of the derivative at $x = 1$.   Alternately, we could use the limit definition of the derivative to attempt to compute $f'(1)$, and discover that the derivative does not exist.  Finally, we can also see visually that the function $f$ in Figure~\ref{F:1.7.NotDiff} does not have a tangent line.  When we zoom in on $(1,1)$ on the graph of $f$, no matter how closely we examine the function, it will always look like a ``V'', and never like a single line, which tells us there is no possibility for a tangent line there.  
+
+To make a more general observation, if a function does have a tangent line at a given point, when we zoom in on the point of tangency, the function and the tangent line should appear essentially indistinguishable\footnote{See, for instance, \href{http://gvsu.edu/s/6J}{\texttt{http://gvsu.edu/s/6J}} for an applet (due to David Austin, GVSU) where zooming in shows the increasing similarity between the tangent line and the curve.  }.  Conversely, if we have a function such that when we zoom in on a point the function looks like a single straight line, then the function should have a tangent line there, and thus be differentiable.  Hence, a function that is differentiable at $x = a$ will, up close, look more and more like its tangent line at $(a,f(a))$, and thus we say that a function is differentiable at $x = a$ is \emph{locally linear}. \index{locally linear}
+
+\input{examples/2-2_Eg3} %EXAMPLE
+
+\input{activities/2.2.Act3} % ACTIVITY This needs to now be redone!!
+
+%--------------
+% SUMMARY
+%--------------
+\begin{summary}
+\item The limit definition of the derivative, $f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$, produces a value for each $x$ at which the derivative is defined, and this leads to a new function whose formula is $y = f'(x)$.  Hence we talk both about a given function $f$ and its derivative $f'$.  
+
+\item There is essentially no difference between writing $f'(a)$ (as we did regularly in Section~\ref{S:2.1.DerivativePt}) and writing $f'(x)$.  In either case, the variable is just a placeholder that is used to define the rule for the derivative function.
+
+\item Given the graph of a function $y = f(x)$, we can sketch an approximate graph of its derivative $y = f'(x)$ by observing that \emph{heights} on the derivative's graph correspond to \emph{slopes} on the original function's graph.
+
+\item In this section, we encountered some functions that had sharp corners on their graphs, such as the shifted absolute value function.  At such points, the derivative fails to exist, and we say that $f$ is not differentiable there.  For now, it suffices to understand this as a consequence of the jump that must occur in the derivative function at a sharp corner on the graph of the original function.  
+\end{summary}
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/2-2.Dfunction(Ex)} 
+
+\cleardoublepage

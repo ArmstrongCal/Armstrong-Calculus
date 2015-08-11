@@ -1,0 +1,203 @@
+\section{Using Derivatives to Evaluate Limits} \label{S:3.7.LHR}
+
+\begin{goals}
+\item How can derivatives be used to help us evaluate indeterminate limits of the form $\frac{0}{0}$?
+\item What does it mean to say that $\lim_{x \to \infty} f(x) = L$ and $\lim_{x \to a} f(x) = \infty$?
+\item How can derivatives assist us in evaluating indeterminate limits of the form $\frac{\infty}{\infty}$?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+Because differential calculus is based on the definition of the derivative, and the definition of the derivative involves a limit, there is a sense in which all of calculus rests on limits.  In addition, the limit involved in the limit definition of the derivative is one that always generates an indeterminate form of $\frac{0}{0}$.  If $f$ is a differentiable function for which $f'(x)$ exists, then when we consider
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h},$$
+it follows that not only does $h \to 0$ in the denominator, but also $(f(x+h)-f(x)) \to 0$ in the numerator, since $f$ is continuous.   Thus, the fundamental form of the limit involved in the definition of $f'(x)$ is $\frac{0}{0}$.  Remember, saying a limit has an indeterminate form only means that we don't yet know its value and have more work to do:  indeed, limits of the form $\frac{0}{0}$ can take on any value, as is evidenced by evaluating $f'(x)$ for varying values of $x$ for a function such as $f'(x) = x^2$.
+
+Of course, we have learned many different techniques for evaluating the limits that result from the derivative definition, and including a large number of shortcut rules that enable us to evaluate these limits quickly and easily.  In this section, we turn the situation upside-down:  rather than using limits to evaluate derivatives, we explore how to use derivatives to evaluate certain limits.  This topic will combine several different ideas, including limits, derivative shortcuts, local linearity, and the tangent line approximation.
+
+\input{previews/3.7.PA1} % PREVIEW ACTIVITY
+
+%-------------------------------------------------------------------------------------------------------------------
+% SUBSECTION USING DERIVATIVES TO EVALUATE INDETERMINATE LIMITS OF THE FORM 0/0
+%-------------------------------------------------------------------------------------------------------------------
+\subsection*{Using derivatives to evaluate indeterminate limits of the form $\frac{0}{0}$.}
+
+The fundamental idea of Preview Activity~\ref{PA:3.7} -- that we can evaluate an indeterminate limit of the form $\frac{0}{0}$ by replacing each of the numerator and denominator with their local linearizations at the point of interest -- can be generalized in a way that enables us to easily evaluate a wide range of limits.  We begin by assuming that we have a function $h(x)$ that can be written in the form $h(x) = \frac{f(x)}{g(x)}$ where $f$ and $g$ are both differentiable at $x=a$ and for which $f(a) = g(a) = 0$.  We are interested in finding a way to evaluate the indeterminate limit given by
+$\ds \lim_{x \to a} h(x).$
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/2_8_LHR.eps}
+\caption{At left, the graphs of $f$ and $g$ near the value $a$, along with their tangent line approximations $L_f$ and $L_g$ at $x = a$.  At right, zooming in on the point $a$ and the four graphs.} \label{F:2.8.LHR}
+\end{marginfigure}
+
+In Figure~\ref{F:2.8.LHR}, we see a visual representation of the situation involving such functions $f$ and $g$.  In particular, we see that both $f$ and $g$ have an $x$-intercept at the point where $x = a$.  In addition, since each function is differentiable, each is locally linear, and we can find their respective tangent line approximations $L_f$ and $L_g$ at $x = a$, which are also shown in the figure.  Since we are interested in the limit of $\frac{f(x)}{g(x)}$ as $x \to a$, the individual behaviors of $f(x)$ and $g(x)$ as $x \to a$ are key to understand.  Here, we take advantage of the fact that each function and its tangent line approximation become indistinguishable as $x \to a$.
+
+First, let's reall that $L_f(x) = f'(a)(x-a) + f(a)$ and $L_g(x) = g'(a)(x-a) +g(a)$.  The critical observation we make is that when taking the limit, because $x$ is getting arbitrarily close to $a$, we can replace $f$ with $L_f$ and replace $g$ with $L_g$, and thus we observe that
+\begin{eqnarray*}
+\lim_{x \to a} \frac{f(x)}{g(x)} & = & \lim_{x \to a} \frac{L_f(x)}{L_g(x)} \\
+& = & \lim_{x \to a} \frac{f'(a)(x-a) + f(a)}{g'(a)(x-a) + g(a)}.
+\end{eqnarray*}
+Next, we remember a key fundamental assumption: that both $f(a) = 0$ and $g(a) = 0$, as this is precisely what makes the original limit indeterminate.  Substituting these values for $f(a)$ and $g(a)$ in the limit above, we now have
+\begin{eqnarray*}
+\lim_{x \to a} \frac{f(x)}{g(x)} & = & \lim_{x \to a} \frac{f'(a)(x-a)}{g'(a)(x-a)} \\
+& = & \lim_{x \to a} \frac{f'(a)}{g'(a)},
+\end{eqnarray*}
+where the latter equality holds since $x$ is approaching (but not equal to) $a$, so $\frac{x-a}{x-a} = 1$. 
+Finally, we note that $\frac{f'(a)}{g'(a)}$ is constant with respect to $x$, and thus
+$$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)}.$$
+We have, of course, implicitly made the assumption that $g'(a) \ne 0$, which is essential to the overall limit having the value $\frac{f'(a)}{g'(a)}$.  We summarize our work above with the statement of L'Hopital's Rule, which is the formal name of the result we have shown.
+
+\concept{L'Hopital's Rule\index{L'Hopital's rule}} % CONCEPT
+{Let $f$ and $g$ be differentiable at $x=a$, and suppose that
+\mbox{$f(a) = g(a) = 0$} and that $g'(a) \neq 0$.  Then
+$$ \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)}.$$ 
+} % end concept
+
+In practice, we typically work with a slightly more general version of L'Hopital's Rule, which states that (under the identical assumptions as the boxed rule above) 
+$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)},$$
+provided the righthand limit exists.  This form reflects the fundamental benefit of L'Hopital's Rule:  if $\frac{f(x)}{g(x)}$ produces an indeterminate limit of form $\frac{0}{0}$ as $x \to a$, it is equivalent to consider the limit of the quotient of the two functions' derivatives, $\frac{f'(x)}{g'(x)}.$  For example, if we consider the limit from Preview Activity~\ref{PA:3.7},
+$$\lim_{x \to 1} \frac{x^5 + x - 2}{x^2 - 1},$$
+by L'Hopital's Rule we have that
+$$
+\lim_{x \to 1} \frac{x^5 + x - 2}{x^2 - 1} = \lim_{x \to 1} \frac{5x^4 + 1}{2x} = \frac{6}{2} = 3. \\
+$$
+By being able to replace the numerator and denominator with their respective derivatives, we often move from an indeterminate limit to one whose value we can easily determine.  
+
+\input{activities/3.7.Act1} % ACTIVITY
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/2_8_LHR2.eps}
+\caption{Two functions $f$ and $g$ that satisfy L'Hopital's Rule.} \label{F:2.8.LHR2}
+\end{marginfigure}
+
+While L'Hopital's Rule can be applied in an entirely algebraic way, it is important to remember that the genesis of the rule is graphical:  the main idea is that the slopes of the tangent lines to $f$ and $g$ at $x = a$ determine the value of the limit of $\frac{f(x)}{g(x)}$ as $x \to a$.  We see this in Figure~\ref{F:2.8.LHR2}, which is a modified version of Figure~\ref{F:2.8.LHR}, where we can see from the grid that $f'(a) = 2$ and $g'(a) = -1$, hence by L'Hopital's Rule, 
+$$\lim_{x \to a}\frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)} = \frac{2}{-1} = -2.$$
+Indeed, what we observe is that it's not the fact that $f$ and $g$ both approach zero that matters most, but rather the \emph{rate} at which each approaches zero that determines the value of the limit.  This is a good way to remember what L'Hopital's Rule says:  if $f(a) = g(a) = 0$, then the limit of $\frac{f(x)}{g(x)}$ as $x \to a$ is given by the ratio of the slopes of $f$ and $g$ at $x = a$.
+
+\input{activities/3.7.Act2} % ACTIVITY
+
+%-----------------------------------------------------
+% SUBSECTION LIMITS INVOLVING INFINITY
+%-----------------------------------------------------
+\subsection*{Limits involving $\infty$}
+
+The concept of infinity\index{infinity}, denoted $\infty$, arises naturally in calculus, like it does in much of mathematics.  It is important to note from the outset that $\infty$ is a concept, but not a number itself.  Indeed, the notion of $\infty$ naturally invokes the idea of limits.  Consider, for example, the function $f(x) = \frac{1}{x}$, whose graph is pictured in Figure~\ref{F:2.8.Infty}.
+
+\begin{marginfigure} % MARGIN FIGURE
+\includegraphics{figures/2_8_Infty.eps}
+\caption{The graph of $f(x) = \frac{1}{x}$.} \label{F:2.8.Infty}
+\end{marginfigure}
+
+We note that $x = 0$ is not in the domain of $f$, so we may naturally wonder what happens as $x \to 0$.  As $x \to 0^+$, we observe that $f(x)$ \emph{increases without bound}.  That is, we can make the value of $f(x)$ as large as we like by taking $x$ closer and closer (but not equal) to $0$, while keeping $x > 0$.  This is a good way to think about what infinity represents:  a quantity is tending to infinity if there is no single number that the quantity is always less than. 
+
+Recall that when we write $\ds \lim_{x \to a} f(x) = L$, this means that can make $f(x)$ as close to $L$ as we'd like by taking $x$ sufficiently close (but not equal) to $a$.  We thus expand this notation and language to include the possibility that either $L$ or $a$ can be $\infty$.  For instance, for $f(x) = \frac{1}{x}$, we now write
+$$\lim_{x \to 0^+} \frac{1}{x} = \infty,$$
+by which we mean that we can make $\frac{1}{x}$ as large as we like by taking $x$ sufficiently close (but not equal) to $0$.  In a similar way, we naturally write
+$$\lim_{x \to \infty} \frac{1}{x} = 0,$$
+since we can make $\frac{1}{x}$ as close to $0$ as we'd like by taking $x$ sufficiently large (i.e., by letting $x$ increase without bound).
+
+In general, we understand the notation $\ds \lim_{x \to a} f(x) = \infty$ to mean that we can make $f(x)$ as large as we'd like by taking $x$ sufficiently close (but not equal) to $a$, and the notation $\ds \lim_{x \to \infty} f(x) = L$ to mean that we can make $f(x)$ as close to $L$ as we'd like by taking $x$ sufficiently large.  This notation applies to left- and right-hand limits, plus we can also use limits involving $-\infty$.  For example, returning to Figure~\ref{F:2.8.Infty} and $f(x) = \frac{1}{x}$, we can say that
+$$\lim_{x \to 0^-} \frac{1}{x} = -\infty \ \ \mbox{and} \ \ \lim_{x \to -\infty} \frac{1}{x} = 0.$$
+Finally, we write
+$$\lim_{x \to \infty} f(x) = \infty$$
+when we can make the value of $f(x)$ as large as we'd like by taking $x$ sufficiently large.  For example, $$\lim_{x \to \infty} x^2 = \infty.$$
+
+Note particularly that limits involving infinity identify \emph{vertical} and \emph{horizontal asymptotes} \index{asymptote} \index{asymptote!vertical} \index{asymptote!horizontal} of a function.  If $\lim_{x \to a} f(x) = \infty$, then $x = a$ is a vertical asymptote of $f$, while if $\lim_{x \to \infty} f(x) = L$, then $y = L$ is a horizontal asymptote of $f$.  Similar statements can be made using $-\infty$, as well as with left- and right-hand limits as $x \to a^-$ or $x \to a^+$.
+
+In precalculus classes, it is common to study the \emph{end behavior} of certain families of functions, by which we mean the behavior of a function as $x \to \infty$ and as $x \to -\infty$.  Here we briefly examine a library of some familiar functions and note the values of several limits involving $\infty$.
+
+\begin{figure*} % FIGURE
+\begin{flushleft}
+\includegraphics{figures/2_8_InftyLib.eps}
+\caption{Graphs of some familiar functions whose end behavior as $x \to \pm \infty$ is known.  In the middle graph, $f(x) = x^3 - 16x$ and $g(x) = x^4 - 16x^2 - 8$.} \label{F:2.8.InftyLib}
+\end{flushleft}
+\end{figure*}
+
+For the natural exponential function $e^x$, we note that $\ds\lim_{x \to \infty} e^x = \infty$ and $\ds \lim_{x \to -\infty} e^x = 0,$ while for the related exponential decay function $e^{-x}$, observe that these limits are reversed, with \newline $\ds \lim_{x \to \infty} e^{-x} = 0$ and $\ds \lim_{x \to -\infty} e^{-x} = \infty.$  Turning to the natural logarithm function, we have $\ds \lim_{x \to 0^+} \ln(x) = -\infty$ and $\ds \lim_{x \to \infty} \ln(x) = \infty.$  While both $e^x$ and $\ln(x)$ grow without bound as $x \to \infty$, the exponential function does so much more quickly than the logarithm function does.  We'll soon use limits to quantify what we mean by ``quickly.''
+
+For polynomial functions of the form $$p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots a_1 x + a_0,$$ the end behavior depends on the sign of $a_n$ and whether the highest power $n$ is even or odd.  If $n$ is even and $a_n$ is positive, then $\ds\lim_{x \to \infty} p(x) = \infty$ and $\ds\lim_{x \to -\infty} p(x) = \infty$, as in the plot of $g$ in Figure~\ref{F:2.8.InftyLib}.  If instead $a_n$ is negative, then $\ds\lim_{x \to \infty} p(x) = -\infty$ and $\ds\lim_{x \to -\infty} p(x) = -\infty$.  In the situation where $n$ is odd, then either $\ds\lim_{x \to \infty} p(x) = \infty$ and $\ds\lim_{x \to -\infty} p(x) = \infty$ (which occurs when $a_n$ is positive, as in the graph of $f$ in Figure~\ref{F:2.8.InftyLib}), or $\ds\lim_{x \to \infty} p(x) = \infty$ and $\ds\lim_{x \to -\infty} p(x) = \infty$ (when $a_n$ is negative).
+
+A function can fail to have a limit as $x \to \infty$.  For example, consider the plot of the sine function at right in Figure~\ref{F:2.8.InftyLib}.  Because the function continues oscillating between $-1$ and $1$ as $x \to \infty$, we say that $\ds\lim_{x \to \infty} \sin(x)$ does not exist.
+
+Finally, it is straightforward to analyze the behavior of any rational function as $x \to \infty$.  Consider, for example, the function 
+$$q(x) =  \frac{3x^2 - 4x + 5}{7x^2 + 9x - 10}.$$
+Note that both $(3x^2 - 4x + 5) \to \infty$ as $x \to \infty$ and $(7x^2 + 9x - 10) \to \infty$ as $x \to \infty$.  Here we say that $\ds\lim_{x \to \infty} q(x)$ has indeterminate form $\frac{\infty}{\infty}$, much like we did when we encountered limits of the form $\frac{0}{0}$.  We can determine the value of this limit through a standard algebraic approach.  Multiplying the numerator and denominator each by $\frac{1}{x^2}$, we find that
+\begin{eqnarray*}
+\lim_{x \to \infty} q(x) & = & \lim_{x \to \infty} \frac{3x^2 - 4x + 5}{7x^2 + 9x - 10} \cdot \frac{\frac{1}{x^2}}{\frac{1}{x^2}} \\
+& = & \lim_{x \to \infty} \frac{3 - 4\frac{1}{x} + 5\frac{1}{x^2}}{7 + 9\frac{1}{x} - 10\frac{1}{x^2}} \\
+& = & \frac{3}{7}
+\end{eqnarray*}
+since $\frac{1}{x^2} \to 0$ and $\frac{1}{x} \to 0$ as $x \to \infty$.  This shows that the rational function $q$ has a horizontal asymptote at $y = \frac{3}{7}$.  A similar approach can be used to determine the limit of any rational function as $x \to \infty$.
+
+But how should we handle a limit such as
+$$\lim_{x \to \infty} \frac{x^2}{e^x}?$$
+Here, both $x^2 \to \infty$ and $e^x \to \infty$, but there is not an obvious algebraic approach that enables us to find the limit's value.  Fortunately, it turns out that L'Hopital's Rule extends to cases involving infinity.
+
+\concept{L'Hopital's Rule ($\infty$)\index{L'Hopital's rule}}{ % CONCEPT
+ If $f$ and $g$ are differentiable and both approach zero or both approach $\pm \infty$ as $x \to a$ (where $a$ is allowed to be $\infty$), then
+$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.$$
+} % end concept
+
+To evaluate $\lim_{x \to \infty} \frac{x^2}{e^x}$, we observe that we can apply L'Hopital's Rule, since both $x^2 \to \infty$ and $e^x \to \infty$.  Doing so, it follows that
+$$\lim_{x \to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x}.$$
+This updated limit is still indeterminate and of the form $\frac{\infty}{\infty}$, but it is simpler since $2x$ has replaced $x^2$.  Hence, we can apply L'Hopital's Rule again, by which we find that
+$$\lim_{x \to \infty} \frac{x^2}{e^x} = \lim_{x \to \infty} \frac{2x}{e^x} = \lim_{x \to \infty} \frac{2}{e^x}.$$
+Now, since $2$ is constant and $e^x \to \infty$ as $x \to \infty$, it follows that $\frac{2}{e^x} \to 0$ as $x \to \infty$, which shows that
+$$\lim_{x \to \infty} \frac{x^2}{e^x} = 0.$$
+
+\input{activities/3.7.Act3} % ACTIVITY
+
+When we are considering the limit of a quotient of two functions $\frac{f(x)}{g(x)}$ that results in an indeterminate form of $\frac{\infty}{\infty}$, in essence we are asking which function is growing faster without bound.  We say that the function $g$ \emph{dominates} the function $f$ as $x \to \infty$ provided that 
+$$\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0,$$
+whereas $f$ dominates $g$ provided that $\ds\lim_{x \to \infty} \frac{f(x)}{g(x)} = \infty$.  Finally, if the value of $\ds\lim_{x \to \infty} \frac{f(x)}{g(x)}$ is finite and nonzero, we say that $f$ and $g$ \emph{grow at the same rate}.  For example, from earlier work we know that $\ds\lim_{x \to \infty} \frac{x^2}{e^x} = 0,$ so $e^x$ dominates $x^2$, while $\ds\lim_{x \to \infty} \frac{3x^2 - 4x + 5}{7x^2 + 9x - 10} = \frac{3}{7}$, so $f(x) = 3x^2 - 4x + 5$ and $g(x) = 7x^2 + 9x - 10$ grow at the same rate.
+
+%-----------------------------------------------------------------------------------------------------
+% SUBSECTION INDETERMINATE FORMS 0 TIMES INFINITY AND INFINITY MINUS INFINITY
+%-----------------------------------------------------------------------------------------------------
+\subsection{Indeterminate Forms $0\cdot\infty$ and $\infty-\infty$}
+
+L'H\^opital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as $0 \cdot \infty$ or $\infty - \infty$, we can sometimes apply algebra to rewrite the limit so that l'H\^opital's Rule can be applied. We demonstrate the general idea in the next example.
+
+\input{examples/3-7_Eg1.tex} % EXAMPLE
+
+%------------------------------------------------------
+% SUBSECTION INDETERMINATE FORMS 0^0, ...
+%------------------------------------------------------
+\subsection{Indeterminate Forms $0^0$, $1^\infty$ and $\infty^0$}
+
+When faced with an indeterminate form that involves a power, it often helps to employ the natural logarithmic function. 
+
+\concept{Evaluating Limits Involving Indeterminate Forms $0^0$, $1^\infty$ and $\infty^0$} % CONCEPT
+{If $\ds \lim_{x \to c} \ln \big( f(x) \big) = L$,\quad then 
+$\ds \lim_{x \to c} f(x) = \lim_{x \to c} e^{\ln( f(x) )} = e\,^L.$ \index{limit!indeterminate form}\index{indeterminate form}
+} % end concept
+
+\input{examples/3-7_Eg2.tex}% EXAMPLE
+
+\pagebreak
+
+\input{activities/3.7.Act4} % ACTIVITY
+
+Our brief revisit of limits will be especially rewarded when we consider \textit{improper integration} in Section~\ref{S:5.5.Improper}. 
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item Derivatives be used to help us evaluate indeterminate limits of the form $\frac{0}{0}$ through L'Hopital's Rule, which is developed by replacing the functions in the numerator and denominator with their tangent line approximations.  In particular, if $f(a) = g(a) = 0$ and $f$ and $g$ are differentiable at $a$, L'Hopital's Rule tells us that 
+$$\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}.$$
+\item When we write $x \to \infty$, this means that $x$ is increasing without bound.  We thus use $\infty$ along with limit notation to write $\lim_{x \to \infty} f(x) = L$, which means we can make $f(x)$ as close to $L$ as we like by choosing $x$ to be sufficiently large, and similarly $\lim_{x \to a} f(x) = \infty$, which means we can make $f(x)$ as large as we like by choosing $x$ sufficiently close to $a$.
+\item A version of L'Hopital's Rule also allows us to use derivatives to assist us in evaluating indeterminate limits of the form $\frac{\infty}{\infty}$.  In particular, if $f$ and $g$ are differentiable and both approach zero or both approach $\pm \infty$ as $x \to a$ (where $a$ is allowed to be $\infty$), then
+$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.$$
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/3-7.LHR(Ex)} 
+
+\cleardoublepage

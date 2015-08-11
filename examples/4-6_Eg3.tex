@@ -1,0 +1,14 @@
+\begin{example} \label{eg:4.6.usub3} 
+Evaluate $\ds \int \sin(x) \cos(x) \ dx$.
+
+\solution
+There is not a composition of functions here to exploit; rather, just a product of functions. 
+
+In this example, let $u = \sin(x)$. Then $du = \cos(x) \ dx$, which we have as part of the integrand! The substitution becomes very straightforward:
+\begin{align*}
+\int \sin(x) \cos(x) \ dx & = \int u \ du \\
+&= \frac{1}{2}u^2+ C \\
+&= \frac{1}{2} \sin^2(x) + C.
+\end{align*}
+One would do well to ask ``What would happen if we let $u = \cos(x)$?'' The answer: the result is just as easy to find, yet looks very different. The challenge to the reader is to evaluate the integral letting $u = \cos(x)$ and discovering why the answer is the same, yet looks different.
+\end{example}

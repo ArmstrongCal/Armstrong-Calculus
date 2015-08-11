@@ -1,0 +1,25 @@
+\begin{example} \label{eg:7.1.2} % EXAMPLE
+Find the $n^\text{th}$ term of the following sequences, i.e., find a function that describes each of the given sequences.
+
+\begin{enumerate}[1)]
+\item $2, 5, 8, 11, 14, \ldots$
+\item $2, -5, 10, -17, 26, -37, \ldots$
+\item $1, 1, 2, 6, 24, 120, 720, \ldots$
+\item $\ds \frac52, \frac52, \frac{15}8, \frac54, \frac{25}{32}, \ldots$
+\end{enumerate}
+
+\solution We should first note that there is never exactly one function that describes a finite set of numbers as a sequence. There are many sequences that start with $2$, then $5$, as our first example does. We are looking for a simple formula that describes the terms given, knowing there is possibly more than one answer.
+\begin{enumerate}[1)]
+\item		Note how each term is $3$ more than the previous one. This implies a linear function would be appropriate: $a(n) = a_n = 3n + b$ for some appropriate value of $b$. As we want $a_1=2$, we set $b=-1$. Thus $a_n = 3n-1$.
+
+\item		First notice how the sign changes from term to term. This is most commonly accomplished by multiplying the terms by either $(-1)^n$ or $(-1)^{n+1}$. Using $(-1)^n$ multiplies the odd terms by $(-1)$; using $(-1)^{n+1}$ multiplies the even terms by $(-1)$. As this sequence has negative even terms, we will multiply by $(-1)^{n+1}$. 
+
+After this, we might feel a bit stuck as to how to proceed. At this point, we are just looking for a pattern of some sort: what do the numbers $2$, $5$, $10$, $17$, etc., have in common? There are many correct answers, but the one that we'll use here is that each is one more than a perfect square. That is, $2=1^1+1$, $5=2^2+1$, $10=3^2+1$, etc. Thus our formula is $a_n= (-1)^{n+1}(n^2+1)$.
+
+\item		One who is familiar with the factorial function will readily recognize these numbers. They are $0!$, $1!$, $2!$, $3!$, etc. Since our sequences start with $n=1$, we cannot write $a_n = n!$, for this misses the $0!$ term. Instead, we shift by $1$, and write $a_n = (n-1)!$.
+
+\item		This one may appear difficult, especially as the first two terms are the same, but a little ``sleuthing'' will help. Notice how the terms in the numerator are always multiples of $5$, and the terms in the denominator are always powers of $2$. Does something as simple as $a_n = \frac{5n}{2^n}$ work?
+
+When $n=1$, we see that we indeed get $5/2$ as desired. When $n=2$, we get $10/4 = 5/2$. Further checking shows that this formula indeed matches the other terms of the sequence.
+\end{enumerate}
+\end{example}

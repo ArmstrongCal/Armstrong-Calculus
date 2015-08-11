@@ -1,0 +1,37 @@
+\begin{example} \label{eg:6.3.6} % EXAMPLE
+%\textbf{The surface area and volume of Gabriel's Horn} 
+
+Consider the solid formed by revolving $y=1/x$ about the $x$-axis on $[1,\infty)$. Find the volume and surface area of this solid. (This shape, as graphed in Figure \ref{F:6.3.Ex6}, is known as ``Gabriel's Horn'' since it looks like a very long horn that only a supernatural person, such as an angel, could play.)\index{Gabriel's Horn}
+
+\solution
+To compute the volume it is natural to use the Disk Method. We have:
+\begin{align*}
+V &= \pi\int_1^\infty \frac{1}{x^2}\ dx \\
+	&= \lim_{b\to\infty}\pi\int_1^b\frac{1}{x^2}\ dx \\
+	&=	\lim_{b\to\infty} \left.\pi\left(\frac{-1}{x}\right)\right|_1^b \\
+	&= \lim_{b\to\infty} \pi\left(1-\frac1b\right) \\
+	&= \pi \ \text{units}^3.
+\end{align*}
+Gabriel's Horn has a finite volume of $\pi$ cubic units. Since we have already seen that objects with infinite length can have a finite area, this is not too difficult to accept.
+
+We now consider its surface area. The integral is straightforward to setup:
+\begin{align*}
+SA &= 2\pi\int_1^\infty \frac{1}{x}\sqrt{1+1/x^4}\ dx.
+\intertext{Integrating this expression is not trivial. We can, however, compare it to other improper integrals. Since $1< \sqrt{1+1/x^4} $ on $[1,\infty)$, we can state that}
+2\pi\int_1^\infty \frac{1}{x}\ dx &<2\pi\int_1^\infty \frac{1}{x}\sqrt{1+1/x^4}\ dx .
+\end{align*}
+The improper integral on the left diverges. Since the integral on the right is larger, we conclude it also diverges, meaning Gabriel's Horn has infinite surface area.
+
+Hence the ``paradox'': we can fill Gabriel's Horn with a finite amount of paint, but since it has infinite surface area, we can never paint it.
+
+Somehow this paradox is striking when we think about it in terms of volume and area. However, we have seen a similar paradox before, as referenced above. We know that the area under the curve $y=1/x^2$ on $[1,\infty)$ is finite, yet the shape has an infinite perimeter. Strange things can occur when we deal with the infinite.
+
+\end{example}
+
+\begin{marginfigure}[-8cm] %MARGIN FIGURE
+\margingraphics{figures/figgabriel}
+\caption{A graph of Gabriel's Horn.} \label{F:6.3.Ex6}
+\end{marginfigure}
+
+
+

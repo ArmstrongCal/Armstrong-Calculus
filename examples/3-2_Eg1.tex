@@ -1,0 +1,18 @@
+\begin{marginfigure}[8cm]
+\margingraphics{figures/3_1_signchart.eps} %Active ex3.1 
+\caption{The first derivative sign chart for a function $f$ whose derivative is given by the formula $f'(x) = e^{-2x}(3-x)(x+1)^2$.} \label{fig:3.2.signchart}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.2.Eg1}
+Let $f$ be a function whose derivative is given by the formula $f'(x) = e^{-2x}(3-x)(x+1)^2$.  Determine all critical values of $f$ and decide whether a relative maximum, relative minimum, or neither occurs at each.
+
+\solution Since we already have $f'(x)$ written in factored form, it is straightforward to find the critical values  of $f$.  Since $f'(x)$ is defined for all values of $x$, we need only determine where $f'(x) = 0$.  From the equation
+$$e^{-2x}(3-x)(x+1)^2 = 0$$
+and the zero product property, it follows that $x = 3$ and $x = -1$ are critical values of $f$.  (Note particularly that there is no value of $x$ that makes $e^{-2x} = 0$.)  
+
+Next, to apply the first derivative test, we'd like to know the sign of $f'(x)$ at values near the critical values.  Because the critical values are the only locations at which $f'$ can change sign, it follows that the sign of the derivative is the same on each of the intervals created by the critical values:  for instance, the sign of $f'$ must be the same for every value of $x < -1$.  We create a first derivative sign chart to summarize the sign of $f'$ on the relevant intervals along with the corresponding behavior of $f$.
+
+The first derivative sign chart in Figure~\ref{fig:3.2.signchart} comes from thinking about the sign of each of the terms in the factored form of $f'(x)$ at one selected point in the interval under consideration.  For instance, for $x < -1$, we could consider $x = -2$ and determine the sign of $e^{-2x}$, $(3-x)$, and $(x+1)^2$ at the value $x = -2$.  We note that both $e^{-2x}$ and $(x+1)^2$ are positive regardless of the value of $x$, while $(3-x)$ is also positive at $x = -2$.  Hence, each of the three terms in $f'$ is positive, which we indicate by writing ``$+++$.''  Taking the product of three positive terms obviously results in a value that is positive, which we denote by the ``$+$'' in the interval to the left of $x = -1$ indicating the overall sign of $f'$.  And, since $f'$ is positive on that interval, we further know that $f$ is increasing, which we summarize by writing ``INC'' to represent the corresponding behavior of $f$.  In a similar way, we find that $f'$ is positive and $f$ is increasing on $-1 < x < 3$, and $f'$ is negative and $f$ is decreasing for $x > 3$.
+
+Now, by the first derivative test, to find relative extremes of $f$ we look for critical value at which $f'$ changes sign.  In this example, $f'$ only changes sign at $x = 3$, where $f'$ changes from positive to negative, and thus $f$ has a relative maximum at $x = 3$.  While $f$ has a critical value at $x = -1$, since $f$ is increasing both before and after $x = -1$, $f$ has neither a minimum nor a maximum at $x = -1$.
+\end{example}

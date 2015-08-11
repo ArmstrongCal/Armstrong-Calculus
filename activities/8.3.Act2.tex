@@ -1,0 +1,55 @@
+\begin{activity} \label{8.3.Act2} If the \emph{series} $\sum a_k$ converges, then an important result necessarily follows regarding the \emph{sequence} $\{a_n\}$. This activity explores this result. 
+
+Assume that the series $\ds \sum_{k=1}^{\infty} a_k$ 
+converges and has sum equal to $L$. 
+
+\ba
+\item What is the $n$th partial sum $S_n$ of the series $\ds \sum_{k=1}^{\infty} a_k$?
+
+\item What is the $(n-1)$st partial sum $S_{n-1}$ of the series $\ds \sum_{k=1}^{\infty} a_k$?
+
+\item What is the difference between the $n$th partial sum and the $(n-1)$st partial sum of the series $\ds \sum_{k=1}^{\infty} a_k$?
+
+\item Since we are assuming that  $\ds \sum_{k=1}^{\infty} a_k = L$, what does that tell us about $\ds \lim_{n \to \infty} S_n$? Why?  What does that tell us about $\ds \lim_{n \to \infty} S_{n-1}$? Why?
+
+
+
+\item Combine the results of the previous two parts of this activity to determine $\ds \lim_{n \to \infty} a_n = \lim_{n \to \infty} (S_n - S_{n-1})$.
+
+
+\ea
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item The $n$th partial sum of the series $\ds \sum_{k=1}^{\infty} a_k$ is
+\[S_n = \sum_{k=1}^n a_k.\]
+    \item The $(n-1)$st partial sum of the series $\ds \sum_{k=1}^{\infty} a_k$ is
+\[S_{n-1} = \sum_{k=1}^{n-1} a_k.\]
+    \item The difference between $S_n$ and $S_{n-1}$ is
+\[\sum_{k=1}^{n} a_k - \sum_{k=1}^{n-1} a_k = a_{n}.\]
+    \item Since  $\ds \sum_{k=1}^{\infty} a_k = \lim_{n \to \infty} S_n$ we must have $\lim_{n \to \infty} S_n = L$. Also,
+\[\lim_{n \to \infty} S_n = \lim_{n \to \infty} S_{n-1},\]
+so $\lim_{n \to \infty} S_{n-1} = L$ as well.
+    \item We have
+\begin{align*}
+\lim_{n \to \infty} a_n &= \lim_{n \to \infty} \left(S_n - S_{n-1}\right) \\
+    &= \lim_{n \to \infty} S_n - \lim_{n \to \infty} S_{n-1} \\
+    &= L - L \\
+    &= 0.
+\end{align*}
+
+\ea
+\end{activitySolution}
+\aftera 

@@ -1,0 +1,18 @@
+\begin{example} \label{Ex:4.6.usub2}
+Evaluate $\ds \int \frac{7}{-3x+1}\ dx$.
+
+\solution
+First notice this integrand is a composition of 
+\[ f(x) = \frac{7}{x} \quad \mbox{and} \quad g(x) = -3x+1. \]
+Therefore, we begin our substitution by letting $\ds u = -3x+1$, which implies
+\[ \frac{du}{dx} = -3 \quad \Rightarrow \quad du = -3 \ dx. \]
+The integrand lacks a $-3$; hence divide the previous equation by $-3$ to obtain 
+\[ - \frac{1}{3} du = dx.\]
+We can now evaluate the integral through substitution.
+\begin{align*}
+\int \frac{7}{-3x+1}\ dx & = \int \frac{7}{u} \cdot -\frac{1}{3} du \\
+&= -\frac{7}{3} \int \frac{1}{u} \ du \\
+&= -\frac{7}{3} \ln |u| + C\\
+&= -\frac{7}{3} \ln|-3x+1| + C.
+\end{align*}
+\end{example}

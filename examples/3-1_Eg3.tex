@@ -1,0 +1,29 @@
+\begin{marginfigure}[8cm]
+\margingraphics{figures/figrr4} %APEX ex 99
+\caption{Tracking a speeding car (at left) with a rotating camera.}\label{fig:3.2.Eg3}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.2.Eg3}
+A camera is placed on a tripod $10$ ft from the side of a road. The camera is to turn to track a car that is to drive by at $100$ mph for a promotional video. The video's planners want to know what kind of motor the tripod should be equipped with in order to properly track the car as it passes by.  Figure \ref{fig:3.2.Eg3} shows the proposed setup.
+How fast must the camera be able to turn to track the car?
+
+\solution We seek information about how fast the camera is to \textit{turn}; therefore, we need an equation that will relate an angle $\theta$ to the position of the camera and the speed and position of the car.
+
+Figure \ref{fig:3.2.Eg3} suggests we use a trigonometric equation. Letting $x$ represent the distance the car is from the point on the road directly in front of the camera, we have 
+\begin{equation}\tan \theta = \frac{x}{10}.\label{eq:rr4}\end{equation} 
+As the car is moving at $100$ mph, we have $\frac{dx}{dt} = -100$ mph since the distance between the car and the camera is decreasing. We need to convert the measurements to common units; rewrite $100$ mph in terms of ft/s:
+$$\frac{dx}{dt} = -100\frac{\text{m}}{\text{h}} = -100\frac{\text{m}}{\text{h}}\cdot5280\frac{\text{f}}{\text{m}}\cdot\frac{1}{3600}\frac{\text{h}}{\text{s}} =-146.\overline{6}\text{ ft/s}.$$
+Now take the derivative of both sides of Equation \eqref{eq:rr4} using implicit differentiation:
+\begin{align}
+		\tan \theta &= \frac{x}{10} \notag \\
+		\frac{d}{dt}\big(\tan \theta\big) &= \frac{d}{dt}\left(\frac{x}{10}\right)\notag \\
+		\sec^2\theta\,\frac{d\theta}{dt} &= \frac{1}{10}\frac{dx}{dt}\notag\\
+		\frac{d\theta}{dt} &= \frac{\cos^2\theta}{10}\frac{dx}{dt}\label{eq:rr4b}
+\end{align}
+We want to know the fastest the camera has to turn. Common sense tells us this is when the car is directly in front of the camera (i.e., when $\theta = 0$). Our mathematics bears this out. In Equation \eqref{eq:rr4b} we see this is when $\cos^2\theta$ is largest; this is when $\cos \theta = 1$, or when $\theta = 0$.
+
+With $\frac{dx}{dt} \approx -146.67$ ft/s, we have 
+	$$\frac{d\theta}{dt} = \frac{1 \ \text{rad}}{10 \ \text{ft}}-146.67\text{ ft/s} = -14.667 \ \text{radians/s}.$$
+What does this number mean? Recall that $1$ circular revolution goes through $2\pi$ radians, thus $-14.667$ rad/s means $-14.667/(2\pi)\approx -2.33$ revolutions per second.  So the camera needs to be able to rotate at least $2.33$ times per second.
+
+\end{example}

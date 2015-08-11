@@ -1,0 +1,51 @@
+from figures import *
+from defaults import *
+
+width = standardwidth
+height = standardheight*0.8
+beginfigure("1_6_Ez2", width, height)
+
+margin = 10
+save()
+setupcoordinates([margin, margin, width-margin, height-margin],
+                 [-4, -1, 4, 5])
+
+grid = Grid([-4, 1, 4], [-2, 1, 5])
+grid.setcolor(gridcolor)
+grid.setlinewidth(gridwidth)
+grid.draw()
+
+axes = Axes()
+axes.draw()
+
+axes.sethticks([-3, 1, 3]) # you can do this in one line with setticks([], [])
+axes.setvticks([0, 1, 4])
+axes.drawticks()
+axes.sethticksize(sizeofaxesticks)
+axes.setvticksize(sizeofaxesticks)
+
+axes.setlabels([-3, 2, 3], # you can do this separately with seth(v)labels
+               [0, 2, 4])
+axes.sethlabelscale(scaleofaxeslabels)
+axes.setvlabelscale(scaleofaxeslabels)
+axes.drawlabels()
+
+
+label = Label(r"$y=g'(x)$", [-3.2, 4.2])
+label.draw()
+
+
+def f(x):
+    return math.sin(3*x) + math.cos(5*x) + 2.5
+
+cliptoboundingbox()
+graph = Graph(Function(f))
+graph.setcolor(graphcolor)
+graph.setmiterlimit(1)
+graph.setlinewidth(graphwidth)
+graph.setN(1000)
+graph.draw()
+
+restore()
+
+endfigure()

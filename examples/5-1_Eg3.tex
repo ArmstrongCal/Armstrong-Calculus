@@ -1,0 +1,22 @@
+\begin{example} \label{eg:5.1.3} % EXAMPLE
+Evaluate $\ds \int \cos(\ln(x))\ dx$.
+
+\solution
+The integrand contains a composition of functions, leading us to think Substitution would be beneficial. Letting $u=\ln(x)$, we have $du = 1/x\ dx$. This seems problematic, as we do not have a $1/x$ in the integrand. But consider:
+$$du = \frac 1x\ dx \Rightarrow x\cdot du = dx.$$
+Since $u = \ln(x)$, we can use inverse functions and conclude that $x = e^u$. Therefore we have that
+\begin{align*}
+dx &= x\cdot du \\
+		&= e^u\ du.
+\end{align*}
+We can thus replace $\ln(x)$ with $u$ and $dx$ with $e^u\ du$. Thus we rewrite our integral as 
+$$\int \cos(\ln(x))\ dx = \int e^u\cos (u) \ du.$$
+We evaluate this integral in the next subsection. Using the result there, we have:
+\begin{align*}
+\int \cos(\ln x)\ dx &= \int e^u\cos (u) \ du \\
+				&= \frac12e^u\big(\sin (u) + \cos (u)\big) + C \\
+				&= \frac12e^{\ln(x)} \big(\sin(\ln(x)) + \cos (\ln(x))\big)+C\\
+				&= \frac12x \big(\sin(\ln(x)) + \cos (\ln(x))\big)+C
+\end{align*}
+
+\end{example}

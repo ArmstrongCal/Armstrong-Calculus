@@ -1,0 +1,21 @@
+\begin{marginfigure}[6cm]
+\margingraphics{figures/figopt2b} %APEX ex101 
+\caption{A sketch of the enclosure in Example~\ref{Ex:3.4.Eg2} } \label{F:3.4.Ex2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.4.Eg2}
+A woman has a $100$ feet of fencing, a small dog, and a large yard that contains a stream (that is mostly straight). She wants to create a rectangular enclosure with maximal area that uses the stream as one side. (Apparently her dog won't swim away.) What dimensions provide the maximal area?
+
+\solution We are maximizing \textit{area}. A sketch of the region will help; Figure~\ref{F:3.4.Ex2} gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
+
+As in the example before, $$\text{Area} = xy.$$ This is our fundamental equation. This defines area as a function of two variables, so we need another equation to  reduce it to one variable.  We again appeal to the perimeter; here the perimeter is $$\text{Perimeter} = 100 = x+2y.$$ Note how this is different than in our previous example.
+
+We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for $y$: $y = 50 - \frac{1}{2}x$. We can now write Area as 
+$$\text{Area} = A(x) = x \left( 50- \frac{1}{2}x \right) = 50x - \frac{1}{2}x^2.$$ Area is now defined as a function of one variable.
+	
+We want the area to be nonnegative. Since $\ds A(x) = x \left( 50- \frac{1}{2}x \right)$, we want $x > 0$ and $50- \frac{1}{2}x > 0$. The latter inequality implies that $x < 100$, so $0 < x < 100$. 
+	
+Now let's find the critical points. We have $A'(x) = 50-x$; setting this equal to $0$ and solving for $x$ returns $x=50$. This gives an area of $$A(50) = 50(25) = 1250.$$  At the endpoints, the minimum is found, giving an area of $0$.
+	
+We earlier set $y = 50- \frac{1}{2}x$; thus $y = 25$. Thus our rectangle will have two sides of length $25$ and one side of length $50$, with a total area of $1250$ ft$^2$.
+\end{example}

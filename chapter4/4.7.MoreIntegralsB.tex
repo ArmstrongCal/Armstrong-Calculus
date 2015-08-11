@@ -1,0 +1,223 @@
+\section{More with Integrals} \label{S:4.7.MoreIntegrals}
+
+\begin{goals}
+\item How can we use definite integrals to determine the average $y$-value of a function?
+\item How can we use definite integrals to measure the area between two curves?
+\item How do we decide whether to integrate with respect to $x$ or with respect to $y$ when we try to find the area of a region?
+\end{goals} 
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+Early in our work with the definite integral, we learned that if we have a nonnegative velocity function, $v$, for an object moving along an axis, the area under the velocity function between $a$ and $b$ tells us the distance the object traveled on that time interval.  Moreover, based on the definition of the definite integral, that area is given precisely by $\int_a^b v(t) \, dt$.  Indeed, for any nonnegative function $f$ on an interval $[a,b]$, we know that $\int_a^b f(x) \, dx$ measures the area bounded by the curve and the $x$-axis between $x = a$ and $x = b$.
+
+In this section, we will further explore definite integrals including some important properties of integrals.  In Preview Activity~\ref{PA:4.7}, we begin this investigation with a refresher of certain contexts. 
+
+\input{previews/4.7.PA1} % PREVIEW ACTIVITY Change activity or the order of the section
+
+%-----------------------------------------------------------------
+% SUBSECTION THE AVERAGE VALUE OF A FUNCTION
+%-----------------------------------------------------------------
+\subsection*{The Average Value of a Function}\index{average value of a function}
+
+One of the most valuable applications of the definite integral is that it provides a way to meaningfully discuss the average value of a function, even for a function that takes on infinitely many values.  Suppose we wish to take the average of $n$ numbers $y_1$, $y_2$, $\ldots$, $y_n$.  We do so by computing
+\[ \mbox{Avg} = \frac{y_1 + y_2 + \cdots + y_n}{n}. \]
+
+Since integrals arise from Riemann sums in which we add $n$ values of a function, it should not be surprising that evaluating an integral is something like averaging the output values of a function.  Consider, for instance, the right Riemann sum $R_n$ of a function $f$, which is given by
+\begin{align*}
+R_n & = f(x_1) \triangle x + f(x_2) \triangle x + \cdots + f(x_n) \triangle x \\
+& = \left( f(x_1) + f(x_2) + \cdots + f(x_n) \right) \triangle x.
+\end{align*}
+Since $\triangle x = \frac{b-a}{n}$, we can thus write 
+\begin{align} \label{E:RAvg}
+R_n &  = (f(x_1) + f(x_2) + \cdots + f(x_n))\cdot \frac{b-a}{n} \notag \\
+& = (b-a) \frac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}.
+\end{align}
+Here, we see that the right Riemann sum with $n$ subintervals is the length of the interval $(b-a)$ times the average of the $n$ function values found at the right endpoints.  And just as with our efforts to compute area, we see that the larger the value of $n$ we use, the more accurate our average of the values of $f$ will be.  Indeed, we will define the average value of $f$ on $[a,b]$ to be 
+\[ f_{\mbox{\tiny{AVG}}[a,b]} = \lim_{n \to \infty} \frac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}.\]  
+But we also know that for any continuous function $f$ on $[a,b]$, taking the limit of a Riemann sum leads precisely to the definite integral.  That is, $\ds \lim_{n \to \infty} R_n = \int_a^b f(x) \, dx$, and thus taking the limit as $n \to \infty$ in Equation~(\ref{E:RAvg}), we have that
+\begin{equation} \label{E:RAvg2} % EQUATION
+\int_a^b f(x) \, dx = (b-a) \cdot f_{\mbox{\tiny{AVG}}[a,b]}.
+\end{equation}
+Solving Equation~(\ref{E:RAvg2}) for $f_{\mbox{\tiny{AVG}}[a,b]}$, we have the following general principle.
+
+\concept{Average Value of a Function} % CONCEPT
+{If $f$ is a continuous function on $[a,b]$, then its average value on $[a,b]$ is given by the formula
+\[ f_{\mbox{\tiny{AVG}}[a,b]} = \frac{1}{b-a} \cdot \int_a^b f(x) \, dx. \]
+} % end concept
+
+\begin{marginfigure} % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figs/4/4-7_AvgVala.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-7_AvgValb.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-7_AvgValc.pdf}}
+\caption{A function $y = f(x)$, the area it bounds, and its average value on $[a,b]$.} \label{fig:4-7_AvgVal}
+\end{marginfigure}
+
+Observe that Equation~(\ref{E:RAvg2}) tells us another way to interpret the definite integral:  the definite integral of a function $f$ from $a$ to $b$ is the length of the interval $(b-a)$ times the average value of the function on the interval.  In addition, Equation~(\ref{E:RAvg2}) has a natural visual interpretation when the function $f$ is nonnegative on $[a,b]$.  
+
+Consider Figure~\ref{fig:4-7_AvgVal}, where we see at the top the shaded region whose area is $\int_a^b f(x) \, dx$, in the middle the shaded rectangle whose dimensions are $(b-a)$ by $f_{\mbox{\tiny{AVG}}[a,b]}$, and at the bottom these two figures superimposed.  Specifically, note that in dark green we show the horizontal line $y = f_{\mbox{\tiny{AVG}}[a,b]}$.  Thus, the area of the green rectangle is given by $(b-a) \cdot f_{\mbox{\tiny{AVG}}[a,b]}$, which is precisely the value of $\int_a^b f(x) \, dx$.  Said differently, the area of the blue region in the top figure is the same as that of the green rectangle in the middle figure; this can also be seen by observing that the areas $A_1$ and $A_2$ in the bottom figure appear to be equal.  Ultimately, the average value of a function enables us to construct a {\em single} rectangle whose area is the same as the value of the definite integral of the function on the interval.  
+
+The java applet at \href{http://gvsu.edu/s/az}{\texttt{http://gvsu.edu/s/az}} provides an opportunity to explore how the average value of the function changes as the interval changes, through an image similar to that found in Figure~\ref{fig:4-7_AvgVal}.
+
+\input{activities/4.7.Act_AV} % ACTIVITY
+
+%----------------------------------------------------------------------------
+% SUBSECTION THE MEAN VALUE THEOREM FOR INTEGRALS
+%----------------------------------------------------------------------------
+\subsection*{The Mean Value Theorem for Integrals}
+
+The average value of a function brings us to an important theoretical result.  The Mean Value Theorem for Integrals says that if $f$ is continuous on the interval $[a,b]$, then there exists at least one point $c$ in the interval $[a,b]$ such that $f(c)$ equals the average value of $f$ on $[a,b]$.  In other words, the horizontal line $y = f_{\mbox{\tiny{AVG}}[a,b]}$ intersects the graph of $f$ for some point $c$ in $[a,b]$, or over the interval $[a,b]$, the average value of a function $f$ must equal its actual value at least once.\footnote{Compare this statement to the Mean Value Theorem for Derivatives, which says that over the interval $[a,b]$ the instantaneous rate of change of some function must equal its average rate of change at least once.}
+
+\concept{Mean Value Theorem for Integrals}
+{Let $f$  be continuous on the interval $[a,b]$.  There exists a point $c$ in $[a,b]$ such that
+\[ f(c) = \frac{1}{b-a} \int_a^b f(x) \ dx. \]
+} % end concept
+
+\proof We begin by letting $F(x) = \int_a^x f(t) \ dt$ and noticing that $F$ is continuous on the interval $[a,b]$ and differentiable on the interval $(a,b)$ by the Fundamental Theorem of Calculus.  Applying the Mean Value Theorem for Derivatives to $F$, we can conclude that there exists at least one point $c$ in $(a,b)$ such that
+\[ F'(c) = f(c) = \frac{F(b) - F(a)}{b-a}. \]
+By the FTCII, we know that $F(b) - F(a)$ equals $\int_a^b f(x) \ dx$, so we can write
+\[ f(c) = \frac{1}{b-a} \cdot F(b) - F(a) = \frac{1}{b-a} \int_a^b f(x) \ dx \]
+where $c$ is some point in the interval $(a,b)$.
+\qed
+
+%----------------------------------------------------
+% SUBSECTION AREA BETWEEN TWO CURVES
+%----------------------------------------------------
+\subsection*{The Area Between Two Curves} \index{area}
+
+In Preview Activity~\ref{PA:4.7}, we encountered a notion that extends to area between two curves:  we can subtract the area of one region from the area of another to calculate the area ``between'' the regions.
+
+\begin{marginfigure}[2cm] % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figs/4/4-7_ABCa.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-7_ABCb.pdf}}
+
+\subfloat{\margingraphics{figs/4/4-7_ABCc.pdf}}
+\caption{The areas bounded by the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$ on the interval $[0,3]$.} \label{fig:4-7_ABC}
+\end{marginfigure}
+
+For the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$, shown in Figure~\ref{fig:4-7_ABC}, we see that the upper curve is $g(x) = x+2$, and that the graphs intersect at $x = 0$ and $x=3$.  Note that we can find where these functions intersect by setting the functions equal to each other and solving for $x$:
+\begin{align*}
+f(x) & = g(x) \\
+(x-1)^2 + 1 & = x+2 \\
+x^2 - 2x +2 & = x+2 \\
+x^2 - 3x & = 0 \\
+x(x-3) & = 0 \\
+\Rightarrow x &= 0,3.
+\end{align*}
+On the interval $[0,3]$, the area beneath $g$ is
+\[ \int_0^3 (x+2) \, dx = \frac{21}{2}, \]
+while the area under $f$ on the same interval is
+\[ \int_0^3 [(x-1)^2 + 1] \, dx = 6. \]
+Thus, the area between the curves is 
+\begin{equation} \label{E:DiffOfInt} % EQUATION
+A = \int_0^3 (x+2) \, dx -  \int_0^3 [(x-1)^2 + 1] \, dx = \frac{21}{2} - 6 = \frac{9}{2}.
+\end{equation}
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-7_ABCd.pdf}
+\caption{The area bounded by the functions $f(x) = (x-1)^2 + 1$ and $g(x) = x+2$ on the interval $[0,3]$.} 
+\label{fig:4-7_ABCd}
+\end{marginfigure}
+
+A slightly different perspective is also helpful here:  if we take the region between two curves and slice it up into thin vertical rectangles (in the same spirit as we originally sliced the region between a single curve and the $x$-axis in Section~\ref{S:4.2.Riemann}), then we see that the height of a typical rectangle is given by the difference between the two functions.  For example, for the rectangle shown in Figure~\ref{fig:4-7_ABCd}, we see that the rectangle's height is $g(x) - f(x)$, while its width can be viewed as $\triangle x$, and thus the area of the rectangle is
+\[ A_{\mbox{\small{rect}}} = (g(x) - f(x)) \triangle x. \]
+In addition, the area between the two curves on the interval $[0,3]$ is then approximated by the Riemann sum
+\[ A \approx \sum_{i=1}^{n} (g(x_i) - f(x_i)) \triangle x, \]
+and then as we let $n \to \infty$, it follows that the area is given by the single definite integral
+\begin{equation} \label{E:IntOfDiff} % EQUATION 
+A = \int_0^3 (g(x) - f(x)) \, dx.
+\end{equation}
+In our work with applications of the definite integral, we will often find it helpful to think of a ``representative slice'' and how the definite integral may be used to add these slices to find the exact value of a desired quantity.  Here, the integral essentially sums the areas of thin rectangles.
+
+Also, we note that whether we think of the area between two curves as stemming from the difference between the area bounded by the individual curves (as in Equation~(\ref{E:DiffOfInt})) or as the limit of a Riemann sum that adds the areas of thin rectangles between the curves (as in Equation~(\ref{E:IntOfDiff})), these two results are the same, since the difference of two integrals is the integral of the difference:
+\[ \int_0^3 g(x) \, dx -  \int_0^3 f(x) \ dx = \int_0^3 (g(x) - f(x)) \ dx. \]
+
+Finally, notice that if we had computed
+\[ \int_0^3 (f(x) - g(x)) \ dx \mbox{ instead of } \int_0^3 (g(x) - f(x)) \ dx, \]
+then our result would have been $\ds -\frac{9}{2}$, which has the same magnitude as the correct result, but the sign is negative.  Whereas the net signed area underneath a function can be either positive or negative, the area that is bounded by or between two curves will be positive.  Therefore, we can simply take the absolute value of our negative result to get the correct result, leading to the following concept.
+
+\concept{Area Between Curves} % CONCEPT 
+{If two curves $y = f(x)$ and $y = g(x)$ intersect only at $x=a$ and $x=b$ on $[a,b]$, then the area between the curves on the interval $[a,b]$ is 
+\[ A = \left| \int_a^b (f(x) - g(x)) \ dx \right|. \]
+} % end concept
+
+\input{examples/4-7_Eg2} % EXAMPLE
+
+\input{activities/4.7.Act2} % ACTIVITY
+
+%-----------------------------------------------------------------------
+% SUBSECTION FINDING AREA WITH HORIZONTAL SLICES
+%-----------------------------------------------------------------------
+\subsection*{Finding Area with Horizontal Slices}
+
+At times, the shape of a geometric region may dictate that we need to use horizontal rectangular slices, rather than vertical ones.  For instance, consider the region bounded by the parabola $x = y^2 - 1$ and the line $y = x-1$, pictured in Figure~\ref{fig:4-7_ABCe}.  First, we observe that by solving the second equation for $x$ and writing $x = y + 1$, we can then determine the $y$-values at which the curves intersect by again setting the curves equal to each other and solving for $y$:
+\begin{align*}
+y^2 - 1 & = y+1 \\
+y^2 - y - 2 &= 0 \\
+(y-2)(y+1) &= 0 \\
+\Rightarrow y &= -1,2.
+\end{align*}
+
+\begin{marginfigure}[-6cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-7_ABCe.pdf}
+\caption{The area bounded by the functions $x = y^2-1$ and $y = x-1$.} 
+\label{fig:4-7_ABCe}
+\end{marginfigure}
+
+We can use the $y$-values to determine the $x$-values at which the curves intersect, which are $x=0$ and $x=3$. We see that if we attempt to use vertical rectangles to slice up the area, at certain values of $x$ (specifically from $x = -1$ to $x = 0$, as seen in Figure~\ref{fig:4-7_ABCf}), the curves that govern the top and bottom of the rectangle are one and the same.  This suggests, as shown in Figure~\ref{fig:4-7_ABCg}, that we try using horizontal rectangles as a way to think about the area of the region.
+
+\begin{marginfigure}
+\margingraphics{figs/4/4-7_ABCf.pdf}
+\caption{The area bounded by the functions $x = y^2-1$ and $y = x-1$ with the region sliced vertically.} 
+\label{fig:4-7_ABCf}
+\end{marginfigure}
+
+For such a horizontal rectangle, note that its width depends on $y$, the height at which the rectangle is constructed.  In particular, at a height $y$ between $y = -1$ and $y = 2$, the right end of a representative rectangle is determined by the line, $x = y+1$, while the left end of the rectangle is determined by the parabola, $x = y^2-1$, and the thickness of the rectangle is $\triangle y$.  
+
+\begin{marginfigure}
+\margingraphics{figs/4/4-7_ABCg.pdf}
+\caption{The area bounded by the functions $x = y^2-1$ and $y = x-1$ with the region sliced horizontally.} 
+\label{fig:4-7_ABCg}
+\end{marginfigure}
+
+Therefore, the area of the rectangle is
+\[ A_{\mbox{\small{rect}}} = [(y+1) - (y^2-1)] \triangle y, \]
+from which it follows that the area between the two curves on the $y$-interval $[-1,2]$ is approximated by the Riemann sum
+\[ A \approx \sum_{i=1}^{n} [(y_i+1)-(y_i^2-1)] \triangle y.\]
+Taking the limit of the Riemann sum, it follows that the area of the region is
+\begin{equation} \label{E:IntWRTy} % EQUATION
+A = \int_{y=-1}^{y=2} [(y+1) - (y^2-1)] \, dy.
+\end{equation}
+We emphasize that we are integrating with respect to $y$; this is dictated by the fact that we chose to use horizontal rectangles whose widths depend on $y$ and whose thickness is denoted $\triangle y$.  It is a straightforward exercise to evaluate the integral in Equation~(\ref{E:IntWRTy}) and find that $A = \frac{9}{2}$.
+
+Just as with the use of vertical rectangles of thickness $\triangle x$, we have a general principle for finding the area between two curves, which we state as follows.
+
+\concept{Area Between Curves}
+{If two curves $x = f(y)$ and $x = g(y)$ intersect only at $y=c$ and $y=d$ on $[c,d]$, then the area between the curves on the interval $[c,d]$ is 
+\[ A = \left| \int_{y=c}^{y=d} (f(y) - g(y)) \ dy \right|. \]
+} % end concept
+
+\input{activities/4.7.Act3}
+
+\begin{summary}
+\item The definite integral $\int_a^b f(x) \,dx$ measures the exact net signed area bounded by $f$ and the horizontal axis on $[a,b]$; in addition, the value of the definite integral is related to what we call the average value of the function on $[a,b]$: $f_{\mbox{\tiny{AVG}}[a,b]} = \frac{1}{b-a} \cdot \int_a^b f(x) \, dx.$  
+
+\item To find the area between two curves, we think about slicing the region into thin rectangles.  If, for instance, the area of a typical rectangle on the interval $x = a$ to $x = b$ is given by $A_{\mbox{\small{rect}}} = (g(x) - f(x)) \triangle x,$ then the exact area of the region is given by the definite integral
+\[ A = \int_a^b (g(x)-f(x))\, dx. \]
+
+\item The shape of the region usually dictates whether we should use vertical rectangles of thickness $\triangle x$ or horizontal rectangles of thickness $\triangle y$.  We desire to have the height of the rectangle governed by the difference between two curves:  if those curves are best thought of as functions of $y$, we use horizontal rectangles, whereas if those curves are best viewed as functions of $x$, we use vertical rectangles.
+\end{summary}
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/4-7.More(Ex)} 
+
+\cleardoublepage

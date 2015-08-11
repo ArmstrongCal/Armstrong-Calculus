@@ -1,0 +1,36 @@
+\begin{example} \label{Ex:3.3.Eg1}
+A $20$ cm piece of wire is cut into two pieces.  One piece is used to form a square and the other an equilateral triangle.  How should the wire be cut to maximize the total area enclosed by the square and triangle?  to minimize the area?
+
+\solution
+We begin by constructing a picture that exemplifies the given situation.  The primary variable in the problem is where we decide to cut the wire.  We thus label that point $x$, and note that the remaining portion of the wire then has length $20-x$
+
+As shown in Figure~\ref{F:3.3.Ex1}, we see that the $x$ cm of the wire that are used to form the equilateral triangle result in a triangle with three sides of length $\frac{x}{3}$.  For the remaining $20-x$ cm of wire, the square that results will have each side of length $\frac{20-x}{4}$.
+
+At this point, we note that there are obvious restrictions on $x$:  in particular, $0 \le x \le 20$.  In the extreme cases, all of the wire is being used to make just one figure.  For instance, if $x = 0$, then all $20$ cm of wire are used to make a square that is $5 \times 5$.
+
+Now, our overall goal is to find the absolute minimum and absolute maximum areas that can be enclosed.  We note that the area of the triangle is $A_{\triangle} = \frac{1}{2} bh = \frac{1}{2} \cdot \frac{x}{3} \cdot \frac{x\sqrt{3}}{6}$, since the height of an equilateral triangle is $\sqrt{3}$ times half the length of the base.  Further, the area of the square is $A_{\Box} = s^2 = \left( \frac{20-x}{4} \right)^2$.  Therefore, the total area function is
+$$A(x) = \frac{\sqrt{3}x^2}{36} + \left( \frac{20-x}{4} \right)^2.$$
+Again, note that we are only considering this function on the restricted domain $[0,20]$ and we seek its absolute minimum and absolute maximum.
+
+Differentiating $A(x)$, we have
+$$A'(x) = \frac{\sqrt{3}x}{18} + 2\left( \frac{20-x}{4} \right)\left( -\frac{1}{4} \right) = \frac{\sqrt{3}}{18} x + \frac{1}{8}x - \frac{5}{2}.$$
+Setting $A'(x) = 0$, it follows that $x = \frac{180}{4\sqrt{3}+9} \approx 11.3007$ is the only critical value of $A$, and we note that this lies within the interval $[0,20]$.  
+
+Evaluating $A$ at the critical value and endpoints, we see that
+\begin{itemize}
+	\item $\ds A\left(\frac{180}{4\sqrt{3}+9}\right) = \frac{\sqrt{3}(\frac{180}{4\sqrt{3}+9})^2}{4} + \left( \frac{20-\frac{180}{4\sqrt{3}+9}}{4} \right)^2 \approx 10.8741$
+	\item $\ds A(0) = 25$
+	\item $\ds A(20) = \frac{\sqrt{3}}{36}(400) = \frac{100}{9} \sqrt{3} \approx 19.2450$
+\end{itemize}
+Thus, the absolute minimum occurs when $x \approx 11.3007$ and results in the minimum area of approximately $10.8741$ square centimeters, while the absolute maximum occurs when we invest all of the wire in the square (and none in the triangle), resulting in 25 square centimeters of area.  These results are confirmed by a plot of $y = A(x)$ on the interval $[0,20]$, as shown in Figure~\ref{F:3.3.Ex1Plot}.
+\end{example}
+
+\begin{marginfigure}[-32cm]
+\margingraphics{figures/3_3_Ex1.eps} %Active ex3.4 
+\caption{A 20 cm piece of wire cut into two pieces, one of which forms an equilateral triangle, the other which yields a square.} \label{F:3.3.Ex1}
+\end{marginfigure}
+
+\begin{marginfigure}[-10cm]
+\margingraphics{figures/3_3_Ex1Plot.eps} 
+\caption{A plot of the area function from Example~\ref{Ex:3.3.Eg1}.} \label{F:3.3.Ex1Plot}
+\end{marginfigure}

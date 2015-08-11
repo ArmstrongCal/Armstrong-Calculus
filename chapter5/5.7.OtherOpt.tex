@@ -1,0 +1,127 @@
+\section{Other Options for Finding Antiderivatives} \label{S:5.7.OtherOpt}
+
+\begin{goals}
+\item What role have integral tables historically played in the study of calculus and how can a table be used to evaluate integrals such as $\int \sqrt{a^2 + u^2} \, du$?
+\item What role can a computer algebra system play in the process of finding antiderivatives?
+\end{goals}
+
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+Calculus has a long history, with key ideas going back as far as Greek mathematicians in $400$-$300$ BC.  Its main foundations were first investigated and understood independently by Isaac Newton and Gottfried Wilhelm Leibniz in the late $1600$s, making the modern ideas of calculus well over $300$ years old.  It is instructive to realize that until the late $1980$s, the personal computer essentially did not exist, so calculus (and other mathematics) had to be done by hand for roughly $300$ years.  During the last $30$ years, however, computers have revolutionized many aspects of the world we live in, including mathematics.  In this section we take a short historical tour to precede the following discussion of the role computer algebra systems can play in evaluating indefinite integrals.  In particular, we consider a class of integrals involving certain radical expressions that, until the advent of computer algebra systems, were often evaluated using an integral table.
+
+%--------------------------------------
+% SUBSECTION INTEGRAL TABLES
+%--------------------------------------
+\subsection*{Using an Integral Table}
+
+As seen in the short table of integrals found in Appendix~\ref{C:9.IntegralTable}, there are also many forms of integrals that involve $\sqrt{a^2 \pm w^2}$ and $\sqrt{w^2 - a^2}.$  %These integral rules can be developed using a technique known as \emph{trigonometric substitution} that we choose to omit; instead, we will simply accept the results presented in the table.  
+To see how these rules are needed and used, consider the differences among
+$$\int \frac{1}{\sqrt{1-x^2}} \,dx, \ \ \  \int \frac{x}{\sqrt{1-x^2}} \,dx, \ \ \  \mbox{and} \ \ \ \int \sqrt{1-x^2} \,dx.$$
+The first integral is a familiar basic one, and results in $\arcsin(x) + C$.  The second integral can be evaluated using a standard $u$-substitution with $u = 1-x^2$.  The third, however, would require a trigonometric substitution.
+
+In Appendix~\ref{C:9.IntegralTable}, we find the rule
+$$(3) ~ \int \sqrt{u^2 \pm a^2} \, du = \frac{u}{2}\sqrt{u^2 \pm a^2} \pm \frac{a^2}{2}\ln|u + \sqrt{u^2 \pm a^2}| + C.$$
+Using the substitutions $a = 1$ and $u = x$ (so that $du = dx$), and choosing the ``$-$'' option from the $\pm$ in the rule, it follows that 
+$$\int \sqrt{1-x^2} \, dx = \frac{x}{2} \sqrt{x^2 - 1} - \frac{1}{2} \ln|x + \sqrt{x^2-1}| + C.$$
+
+One important point to note is that whenever we are applying a rule in the table, we are doing a substitution.  This is especially key when the situation is more complicated than allowing $u = x$ as in the last example.  For instance, say we wish to evaluate the integral
+$$\int \sqrt{9 + 64x^2} \, dx.$$
+Once again, we want to use Rule (3) from the table, but now do so with $a = 3$ and $u = 8x$; we also choose the ``$+$'' option in the rule.  With this substitution, it follows that $du = 8 \ dx$, so $dx = \frac{1}{du}$.  Applying this substitution, 
+$$\int \sqrt{9 + 64x^2} \, dx = \int \sqrt{9 + u^2} \cdot \frac{1}{8} \, du = \frac{1}{8} \int \sqrt{9+u^2} \, du.$$
+By Rule (3), we now find that\small
+\begin{eqnarray*}
+  \int \sqrt{9 + 64x^2} \, dx & = & \frac{1}{8} \left( \frac{u}{2}\sqrt{u^2 + 9} + \frac{9}{2}\ln|u + \sqrt{u^2 + 9}| + C \right) \\
+  				& = & \frac{1}{8} \left( \frac{8x}{2}\sqrt{64x^2 + 9} + \frac{9}{2}\ln|8x + \sqrt{64x^2 + 9}| + C \right).
+\end{eqnarray*}\normalsize
+In problems such as this one, it is essential that we not forget to account for the factor of $\frac{1}{8}$ that must be present in the evaluation.
+
+\input{activities/5.7.Act1} %ACTIVITY
+
+%----------------------------------------------
+% SUBSECTION USING COMPUTER ALGEBRA SYSTEMS
+%----------------------------------------------
+\subsection*{Using Computer Algebra Systems} 
+
+A computer algebra system (CAS) is a computer program that is capable of executing symbolic mathematics.  For a simple example, if we ask a CAS to solve the equation $ax^2 + bx + c = 0$ for the variable $x$, where $a$, $b$, and $c$ are arbitrary constants, the program will return $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.  While research to develop the first CAS dates to the $1960$s, these programs became more common and publicly available in the early $1990$s.  Two prominent early examples are the programs \emph{Maple} and \emph{Mathematica}, which were among the first computer algebra systems to offer a graphical user interface.  Today, \emph{Maple} and \emph{Mathematica} are exceptionally powerful professional software packages that are capable of executing an amazing array of sophisticated mathematical computations.  They are also very expensive, as each is a proprietary program.  The CAS \emph{SAGE} is an open-source, free alternative to \emph{Maple} and \emph{Mathematica}.
+
+For the purposes of this text, when we need to use a CAS, we are going to turn instead to a similar, but somewhat different computational tool, the web-based ``computational knowledge engine'' called \emph{WolframAlpha}.  There are two features of \emph{WolframAlpha} that typically make it more approachable to beginners than the CAS options mentioned above:  (1) unlike \emph{Maple} and \emph{Mathematica}, \emph{WolframAlpha} is free (provided we are willing to suffer through some pop-up advertising); and (2) unlike any of the three, the syntax in  \emph{WolframAlpha} is flexible.  Think of  \emph{WolframAlpha} as being a little bit like doing a Google search: the program will interpret what is input, and then provide a summary of options.
+
+If we want to have \emph{WolframAlpha} evaluate an integral for us, we can provide it syntax such as
+\begin{quote}
+\texttt{integrate x\^{}2 dx}
+\end{quote}
+to which the program responds with
+$$\int x^2 \, dx = \frac{x^3}{3} + \mbox{constant}.$$
+While there is much to be enthusiastic about regarding CAS programs such as \emph{WolframAlpha}, there are several things we should be cautious about:  (1) a CAS only responds to exactly what is input; (2) a CAS can answer using powerful functions from highly advances mathematics; and (3) there are problems that even a CAS cannot do without additional human insight.
+
+Although (1) likely goes without saying, we have to be careful with our input:  if we enter syntax that defines a function other than the problem of interest, the CAS will work with precisely the function we define.  For example, if we are interested in evaluating the integral
+$$\int \frac{1}{16-5x^2} \, dx,$$
+and we mistakenly enter 
+\begin{quote}
+\texttt{integrate 1/16 - 5x\^{}2 dx}
+\end{quote}
+a CAS will (correctly) reply with 
+$$\frac{1}{16}x - \frac{5}{3} x^3.$$
+It is essential that we are sufficiently well-versed in antidifferentiation to recognize that this function cannot be the the one that we seek:  integrating a rational function such as $\frac{1}{16-5x^2}$, we expect the logarithm function to be present in the result.
+
+Regarding (2), even for a relatively simple integral such as $\int \frac{1}{16-5x^2} \, dx,$ some CASs will invoke advanced functions rather than simple ones.  For instance, if we use \emph{Maple} to execute the command
+\begin{quote}
+\texttt{int(1/(16-5*x\^{}2), x);}
+\end{quote}
+the program responds with 
+$$\int \frac{1}{16-5x^2} \, dx = \frac{\sqrt{5}}{20} \mbox{arctanh}\left(\frac{\sqrt{5}}{4}x\right).$$ 
+While this is correct (save for the missing arbitrary constant, which \emph{Maple} never reports), the inverse hyperbolic tangent function is not a common nor familiar one; a simpler way to express this function can be found by using the partial fractions method, and happens to be the result reported by \emph{WolframAlpha}:\small
+$$\int \frac{1}{16-5x^2} \, dx = \frac{1}{8\sqrt{5}} \left(\log(4\sqrt{5}+5\sqrt{x}) - \log(4\sqrt{5}-5\sqrt{x})\right) + \mbox{constant}.$$\normalsize
+
+Using sophisticated functions from more advanced mathematics is sometimes the way a CAS says to the user ``I don't know how to do this problem.''  For example, if we want to evaluate 
+$$\int e^{-x^2} \, dx,$$
+and we ask \emph{WolframAlpha} to do so, the input
+\begin{quote}
+\texttt{integrate exp(-x\^{}2) dx}
+\end{quote} 
+results in the output
+$$\int e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}\mbox{erf}(x) + \mbox{constant}.$$
+The function ``erf$(x)$'' is the \emph{error function}\index{error function}, which is actually defined by an integral:
+$$\mbox{erf}(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} \, dt.$$
+So, in producing output involving an integral, the CAS has basically reported back to us the very question we asked.
+
+Finally, as remarked at (3) above, there are times that a CAS will actually fail without some additional human insight.  If we consider the integral
+$$\int (1+x)e^x \sqrt{1+x^2e^{2x}} \, dx $$
+and ask \emph{WolframAlpha} to evaluate
+\begin{quote}
+\texttt{int (1+x) * exp(x) * sqrt(1+x\^{}2 * exp(2x)) dx},
+\end{quote}
+the program thinks for a moment and then reports
+\begin{quote}
+(\emph{no result found in terms of standard mathematical functions})
+\end{quote}
+But if we let $u = xe^{x}$, then $du = (1+x)e^x \, dx$, which means that the preceding integral has form
+$$\int (1+x)e^x \sqrt{1+x^2e^{2x}} \, dx = \int \sqrt{1+u^2} \, du, $$
+which is a straightforward one for any CAS to evaluate.
+
+So, the above observations regarding computer algebra systems lead us to proceed with some caution:  while any CAS is capable of evaluating a wide range of integrals (both definite and indefinite), there are times when the result can mislead us.  We must think carefully about the meaning of the output, whether it is consistent with what we expect, and whether or not it makes sense to proceed.
+
+\input{activities/5.7.Act2} %ACTIVITY 
+
+\vspace*{-.8cm}
+
+%----------------------------------------------
+% SUBSECTION SUMMARY
+%----------------------------------------------
+\begin{summary}
+\item Until the development of computing algebra systems, integral tables enabled students of calculus to more easily evaluate integrals such as $\int \sqrt{a^2 + u^2} \, du$, where $a$ is a positive real number.  A short table of integrals may be found in Appendix~\ref{C:9.IntegralTable}.
+\item Computer algebra systems can play an important role in finding antiderivatives, but we must be cautious to use correct input, watch for unfamiliar advanced functions that the CAS may cite in its result, and consider that a CAS may need further assistance from us in order to answer a particular question.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/5-7.Other(Ex)} 
+
+\cleardoublepage

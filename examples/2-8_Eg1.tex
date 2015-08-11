@@ -1,0 +1,18 @@
+
+\begin{example} \label{Ex:2.8.Eg1}
+Find the derivatives of the following functions. 
+
+			\begin{enumerate}[1)]
+			\item		$y = \ln (4x^3-2x^2)$
+			\item		$g(x) = x\ln(x) - x$.
+			\end{enumerate}
+
+\solution
+\begin{enumerate}[1)]
+\item Recognize that $y = \ln (4x^3-2x^2)$ is the composition of $f(x) = \ln(x)$ and $g(x) = 4x^3-2x^2$. Also, recall that $$\frac{d}{dx}\Big(\ln(x)\Big) = \frac{1}{x}.$$ This leads us to:
+		$$y' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.$$
+\item We use the Product Rule to find $$\ds \frac{d}{dx}\Big(x\ln(x)\Big) = x\cdot 1/x + 1\cdot \ln(x) = 1+\ln(x)$$ Using this result, we compute $$\ds \frac{d}{dx}\Big(x\ln(x)-x\Big) = 1+\ln(x)-1 = \ln(x).$$ 
+		\end{enumerate}
+%This seems significant; if the natural log function $\ln x$ is an important function (it is), it %seems worthwhile to know a function whose derivative is $\ln x$. We have found one. (We leave it %to the reader to find another; a correct answer will be \textit{very} similar to this one.)
+
+\end{example}

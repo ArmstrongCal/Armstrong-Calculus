@@ -1,0 +1,23 @@
+\begin{marginfigure}[4CM]
+\margingraphics{figures/figeximpint2} %EXAMPLE 192 APEX
+\caption{A graph of $f(x) = \frac{\ln(x)}{x^2}$ in Example \ref{eg:5.5.2}}
+\label{F:5-5_Eg2}
+\end{marginfigure}
+
+\begin{example} \label{eg:5.5.2} % EXAMPLE
+Evaluate the improper integral $\ds \int_1^\infty \frac{\ln( x)}{x^2}\ dx.$
+
+\solution This integral will require the use of Integration by Parts. Let $u = \ln (x)$ and $dv = 1/x^2\ dx$. Then
+\begin{align*}
+\int_1^\infty\frac{\ln (x)}{x^2}\ dx &= \lim_{b\to\infty}\int_1^b\frac{\ln (x)}{x^2}\ dx \\
+&=  \lim_{b\to\infty}\left(-\frac{\ln (x)}{x}\Big|_1^b +\int_1^b \frac{1}{x^2} \ dx \right)\\
+&=  \lim_{b\to\infty} \left.\left(-\frac{\ln (x)}{x} -\frac1x\right)\right|_1^b\\
+&=	\lim_{b\to\infty} \left(-\frac{\ln (b)}{b}-\frac1b - \left(-\ln (1)-1\right)\right).\\
+\intertext{The $1/b$ and $\ln (1)$ terms go to $0$, leaving $\ds \lim_{b\to\infty} -\frac{\ln (b)}b + 1.$ We need to evaluate $\ds \lim_{b\to\infty} \frac{\ln (b)}{b}$ with l'H\^opital's Rule. We have:}
+\lim_{b\to\infty}\frac{\ln (b)}b &\stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}} \ }{=} \lim_{b\to\infty} \frac{1/b}{1} \\
+&= 0.
+\intertext{Thus the improper integral evaluates as: }
+\int_1^\infty\frac{\ln (x)}{x^2}\ dx &= 1.
+\end{align*}
+
+\end{example}

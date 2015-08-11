@@ -1,0 +1,35 @@
+\begin{marginfigure}[8cm]
+\margingraphics{figures/figrr3} %APEX Example 98
+\caption{A sketch of a police car (at bottom) attempting to measure the speed of a car (at right) in Example \ref{Ex:3.1.Eg1}.}\label{fig:3.1.Eg1}
+\end{marginfigure}
+
+\marginnote{Example~\ref{Ex:3.1.Eg1} is both interesting and impractical. It highlights the difficulty in using radar in a non--linear fashion, and explains why ``in real life'' the police officer would follow the other driver to determine their speed, and not pull out pencil and paper.  The principles here are important, though. Many automated vehicles make judgments about other moving objects based on perceived distances and radar--like measurements using related--rates ideas.}
+
+\begin{example} \label{Ex:3.1.Eg1}
+Radar guns measure the rate of distance change between the gun and the object it is measuring. For instance, a reading of ``$55$ mph'' means the object is moving away from the gun at a rate of $55$ miles per hour, whereas a measurement of ``$-25$ mph'' would mean that the object is approaching the gun at a rate of $25$ miles per hour.
+
+If the radar gun is moving (say, attached to a police car) then radar readouts are only immediately understandable if the gun and the object are moving along the same line. If a police officer is traveling $60$ mph and gets a readout of $15$ mph, he knows that the car ahead of him is moving away at a rate of $15$ miles an hour, meaning the car is traveling $75$ mph. (This straight--line principle is one reason officers park on the side of the highway and try to shoot straight back down the road. It gives the most accurate reading.)
+
+Suppose an officer is driving due north at $60$ mph and sees a car moving due east, as shown in Figure \ref{fig:3.1.Eg1}. Using his radar gun, he measures a reading of $-5$ mph. By using landmarks, he believes both he and the other car are about $1/2$ mile from the intersection of their two roads. 
+
+If the speed limit on the other road is $55$ mph, is the other driver speeding?
+
+\solution Using the diagram in Figure \ref{fig:3.1.Eg1}, let's label what we know about the situation. As both the police officer and other driver are $1/2$ mile from the intersection, we have $A = 1/2$, $B = 1/2$, and through the Pythagorean Theorem, $C = 1/\sqrt{2}\approx 0.707$. 
+
+We know the police officer is traveling at $60$ mph; therefore, $\frac{dA}{dt} = -60$ since his distance from the intersection is decreasing. The radar measurement is $\frac{dC}{dt} = -5$. We want to find $\frac{dB}{dt}$. 
+
+We need an equation that contains relates $B$ to $A$ and/or $C$. The Pythagorean Theorem seems like a good choice: $A^2+B^2 = C^2$. Differentiate both sides with respect to $t$:
+\begin{align*}
+A^2 + B^2 &= C^2 \\
+\frac{d}{dt}\left(A^2+B^2\right) &= \frac{d}{dt}\left(C^2\right) \\
+2A\frac{dA}{dt} + 2B\frac{dB}{dt} &= 2C\frac{dC}{dt}
+\end{align*}
+
+We have values for everything except $\frac{dB}{dt}$. Solving for this we have 
+\begin{align*}
+\frac{dB}{dt} &= \frac{C\frac{dC}{dt}- A\frac{dA}{dt}}{B} \\
+&= \frac{ \frac{1}{\sqrt{2}}(-5)  - \frac{1}{2}(-60) }{1/2}\\
+&\approx 52.93\text{ mph}.
+\end{align*}
+The other driver does not appear to be speeding.	
+\end{example}

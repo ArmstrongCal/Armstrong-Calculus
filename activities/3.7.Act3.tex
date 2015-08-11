@@ -1,0 +1,52 @@
+\begin{activity} \label{A:3.7.3}  
+Evaluate each of the following limits.  If you use L'Hopital's Rule, indicate where it was used, and be certain its hypotheses are met before you apply it.
+\ba
+  \item $\ds \lim_{x \to \infty} \frac{x}{\ln(x)}$  
+  \item $\ds \lim_{x \to \infty} \frac{e^{x} + x}{2e^{x} + x^2}$ 
+  \item $\ds \lim_{x \to 0^+} \frac{\ln(x)}{\frac{1}{x}}$  
+  \item $\ds \lim_{x \to \frac{\pi}{2}^-} \frac{\tan(x)}{x-\frac{\pi}{2}}$
+  \item $\ds \lim_{x \to \infty} xe^{-x}$
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Remember that $\ln(x) \to \infty$ as $x \to infty$.
+	\item Both the numerator and denominator tend to $\infty$ as $x \to \infty$.
+	\item Note that $x \to 0^+$, not $\infty$.
+	\item As $x \to \frac{\pi}{2}^-$, $\tan(x) \to \infty$.
+	\item Observe that $e^{-x} = \frac{1}{e^x}$.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Remember that $\ln(x) \to \infty$ as $x \to infty$, so this limit is indeterminate.
+	\item Both the numerator and denominator tend to $\infty$ as $x \to \infty$.  Remember that L'Hopital's Rule can be applied more than once, if needed.
+	\item Note that $x \to 0^+$, not $\infty$, and that $\ln(x) \to -\infty$ as $x \to 0^+$.
+	\item As $x \to \frac{\pi}{2}^-$, $\tan(x) \to \infty$.  
+	\item Observe that $e^{-x} = \frac{1}{e^x}$, so this limit can be rearranged to have indeterminate form $\frac{\infty}{\infty}.$
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+  \item As both numerator and denominator tend to $\infty$ as $x \to \infty$, by L'Hopital's Rule followed by some elementary algebra,
+  $$ \lim_{x \to \infty} \frac{x}{\ln(x)} = \lim_{x \to \infty} \frac{1}{\frac{1}{x}} = \lim_{x \to \infty} x = \infty.$$  
+  \item Because this limit has indeterminate form $\frac{\infty}{\infty}$, L'Hopital's Rule tells us that
+  $$ \lim_{x \to \infty} \frac{e^{x} + x}{2e^{x} + x^2} = \lim_{x \to \infty} \frac{e^{x} + 1}{2e^{x} + 2x}.$$
+  The latest limit is indeterminate for the same reason, and a second application of the rule shows
+  $$ \lim_{x \to \infty} \frac{e^{x} + x}{2e^{x} + x^2} = \lim_{x \to \infty} \frac{e^{x}}{2e^{x} + 2}.$$
+  Note how each application of the rule produces a simpler numerator and denominator.  With one more use of L'Hopital's Rule, followed by a simple algebraic simplification, we have
+  $$ \lim_{x \to \infty} \frac{e^{x} + x}{2e^{x} + x^2} = \lim_{x \to \infty} \frac{e^{x}}{2e^{x}} = \lim_{x \to \infty} \frac{1}{2} = \frac{1}{2}.$$
+  \item As $x \to 0^+$, $\ln(x) \to -\infty$ and $\frac{1}{x} \to +\infty$, thus by L'Hopital's Rule,
+  $$ \lim_{x \to 0^+} \frac{\ln(x)}{\frac{1}{x}} = \lim_{x \to 0^+} \frac{\frac{1}{x}}{-\frac{1}{x^2}}.$$
+  Reciprocating, multiplying, and simplifying, it follows that  
+    $$ \lim_{x \to 0^+} \frac{\ln(x)}{\frac{1}{x}} = \lim_{x \to 0^+} \frac{1}{x}\cdot \frac{x^2}{-1} = \lim_{x \to 0^+} -x = 0.$$ 
+  \item Here, the numerator tends to $\infty$ while the denominator tends to $0^-$.  Note well that this limit is not indeterminate, but rather produces a collection of fractions with large positive numerators and small negative denominators.  Hence
+  $$\ds \lim_{x \to \frac{\pi}{2}^-} \frac{\tan(x)}{x-\frac{\pi}{2}} = -\infty.$$
+  In particular, we observe that L'Hopital's Rule is not applicable here.
+  \item In its original form, $\ds \lim_{x \to \infty} xe^{-x}$, is indeterminate of form $\infty \cdot 0$.  Rewriting $e^{-x}$ as $\frac{1}{e^x}$, a straightforward application of L'Hopital's Rule tells us that
+  $$ \lim_{x \to \infty} xe^{-x} = \lim_{x \to \infty} \frac{x}{e^x} = \lim_{x \to \infty} \frac{1}{e^x}.$$
+  Since $e^x \to \infty$ as $x \to \infty$, we find that
+  $$\lim_{x \to \infty} xe^{-x} = 0.$$
+\ea
+\end{activitySolution}
+\aftera

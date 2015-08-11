@@ -1,0 +1,45 @@
+\begin{example} \label{Ex:3.7.Eg2}
+Evaluate the following limits.
+\bmtwo
+\begin{enumerate}[1)]
+\item $\ds \lim_{x\to\infty} \left(1+\frac1x\right)^x $
+\item $\ds \lim_{x\to0^+} x^x.$
+\end{enumerate}
+\emtwo
+
+\solution
+\begin{enumerate}[1)]
+\item	This limit is a special limit, and it has important applications within mathematics and finance. Note that the exponent approaches $\infty$ while the base approaches $1$, leading to the indeterminate form $1^\infty$. Let $f(x) = (1+1/x)^x$; the problem asks to evaluate $\ds\lim_{x\to\infty}f(x)$. Let's first evaluate $\ds \lim_{x\to\infty}\ln\big(f(x)\big)$.
+\begin{align*}
+\lim_{x\to\infty}\ln\big(f(x)\big) & = \lim_{x\to\infty} \ln \left(1+\frac1x\right)^x \\
+			&= \lim_{x\to\infty} x\ln\left(1+\frac1x\right)\\
+			&=  \lim_{x\to\infty} \frac{\ln\left(1+\frac1x\right)}{1/x}\\
+			\intertext{This produces the indeterminate form $0/0$, so we apply l'H\^opital's Rule.}
+			&=	\lim_{x\to\infty} \frac{\frac{1}{1+1/x}\cdot(-1/x^2)}{(-1/x^2)} \\
+			&= \lim_{x\to\infty}\frac{1}{1+1/x}\\
+			&= 1.
+\end{align*}
+Thus $\ds\lim_{x\to\infty} \ln \big(f(x)\big) = 1$, and
+$$\lim_{x\to\infty}\left(1+\frac1x\right)^x = \lim_{x\to\infty} f(x) =  \lim_{x\to\infty}e^{\ln (f(x))} = e^1 = e.$$
+
+%ITEM
+\item	This limit leads to the indeterminate form $0^0$. Let $f(x) = x^x$ and consider first $\ds\lim_{x\to0^+} \ln\big(f(x)\big)$. 
+\begin{align*}
+\lim_{x\to0^+} \ln\big(f(x)\big) &= \lim_{x\to0^+} \ln\left(x^x\right) \\
+			&= \lim_{x\to0^+} x\ln x \\
+			&= \lim_{x\to0^+} \frac{\ln x}{1/x}.\\
+			\intertext{This produces the indeterminate form $-\infty/\infty$ so we apply l'H\^opital's Rule.}
+			&=	\lim_{x\to0^+} \frac{1/x}{-1/x^2} \\
+			&= \lim_{x\to0^+} -x \\
+			&= 0.
+\end{align*}
+Thus $\ds\lim_{x\to0^+} \ln\big(f(x)\big) =0$, and
+$$\lim_{x\to0^+} x^x = \lim_{x\to0^+} f(x) = \lim_{x\to0^+} e^{\ln(f(x))} = e^0 = 1.$$
+This result is supported by the graph of $f(x)=x^x$ given in Figure~\ref{fig:LHR4}.
+\end{enumerate}
+\end{example}
+
+\begin{marginfigure}[-6cm]
+\margingraphics{figures/figLHR4}
+\caption{A graph of $f(x)=x^x$ supporting the fact that as $x\to 0^+$, $f(x)\to 1$.}\label{fig:LHR4}
+\end{marginfigure}

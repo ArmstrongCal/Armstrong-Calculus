@@ -1,0 +1,211 @@
+\section{Infinite Series} \label{S:7.2.Sequences}
+
+\begin{goals}
+\item What is an infinite series?
+\item What is the $n$th partial sum of an infinite series?
+\item How do we add up an infinite number of numbers? In other words, what does is mean for an infinite series of real numbers to converge?
+\item What does is mean for an infinite series of real numbers to diverge?
+
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+Given the sequence $\{a_n\} = \{1/2^n\} = 1/2,\ 1/4,\ 1/8,\ \ldots$, consider the following sums:
+
+$$\begin{array}{ccccc}
+a_1				&=& 1/2					 &=& 1/2\\
+a_1+a_2		&=& 1/2+1/4			 &=& 3/4\\
+a_1+a_2+a_3 &=& 1/2+1/4+1/8  &=& 7/8\\
+a_1+a_2+a_3+a_4 &=& 1/2+1/4+1/8+1/16 & =& 15/16
+\end{array}$$
+In general, we can show that $$a_1+a_2+a_3+\cdots +a_n = \frac{2^n-1}{2^n} = 1-\frac{1}{2^n}.$$
+Let $S_n$ be the sum of the first $n$ terms of the sequence $\{1/2^n\}$. From the above, we see that $S_1=1/2$, $S_2 = 3/4$, etc. Our formula at the end shows that $S_n = 1-1/2^n$. 
+
+Now consider the following limit: $\ds \lim_{n\to\infty}S_n = \lim_{n\to\infty}\big(1-1/2^n\big) = 1$. This limit can be interpreted as saying something amazing: \emph{the sum of \emph{all} the terms of the sequence $\{1/2^n\}$ is 1.} 
+
+
+This example illustrates some interesting concepts that we explore in this section. We begin this exploration with some definitions.
+
+\definition{Infinite Series, $n^\text{th}$ Partial Sums, Convergence, Divergence}  %definition
+{Let $\{a_n\}$ be a sequence.
+\begin{enumerate}
+\item		The sum $\ds a_1 + a_2 + \cdots + a_n + \cdots =\sum_{n=1}^\infty a_n$ is an \textbf{infinite series} (or, simply \textbf{series}).
+\item		Let $\ds S_n = a_1 + a_2 + \cdots + a_n = \sum_{i=1}^n a_i$; the sequence $\{S_n\}$ is the sequence of \textbf{$n^\text{th}$ partial sums} of $\{a_n\}$.
+\item		If the sequence $\{S_n\}$ converges to $L$, we say the series $\ds \sum_{n=1}^\infty a_n$ \textbf{converges} to $L$, and we write $\ds \sum_{n=1}^\infty a_n = L$.
+\item		If the sequence $\{S_n\}$ diverges, the series $\ds \sum_{n=1}^\infty a_n$ \textbf{diverges}.
+\index{series!definition}\index{series!partial sums}\index{series!convergent}\index{series!divergent}\index{convergence!of series}\index{divergence!of series}
+\end{enumerate}
+}  %end definition
+
+
+Using our new terminology, we can state that the series $\ds \sum_{n=1}^\infty 1/2^n$ converges, and $\ds \sum_{n=1}^\infty 1/2^n = 1.$
+
+We will explore a variety of series in this section. We start with two series that diverge, showing how we might discern divergence.
+
+\input{examples/7-2_Eg1.tex}
+
+While it is important to recognize when a series diverges, we are generally more interested in the series that  converge. In this section we will demonstrate a few general techniques for determining convergence; later sections will delve deeper into this topic. First, the activity demonstrates an important series that has many applications.
+
+\input{activities/7.2.Act1} % ACTIVITY
+
+
+%-------------------------------
+% SUBSECTION Geometric Series
+%-------------------------------
+\subsection*{Geometric Series} \index{geometric series}
+
+In Activity \ref{A:7.2.1} we encountered the sum
+\[(5 \times 0.08)\left(1+0.08+0.08^2+0.08^3+ \cdots + 0.08^{n-1}\right).\]
+In order to evaluate the long-term level of Warfarin in the patient's system, we will want to fully understand the sum in this expression. This sum has the form
+\begin{equation} \label{eq:7.2_part_sum_geometric_1}
+a+ar+ar^2+ \cdots + ar^{n-1}
+\end{equation}
+where $a=5 \times 0.08$ and $r=0.08$. Such a sum is called a \emph{geometric sum}\index{geometric sum} with ratio $r$. When the sum has infinite terms it is called a \emph{geometric series}.
+
+\definition{Geometric Series} %definition
+{A \textbf{geometric series} is a series of the form 
+$$\sum_{n=0}^\infty r^n = 1+r+r^2+r^3+\cdots+r^n+\cdots$$
+Note that the index starts at $n=0$, not $n=1$.%
+\index{series!geometric}\index{geometric series}
+} %end definition
+
+We started this section with a geometric series, although we dropped the first term of $1$. One reason geometric series are important is that they have nice convergence properties.
+
+\concept{Convergence of Geometric Series}
+{Consider the geometric series $\ds \sum_{n=0}^\infty r^n$.
+\begin{enumerate}
+\item		The $n^\text{th}$ partial sum is: $\ds S_n = \frac{1-r\,^{n+1}}{1-r}$.
+\item		The series converges if, and only if, $|r| < 1$. When $|r|<1$, 
+\index{series!geometric}\index{geometric series}\index{convergence!of geometric series}\index{divergence!of geometric series}
+$$\sum_{n=0}^\infty r^n = \frac{1}{1-r}.$$
+\end{enumerate}
+}
+
+\input{activities/7.2.Act2} %activity
+
+According to the concept above, the series $\ds\sum_{n=0}^\infty \frac{1}{2^n} = 1+\frac12+\frac14+\cdots$ converges, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.
+
+\input{examples/7-2_Eg2.tex} %example
+
+
+
+%-------------------------------
+% SUBSECTION p-Series
+%-------------------------------
+\subsection*{$p$--Series}
+
+Another important type of series is the \emph{p-series}.
+
+\definition{$p$--Series, General $p$--Series} %definition
+{\begin{enumerate}
+\item	A \textbf{$p$-series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
+
+\item	A \textbf{general $p$-series} is a series of the form 
+\index{series!p@$p$-series}\index{p@$p$-series}
+$$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
+\end{enumerate}
+} % end definition
+
+Like geometric series, one of the nice things about p-series is that they have easy to determine convergence properties.
+
+\concept{Convergence of General $p$-Series} \label{thm:pseries}%concept
+{A general $p$-series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ will converge if, and only if, $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
+\index{convergence!of p@of $p$-series}\index{divergence!of p@of $p$-series}
+} %end concept
+\footnote{\textbf{Note:} Concept \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
+
+\input{examples/7-2_Eg3.tex} %example
+
+
+Later sections will provide tests by which we can determine whether or not a given series converges. This, in general, is much easier than determining \emph{what} a given series converges to. There are many cases, though, where the sum can be determined. \\
+
+\input{examples/7-2_Eg4.tex} %example
+
+The series in Example \ref{eg:7.2.4} is an example of a \sword{telescoping series}. Informally, a telescoping series is one in which the partial sums reduce to just a finite number of terms. The partial sum $S_n$ did not contain $n$ terms, but rather just two: 1 and $1/(n+1)$.\index{series!telescoping}\index{telescoping series}
+
+When possible, seek a way to write an explicit formula for the $n^\text{th}$ partial sum $S_n$. This makes evaluating the limit $\ds\lim_{n\to\infty} S_n$ much more approachable. We do so in the next example.
+
+\input{examples/7-2_Eg5.tex} %example
+
+
+We are learning about a new mathematical object, the series. As done before, we apply ``old'' mathematics to this new topic.
+
+\concept{Properties of Infinite Series} %concept
+{Let \quad$\ds \sum_{n=1}^\infty a_n = L$,\quad  $\ds\sum_{n=1}^\infty b_n = K$, and let $c$ be a constant.
+\begin{enumerate}
+\item  Constant Multiple Rule: $\ds\sum_{n=1}^\infty c\cdot a_n = c\cdot\sum_{n=1}^\infty a_n = c\cdot L.$\index{Constant Multiple Rule!of series}
+\item		Sum/Difference Rule: $\ds\sum_{n=1}^\infty \big(a_n\pm b_n\big) = \sum_{n=1}^\infty a_n \pm \sum_{n=1}^\infty b_n = L \pm K.$
+\index{series!properties}\index{Sum/Difference Rule!of series}
+\end{enumerate} 
+} %end concept
+
+
+Before using this theorem, we provide a few ``famous'' series.
+
+\concept{Important Series} %concept
+{\begin{enumerate}
+\item	\parbox{90pt}{$\ds\sum_{n=0}^\infty \frac1{n!} = e$. } (Note that the index starts with $n=0$.)
+\item	$\ds\sum_{n=1}^\infty \frac1{n^2} = \frac{\pi^2}{6}$.
+\item	$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}$.
+\item	$\ds\sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1} = \frac{\pi}{4}$.
+\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{1}{n} $ \quad diverges.} (This is called the \emph{Harmonic Series}.)\index{Harmonic Series}
+\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2$.} (This is called the \emph{Alternating Harmonic Series}.)\index{Alternating Harmonic Series}
+\end{enumerate}
+} % end concept
+
+
+\input{examples/7-2_Eg6.tex} %example
+
+
+It may take a while before one is comfortable with this statement, whose truth lies at the heart of the study of infinite series: \emph{it is possible that the sum of an infinite list of nonzero numbers is finite.} We have seen this repeatedly in this section, yet it still may ``take some getting used to.''
+
+As one contemplates the behavior of series, a few facts become clear. 
+\begin{enumerate}
+\item		In order to add an infinite list of nonzero numbers and get a finite result, ``most'' of those numbers must be ``very near'' 0. 
+\item		If a series diverges, it means that the sum of an infinite list of numbers is not finite (it may approach $\pm \infty$ or it may oscillate), and:
+		\begin{enumerate}
+		\item		The series will still diverge if the first term is removed.
+		\item		The series will still diverge if the first 10 terms are removed.
+		\item		The series will still diverge if the first $1,000,000$ terms are removed.
+		\item		The series will still diverge if any finite number of terms from anywhere in the series are removed.
+		\end{enumerate}
+\end{enumerate}
+
+These concepts are very important and lie at the heart of the next two theorems.
+
+\theorem{thm:series_nth_term}{$n^\text{th}$--Term Test for Convergence/Divergence}
+{Consider the series $\ds\sum_{n=1}^\infty a_n$. 
+\index{series!nth@$n^\text{th}$--term test}\index{nth@$n^\text{th}$--term test}\index{convergence!nth@$n^\text{th}$--term test}\index{divergence!nth@$n^\text{th}$--term test}
+\begin{enumerate}
+\item		If $\ds\sum_{n=1}^\infty a_n$ converges, then $\ds \lim_{n\to\infty}a_n =0$.
+\item		If $\ds \lim_{n\to\infty}a_n \neq 0$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
+\end{enumerate}
+}
+
+Note that the two statements in Theorem \ref{thm:series_nth_term} are really the same. In order to converge, the limit of the terms of the sequence must approach 0; if they do not, the series will not converge. 
+
+Looking back, we can apply this theorem to the series in Example \ref{ex_series1}. In that example, the $n^\text{th}$ terms of both sequences do not converge to 0, therefore we can quickly conclude that each series diverges.
+
+\textbf{Important!} This theorem \emph{does not state} that if $\ds \lim_{n\to\infty} a_n = 0$ then $\ds \sum_{n=1}^\infty  a_n $ converges. The standard example of this is the Harmonic Series, as given in Key Idea \ref{idea:famous_series}. The Harmonic Sequence, $\{1/n\}$, converges to 0; the Harmonic Series, $\ds \sum_{n=1}^\infty 1/n$, diverges.
+
+\theorem{thm:series_behavior}{Infinite Nature of Series}
+{The convergence or divergence remains unchanged by the addition or subtraction of any finite number of terms. That is:
+	\begin{enumerate}
+	\item		A divergent series will remain divergent with the addition or subtraction of any finite number of terms.
+	\item		A convergent series will remain convergent with the addition or subtraction of any finite number of terms. (Of course, the \emph{sum} will likely change.)
+	\end{enumerate}
+}
+
+Consider once more the Harmonic Series $\ds\sum_{n=1}^\infty  \frac1n$ which diverges; that is, the sequence of partial sums $\{S_n\}$ grows (very, very slowly) without bound. One might think that by removing the ``large'' terms of the sequence that perhaps the series will converge. This is simply not the case. For instance, the sum of the first 10 million terms of the Harmonic Series is about 16.7. Removing the first 10 million terms from the Harmonic Series changes the $n^\text{th}$ partial sums,  effectively subtracting 16.7 from the sum. However, a sequence that is growing without bound will still grow without bound when 16.7 is subtracted from it. 
+
+The equations below illustrate this. The first line shows the infinite sum of the Harmonic Series split into the sum of the first 10 million terms plus the sum of ``everything else.'' The next equation shows us subtracting these first 10 million terms from both sides. The final equation employs a bit of ``psuedo--math'': subtracting 16.7 from ``infinity'' still leaves one with ``infinity.''
+\begin{align*}
+ \parbox{50pt}{\centering$\ds\sum_{n=1}^\infty \frac1n$} &= \parbox{50pt}{\centering$\ds\sum_{n=1}^{10,000,000}\frac1n$}\quad + \parbox{50pt}{\centering$\ds\sum_{n=10,000,001}^\infty \frac1n$} \rule[-20pt]{0pt}{1pt} \\
+ \parbox{50pt}{\centering$\ds\sum_{n=1}^\infty \frac1n$} - \parbox{50pt}{\centering$\ds\sum_{n=1}^{10,000,000}\frac1n$}&= \parbox{50pt}{\centering$\ds\sum_{n=10,000,001}^\infty \frac1n$} \rule[-20pt]{0pt}{1pt}\\
+\parbox{50pt}{\centering	$\infty$} - \parbox{50pt}{\centering $16.7$} &=  \parbox{50pt}{\centering$\infty$}
+\end{align*}													
+
+\printexercises{exercises/08_02_exercises}

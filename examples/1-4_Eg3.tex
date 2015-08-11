@@ -1,0 +1,28 @@
+\begin{example} \label{Ex:1.4.Eg3}
+Show that $\ds \lim_{x \to 0} e^x = 1 $.
+
+\solution Symbolically, we want to take the equation $|e^x - 1| < \epsilon$ and unravel it to the form $|x-0| < \delta$.  Let's look at some calculations:
+\begin{eqnarray*}
+|e^x - 1| < \epsilon&\\
+-\epsilon < e^x - 1 < \epsilon& \qquad \textrm{(Definition of absolute value)}\\
+1-\epsilon < e^x < 1+\epsilon & \qquad \textrm{(Add 1)}\\
+\ln(1-\epsilon) < x < \ln(1+\epsilon) & \qquad \textrm{(Take natural logs)}
+\end{eqnarray*}
+Making the safe assumption that $\epsilon<1$ ensures the last inequality is valid (i.e., so that $\ln (1-\epsilon)$ is defined). Recall $\ln(1)= 0$ and $\ln(x)<0$ when $0<x<1$. So $\ln (1-\epsilon) <0$, hence we consider its absolute value. We can then set $\delta$ to be the minimum of $|\ln(1-\epsilon)|$ and $\ln(1+\epsilon)$; i.e.,  
+%  Well, there is a catch.  The value of $\epsilon$ is supposed to be small, but if it happens that $\epsilon \ge 1$, then $\ln(1-\epsilon)$ would be undefined!  The way to work around this is to simply define a new epsilon that is guaranteed to be smaller than the original epsilon \textit{and} less than 1 (let's say less than 1/2 just to be on the safe side).  Let's call this new value $\epsilon_1$ and define it to be $\epsilon_1 = \min\{\epsilon, 1/2\}$.  Then we can use the calculations above to define 
+\[ \delta = \min\{|\ln(1-\epsilon)|, \ln(1+\epsilon)\}. \]
+
+
+Now, we work through the actual the proof:
+
+\begin{eqnarray*}
+|x - 0|<\delta\\
+-\delta < x < \delta& \qquad \textrm{(Definition of absolute value)}\\
+\ln(1-\epsilon) < x < \ln(1+\epsilon) & \qquad \textrm{(By our choice of}\; \delta)\\
+1-\epsilon < e^x < 1+\epsilon & \qquad \textrm{(Exponentiate)}\\
+-\epsilon < e^x - 1 < \epsilon & \qquad \textrm{(Subtract 1)}\\
+%-\epsilon < e^x - 1 < \epsilon & \qquad \textrm{(Since}\; \epsilon_1 \le \epsilon)\\
+\end{eqnarray*}
+
+In summary, given $\epsilon > 0$, let $\delta = \min\{|\ln(1-\epsilon |, \ln(1+\epsilon)\}$. Then $|x - 0| < \delta$ implies $|e^x - 1|< \epsilon$ as desired.  We have shown that $\displaystyle \lim_{x\rightarrow 0} e^x = 1 $.
+\end{example}

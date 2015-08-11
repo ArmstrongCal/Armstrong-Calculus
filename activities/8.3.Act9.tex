@@ -1,0 +1,59 @@
+\begin{activity} \label{8.3.Act9} Determine whether each of the following series  convergens or diverges. Explicitly state which test you use.
+\ba
+\item $\ds \sum \frac{k}{2^k}$
+
+\item $\ds \sum \frac{k^3+2}{k^2+1}$
+
+\item $\ds \sum \frac{10^k}{k!}$
+
+\item $\ds \sum \frac{k^3-2k^2+1}{k^6+4}$
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Since $\lim_{n \to \infty} \frac{n}{2^n} = 0$, the Divergence Test does not apply. The Ratio Test is a good one to apply with series whose terms involve exponentials and polynomials.
+
+In this example we have $a_{n+1} = \frac{n+1}{2^{n+1}}$ and $a_n = \frac{n}{2^n}$. So
+\[\frac{a_{n+1}}{a_n} = \frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}} = \frac{n+1}{2n}.\]
+As $n$ goes to infinity, the fraction $\frac{n+1}{n}$ goes to 1 and so
+\[\lim_{n \to \infty} \frac{n+1}{2n} = \frac{1}{2}.\]
+So in this example, for large $n$ we have that $\frac{a_{n+1}}{a_n} \approx \frac{1}{2}$ or that $\sum a_n$ is roughly a geometric series for large $n$ with ratio $\frac{1}{2}$. Since geometric series with ratio $\frac{1}{2}$ converges, we can conclude that
+\[\sum \frac{n}{2^n}\]
+converges as well.
+
+\item For this series, notice that the degree of the numerator is greater than the degree of the denominator, so
+\[\lim_{n \to \infty} \frac{n^3+2}{n^2+1} = \infty.\]
+Since this limit is not 0, the Divergence Test shows that $\ds \sum \frac{k^3+2}{k^2+1}$ diverges.
+
+\item We use the Ratio Test here with $a_k = \frac{10^k}{k!}$. Now
+\begin{align*}
+\lim_{k \to \infty} \frac{a_{k+1}}{a_k} &= \lim_{k \to \infty} \frac{ \frac{10^{k+1}}{(k+1)!} }{ \frac{10^k}{k!} } \\
+    &= \lim_{k \to \infty} \frac{10^{k+1}(k!)}{10^k(k+1)!} \\
+    &= \lim_{k \to \infty} \frac{10}{k+1} \\
+    &= 0,
+\end{align*}
+so the Ratio Test shows that $\ds \sum \frac{10^k}{k!}$ converges.
+
+\item If we ignore the highest powered terms, then the series $\ds \sum \frac{k^3-2k^2+1}{k^6+4}$ looks like the series $\ds \sum \frac{k^3}{k^6} = \sum \frac{1}{k^3}$. We formally apply the Limit Comparison Test as follows:
+\begin{align*}
+\lim_{k \to \infty} \frac{ \frac{k^3-2k^2+1}{k^6+4} }{  \frac{1}{k^3} } &= \lim_{k \to \infty} \frac{k^6-2k^5+k^3}{k^6+4} \\
+    &= \lim_{k \to \infty} \frac{1 - \frac{2}{k} + \frac{1}{k^3}}{1 + \frac{4}{k^6}} \\
+    & 1.
+\end{align*}
+Since $\ds \sum \frac{1}{k^3}$ is a $p$-series with $p=3>1$, the series $\ds \sum \frac{1}{k^3}$ converges. Consequently, the Limit Comparison Test shows that $\ds \sum \frac{k^3-2k^2+1}{k^6+4}$ converges as well. 
+
+\ea
+\end{activitySolution}
+\aftera 

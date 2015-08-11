@@ -1,0 +1,63 @@
+%\ifthenelse{\boolean{longpage}}%
+%{\mtable{.4}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
+		%\begin{tabular}{cc} 
+		%\myincludegraphics{figures/figLimitProof1a}&
+		%\myincludegraphics{figures/figLimitProof1b}
+		%\end{tabular}
+		%\vskip \baselineskip
+		%\parbox{200pt}{\centering With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
+		%}
+%}
+%\mtable{.45}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
+%		\begin{tabular}{c} 
+%		\myincludegraphics{figures/figLimitProof1a}\\
+%		\myincludegraphics{figures/figLimitProof1b}\\
+%		\noindent\parbox{200pt}{With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
+%		\end{tabular}
+%	}
+
+\begin{marginfigure}[7cm] % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figures/figLimitProof1a}}
+
+\subfloat{\margingraphics{figures/figLimitProof1b}}
+\caption{Illustrating the $\epsilon-\delta$ process. With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
+\label{fig:1-4_Eg1}
+\end{marginfigure}
+
+\begin{example} \label{Ex:1.4.Eg1}
+Show that $\ds \lim_{x \to 4} \sqrt{x} = 2 $.
+
+\solution Before we use the formal definition, let's try some numerical tolerances.  What if the $y$ tolerance is $0.5$, or $\epsilon =0.5$?  How close to $4$ does $x$ have to be so that $y$ is within $0.5$ units of $2$ (or $1.5 < y < 2.5$)?  In this case, we can just square these values since $y = \sqrt{x}$ to get
+$1.5^2 < x < 2.5^2,$ or 
+\[ 2.25 < x < 6.25.\]
+So, what is the desired $x$ tolerance?  Remember, we want to find a symmetric interval of $x$ values, namely
+$4 - \delta < x < 4 + \delta$.  The lower bound of $2.25$ is $1.75$ units from $4$; the upper bound of $6.25$ is $2.25$ units from $4$. We need the smaller of these two distances; we must have $\delta = 1.75$. See Figure~\ref{fig:1-4_Eg1}.
+
+Now read it in the correct way:  For the $y$ tolerance $\epsilon =0.5$, we have found an $x$ tolerance, $\delta = 1.75$, so that whenever $x$ is within $\delta$ units of $4$, then $y$ is within $\epsilon$ units of $2$.  That's what we were trying to find.
+  
+Let's try another value of $\epsilon$.  What if the $y$ tolerance is $0.01$, or $\epsilon =0.01$?  How close to $4$ does $x$ have to be in order for $y$ to be within $0.01$ units of $2$ (or $1.99 < y < 2.01$)?  Again, we just square these values to get $1.99^2 < x < 2.01^2$, or 
+\[ 3.9601 < x < 4.0401.\]  
+So, what is the desired $x$ tolerance?  In this case we must have $\delta = 0.0399$.  Note that in some sense, it looks like there are two tolerances (below $4$ of $0.0399$ units and above $4$ of $0.0401$ units).  However, we couldn't use the larger value of $0.0401$ for $\delta$ since then the interval for $x$ would be  $3.9599 < x < 4.0401$ resulting in $y$ values of $1.98995 < y < 2.01$ (which contains values NOT within $0.01$ units of $2$).
+
+What we have so far: if $\epsilon =0.5$, then $\delta = 1.75$ and if $\epsilon =0.01$, then $\delta = 0.0399$. A pattern is not easy to see, so we switch to general $\epsilon$ and $\delta$ and do the calculations symbolically.  We start by assuming $y=\sqrt{x}$ is within $\epsilon$ units of $2$:
+\begin{eqnarray*}
+|y - 2| < \epsilon &\\
+-\epsilon < y - 2 < \epsilon& \qquad \textrm{(Absolute value)}\\
+-\epsilon < \sqrt{x} - 2 < \epsilon  &\qquad (y=\sqrt{x})\\
+2 - \epsilon < \sqrt{x} < 2+ \epsilon &\qquad \textrm{ (Add 2)}\\
+(2 - \epsilon)^2 < x < (2+ \epsilon) ^2 &\qquad \textrm{ (Square all)}\\
+4 - 4\epsilon + \epsilon^2 < x < 4 + 4\epsilon + \epsilon^2 &\qquad \textrm{ (Expand)}\\
+4 - (4\epsilon - \epsilon^2) < x < 4 + (4\epsilon + \epsilon^2) &\qquad \textrm{ (Rewrite)}
+\end{eqnarray*}
+
+Since we want this last interval to describe an $x$ tolerance around $4$, we have that either $\delta = 4\epsilon + \epsilon^2$ or $\delta = 4\epsilon - \epsilon^2$. However, as we saw in the case when $\epsilon = 0.01$, we want the smaller of the two values for $\delta$.  So, to conclude this part, we set
+$\delta$ equal to the minimum of these two values, or $\delta = \min\{4\epsilon + \epsilon^2, 4\epsilon - \epsilon^2\}$.  Since $\epsilon > 0$, the minimum will occur when $\delta = 4\epsilon - \epsilon^2$.  That's the formula!  
+
+We can check this for our previous values.  If $\epsilon=0.5$, the formula gives
+$\delta = 4(0.5) - (0.5)^2 = 1.75$ and when $\epsilon=0.01$, the formula gives $\delta = 4(0.01) - (0.01)^2 = 0.399$.
+
+So given any $\epsilon >0$, we can set $\delta = 4\epsilon - \epsilon^2$ and the limit definition is satisfied.  We have shown formally (and finally!) that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 $.
+\end{example}
+
+%FOOTNOTE $**$: Actually, it is a pain, but this won't work if $\epsilon \ge 4$.  This shouldn't really occur since $\epsilon$ is supposed to be small, but it could happen.  In the cases where $\epsilon \ge 4$, just take $\delta = 1$ and you'll be fine.

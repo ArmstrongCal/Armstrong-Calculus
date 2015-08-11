@@ -1,0 +1,26 @@
+\begin{example} \label{eg:7.1.4} % EXAMPLE
+Let the following sequences, and their limits, be given:
+
+\begin{itemize}
+\item $\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}$, and $\ds \lim_{n\to\infty} a_n = 0$;
+\item $\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}$, and $\ds \lim_{n\to\infty} b_n = e$; and
+\item $\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}$, and $\ds \lim_{n\to\infty} c_n = 5$.
+\end{itemize}
+
+Evaluate the following limits.
+
+\begin{enumerate}[1)]
+\item $\ds \lim_{n\to\infty} (a_n+b_n)$ 
+\item $\ds \lim_{n\to\infty} (b_n\cdot c_n)$ 
+\item $\ds \lim_{n\to\infty} (1000\cdot a_n)$
+\end{enumerate}
+
+\solution
+\begin{enumerate}[1)] 
+\item Since $\ds \lim_{n\to\infty} a_n = 0$ and $\ds \lim_{n\to\infty} b_n = e$, we conclude that $\ds \lim_{n\to\infty} (a_n+b_n) = 0+e = e.$ So even though we are adding something to each term of the sequence $b_n$, we are adding something so small that the final limit is the same as before.
+
+\item Since $\ds \lim_{n\to\infty} b_n = e$ and $\ds \lim_{n\to\infty} c_n = 5$, we conclude that $\ds \lim_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.$
+
+\item Since $\ds \lim_{n\to\infty} a_n = 0$, we have $\ds \lim_{n\to\infty} 1000a_n =1000\cdot 0 = 0$. It does not matter that we multiply each term by $1000$; the sequence still approaches $0$. (It just takes longer to get close to $0$.)
+\end{enumerate}
+\end{example}

@@ -1,0 +1,16 @@
+\begin{example} \label{eg:4.6.usub6} % EXAMPLE
+Evaluate $\ds\int \sec(x) \ dx$.
+
+\solution
+This example employs a wonderful trick: multiply the integrand by ``$1$'' so that we see how to integrate more clearly. In this case, we write ``$1$'' as
+\[ 1 = \frac{\sec x + \tan x}{\sec x + \tan x}. \]
+This may seem like it came out of left field, but it works beautifully. Consider:
+\begin{align*}
+\int \sec x\ dx	&=	\int \sec x\cdot \frac{\sec x + \tan x}{\sec x + \tan x}\ dx \\
+&= \int \frac{\sec^2 x + \sec x\tan x}{\sec x + \tan x}\ dx.\\
+\intertext{Now let $u = \sec x+\tan x$; this means $du = (\sec x\tan x+ \sec^2 x)\ dx$, which is our numerator. Thus:}
+&= \int \frac{du}{u} \\
+&= \ln |u| + C \\
+&= \ln |\sec x+\tan x| + C.
+\end{align*}
+\end{example}

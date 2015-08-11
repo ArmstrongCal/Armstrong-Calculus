@@ -1,0 +1,149 @@
+\documentclass[symmetric,justified,marginals=justified,notoc]{tufte-book}
+\usepackage{lipsum,amsfonts,amsmath,amsthm,xcolor,tikz,multicol}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage[strict]{changepage}
+
+\usepackage{mdframed}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+
+\newcounter{eg}
+\newcounter{act}
+
+\renewcommand{\theeg}{\arabic{eg}}
+\renewcommand{\theact}{\thesection.\arabic{act}}
+
+\mdfdefinestyle{examplestyle}{
+	innerleftmargin=10,
+	innerrightmargin=10,
+	linecolor=black!50,
+	linewidth=1.5pt,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	frametitlerule=true,
+	frametitlerulecolor=black!50,
+	frametitlerulewidth=1.5pt
+}
+
+\newcommand{\example}[1]{
+\begin{mdframed}[
+	style=examplestyle,
+	settings={\global\refstepcounter{eg}},
+	frametitle={\Large Example \theeg}
+]
+#1
+\end{mdframed}
+}
+
+\newcommand{\activity}[1]{
+\begin{mdframed}[
+	style=examplestyle,
+	settings={\global\refstepcounter{act}},
+	frametitle={\Large Activity \theact}
+]
+#1
+\end{mdframed}
+}
+
+\newcommand{\preview}[1]{
+\begin{mdframed}[
+	style=examplestyle,
+	frametitle={\Large Preview Activity}
+]
+#1
+\end{mdframed}
+}
+
+\mdfdefinestyle{definitionstyle}{%
+	linecolor=blue!50,
+	backgroundcolor=blue!15,
+	linewidth=1pt,
+	leftmargin=1cm,
+	rightmargin=1cm,
+	frametitleaboveskip=12pt,
+	frametitlebelowskip=10pt
+}
+
+\newcommand{\definition}[2]{
+\begin{mdframed}[
+	style=definitionstyle,
+	frametitle={\Large \begin{center}#1\end{center}}
+]
+#2
+\end{mdframed}
+}
+
+\mdfdefinestyle{conceptstyle}{%
+	linecolor=green!50,
+	backgroundcolor=green!15,
+	linewidth=1pt,
+	leftmargin=1cm,
+	rightmargin=1cm,
+	frametitleaboveskip=12pt,
+	frametitlebelowskip=10pt
+}
+
+\newcommand{\concept}[2]{
+\begin{mdframed}[
+	style=conceptstyle,
+	frametitle={\Large \begin{center}#1\end{center}}
+]
+#2
+\end{mdframed}
+}
+
+%----------------------
+% BEGIN DOCUMENT
+%----------------------
+\begin{document}
+
+\setcounter{eg}{0}
+\setcounter{act}{0}
+
+\preview{
+\lipsum[2]
+}
+
+\activity{
+\lipsum[2]
+}
+
+\example{
+\lipsum[1-3]
+}
+
+\subsection{Exercises}
+
+\begin{multicols}{2}[\noindent {\bf For the following functions, differentiate them.}]
+\lipsum[1]
+\end{multicols}
+
+\begin{multicols}{2}[\noindent For the following functions, integrate them.]
+\begin{enumerate}[1), leftmargin=*]
+\item a
+\item b
+\item c
+\item d
+\item e
+\item f
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}[\noindent For the following functions, differentiate them.]
+\begin{enumerate}[1), leftmargin=*,start=7]
+\item a
+\item b
+\item c
+\item d
+\item e
+\item f
+\end{enumerate}
+\end{multicols}
+
+\end{document}
+%-------------------
+% END DOCUMENT
+%-------------------

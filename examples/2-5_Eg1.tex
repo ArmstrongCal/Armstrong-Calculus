@@ -1,0 +1,16 @@
+\begin{example} \label{Ex:2.5.Eg1}
+Use the definition of the derivative to prove the Product Rule for differentiation.
+
+\solution By the limit definition, we have 
+\[ \frac{d}{dx}\Big(f(x)g(x)\Big) =\lim_{h \to 0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}.\] 
+We now do something a bit unexpected; add $0$ to the numerator (so that nothing is changed) in the form of $-f(x+h)g(x)+f(x+h)g(x)$, then do some regrouping as shown.
+\begin{align*}
+\left.\right.& \frac{d}{dx}\Big(f(x)g(x)\Big) \\
+&=\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h} \quad \parbox{120pt}{ (now add $0$ to the numerator) } \\
+&=	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h} \\ % \quad \parbox{100pt}{\small (regroup)} \\
+&=	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}\\
+&=	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h} \\ %\quad\parbox{100pt}{\small (factor)}\\
+&=\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x) \\ %\quad\parbox{100pt}{\small (apply limits)}\\
+&=f(x)g'(x) + \fp(x)g(x)
+\end{align*}
+\end{example}

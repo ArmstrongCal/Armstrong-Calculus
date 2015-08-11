@@ -1,0 +1,75 @@
+\begin{activity} \label{A:2.2.2}
+For each of the listed functions, determine a formula for the derivative function.  For the first two, determine the formula for the derivative by thinking about the nature of the given function and its slope at various points; do not use the limit definition.  For the latter four, use the limit definition.  Pay careful attention to the function names and independent variables.  It is important to be comfortable with using letters other than $f$ and $x$.  For example, given a function $p(z)$, we call its derivative $p'(z)$.
+\begin{multicols}{3}
+\ba
+	\item $\ds (x) = 1$
+	\item $\ds g(t) = t$
+	\item $\ds p(z) = z^2$
+	\item $\ds q(s) = s^3$
+	\item $\ds F(t) = \frac{1}{t}$
+	\item $\ds G(y) = \sqrt{y}$
+\ea
+\end{multicols}
+
+\end{activity}
+\begin{smallhint}
+\ba
+	\item  What is the slope of the function at every point?
+	\item  What is the slope of the function at every point?
+	\item  $p(z+h) = (z+h)^2$
+	\item  $q(s+h) = (s+h)^3$
+	\item  $F(t+h) = \frac{1}{t+h}$
+	\item  $G(y+h) = \sqrt{y+h}$
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item  The function is a horizontal line.
+	\item  The function is a line with slope 1.
+	\item  $p(z+h) - p(z) = (z+h)^2 - z^2 = z^2 + 2zh + h^2 - z^2$
+	\item  $q(s+h) - q(s) = (s+h)^3 - s^3 = s^3 + 3s^2h + 3sh^2 + h^3 - s^3$
+	\item  Find a common denominator for $ \frac{1}{t+h} - \frac{1}{t}$.
+	\item  Multiply the difference quotient by this form of 1: $\frac{\sqrt{y+h} + \sqrt{y}}{\sqrt{y+h} + \sqrt{y}}.$
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item  $f'(x) = 0$ because the slope of the tangent line to the horizontal line given by $f(x) = 1$ is zero at every value of $x$.
+	\item  $g'(t) = 1$ because the slope of the tangent line to the line given by $g(t) = t$ is 1 at every value of $t$.
+	\item  \begin{eqnarray*}
+		p'(z) & = & \lim_{h \to 0} \frac{p(z+h) - p(z)}{h} \\
+		       & = & \lim_{h \to 0} \frac{(z+h)^2 - z^2}{h} \\
+		       & = & \lim_{h \to 0} \frac{z^2 + 2zh + h^2 - z^2}{h} \\
+		       & = & \lim_{h \to 0} \frac{2zh + h^2}{h} \\
+		       & = & \lim_{h \to 0} 2z + h \\
+		       & = & 2z
+		 \end{eqnarray*}
+		 
+	\item  \begin{eqnarray*}
+		q'(s) & = & \lim_{h \to 0} \frac{q(s+h) - q(s)}{h} \\
+		       & = & \lim_{h \to 0} \frac{(s+h)^3 - s^3}{h} \\
+		       & = & \lim_{h \to 0} \frac{s^3 + 3s^2h + 3sh^2 + h^3 - s^3}{h} \\
+		       & = & \lim_{h \to 0} \frac{3s^2h + 3sh^2 + h^2}{h} \\
+		       & = & \lim_{h \to 0} 3s^2 + 3sh + h \\
+		       & = & 3s^2
+		 \end{eqnarray*}
+	\item  \begin{eqnarray*}
+		F'(t) & = & \lim_{h \to 0} \frac{F(t+h) - F(s)}{h} \\
+		       & = & \lim_{h \to 0} \frac{\frac{1}{t+h} - \frac{1}{t}}{h} \\
+		       & = & \lim_{h \to 0} \frac{\frac{t - (t+h)}{t(t+h)}}{h} \\
+		       & = & \lim_{h \to 0} \frac{-h}{ht(t+h)} \\
+		       & = & \lim_{h \to 0} \frac{-1}{t(t+h)} \\
+		       & = & \frac{-1}{t^2}
+		 \end{eqnarray*}
+	\item  \begin{eqnarray*}
+		G'(y) & = & \lim_{h \to 0} \frac{G(y+h) - G(y)}{h} \\
+		       & = & \lim_{h \to 0} \frac{\sqrt{y+h}-\sqrt{y}}{h} \\
+		       & = & \lim_{h \to 0} \frac{\sqrt{y+h}-\sqrt{y}}{h} \cdot \frac{\sqrt{y+h} + \sqrt{y}}{\sqrt{y+h} + \sqrt{y}} \\
+		       & = & \lim_{h \to 0} \frac{(y+h)-y}{h(\sqrt{y+h} + \sqrt{y})} \\
+		       & = & \lim_{h \to 0} \frac{h}{h(\sqrt{y+h} + \sqrt{y})} \\
+		       & = & \lim_{h \to 0} \frac{1}{\sqrt{y+h} + \sqrt{y}} \\
+		       & = & \frac{1}{2\sqrt{y}}
+		 \end{eqnarray*}		 
+\ea
+\end{activitySolution}
+\aftera

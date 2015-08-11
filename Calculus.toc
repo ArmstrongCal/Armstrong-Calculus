@@ -1,0 +1,68 @@
+\contentsline {chapter}{\numberline {0}Introduction to Calculus}{11}{chapter.0}
+\contentsline {section}{\numberline {0.1}Why do we study calculus?}{11}{section.0.1}
+\contentsline {section}{\numberline {0.2}How do we measure velocity?}{15}{section.0.2}
+\contentsline {chapter}{\numberline {1}Limits}{23}{chapter.1}
+\contentsline {section}{\numberline {1.1}The notion of limit}{23}{section.1.1}
+\contentsline {subsection}{Identifying When Limits Do Not Exist}{27}{subsection*.3}
+\contentsline {subsection}{Computing Limits}{28}{subsection*.4}
+\contentsline {section}{\numberline {1.2}Limits involving infinity}{41}{section.1.2}
+\contentsline {subsection}{Introduction}{41}{subsection*.5}
+\contentsline {subsection}{Limits at Infinity}{44}{subsection*.6}
+\contentsline {section}{\numberline {1.3}Continuity}{49}{section.1.3}
+\contentsline {section}{\numberline {1.4}Epsilon-Delta Definition of a Limit}{59}{section.1.4}
+\contentsline {chapter}{\numberline {2}Derivatives}{67}{chapter.2}
+\contentsline {section}{\numberline {2.1}Derivatives and Rates of Change}{67}{section.2.1}
+\contentsline {section}{\numberline {2.2}The derivative function}{83}{section.2.2}
+\contentsline {section}{\numberline {2.3}The second derivative}{95}{section.2.3}
+\contentsline {section}{\numberline {2.4}Basic derivative rules}{107}{section.2.4}
+\contentsline {section}{\numberline {2.5}The product and quotient rules}{119}{section.2.5}
+\contentsline {section}{\numberline {2.6}The chain rule}{135}{section.2.6}
+\contentsline {subsection}{Chaining together rates of change}{136}{subsection*.9}
+\contentsline {section}{\numberline {2.7}Derivatives of functions given implicitly}{149}{section.2.7}
+\contentsline {section}{\numberline {2.8}Derivatives of inverse functions}{161}{section.2.8}
+\contentsline {subsection}{Logarithmic Differentiation}{170}{subsection*.12}
+\contentsline {subsection}{Proof of the Power Rule}{172}{subsection*.13}
+\contentsline {chapter}{\numberline {3}Applications of Derivatives}{177}{chapter.3}
+\contentsline {section}{\numberline {3.1}Related rates}{177}{section.3.1}
+\contentsline {section}{\numberline {3.2}Using derivatives to identify extreme values of a function}{191}{section.3.2}
+\contentsline {subsection}{Curve Sketching}{199}{subsection*.5}
+\contentsline {section}{\numberline {3.3}Global Optimization}{207}{section.3.3}
+\contentsline {section}{\numberline {3.4}Applied Optimization}{215}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Mean Value Theorem}{225}{section.3.5}
+\contentsline {section}{\numberline {3.6}The Tangent Line Approximation}{231}{section.3.6}
+\contentsline {section}{\numberline {3.7}Using Derivatives to Evaluate Limits}{243}{section.3.7}
+\contentsline {subsection}{Indeterminate Forms $0\cdot \infty $ and $\infty -\infty $}{252}{subsection*.8}
+\contentsline {subsection}{Indeterminate Forms $0^0$, $1^\infty $ and $\infty ^0$}{253}{subsection*.9}
+\contentsline {section}{\numberline {3.8}Newton's Method}{257}{section.3.8}
+\contentsline {subsection}{Convergence of Newton's Method}{261}{subsection*.10}
+\contentsline {chapter}{\numberline {4}Integration}{265}{chapter.4}
+\contentsline {section}{\numberline {4.1}Determining distance traveled from velocity}{265}{section.4.1}
+\contentsline {section}{\numberline {4.2}Riemann Sums}{277}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Definite Integral}{291}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Fundamental Theorem of Calculus, Part I}{303}{section.4.4}
+\contentsline {subsection}{The Fundamental Theorem and the Chain Rule}{306}{subsection*.4}
+\contentsline {section}{\numberline {4.5}The Fundamental Theorem of Calculus, part II}{313}{section.4.5}
+\contentsline {section}{\numberline {4.6}Integration by Substitution}{329}{section.4.6}
+\contentsline {section}{\numberline {4.7}More with Integrals}{343}{section.4.7}
+\contentsline {chapter}{\numberline {5}Topics of Integration}{353}{chapter.5}
+\contentsline {section}{\numberline {5.1}Integration by Parts}{353}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trigonometric Integrals}{367}{section.5.2}
+\contentsline {section}{\numberline {5.3}Trigonometric Substitution}{377}{section.5.3}
+\contentsline {section}{\numberline {5.4}Partial Fractions}{385}{section.5.4}
+\contentsline {section}{\numberline {5.5}Improper Integrals}{395}{section.5.5}
+\contentsline {section}{\numberline {5.6}Numerical Integration}{409}{section.5.6}
+\contentsline {section}{\numberline {5.7}Other Options for Finding Antiderivatives}{427}{section.5.7}
+\contentsline {chapter}{\numberline {6}Applications of Integration}{433}{chapter.6}
+\contentsline {section}{\numberline {6.1}Using Definite Integrals to Find Volume}{433}{section.6.1}
+\contentsline {section}{\numberline {6.2}Volume by The Shell Method}{445}{section.6.2}
+\contentsline {section}{\numberline {6.3}Arc Length and Surface Area}{453}{section.6.3}
+\contentsline {section}{\numberline {6.4}Density, Mass, and Center of Mass}{463}{section.6.4}
+\contentsline {section}{\numberline {6.5}Physics Applications: Work, Force, and Pressure}{473}{section.6.5}
+\contentsline {section}{\numberline {6.6}An Introduction to Differential Equations}{491}{section.6.6}
+\contentsline {subsection}{Slope Fields}{497}{subsection*.3}
+\contentsline {section}{\numberline {6.7}Separable differential equations}{505}{section.6.7}
+\contentsline {section}{\numberline {6.8}Hyperbolic Functions}{521}{section.6.8}
+\contentsline {chapter}{\numberline {7}Sequences \& Series}{529}{chapter.7}
+\contentsline {section}{\numberline {7.1}Sequences}{529}{section.7.1}
+\contentsline {chapter}{\numberline {A}A Short Table of Integrals}{539}{appendix.A}
+\contentsfinish 

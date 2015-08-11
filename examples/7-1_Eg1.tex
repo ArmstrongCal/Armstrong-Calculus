@@ -1,0 +1,37 @@
+\begin{marginfigure}[4cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseq1a}}
+
+\subfloat[]{\margingraphics{figures/figseq1b}}
+
+\subfloat[]{\margingraphics{figures/figseq1c}}
+\caption{Plotting sequences from Example~\ref{eg:7.1.1}.} \label{F:eg:7.1.1}
+\end{marginfigure}
+
+\begin{example} \label{eg:7.1.1} % EXAMPLE
+List the first four terms of the following sequences.
+
+\begin{enumerate}[1), leftmargin=*]
+\item $\ds \{a_n\} = \left\{\frac{3^n}{n!}\right\}$
+\item $\{a_n\} = \{4+(-1)^n\}$
+\item $\ds \{a_n\} = \left\{\frac{(-1)^{n(n+1)/2}}{n^2}\right\}$
+\end{enumerate}
+
+\solution
+\begin{enumerate}[1)]
+\item	 $\ds a_1=\frac{3^1}{1!} = 3$; $\ds a_2= \frac{3^2}{2!} = \frac92$; $\ds a_3 = \frac{3^3}{3!} = \frac92$; $\ds a_4 = \frac{3^4}{4!} = \frac{27}8$
+
+We can plot the terms of a sequence with a scatter plot. The ``$x$''-axis is used for the values of $n$, and the values of the terms are plotted on the $y$-axis. To visualize this sequence, see Figure~\ref{F:eg:7.1.1}-(a).\\
+
+\item		$a_1= 4+(-1)^1 = 3$;\qquad $a_2 = 4+(-1)^2 = 5$; 
+
+\noindent $a_3=4+(-1)^3 = 3$; \qquad $a_4 = 4+(-1)^4 = 5$. Note that the range of this sequence is finite, consisting of only the values 3 and 5. This sequence is plotted in Figure \ref{F:eg:7.1.1}-(b).\\
+
+\item		$\ds a_1= \frac{(-1)^{1(2)/2}}{1^2} = -1$; \qquad $\ds a_2 = \frac{(-1)^{2(3)/2}}{2^2} =-\frac14$
+
+\noindent $\ds a_3 = \frac{(-1)^{3(4)/2}}{3^2} = \frac19$ \qquad $\ds a_4 = \frac{(-1)^{4(5)/2}}{4^2} = \frac1{16}$; 
+
+\noindent $\ds a_5 = \frac{(-1)^{5(6)/2}}{5^2}=-\frac1{25}$.
+
+\noindent We gave one extra term to begin to show the pattern of signs is ``$-$, $-$, $+$, $+$, $-$, $-$, $\ldots$, due to the fact that the exponent of $-1$ is a special quadratic. This sequence is plotted in Figure \ref{F:eg:7.1.1}-(c).
+\end{enumerate}
+\end{example}

@@ -1,0 +1,30 @@
+\begin{activity} \label{A:1.2.1}  Estimate the value of each of the following limits by constructing appropriate tables of values.  Then determine the exact value of the limit by using algebra to simplify the function. Finally, plot each function on an appropriate interval to check your result visually.
+\ba
+		\item $\ds \lim_{x \to 1} \frac{x^2 - 1}{x-1}$
+		\item $\ds \lim_{x \to 0} \frac{(2+x)^3 - 8}{x}$
+		\item $\ds \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x}$
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item $(x^2 - 1)$ can be factored.
+	\item Expand the expression $(2+x)^3$, and then combine like terms in the numerator.
+	\item Try multiplying the given function by this fancy form of 1: $\frac{\sqrt{x+1} + 1}{\sqrt{x+1} + 1}$.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item $(x^2 - 1) = (x+1)(x-1)$.
+	\item Expand the expression $(2+x)^3$ using the rule $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$, and then combine like terms in the numerator.
+	\item Try multiplying the given function by this fancy form of 1: $\frac{\sqrt{x+1} + 1}{\sqrt{x+1} + 1}$.  Expand and simplify the numerator, and then see what happens as $x \to 0$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+Estimating the values of the limits with tables is straightforward and should suggest the exact values stated below.
+\ba
+	\item $\ds \lim_{x \to 1} \frac{x^2 - 1}{x-1} = \lim_{x \to 1} \frac{(x+1)(x-1)}{x-1} = \lim_{x \to 1} (x+1) = 2$. 
+	\item $\ds \lim_{x \to 0} \frac{(2+x)^3 - 8}{x} = \lim_{x \to 0} \frac{8 + 12x + 6x^2 + x^3 - 8}{x} = \lim_{x \to 0} \frac{12x + 6x^2 + x^3}{x} =  \lim_{x \to 0} (12 + 6x + x^2) = 12$.
+	\item $\ds \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x} = \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x} \cdot \frac{\sqrt{x+1} + 1}{\sqrt{x+1} + 1} = \lim_{x \to 0} \frac{x+1-1}{x(\sqrt{x+1}+1)} = \lim_{x \to 0} \frac{1}{\sqrt{x+1}+1} = \frac{1}{2}.$
+\ea
+\end{activitySolution}
+\aftera

@@ -1,0 +1,39 @@
+\begin{marginfigure}[1cm]
+\margingraphics{figures/figtangent1} %FIG EXAMPLE 33 apex
+\caption{A graph of $f(x) = 3x^2+5x-7$ and its tangent lines at $x=1$ and $x=3$.}\label{fig:2.1.Eg3}
+\end{marginfigure}
+
+\begin{example} \label{Ex:2.1.Eg3}
+Let $f(x) = 3x^2+5x-7$. Find: 
+\begin{enumerate*}[1)]
+\item $f'(1)$; 	
+\item the equation of the tangent line to the graph of $f$ at $x=1$; 
+\item $f'(3)$; and 
+\item the equation of the tangent line to the graph $f$ at $x=3$.
+\end{enumerate*}
+	
+\solution
+\begin{enumerate}[1)]
+\item We compute this directly using the definition of the derivative at a point.
+\begin{align*}
+f'(1) &= \lim_{h \to 0} \frac{f(1+h)-f(1)}{h} \\
+&=	\lim_{h \to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
+&=	\lim_{h\to 0} \frac{3h^2+11h}{h}\\
+&= 	\lim_{h\to 0} 3h+11=11.
+%&= 11.
+\end{align*}
+
+\item The tangent line at $x=1$ has slope $f'(1)$ and goes through the point $(1,f(1)) = (1,1)$. Thus the tangent line has equation, in point-slope form, $y = 11(x-1) + 1$. In slope-intercept form we have $y = 11x-10$.
+	
+\item Again, using the definition,
+\begin{align*}
+f'(3) &=	\lim_{h \to 0} \frac{f(3+h)-f(3)}{h} \\
+&=	\lim_{h \to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h} \\
+&=	\lim_{h \to 0} \frac{3h^2+23h}{h}\\
+&= \lim_{h \to 0} 3h+23 = 23
+%&= 23.
+\end{align*}
+	
+\item The tangent line at $x=3$ has slope $23$ and goes through the point $(3,f(3)) = (3,35)$. Thus the tangent line has equation $y=23(x-3)+35 = 23x-34$.
+\end{enumerate}
+\end{example}

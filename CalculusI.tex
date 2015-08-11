@@ -1,0 +1,70 @@
+\documentclass[symmetric,justified,marginals=justified,notoc]{tufte-book}
+
+%---------------
+% PACKAGES
+%---------------
+\usepackage{tufte-11pt}
+\usepackage{lipsum,graphicx,amsfonts,amsmath,amsthm,xcolor,ifthen,epstopdf,multicol,caption,subfig}
+\usepackage[shortlabels,inline]{enumitem}
+\usepackage[strict]{changepage}
+\usepackage{mdframed}
+\usepackage{ouractivities}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\captionsetup{font={footnotesize}}%scriptsize,sf,singlespacing}}
+
+\geometry{
+	top=1in, 			% top margin
+	textheight=9in, 		% height of text
+	marginparwidth=2.5in,% width of margin
+	footskip=.75in
+}
+
+\newcommand{\na}{\quad--}% used in tables for N/A cells
+
+\input{titlingstyles}
+\input{commands}
+\input{pagestyles}
+\pagestyle{mypagestyle}
+
+\newsavebox{\titleimage}
+\savebox{\titleimage}{\includegraphics[scale=.35]{figs/cc_license.png}}
+
+\title{Calculus}
+\author{Jared Schlieper \& Michael Tiemeyer}
+\date{}
+\publisher{\usebox{\titleimage}}
+
+%\includeonly{0.chapter,1.chapter,2.chapter,3.chapter,4.chapter}
+
+%------------------------
+% BEGIN DOCUMENT
+%------------------------
+\begin{document}
+
+\maketitle
+
+\cleardoublepage
+
+\input{copyright}
+\input{preface}
+
+\tableofcontents
+
+\include{0.chapter}
+\include{1.chapter}
+\include{2.chapter}
+\include{3.chapter}
+\include{4.chapter}
+%\include{5.chapter}
+%\include{6.chapter}
+%\include{7.chapter}
+
+\appendix
+%\include{9.appendices}
+
+\end{document}
+%-------------------
+% END DOCUMENT
+%-------------------

@@ -1,0 +1,39 @@
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figures/6_4_DamEx.eps}
+%\caption{A trapezoidal dam that is 25 feet tall, 60 feet wide at its base, 90 feet wide at its top, with the water line 5 feet down from the top of its face.} \label{F:6.4.DamEx}
+%\end{marginfigure}
+
+\begin{example} \label{eg:6.7.2} % EXAMPLE
+Solve the differential equation
+$$\frac{dy}{dt} =3y.$$
+
+\solution Following the same strategy as in Example~\ref{eg:6.7.1}, we have
+$$  \frac 1y \frac{dy}{dt} = 3. $$
+Integrating both sides with respect to $t$,
+$$  \int \frac 1y\frac{dy}{dt}~dt = \int 3~dt,$$
+and thus 
+$$ \int \frac 1y~dy =  \int 3~dt.$$
+Antidifferentiating and including the integration constant, we find that
+$$  \ln|y| = 3t + C.$$
+Finally, we need to solve for $y$.  Here, one point deserves careful
+attention.  By the definition of the natural logarithm function, it follows that
+$$
+|y| = e^{3t+C} = e^{3t}e^C.
+$$
+Since $C$ is an unknown constant, $e^C$ is as well, though we do know
+that it is positive (because $e^x$ is positive for any $x$).
+When we remove the absolute value in order to solve for $y$, however, this constant may be either positive or
+negative.  We 
+will denote this updated constant (that accounts for a possible $+$ or $-$) by $C$ to obtain
+$$
+y(t) = Ce^{3t}.
+$$
+
+There is one more slightly technical point to make.  Notice that $y=0$
+is an equilibrium solution to this differential equation.  In solving
+the equation above, we begin by dividing both sides by $y$, which
+is not allowed if $y=0$.  To be perfectly careful, therefore, we will typically
+consider the equilibrium solutions separably.  In this case, notice that the final
+form of our solution captures the equilibrium solution by allowing
+$C=0$. 
+\end{example}

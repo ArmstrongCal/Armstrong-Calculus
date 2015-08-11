@@ -1,0 +1,38 @@
+\begin{activity} \label{8.3.Act6} Consider the series $\ds \sum \frac{k+1}{k^3+2}$. Since the convergence or divergence of a series only depends on the behavior of the series for large values of $k$, we might examine the terms of this series more closely as $k$ gets large.
+    \ba
+    \item By computing the value of $\ds \frac{k+1}{k^3+2}$ for $k = 100$ and $k = 1000$, explain why the terms $\ds \frac{k+1}{k^3+2}$ are essentially $\ds \frac{k}{k^3}$ when $k$ is large. 
+
+    \item Let's formalize our observations in (a) a bit more. Let $a_k = \ds \frac{k+1}{k^3+2}$ and $b_k = \ds \frac{k}{k^3}$. Calculate 
+    \[\lim_{k \to \infty} \frac{a_k}{b_k}.\]
+    What does the value of the limit tell you about $a_k$ and $b_k$ for large values of $k$? Compare your response from part (a). 
+
+    \item Does the series $\ds \sum \frac{k}{k^3}$ converge or diverge? Why? What do you think that tells us about the convergence or divergence of the series $\ds \sum \frac{k+1}{k^3+2}$? Explain. 
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item When $k$ is very large, the constant 1 in the numerator is negligible compared to $k$ and the constant 2 in the denominator is negligible compared to $k^3$. So the numerator looks like $k$ and the denominator $k^3$ when $k$ is large. It follows that $\ds \frac{k+1}{k^3+2}$ looks like $\ds \frac{k}{k^3}$ when $k$ is large.
+    \item Note that 
+    \begin{align*}
+    \lim_{k \to \infty} \frac{a_k}{b_k} &= \lim_{k \to \infty} \frac{ \frac{k+1}{k^3+2} }{ \frac{k}{k^3} } \\
+        &= \lim_{k \to \infty} \frac{(k+1)k^3}{k(k^3+2)} \\
+        &= \lim_{k \to \infty} \frac{1+\frac{1}{k}}{1+\frac{2}{k}} \\
+        &= 1.
+    \end{align*}
+    This tells us that $a_k \approx b_k$ for large values of $k$, which is what we suggested in part (a). 
+    \item Since $\frac{k}{k^3} = \frac{1}{k^2}$, the series $\ds \sum \frac{k}{k^3}$ is a $p$-series with $p=2$ and so converges. Since $a_k \approx b_k$ for large values of $k$, it seems reasonable to expect that $\sum a_k \approx \sum b_k$ for large $k$s. Since $\sum a_k$ is finite, we should then conclude that $\sum b_k$ is also finite. So $\ds \sum \frac{k+1}{k^3+2}$ should be a convergent series. 
+\ea
+\end{activitySolution}
+\aftera 

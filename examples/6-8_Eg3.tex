@@ -1,0 +1,46 @@
+\begin{example} \label{eg:6.8.3} % EXAMPLE
+Evaluate the following.
+
+\begin{enumerate*}[1)]
+\item	$\ds \frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}{5}\right)\right]$ \hspace{.25cm}
+\item	$\ds \int\frac{1}{x^2-1}\ dx$ \hspace{.25cm}
+\item	$\ds \int \frac{1}{\sqrt{9x^2+10}}\ dx$
+\end{enumerate*}
+
+\solution
+\begin{enumerate}[1)]
+\item	 Applying the concepts along with the Chain Rule gives:
+$$\frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)-1}}\cdot\frac35.$$
+
+\item Multiplying the numerator and denominator by $(-1)$ gives: $\ds \int \frac{1}{x^2-1}\ dx = \int \frac{-1}{1-x^2}\ dx$. The second integral can be solved with a direct application of item \#3 from the integral concepts, with $a=1$. Thus
+\begin{align*}
+\int \frac{1}{x^2-1}\ dx &= -\int \frac{1}{1-x^2}\ dx  \\
+&= \left\{\begin{array}{ccc} -\tanh^{-1}\left(x\right)+C & & x^2<1 \\ \\ -\coth^{-1}\left(x\right)+C & & 1<x^2 \end{array}\right. \\
+&=-\frac12\ln\left|\frac{x+1}{x-1}\right|+C\\
+&=\frac12\ln\left|\frac{x-1}{x+1}\right|+C.
+\end{align*}
+
+%The key to linking the two seemingly different answers together is Figure \ref{fig:hfinverse5}, where the logarithmic definitions of the inverse hyperbolic functions are given. Note that the definitions of $\tanh^{-1}x$ and $\coth^{-1}x$ are very similar; the conditions placed on $|x|$ ensure that the argument of $\ln$ is always positive. Thus one could say 
+%$$\frac12\ln\left|\frac{x+1}{x-1}\right| = \left\{\begin{array}{ccc} \tanh^{-1}x+C & & |x|<1 \\ \\
+%\coth^{-1}x+C & & |x|>1 \end{array}\right..$$
+%
+%We reconcile the two answers by returning to Equation \ref{eq:hf3} and continuing:
+%\begin{align*}
+%\int \frac{1}{x^2-1}\ dx &= \int \frac{-1}{1-x^2}\ dx \\
+%			&= \left\{\begin{array}{ccc} -\frac1a\tanh^{-1}\left(\frac xa\right)+C & & x^2<a^2 \\ \\
+%-\frac1a\coth^{-1}\left(\frac xa\right)+C & & a^2<x^2 \end{array}\right. \\
+%			&= -\frac12\ln\left|\frac{x+1}{x-1}\right|+C \\
+%			&= -\frac12\ln|x+1| + \frac12\ln|x-1| +C,
+%\end{align*}
+%matching the answer previously obtained.
+
+\item	 This requires a substitution; let $u = 3x$, hence $du = 3dx$. We have 
+\begin{align*}
+\int \frac{1}{\sqrt{9x^2+10}}\ dx &= \frac13\int\frac{1}{\sqrt{u^2+10}}\ du. \\
+\intertext{Note $a^2=10$, hence $a = \sqrt{10}.$ Now apply the integral rule.}
+ &= \frac13 \sinh^{-1}\left(\frac{3x}{\sqrt{10}}\right) + C \\
+ &= \frac13 \ln \Big|3x+\sqrt{9x^2+10}\Big|+C.
+\end{align*}
+\end{enumerate}
+
+\end{example}

@@ -1,0 +1,45 @@
+\begin{example} \label{Ex:3.7.Eg1}
+Evaluate the following limits.
+\bmtwo
+\begin{enumerate}[1)]
+\item $\ds \lim_{x\to0^+} x\cdot e^{1/x}$
+\item	 $\ds \lim_{x\to0^-} x\cdot e^{1/x}$
+\item	 $\ds \lim_{x\to\infty} \Big( \ln(x+1)-\ln x \Big)$
+\item	 $\ds \lim_{x\to\infty} \big( x^2-e^x \big)$
+\end{enumerate}
+\emtwo
+
+\solution
+\begin{enumerate}[1)]
+%ITEM
+\item	As $x\rightarrow 0^+$, $x\rightarrow 0$ and $e^{1/x}\rightarrow \infty$. Thus we have the indeterminate form $0\cdot\infty$. We rewrite the expression $x\cdot e^{1/x}$ as $\ds\frac{e^{1/x}}{1/x}$; now, as $x\rightarrow 0^+$, we get the indeterminate form $\infty/\infty$ to which l'H\^opital's Rule can be applied. 
+$$ \lim_{x\to0^+} x\cdot e^{1/x} = \lim_{x\to 0^+} \frac{e^{1/x}}{1/x} = \lim_{x\to 0^+}\frac{(-1/x^2)e^{1/x}}{-1/x^2} =\lim_{x\to 0^+}e^{1/x} =\infty.$$
+
+Interpretation: $e^{1/x}$ grows ``faster'' than $x$ shrinks to zero, meaning their product grows without bound.
+
+%ITEM
+\item	As $x\rightarrow 0^-$, $x\rightarrow 0$ and $e^{1/x}\rightarrow e^{-\infty}\rightarrow 0$. The the limit evaluates to $0\cdot 0$ which is not an indeterminate form. We conclude then that $$\lim_{x\to 0^-}x\cdot e^{1/x} = 0.$$
+
+%ITEM
+\item	This limit initially evaluates to the indeterminate form $\infty-\infty$. By applying a logarithmic rule, we can rewrite the limit as 
+$$ \lim_{x\to\infty} \Big( \ln(x+1)-\ln x \Big) = \lim_{x\to \infty} \ln \left(\frac{x+1}x\right).$$
+
+As $x\rightarrow \infty$, the argument of the $\ln$ term approaches $\infty/\infty$, to which we can apply l'H\^opital's Rule.
+$$\lim_{x\to\infty} \frac{x+1}x = \frac11=1.$$
+
+Since $x\rightarrow \infty$ implies $\ds\frac{x+1}x\rightarrow 1$, it follows that 
+$$x\rightarrow \infty \quad \text{ implies }\quad \ln\left(\frac{x+1}x\right)\rightarrow \ln 1=0.$$
+
+Thus $$ \lim_{x\to\infty} \ln(x+1)-\ln x = \lim_{x\to \infty} \ln \left(\frac{x+1}x\right)=0.$$
+Interpretation: since this limit evaluates to $0$, it means that for large $x$, there is essentially no difference between $\ln (x+1)$ and $\ln x$; their difference is essentially $0$.
+
+%ITEM
+\item	The limit $\ds \lim_{x\to\infty} \big( x^2-e^x \big)$ initially returns the indeterminate form $\infty-\infty$. We can rewrite the expression by factoring out $x^2$; $\ds x^2-e^x = x^2\left(1-\frac{e^x}{x^2}\right).$ We need to evaluate how $e^x/x^2$ behaves as $x\rightarrow \infty$:
+$$\lim_{x\to\infty}\frac{e^x}{x^2} = \lim_{x\to\infty} \frac{e^x}{2x} = \lim_{x\to\infty} \frac{e^x}{2} = \infty.$$
+
+Thus $\lim_{x\to\infty}x^2(1-e^x/x^2)$ evaluates to $\infty\cdot(-\infty)$, which is not an indeterminate form; rather, $\infty\cdot(-\infty)$ evaluates to $-\infty$. We conclude that 
+$\ds \lim_{x\to\infty} x^2-e^x = -\infty.$
+
+Interpretation: as $x$ gets large, the difference between $x^2$ and $e^x$ grows very large.
+\end{enumerate}
+\end{example}

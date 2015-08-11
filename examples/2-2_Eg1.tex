@@ -1,0 +1,14 @@
+\begin{example} \label{Ex:2.2.Eg1}
+Let $f(x) = 3x^2+5x-7$. Find $f'(x)$.
+
+\solution We apply the definition of the derivative.
+\begin{align*}
+f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\
+&=	\lim_{h \to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
+&=	\lim_{h \to 0} \frac{3h^2 +6xh+5h}{h}\\
+&= \lim_{h \to 0} 3h+6x+5 \\
+&= 6x+5
+\end{align*}
+So $f'(x) = 6x+5$. Recall in Example~\ref{Ex:2.1.Eg2} of Section~\ref{S:2.1.DerivativePt}, we found that $f'(1) = 11$ and $f'(3) = 23$. Note our new computation of $f'(x)$ affirm these facts.
+\end{example}
+

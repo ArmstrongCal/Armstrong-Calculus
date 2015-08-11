@@ -1,0 +1,66 @@
+\begin{activity} \label{A:7.3.1}  
+\ba
+\item Consider the initial value problem:
+\begin{eqnarray*}
+  \frac{dy}{dt} &=& 2t-1 \\
+  y(0) & = & 0
+\end{eqnarray*}
+Use Euler's method with $\Delta t = 0.2$ to approximate the solution
+at $t_i = 0.2, 0.4, 0.6, 0.8$, and $1.0$.   Sketch the points $(t_i,
+y_i)$ on the right.
+
+\medskip
+\begin{minipage}[t]{4in}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $t_i$&$y_i$&$dy/dt$&$\Delta y$\\
+  \hline
+  \hline
+  \vphantom{\Huge{M}}0.0000&0.0000&\hphantom{1.0000}&\hphantom{0.2000} \\
+  \hline
+  \vphantom{\Huge{M}}0.2000&\hphantom{MMMMMM} 
+  & \hphantom{MMMMMM} & \hphantom{MMMMMM} \\
+  \hline
+  \vphantom{\Huge{M}}0.4000& & & \\
+  \hline
+  \vphantom{\Huge{M}}0.6000& & & \\
+  \hline
+  \vphantom{\Huge{M}}0.8000& & & \\
+  \hline
+  \vphantom{\Huge{M}}1.0000& & & \\
+  \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}[c]{2in}
+\includegraphics{figures/7.3.euler.empty.eps}
+\end{minipage}
+
+\item Find the exact solution to the initial value problem in part b)
+  and find the error in your approximation at each one of the points
+  $t_i$.
+
+\item Explain why Euler's method for this initial value problem
+  produces a left Riemann sum for the definite integral $\int_0^1
+  (2t-1)~dt$.  
+
+\item How would your result differ if the initial value was $y(0) =
+  1$? 
+
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Solutions for each of the prompts above.
+\ea
+\end{activitySolution}
+\aftera

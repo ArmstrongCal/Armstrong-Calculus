@@ -1,0 +1,154 @@
+\section{Physics Applications:  Work, Force, and Pressure} \label{S:6.5.Physics}
+
+\begin{goals}
+  \item How do we measure the work accomplished by a varying force that moves an object a certain distance?
+  \item What is the total force exerted by water against a dam?
+  \item How are both of the above concepts and their corresponding use of definite integrals similar to problems we have encountered in the past involving formulas such as ``distance equals rate times time'' and ``mass equals density times volume''?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+%\begin{figure*}[h]
+%\begin{flushleft}
+%\includegraphics{figures/6_4_Intro.eps}
+%\caption{Three settings where we compute the accumulation of a varying quantity:  the area under $y = f(x)$, the distance traveled by an object with velocity $y = v(t)$, and the mass of a bar with density function $y=\rho(x)$.} 
+%\label{F:6.4.Intro}
+%\end{flushleft}
+%\end{figure*}
+
+In our work to date with the definite integral, we have seen several different circumstances where the integral enables us to measure the accumulation of a quantity that varies, provided the quantity is approximately constant over small intervals.  For instance, based on the fact that the area of a rectangle is $A = l \cdot w$, if we wish to find the area bounded by a nonnegative curve $y = f(x)$ and the $x$-axis on an interval $[a,b]$, a representative slice of width $\triangle x$ has  area $A_{\mbox{\small{slice}}} = f(x) \triangle x$, and thus as we let the width of the representative slice tend to zero, we find that the exact area of the region is
+$$A = \int_a^b f(x) \, dx.$$
+In a similar way, if we know that the velocity of a moving object is given by the function $y = v(t)$, and we wish to know the distance the object travels on an interval $[a,b]$ where $v(t)$ is nonnegative, we can use a definite integral to generalize the fact that $d = r \cdot t$ when the rate, $r$, is constant.  More specifically, on a short time interval $\triangle t$, $v(t)$ is roughly constant, and hence for a small slice of time, $d_{\mbox{\small{slice}}} = v(t) \triangle t$, and so as the width of the time interval $\triangle t$ tends to zero, the exact distance traveled is given by the definite integral
+$$d = \int_a^b v(t) \, dt.$$
+Finally, when we recently learned about the mass of an object of non-constant density, we saw that since $M = D \cdot V$ (mass equals density times volume, provided that density is constant), if we can consider a small slice of an object on which the density is approximately constant, a definite integral may be used to determine the exact mass of the object.  For instance, if we have a thin rod whose cross sections have constant density, but whose density is distributed along the $x$ axis according to the function $y = \rho(x)$, it follows that for a small slice of the rod that is $\triangle x$ thick, $M_{\mbox{\small{slice}}} = \rho(x) \triangle x$.  In the limit as $\triangle x \to 0$, we then find that the total mass is given by 
+$$M = \int_a^b \rho(x) \, dx.$$
+
+Note that all three of these situations are similar in that we have a basic rule ($A = l \cdot w$, $d = r \cdot t$, $M = D \cdot V$) where one of the two quantities being multiplied is no longer constant; in each, we consider a small interval for the other variable in the formula, calculate the approximate value of the desired quantity (area, distance, or mass) over the small interval, and then use a definite integral to sum the results as the length of the small intervals is allowed to approach zero.  It should be apparent that this approach will work effectively for other situations where we have a quantity of interest that varies.  
+
+We next turn to the notion of \emph{work}\index{work}:  from physics, a basic principal is that work is the product of force and distance.  For example, if a person exerts a force of 20 pounds to lift a 20-pound weight 4 feet off the ground, the total work accomplished is
+$$W = F \cdot d = 20 \cdot 4 = 80 \ \mbox{foot-pounds}.$$
+If force and distance are measured in English units (pounds and feet), then the units on work are \emph{foot-pounds}\index{foot-pound}.  If instead we work in metric units, where forces are measured in Newtons and distances in meters, the units on work are \emph{Newton-meters}\index{Newton-meter}.
+
+Of course, the formula $W = F \cdot d$ only applies when the force  is constant while it is exerted over the distance $d$.  In Preview Activity~\ref{PA:6.5}, we explore one way that we can use a definite integral to compute the total work accomplished when the force exerted varies.
+
+\input{previews/6.5.PA1} % PREVIEW ACTIVITY
+
+%--------------------------
+% SUBSECTION WORK
+%-------------------------
+\subsection*{Work} \index{work}
+
+Because work is calculated by the rule $W = F \cdot d$, whenever the force $F$ is constant, it follows that we can use a definite integral to compute the work accomplished by a varying force.  For example, suppose that in a setting similar to the problem posed in Preview Activity~\ref{PA:6.5}, we have a bucket being lifted in a $50$-foot well whose weight at height $h$ is given by $B(h) = 12 + 8e^{-0.1h}$.  
+
+In contrast to the problem in the preview activity, this bucket is not leaking at a constant rate; but because the weight of the bucket and water is not constant, we have to use a definite integral to determine the total work that results from lifting the bucket.  Observe that at a height $h$ above the water, the approximate work to move the bucket a small distance $\triangle h$ is
+$$W_{\mbox{\small{slice}}} = B(h) \triangle h = (12 + 8e^{-0.1h}) \triangle h.$$
+Hence, if we let $\triangle h$ tend to $0$ and take the sum of all of the slices of work accomplished on these small intervals, it follows that the total work is given by
+$$W = \int_0^{50} B(h) \, dh = \int_0^{50} (12 + 8e^{-0.1h}) \, dh.$$
+While is a straightforward exercise to evaluate this integral exactly using the Fundamental Theorem of Calculus, in applied settings such as this one we will typically use computing technology to find accurate approximations of integrals that are of interest to us.  Here, it turns out that $W = \int_0^{50} (12 + 8e^{-0.1h}) \, dh \approx 679.461$ foot-pounds.
+
+Our work in the most recent example above employs the following important general principle.
+
+\concept{Work}{ % CONCEPT
+For an object being moved in the positive direction along an axis, $x$, by a force $F(x)$, the total work to move the object from $a$ to $b$ is given by
+$$W = \int_a^b F(x) \, dx.$$
+} % end concept
+
+\input{examples/6-5_Eg2.tex} % EXAMPLE
+
+\input{examples/6-5_Eg3.tex} % EXAMPLE
+
+\input{examples/6-5_Eg4.tex} % EXAMPLE
+
+\input{activities/6.5.Act1} % ACTIVITY
+
+%--------------------------------------------------------------
+% SUBSECTION WORK: PUMPING LIQUID FROM A TANK
+%--------------------------------------------------------------
+\subsection*{Work: Pumping Liquid from a Tank}
+
+\begin{marginfigure}[3cm] % MARGIN FIGURE
+\margingraphics{figures/6_4_SumpCrock.pdf}
+\caption{A sump crock.} \label{F:6.4.SumpCrock}
+\end{marginfigure}
+
+In certain geographic locations where the water table is high, residential homes with basements have a peculiar feature:  in the basement, one finds a large hole in the floor, and in the hole, there is water.  For example, in Figure~\ref{F:6.4.SumpCrock} 
+where we see a \emph{sump crock}\footnote{Image credit to \href{http://www.warreninspect.com/basement-moisture}{\texttt{http://www.warreninspect.com/basement-moisture}}.}.  Essentially, a sump crock provides an outlet for water that may build up beneath the basement floor; of course, as that water rises, it is imperative that the water not flood the basement.  Hence, in the crock we see the presence of a floating pump that sits on the surface of the water:  this pump is activated by elevation, so when the water level reaches a particular height, the pump turns on and pumps a certain portion of the water out of the crock, hence relieving the water buildup beneath the foundation.  One of the questions we'd like to answer is:  how much work does a sump pump accomplish?
+
+To that end, let's suppose that we have a sump crock that has the shape of a frustum of a cone, as pictured in Figure~\ref{F:6.4.Crock}.  Assume that the crock has a diameter of $3$ feet at its surface, a diameter of $1.5$ feet at its base, and a depth of $4$ feet.  In addition, suppose that the sump pump is set up so that it pumps the water vertically up a pipe to a drain that is located at ground level just outside a basement window.  To accomplish this, the pump must send the water to a location $9$ feet above the surface of the sump crock.
+
+\begin{marginfigure} % MARGIN FIGURE
+\includegraphics{figures/6_4_Crock.eps}
+\caption{A sump crock with approximately cylindrical cross-sections that is 4 feet deep, 1.5 feet in diameter at its base, and 3 feet in diameter at its top.} \label{F:6.4.Crock}
+\end{marginfigure}
+
+It turns out to be advantageous to think of the depth below the surface of the crock as being the independent variable, so, in problems such as this one we typically let the positive $x$-axis point down, and the positive $x$-axis to the right, as pictured in the figure.  As we think about the work that the pump does, we first realize that the pump sits on the surface of the water, so it makes sense to think about the pump moving the water one ``slice'' at a time, where it takes a thin slice from the surface, pumps it out of the tank, and then proceeds to pump the next slice below.
+
+For the sump crock described in this example, each slice of water is cylindrical in shape.  We see that the radius of each approximately cylindrical slice varies according to the linear function $y = f(x)$ that passes through the points $(0,1.5)$ and $(4,0.75)$, where $x$ is the depth of the particular slice in the tank; it is a straightforward exercise to find that $f(x) = 1.5 - 0.375x$.  Now we are prepared to think about the overall problem in several steps:  (a) determining the volume of a typical slice; (b) finding the weight\footnote{We assume that the weight density of water  is $62.4$ pounds per cubic foot.} of a typical slice (and thus the force that must be exerted on it); (c) deciding the distance that a typical slice moves; and (d) computing the work to move a representative slice.  Once we know the work it takes to move one slice, we use a definite integral over an appropriate interval to find the total work.
+
+Consider a representative cylindrical slice that sits on the surface of the water at a depth of $x$ feet below the top of the crock.  It follows that the approximate volume of that slice is given by 
+$$V_{\mbox{\small{slice}}} = \pi f(x)^2 \triangle x = \pi (1.5 - 0.375x)^2 \triangle x.$$
+Since water weighs $62.4$ lb/ft$^3$, it follows that the approximate weight of a representative slice, which is also the approximate force the pump must exert to move the slice, is
+$$F_{\mbox{\small{slice}}} = 62.4 \cdot V_{\mbox{\small{slice}}} = 62.4 \pi (1.5 - 0.375x)^2 \triangle x.$$
+Because the slice is located at a depth of $x$ feet below the top of the crock, the slice being moved by the pump must move $x$ feet to get to the level of the basement floor, and then, as stated in the problem description, be moved another $9$ feet to reach the drain at ground level outside a basement window.  Hence, the total distance a representative slice travels is
+$$d_{\mbox{\small{slice}}} = x + 9.$$
+Finally, we note that the work to move a representative slice is given by 
+$$W_{\mbox{\small{slice}}} = F_{\mbox{\small{slice}}} \cdot d_{\mbox{\small{slice}}} = 62.4 \pi (1.5 - 0.375x)^2 \triangle x \cdot (x+9),$$
+since the force to move a particular slice is constant.
+
+We sum the work required to move slices throughout the tank (from $x = 0$ to $x = 4$), let $\triangle x \to 0$, and hence 
+$$W = \int_0^4 62.4 \pi (1.5 - 0.375x)^2 (x+9) \, dx,$$
+which, when evaluated using appropriate technology, shows that the total work is $W = 1872\pi$ foot-pounds.
+
+The preceding example demonstrates the standard approach to finding the work required to empty a tank filled with liquid.  The main task in each such problem is to determine the volume of a representative slice, followed by the force exerted on the slice, as well as the distance such a slice moves.  In the case where the units are metric, there is one key difference:  in the metric setting, rather than weight, we normally first find the mass of a slice.  For instance, if distance is measured in meters, the mass density of water is 1000 kg/m$^3$.  In that setting, we can find the mass of a typical slice (in kg).  To determine the force required to move it, we use $F = ma$, where $m$ is the object's mass and $a$ is the gravitational constant $9.81$ N/kg$^3$.  That is, in metric units, the weight density of water is $9810$ N/m$^3$.
+
+\input{examples/6-5_Eg5.tex} % EXAMPLE
+
+\input{examples/6-5_Eg6.tex} % EXAMPLE
+
+\input{examples/6-5_Eg7.tex} % EXAMPLE
+
+\input{activities/6.5.Act2} % ACTIVITY
+
+%-----------------------------------------------------------------
+% SUBSECTION FORCE DUE TO HYDROSTATIC PRESSURE
+%-----------------------------------------------------------------
+\subsection*{Force due to Hydrostatic Pressure} 
+
+When a dam is built, it is imperative to for engineers to understand how much force water will exert against the face of the dam.  The first thing we realize is the the force exerted by the fluid is related to the natural concept of pressure.  The pressure a force exerts on a region is measured in units of force per unit of area:  for example, the air pressure in a tire is often measured in pounds per square inch (PSI).  Hence, we see that the general relationship is given by
+$$P = \frac{F}{A}, \ \mbox{or} \ F = P \cdot A,$$
+where $P$ represents pressure, $F$ represents force, and $A$ the area of the region being considered.  Of course, in the equation $F = PA$, we assume that the pressure is constant over the entire region $A$.
+
+Most people know from experience that the deeper one dives underwater while swimming, the greater the pressure that is exerted by the water.  This is due to the fact that the deeper one dives, the more water there is right on top of the swimmer:  it is the force that ``column'' of water exerts that determines the pressure the swimmer experiences.  To get water pressure measured in its standard units (pounds per square foot), we say that the total water pressure is found by computing the total weight of the column of water that lies above a region of area 1 square foot at a fixed depth.  Such a rectangular column with a $1 \times 1$ base and a depth of $d$ feet has volume $V = 1 \cdot 1 \cdot d$ ft$^3$, and thus the corresponding weight of the water overhead is $62.4d$.  Since this is also the amount of force being exerted on a 1 square foot region at a depth $d$ feet underwater, we see that $P = 62.4 d$ (lbs/ft$^2$) is the pressure exerted by water at depth $d$.
+
+The understanding that $P = 62.4d$ will tell us the pressure exerted by water at a depth of $d$, along with the fact that $F = PA$, will now enable us to compute the total force that water exerts on a dam, as we see in the following example.
+
+\input{examples/6-5_Eg1.tex} % EXAMPLE
+
+\input{examples/6-5_Eg8.tex} % EXAMPLE
+
+\input{examples/6-5_Eg9.tex} % EXAMPLE
+
+\input{activities/6.5.Act3} % ACTIVITY
+
+While there are many different formulas that we use in solving problems involving work, force, and pressure, it is important to understand that the fundamental ideas behind these problems are similar to several others that we've encountered in applications of the definite integral.  In particular, the basic idea is to take a difficult problem and somehow slice it into more manageable pieces that we understand, and then use a definite integral to add up these simpler pieces.
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+  \item To measure the work accomplished by a varying force that moves an object, we subdivide the problem into pieces on which we can use the formula $W = F \cdot d$, and then use a definite integral to sum the work accomplished on each piece.
+  \item To find the total force exerted by water against a dam, we use the formula $F = P \cdot A$ to measure the force exerted on a slice that lies at a fixed depth, and then use a definite integral to sum the forces across the appropriate range of depths.
+  \item Because work is computed as the product of force and distance (provided force is constant), and the force water exerts on a dam can be computed as the product of pressure and area (provided pressure is constant), problems involving these concepts are similar to earlier problems we did using definite integrals to find distance (via ``distance equals rate times time'')  and mass (``mass equals density times volume'').
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/6-5.Work(Ex)} 
+
+\cleardoublepage

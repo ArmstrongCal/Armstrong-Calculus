@@ -1,0 +1,17 @@
+\begin{example}
+Evaluate $\ds \int (3x^2 + 4x+5)\ dx$. 
+
+\solution We seek a function $F(x)$ whose derivative is $3x^2+4x+5$. When taking derivatives, we can consider functions term-by-term, so we can also do that here.
+
+What functions have a derivative of $3x^2$? Some thought will lead us to a cubic, specifically $x^3+C_1$, where $C_1$ is a constant. 
+
+What functions have a derivative of $4x$? Here the $x$ term is raised to the first power, so we likely seek a quadratic. Some thought should lead us to $2x^2+C_2$, where $C_2$ is a constant.
+
+Finally, what functions have a derivative of $5$? Functions of the form $5x+C_3$, where $C_3$ is a constant.
+
+Our answer appears to be 
+\[ \int (3x^2+4x+5)\ dx = x^3+C_1+2x^2+C_2+5x+C_3.\]
+We do not need three separate constants of integration; combine them as one constant, giving the final answer of 
+\[ \int (3x^2+4x+5)\ dx = x^3+2x^2+5x+C.\]
+It is easy to verify our answer; take the derivative of $x^3+2x^3+5x+C$ and see we indeed get $3x^2+4x+5$.
+\end{example}

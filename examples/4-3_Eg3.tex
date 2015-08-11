@@ -1,0 +1,29 @@
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/apex_5-3_Area3R.pdf}
+\caption{Approximating $\int_{-1}^5 x^3\ dx$ using $R_n$.} \label{fig:apex_5-3_Area3R}
+\end{marginfigure}
+
+\begin{example} % EXAMPLE
+Find a formula that approximates $\ds \int_{-1}^5 x^3 \ dx$ using $R_n$; then take the limit as $n \to \infty$ to find the exact area.
+
+\solution We have $\ds \Delta x = \frac{5-(-1)}{n} = \frac{6}{n}$ and $\ds x_i = -1 + \frac{6}{n}i$,
+and we construct the Riemann sum and compute its value using summation formulas.
+\begin{eqnarray*}
+\int_{-1}^5 x^3\ dx 	& \approx & \sum_{i=1}^n f(x_i) \Delta x \\
+&=& \sum_{i=1}^n f(-1+i\Delta x)\Delta x \\
+&=& \sum_{i=1}^n (-1+i\Delta x)^3\Delta x \\
+&=& \sum_{i=1}^n \big((i\Delta x)^3 -3(i\Delta x)^2 + 3i\Delta x -1\big)\Delta x \\
+&=& \sum_{i=1}^n \big(i^3\Delta x^4 - 3i^2\Delta x^3 + 3i\Delta x^2 -\Delta x\big) \\
+&=& \Delta x^4 \sum_{i=1}^ni^3 -3\Delta x^3 \sum_{i=1}^n i^2+ 3\Delta x^2 \sum_{i=1}^n i - \sum_{i=1}^n \Delta x \\
+&=& \Delta x^4 \left(\frac{n(n+1)}{2}\right)^2 -3\Delta x^3 \frac{n(n+1)(2n+1)}{6} \\
+& & + \ 3 \Delta x^2 \frac{n(n+1)}{2} - n \Delta x \\
+&=& \frac{1296}{n^4}\cdot\frac{n^2(n+1)^2}{4} - 3\cdot\frac{216}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} \\
+&& + \ 3\cdot\frac{36}{n^2}\frac{n(n+1)}2 -6 \\
+&=&156 + \frac{378}n + \frac{216}{n^2}
+\end{eqnarray*}
+
+%\mfigure{.7}{Approximating $\int_{-1}^5 x^3\ dx$ using the Right Hand Rule and 10 evenly spaced subintervals.}{fig:rie9}{figures/figrie9}
+
+Taking the limit, we get
+\[ \int_{-1}^{5} x^3\ dx = \lim_{n \to \infty} \left( 156 + \frac{378}n + \frac{216}{n^2} \right) = 156.\]
+\end{example}

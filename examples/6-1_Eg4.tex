@@ -1,0 +1,18 @@
+\begin{example} \label{eg:6.1.4} % EXAMPLE
+Find the volume of the solid of revolution generated when the finite region $R$ that lies between $y = \sqrt{x}$ and $y = x^4$ is revolved about the $y$-axis.
+
+\solution
+We observe that these two curves intersect when $x = 1$, hence at the point $(1,1)$.  When we take the region $R$ that lies between the curves and revolve it about the $y$-axis, we get the three-dimensional solid pictured at left in Figure~\ref{F:6.2.Ex3}.
+
+Now, it is particularly important to note that the thickness of a representative slice is $\triangle y$, and that the slices are only cylindrical washers in nature when taken perpendicular to the $y$-axis.  Hence, we envision slicing the solid horizontally, starting at $y = 0$ and proceeding up to $y = 1$.  Because the inner radius is governed by the curve $y = \sqrt{x}$, but from the perspective that $x$ is a function of $y$, we solve for $x$ and get $x = y^2 = r(y)$.  In the same way, we need to view the curve $y = x^4$ (which governs the outer radius) in the form where $x$ is a function of $y$, and hence $x = \sqrt[4]{y}$.  Therefore, we see that the volume of a typical slice is 
+$$V_{\mbox{\small{slice}}} = \pi [R(y)^2 - r(y)^2] = \pi[\sqrt[4]{y}^2 - (y^2)^2] \triangle y.$$
+Using a definite integral to sum the volume of all the representative slices from $y = 0$ to $y = 1$, the total volume is
+$$V = \int_{y=0}^{y=1} \pi \left[ \sqrt[4]{y}^2 - (y^2)^2 \right] \, dy.$$
+It is straightforward to evaluate the integral and find that $\ds V = \frac{7}{15} \pi$.
+\end{example}
+
+\begin{marginfigure}[-12cm] %MARGIN FIGURE
+\margingraphics{figures/6_2_Ex3.eps}
+\caption{At left, the solid of revolution in Example~\ref{eg:6.1.4}.  At right, a typical slice with inner radius $r(y)$ and outer radius $R(y)$.} \label{F:6.2.Ex3}
+\end{marginfigure}
+

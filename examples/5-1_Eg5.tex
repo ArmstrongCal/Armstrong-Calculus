@@ -1,0 +1,28 @@
+\begin{example} \label{eg:5.1.5} % EXAMPLE
+Evaluate $\displaystyle \int_1^2 x^2 \ln(x) \,dx$.
+
+\solution Once again, our mnemonic suggests we let $u=\ln(x)$.  (We could let $u = x^2$ and $dv = \ln(x)\ dx$, as we now know the antiderivative of $\ln(x)$. However, letting $u = \ln(x)$ makes our next integral much simpler as it removes the logarithm from the integral entirely.)
+
+So we have $u=\ln(x)$ and $dv=x^2\,dx$.  We then get $du = (1/x)\,dx$ and $v=x^3/3$ as shown below.
+
+\begin{tabular}{llcll} \\
+$u= \ln(x)$ & $v=\text{?}$ & & $u= \ln(x)$ & $v=x^3/3$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=x^2\ dx$ & &  $du= 1/x\ dx$ & $dv=x^2\ dx$ \\
+\end{tabular}
+%\captionsetup{type=figure}%
+%\caption{Setting up Integration by Parts.}\label{fig:ibp7}
+%\end{minipage}\\
+%\vskip\baselineskip
+
+The Integration by Parts formula then gives
+\begin{align*}
+\int_1^2 x^2 \ln(x)\,dx &= \frac{x^3}3\ln(x)\bigg|_1^2 - \int_1^2 \frac{x^3}{3}\,\frac 1x\,dx \\
+				&=  \frac{x^3}3\ln(x)\bigg|_1^2 - \int_1^2 \frac{x^2}{3}\,dx \\
+				&=  \frac{x^3}3\ln(x)\bigg|_1^2 - \frac{x^3}{9}\bigg|_1^2\\
+				&=  \left(\frac{x^3}3\ln(x) - \frac{x^3}{9}\right)\bigg|_1^2\\
+				&=	\left(\frac83\ln(2) - \frac89\right)-\left(\frac13\ln(1) - \frac19\right) \\
+				&= \frac83\ln(2) - \frac79 
+%				&\approx 1.07.
+\end{align*}
+\end{example}

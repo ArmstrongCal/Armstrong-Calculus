@@ -1,0 +1,26 @@
+\begin{example} \label{eg:5.2.4} % EXAMPLE
+Evaluate $\ds\int \sec^3(x)\ dx$.
+
+\solution We apply rule $3$) as the power of secant is odd and the power of tangent is even ($0$ is an even number). We use Integration by Parts; the rule suggests letting $dv = \sec^2(x)\ dx$, meaning that $u = \sec(x)$. \\ \footnotesize
+
+\begin{tabular}{llcll}  
+$u= \sec(x)$ & $v=\text{?}$ &  & $u= \sec(x)$ & $v=\tan(x)$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=\sec^2(x)\ dx$ & & $du= \sec(x)\tan(x)\ dx$ & $dv=\sec^2(x)\ dx$ \\
+\end{tabular}\small
+
+\vspace{.25cm}
+
+Employing Integration by Parts, we have
+\begin{align*}
+\int \sec^3(x)\ dx  	&=	\int \underbrace{\sec(x)}_u\cdot\underbrace{\sec^2(x)\ dx}_{dv}\\
+						&=	\sec(x)\tan(x) - \int \sec(x) \tan^2(x)\ dx. \\
+\intertext{This new integral also requires applying rule $3$):}
+						&= \sec(x)\tan(x) - \int \sec(x) \big(\sec^2(x)-1\big)\ dx\\
+						&=	\sec(x)\tan(x) - \int \sec^3(x)\ dx + \int \sec(x)\ dx \\
+						&= \sec(x)\tan(x) -\int \sec^3(x)\ dx + \ln|\sec(x)+\tan(x)| \\
+\intertext{In previous applications of Integration by Parts, we have seen where the original integral has reappeared in our work. We resolve this by adding $\int \sec^3(x)\ dx$ to both sides, giving:}
+2\int \sec^3(x)\ dx &= \sec(x)\tan(x) + \ln|\sec(x)+\tan(x)| \\
+\int \sec^3(x)\ dx &= \frac12\Big(\sec(x)\tan(x) + \ln|\sec(x)+\tan(x)|\Big)+C
+\end{align*}	
+\end{example}

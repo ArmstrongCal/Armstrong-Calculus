@@ -1,0 +1,26 @@
+\begin{marginfigure}[2cm] %MARGIN FIGURE
+\margingraphics{figures/6_2_Ex2.eps}
+\caption{At left, the solid of revolution in Example~\ref{eg:6.1.3}.  At right, a typical slice with inner radius $r(x)$ and outer radius $R(x)$.} \label{F:6.1.Eg3}
+\end{marginfigure}
+
+\begin{example} \label{eg:6.1.3} % EXAMPLE
+Find the volume of the solid of revolution generated when the finite region $R$ that lies between $y = 4-x^2$ and $y = x+2$ is revolved about the $x$-axis.
+
+
+\solution
+First, we must determine where the curves $y = 4-x^2$ and $y = x+2$ intersect.  Substituting the expression for $y$ from the second equation into the first equation, we find that $x + 2 = 4-x^2$.  Rearranging, it follows that
+$$x^2 + x - 2 = 0,$$
+and the solutions to this equation are $x = -2$ and $x = 1$.  The curves therefore cross at $(-2,0)$ and $(1,3)$.
+
+When we take the region $R$  that lies between the curves and revolve it about the $x$-axis, we get the three-dimensional solid pictured at left in Figure~\ref{F:6.1.Eg3}.
+
+Immediately we see a major difference between the solid in this example and the one in Example~\ref{eg:6.1.2}:  here, the three-dimensional solid of revolution isn't ``solid'' in the sense that it has open space in its center.  If we slice the solid perpendicular to the axis of revolution, we observe that in this setting the resulting representative slice is not a solid disk, but rather a \emph{washer}, as pictured at right in Figure~\ref{F:6.1.Eg3}.  Moreover, at a given location $x$ between $x = -2$ and $x = 1$, the small radius $r(x)$ of the inner circle is determined by the curve $y = x+2$, so $r(x) = x+2$.  Similarly, the big radius $R(x)$ comes from the function $y = 4-x^2$, and thus $R(x) = 4-x^2$.
+
+Thus, to find the volume of a representative slice, we compute the volume of the outer disk and subtract the volume of the inner disk.  Since
+$$\pi R(x)^2 \triangle x - \pi r(x)^2 \triangle x = \pi [ R(x)^2 - r(x)^2] \triangle x,$$
+it follows that the volume of a typical slice is
+$$V_{\text{\small{slice}}} = \pi [ (4-x^2)^2 - (x+2)^2 ] \triangle x.$$
+Hence, using a definite integral to sum the volumes of the respective slices across the integral, we find that
+$$V = \int_{-2}^1 \pi[ (4-x^2)^2 - (x+2)^2 ] \, dx.$$
+Evaluating the integral, the volume of the solid of revolution is $\ds V = \frac{108}{5}\pi$.
+\end{example}

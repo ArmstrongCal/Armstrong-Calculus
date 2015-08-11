@@ -1,0 +1,243 @@
+\section{Riemann Sums} \label{S:4.2.Riemann}
+
+\begin{goals}
+\item How can we use a Riemann sum to estimate the area between a given curve and the horizontal axis over a particular interval?
+
+\item What are the differences among left, right, middle, and random Riemann sums?
+
+\item What is sigma notation and how does this enable us to write Riemann sums in an abbreviated form?
+\end{goals}
+
+%----------------------------------
+% SUBSECTION INTRODUCTION
+%----------------------------------
+\subsection*{Introduction}
+
+\begin{marginfigure}[3in] % MARGIN FIGURE
+\margingraphics{figs/4/4-2_Intro.pdf}
+\caption{A velocity function that is sometimes negative.} \label{fig:4.2_Intro}
+\end{marginfigure}
+
+In Section~\ref{S:4.1.VelocityDistance}, we learned that if we have a moving object with velocity function $v$, whenever $v(t)$ is positive, the area between $y = v(t)$ and the $t$-axis over a given time interval tells us the distance traveled by the object over that time period; in addition, if $v(t)$ is sometimes negative and we view the area of any region below the $t$-axis as having an associated negative sign, then the sum of these signed areas over a given interval tells us the moving object's change in position over the time interval.
+
+For instance, for the velocity function given in Figure~\ref{fig:4.2_Intro}, if the areas of shaded regions are $A_1$, $A_2$, and $A_3$ as labeled, then the total distance $D$ traveled by the moving object on $[a,b]$ is 
+\[ D = A_1 + A_2 + A_3, \]
+while the total change in the object's position on $[a,b]$ is 
+\[ s(b) - s(a) = A_1 - A_2 + A_3. \]
+Because the motion is in the negative direction on the interval where $v(t) < 0$, we subtract $A_2$ when determining the object's total change in position.
+
+Of course, finding $D$ and $s(b)-s(a)$ for the situation given in Figure~\ref{fig:4.2_Intro} presumes that we can actually find the areas represented by $A_1$, $A_2$, and $A_3$.  In most of our work in Section~\ref{S:4.1.VelocityDistance}, such as in Activities~\ref{A:4.1.2} and~\ref{A:4.1.3}, we worked with velocity functions that were either constant or linear, so that by finding the areas of rectangles and triangles, we could find the area bounded by the velocity function and the horizontal axis exactly.  But when the curve that bounds a region is not one for which we have a known formula for area, we are unable to find this area exactly.  Indeed, this is one of our biggest goals in Chapter~\ref{CH:4}: to learn how to find the exact area bounded between a curve and the horizontal axis for as many different types of functions as possible.  
+
+To begin, we expand on the ideas in Activity~\ref{A:4.1.1}, where we encountered a nonlinear velocity function and approximated the area under the curve using four and eight rectangles, respectively.  In the following preview activity, we focus on three different options for deciding how to find the heights of the rectangles we will use.
+
+\input{previews/4.2.PA1} % PREVIEW ACTIVITY
+
+%-------------------------------------
+% SUBSECTION SIGMA NOTATION
+%-------------------------------------
+\subsection*{Sigma Notation}
+
+It is apparent from several different problems that sums of areas of rectangles is one of the main ways to approximate the area under a curve over a given interval.  Intuitively, we expect that using a larger number of thinner rectangles will provide a way to improve the estimates we are computing.  As such, we anticipate dealing with sums with a large number of terms.  To do so, we introduce the use of so-called \emph{sigma notation}\index{sigma notation}, named for the Greek letter $\Sigma$, which is the capital letter $S$ in the Greek alphabet.
+
+For example, say we are interested in the sum
+\[ 1 + 2 + 3 + \cdots + 100, \]
+which is the sum of the first $100$ natural numbers.  Sigma notation provides a shorthand notation that recognizes the general pattern in the terms of the sum.  It is equivalent to write
+\[ \sum_{k=1}^{100} k =  1 + 2 + 3 + \cdots + 100. \]
+We read the symbol $\ds \sum_{k=1}^{100} k$ as ``the sum from $k$ equals $1$ to $100$ of $k$.''  The variable $k$ is usually called the index of summation, and the letter that is used for this variable is immaterial.  
+
+Suppose we wish to add up a list of numbers $a_1$, $a_2$, $a_3$, \ldots, $a_9$. Instead of writing $\ds a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9,$
+we use sigma notation and write 
+\[ \sum_{i=1}^9 a_i. \]
+Again, the capital sigma represents the term ``sum.'' The index of summation in this example is $i$. By convention, the index takes on only the integer values between (and including) the lower and upper bounds. 
+
+Each summand in sigma notation involves a function of the index; for example,
+\begin{eqnarray*}
+\sum_{k=1}^{10} (k^2 + 2k) & = & (1^2 + 2\cdot 1) + (2^2 + 2\cdot 2) + (3^2 + 2\cdot 3) \\
+& & + \cdots + (10^2 + 2\cdot 10),
+\end{eqnarray*}
+and more generally,
+$$\sum_{k=1}^n f(k) = f(1) + f(2) + \cdots + f(n).$$
+Sigma notation allows us the flexibility to easily vary the function being used to track the pattern in the sum, as well as to adjust the number of terms in the sum simply by changing the value of $n$.  We test our understanding of this new notation in the following activity.
+
+\input{activities/4.2.Act1} % ACTIVITY
+
+It might seem odd to stress a new, concise way of writing summations only to write each term out as we add them up. It is. Therefore, we give some properties of summations that allow us to work with them without writing individual terms. 
+
+\definition{Properties of Summations\index{summation!properties}} % DEFINITION
+{
+\begin{enumerate}[1)]
+\item	$\ds \sum_{i=1}^n c = c\cdot n$, where $c$ is a constant.
+\item	$\ds \sum_{i=1}^n c\cdot a_i = c\cdot\sum_{i=1}^n a_i$
+\item	$\ds \sum_{i=m}^n (a_i\pm b_i) = \sum_{i=m}^n a_i \pm \sum_{i=m}^n b_i$
+\end{enumerate}
+\begin{multicols}{2}
+\begin{enumerate}[1),resume]
+\item	$\ds \sum_{i=m}^j a_i + \sum_{i=j+1}^n  a_i = \sum_{i=m}^n a_i$
+\item	$\ds \sum_{i=1}^n i = \frac{n(n+1)}2$
+\item	$\ds \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}6$
+\item	$\ds \sum_{i=1}^n i^3 = \left(\frac{n(n+1)}2\right)^2$
+\end{enumerate}
+\end{multicols}
+$\left.\right.$
+} % end definition
+
+\input{examples/4-2_Eg2} % EXAMPLE 
+
+%-------------------------------------
+% SUBSECTION RIEMANN SUMS
+%-------------------------------------
+\subsection*{Riemann Sums}
+
+When a moving body has a positive velocity function $y = v(t)$ on a given interval $[a,b]$, we know that the area under the curve over the interval is the total distance the body travels on $[a,b]$.  While this is the fundamental motivating force behind our interest in the area bounded by a function, we are also interested more generally in being able to find the exact area bounded by $y = f(x)$ on an interval $[a,b]$, regardless of the meaning or context of the function $f$.  For now, we continue to focus on determining an accurate estimate of this area through the use of a sum of the areas of rectangles, doing so in the setting where $f(x) \ge 0$ on $[a,b]$.  Throughout, unless otherwise indicated, we also assume that $f$ is continuous on $[a,b]$.
+
+The first choice we make in any such approximation is the number of rectangles.  If we say that the total number of rectangles is $n$, and we desire $n$ rectangles of equal width to subdivide the interval $[a,b]$, then each rectangle must have width $\triangle x = \frac{b-a}{n}$. We observe further that $x_1 = x_0 + \triangle x$, $x_2 = x_0 + 2 \triangle x$, and thus in general $x_{i} = a + i\triangle x,$ as pictured in Figure~\ref{fig:4-2_Interval}.
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-2_Interval.pdf}
+\caption{Subdividing the interval $[a,b]$ into $n$ subintervals of equal length $\Delta x$.} \label{fig:4-2_Interval}
+\end{marginfigure}
+
+We use each subinterval $[x_i, x_{i+1}]$ as the base of a rectangle, and next must choose how to decide the height of the rectangle that will be used to approximate the area under $y = f(x)$ on the subinterval.  There are three standard choices:  use the left endpoint of each subinterval, the right endpoint of each subinterval, or the midpoint of each.  These are precisely the options encountered in Preview Activity~\ref{PA:4.2} and seen in Figure~\ref{fig:4.2.PA1}.  We next explore how these choices can be reflected in sigma notation.
+
+If we now consider an arbitrary positive function $f$ on $[a,b]$ with the interval subdivided as shown in Figure~\ref{fig:4-2_Interval}, and choose to use left endpoints, then on each interval of the form $[x_{i}, x_{i+1}]$, the area of the rectangle formed is given by
+\[ A_{i+1} = f(x_i) \cdot \triangle x,\]
+as seen in Figure~\ref{fig:4.2_LeftSum}.
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-2_LeftSum.pdf}
+\caption{Subdividing the interval $[a,b]$ into $n$ subintervals of equal length $\triangle x$ and approximating the area under $y = f(x)$ over $[a,b]$ using left rectangles.} \label{fig:4.2_LeftSum}
+\end{marginfigure}
+
+If we let $L_n$ denote the sum of the areas of rectangles whose heights are given by the function value at each respective left endpoint, then we see that
+\begin{eqnarray*}
+L_n & = & A_1 + A_2 + \cdots + A_{i+1} + \cdots + A_n \\
+	& = & f(x_0) \cdot \triangle x + f(x_1) \cdot \triangle x + \cdots + f(x_i) \cdot \triangle x \\ 
+& & + \cdots + f(x_{n-1}) \cdot \triangle x.
+\end{eqnarray*}
+In the more compact sigma notation, we have 
+\[ L_n = \sum_{i = 0}^{n-1} f(x_i) \triangle x. \]
+Note particularly that since the index of summation begins at $0$ and ends at $n-1$, there are indeed $n$ terms in this sum.  We call $L_n$ the \emph{left Riemann sum} \index{Riemann sum} \index{Riemann sum!left} for the function $f$ on the interval $[a,b]$.
+
+\begin{marginfigure}[3in] % MARGIN FIGURE
+\margingraphics{figures/4_2_RenaultAppletRS.pdf}
+\caption{A snapshot of the applet found at \href{http://gvsu.edu/s/a9}{\texttt{http://gvsu.edu/s/a9}}.} \label{F:4.2.RenaultAppletRS}
+\end{marginfigure}
+
+There are now two fundamental issues to explore:  the number of rectangles we choose to use and the selection of the pattern by which we identify the height of each rectangle.  It is best to explore these choices dynamically, and the applet found at \href{http://gvsu.edu/s/a9}{\texttt{http://gvsu.edu/s/a9}} is a particularly useful one.  There we see the image shown in Figure~\ref{F:4.2.RenaultAppletRS}, but with the opportunity to adjust the slider bars for the left endpoint and the number of subintervals.  By moving the sliders, we can see how the heights of the rectangles change as we consider left endpoints, midpoints, and right endpoints, as well as the impact that a larger number of narrower rectangles has on the approximation of the exact area bounded by the function and the horizontal axis.  
+
+To see how the Riemann sums for right endpoints and midpoints are constructed, we consider Figure~\ref{fig:4-2_RightSum} and Figure~\ref{fig:4-2_MidSum}. For the sum with right endpoints, we see that the area of the rectangle on an arbitrary interval $[x_i, x_{i+1}]$ is given by
+\[ B_{i+1} = f(x_{i+1}) \cdot \triangle x, \]
+so that the sum of all such areas of rectangles is given by
+\begin{eqnarray*}
+R_n & = & B_1 + B_2 + \cdots + B_{i+1} + \cdots + B_n \\
+& = &  f(x_1) \cdot \triangle x + f(x_2) \cdot \triangle x + \cdots + f(x_{i+1}) \cdot \triangle x \\
+& & + \cdots + f(x_{n}) \cdot \triangle x \\ 
+& = & \sum_{i=1}^{n} f(x_i) \triangle x.
+\end{eqnarray*}
+We call $R_n$ the \emph{right Riemann sum} \index{Riemann sum!right} for the function $f$ on the interval $[a,b]$.  
+
+For the sum that uses midpoints, we introduce the notation
+\[ \overline{x}_{i+1} = \frac{x_{i} + x_{i+1}}{2} \]
+so that $\overline{x}_{i+1}$ is the midpoint of the interval $[x_i, x_{i+1}]$.  For instance, for the rectangle with area $C_1$ in Figure~\ref{fig:4-2_MidSum}, we now have
+\[ C_1 = f(\overline{x}_1) \cdot \triangle x. \]
+
+\begin{marginfigure}[-7cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-2_RightSum.pdf}
+\caption{Riemann sums using right endpoints.} \label{fig:4-2_RightSum}
+\end{marginfigure}
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-2_MidSum.pdf}
+\caption{Riemann sums using midpoints.} \label{fig:4-2_MidSum}
+\end{marginfigure}
+
+Hence, the sum of all the areas of rectangles that use midpoints is 
+\begin{eqnarray*}
+M_n & = & C_1 + C_2 + \cdots + C_{i+1} + \cdots + C_n \\
+& = &  f(\overline{x_1}) \cdot \triangle x + f(\overline{x_2}) \cdot \triangle x + \cdots + f(\overline{x}_{i+1}) \cdot \triangle x \\
+& & + \cdots + f(\overline{x}_{n}) \cdot \triangle x \\ 
+& = & \sum_{i=1}^{n} f(\overline{x}_i) \triangle x,
+\end{eqnarray*}
+and we say that $M_n$ is the \emph{middle Riemann sum} \index{Riemann sum!middle} for $f$ on $[a,b]$.
+
+\input{examples/4-2_Eg1} % EXAMPLE
+
+When $f(x) \ge 0$ on $[a,b]$, each of the Riemann sums $L_n$, $R_n$, and $M_n$ provides an estimate of the area under the curve $y = f(x)$ over the interval $[a,b]$; momentarily, we will discuss the meaning of Riemann sums in the setting when $f$ is sometimes negative.  We also recall that in the context of a nonnegative velocity function $y = v(t)$, the corresponding Riemann sums are approximating the distance traveled on $[a,b]$ by the moving object with velocity function $v$.
+
+There is a more general way to think of Riemann sums, and that is to not restrict the choice of where the function is evaluated to determine the respective rectangle heights.  That is, rather than saying we'll always choose left endpoints, or always choose midpoints, we simply say that a point $x_{i+1}^*$ will be selected at random in the interval $[x_i, x_{i+1}]$ (so that $x_i \le x_{i+1}^* \le x_{i+1}$), which makes the Riemann sum given by
+\begin{eqnarray*}
+\ds \sum_{i=1}^{n} f(x_i^*) \triangle x & = & f(x_1^*) \cdot \triangle x + f(x_2^*) \cdot \triangle x + \cdots + f(x_{i+1}^*) \cdot \triangle x \\
+& & + \cdots + f(x_n^*) \cdot \triangle x.
+\end{eqnarray*}
+At \href{http://gvsu.edu/s/a9}{\texttt{http://gvsu.edu/s/a9}}, the applet noted earlier and referenced in Figure~\ref{F:4.2.RenaultAppletRS}, by unchecking the ``relative'' box at the top left, and instead checking ``random,'' we can easily explore the effect of using random point locations in subintervals on a given Riemann sum.  In computational practice, we most often use $L_n$, $R_n$, or $M_n$, while the random Riemann sum is useful in theoretical discussions.  In the following activity, we investigate several different Riemann sums for a particular velocity function.
+
+\input{examples/4-2_Eg3} % EXAMPLE
+
+\input{activities/4.2.Act2} % ACTIVITY
+
+%------------------------------------------------------------------------
+% SUBSECTION WHEN THE FUNCTION IS SOMETIMES NEGATIVE
+%------------------------------------------------------------------------
+\subsection*{When the function is sometimes negative}
+
+For a Riemann sum such as 
+$$L_n = \sum_{i=0}^{n-1} f(x_i) \triangle x,$$
+we can of course compute the sum even when $f$ takes on negative values.  We know that when $f$ is positive on $[a,b]$, the corresponding left Riemann sum $L_n$ estimates the area bounded by $f$ and the horizontal axis over the interval.
+
+\begin{marginfigure}[-5cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-2_NegFa.pdf}
+\caption{A left Riemann sum for a function $f$ that is sometimes negative.} \label{fig:4-2_NegFa}
+\end{marginfigure}
+
+For a function such as the one pictured in Figure~\ref{fig:4-2_NegFa}, where in the figure a left Riemann sum is being taken with $12$ subintervals over $[a,d]$, we observe that the function is negative on the interval $b \le x \le c$, and so for the four left endpoints that fall in $[b,c]$, the terms $f(x_i) \triangle x$ have negative function values.  This means that those four terms in the Riemann sum produce an estimate of the \emph{opposite} of the area bounded by $y = f(x)$ and the $x$-axis on $[b,c]$.
+
+In Figure~\ref{fig:4-2_NegFb}, we also see evidence that by increasing the number of rectangles used in a Riemann sum, it appears that the approximation of the area (or the opposite of the area) bounded by a curve appears to improve.  For instance,  we use $24$ left rectangles, and from the shaded areas, it appears that we have decreased the error from the approximation that uses $12$.  When we proceed to Section~\ref{S:4.3.DefiniteIntegral}, we will discuss the natural idea of letting the number of rectangles in the sum increase without bound.  
+
+\begin{marginfigure}[-7cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-2_NegFb.pdf}
+\caption{A left Riemann sum using more rectangles for a function $f$ that is sometimes negative.} \label{fig:4-2_NegFb}
+\end{marginfigure}
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/4/4-2_NegFc.pdf}
+\caption{The areas bounded by $f$ on the interval $[a,d]$.} \label{fig:4-2_NegFc}
+\end{marginfigure}
+
+For now, it is most important for us to observe that, in general, any Riemann sum of a continuous function $f$ on an interval $[a,b]$ approximates the difference between the area that lies above the horizontal axis on $[a,b]$ and under $f$ and the area that lies below the horizontal axis on $[a,b]$ and above $f$.  In the notation of Figure~\ref{fig:4-2_NegFc}, we may say that
+$$L_{24} \approx A_1 - A_2 + A_3,$$
+where $L_{24}$ is the left Riemann sum using $24$ subintervals shown in the middle graph, and $A_1$ and $A_3$ are the areas of the regions where $f$ is positive on the interval of interest, while $A_2$ is the area of the region where $f$ is negative.  We will also call the quantity $A_1 - A_2 + A_3$ the \emph{net signed area} \index{net signed area} bounded by $f$ over the interval $[a,d]$, where by the phrase ``signed area'' we indicate that we are attaching a minus sign to the areas of regions that fall below the horizontal axis.
+
+Finally, we recall from the introduction to this present section that in the context where the function $f$ represents the velocity of a moving object, the total sum of the areas bounded by the curve tells us the total distance traveled over the relevant time interval, while the total net signed area bounded by the curve computes the object's change in position on the interval.
+
+\input{examples/4-2_Eg4} % EXAMPLE
+
+\newpage
+
+\vspace*{-.5cm}
+
+\input{activities/4.2.Act3} % ACTIVITY
+
+\vspace*{-.5cm}
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item A Riemann sum is simply a sum of products of the form $f(x_i^*) \triangle x$ that estimates the area between a positive function and the horizontal axis over a given interval.  If the function is sometimes negative on the interval, the Riemann sum estimates the difference between the areas that lie above the horizontal axis and those that lie below the axis.
+\item The three most common types of Riemann sums are left, right, and middle sums, plus we can also work with a more general, random Riemann sum.  The only difference among these sums is the location of the point at which the function is evaluated to determine the height of the rectangle whose area is being computed in the sum.  For a left Riemann sum, we evaluate the function at the left endpoint of each subinterval, while for right and middle sums, we use right endpoints and midpoints, respectively.
+
+\item The left, right, and middle Riemann sums are denoted $L_n$, $R_n$, and $M_n$, with formulas
+\[ L_n = f(x_0) \triangle x + f(x_1) \triangle x + \cdots + f(x_{n-1}) \triangle x = \sum_{i = 0}^{n-1} f(x_i) \triangle x, \]
+\[ R_n = f(x_1) \triangle x + f(x_2) \triangle x + \cdots + f(x_{n}) \triangle x = \sum_{i = 1}^{n} f(x_i) \triangle x,\]
+\[ M_n = f(\overline{x}_1) \triangle x + f(\overline{x}_2) \triangle x + \cdots + f(\overline{x}_{n}) \triangle x = \sum_{i = 1}^{n} f(\overline{x}_i) \triangle x,\]
+where $x_0 = a$, $x_i = a + i\triangle x$, and $x_n = b$, using $\triangle x = \frac{b-a}{n}$.  For the midpoint sum, $\overline{x}_{i} = (x_{i-1} + x_i)/2$.
+\end{summary} 
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/4-2.Riemann(Ex)} 
+
+\cleardoublepage

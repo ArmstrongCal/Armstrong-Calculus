@@ -1,0 +1,35 @@
+\begin{activity} \label{A:5.3.1}  Evaluate each of the following indefinite integrals.  
+\bmtwo\ba
+	\item $\ds \int \frac{\sqrt{4-x^2}}{x^2}\ dx$
+	\item $\ds \int \sqrt{5+4x-x^2} \, dx$
+	\item $\ds \int \frac{1}{\sqrt{x^2-6x+13}} \, dx$
+	\item $\ds \int \frac{1}{x^3\sqrt{x^2-1}}\, dx$
+\ea\emtwo
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item We use Key Idea \ref{idea:trigsub}(a) with $a=2$, $x=2\sin \theta$, $dx = 2\cos \theta$ and hence $\sqrt{4-x^2} = 2\cos\theta$. This gives
+\begin{align*}
+\int \frac{\sqrt{4-x^2}}{x^2}\ dx &= \int \frac{2\cos\theta}{4\sin^2\theta}(2\cos\theta)\ d\theta\\
+		&= \int \cot^2\theta\ d\theta\\
+		&=	\int (\csc^2\theta -1)\ d\theta\\
+		&= -\cot\theta -\theta + C.
+\end{align*}
+We need to rewrite our answer in terms of $x$. Using the reference triangle found in Key Idea \ref{idea:trigsub}(a), we have $\cot\theta = \sqrt{4-x^2}/x$ and $\theta = \sin^{-1}(x/2)$. Thus
+$$\int \frac{\sqrt{4-x^2}}{x^2}\ dx = -\frac{\sqrt{4-x^2}}x-\sin^{-1}\left(\frac x2\right) + C.$$
+%Solutions for each of the prompts above.
+	\item 
+
+\ea
+\end{activitySolution}
+\aftera

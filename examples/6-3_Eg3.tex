@@ -1,0 +1,31 @@
+\begin{margintable}[3cm]
+\begin{center}
+\scalebox{1.15}{
+\begin{tabular}{c | r} 
+ $x$ & $\sqrt{1+\cos^2x}$ \\ \hline
+ $0$ & $\sqrt{2}$ \\
+ $\pi/4$ & $\sqrt{3/2}$ \\
+ $\pi/2$ & $1$ \\
+ $3 \pi/4$ & $\sqrt{3/2}$ \\
+ $\pi$  & $\sqrt{2}$ \\
+\end{tabular}}
+\end{center}
+\caption{A table of values of $y=\sqrt{1+\cos^2x}$ to evaluate a definite integral in Example \ref{eg:6.3.3}.} \label{T:6.3.Ex3}
+\end{margintable}
+
+\begin{example} \label{eg:6.3.3} % EXAMPLE
+Find the length of the sine curve from $x=0$ to $x=\pi$.
+
+\solution This is somewhat of a mathematical curiosity; in Activity \ref{A:4.5.1} (b) we found the area under one ``hump'' of the sine curve is 2 square units; now we are measuring its arc length.
+
+The setup is straightforward: $f(x) = \sin x$ and $\fp(x) = \cos x$. Thus 
+$$L = \int_0^\pi \sqrt{1+\cos^2x}\ dx.$$
+This integral \textit{cannot} be evaluated in terms of elementary functions so we will approximate it with Simpson's Method with $n=4$. 
+
+Table~\ref{T:6.3.Ex3} gives $\sqrt{1+\cos^2x}$ evaluated at 5 evenly spaced points in $[0,\pi]$. Simpson's Rule then states that 
+\begin{align*}
+\int_0^\pi \sqrt{1+\cos^2x}\ dx &\approx	\frac{\pi-0}{4\cdot 3}\left(\sqrt{2}+4\sqrt{3/2}+2(1)+4\sqrt{3/2}+\sqrt{2}\right) \\
+			&=3.82918.
+\end{align*}
+Using a computer with $n=100$ the approximation is $L\approx 3.8202$; our approximation with $n=4$ is quite good.
+\end{example}

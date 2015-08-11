@@ -1,0 +1,35 @@
+\begin{activity} \label{A:3.1.4}  
+A baseball diamond is $90'$ square.  A batter who hits a ball along the third base line runs to first base.  At what rate is the distance between the ball and first base changing when the ball is halfway to third base, if at that instant the ball is traveling $100$ feet/sec?  At what rate is the distance between the ball and the runner changing at the same instant, if at the same instant the runner is $1/8$ of the way to first base running at $30$ feet/sec?
+\end{activity}
+\begin{smallhint}
+Let $x$ denote the position of the ball along the third base line at time $t$, and $z$ the distance from the ball to first base.  Note that the basepaths meet at 90 degree angles.
+\end{smallhint}
+\begin{bighint}
+Let $x$ denote the position of the ball along the third base line at time $t$, and $z$ the distance from the ball to first base.  Note that the basepaths meet at 90 degree angles.  Find a right triangle in which you can use the Pythagorean Theorem.  When including the runner for the second question, let $r$ denote the runner's position at time $t$, and again work with a key right triangle.
+\end{bighint}
+\begin{activitySolution}
+We let $x$ denote the position of the ball at time $t$ and $z$ the distance from the ball to first base, as pictured below.
+\begin{center}
+\includegraphics{figures/3_5_Act4Soln1.eps}
+\end{center}
+By the Pythagorean Theorem, we know that $x^2 + 90^2 = z^2$; differentiating with respect to $t$, we have
+$$2x\frac{dx}{dt} = 2z\frac{dz}{dt}.$$
+At the instant the ball is halfway to third base, we know $x = 45$ and $\left. \frac{dx}{dt} \right|_{x = 45} = 100$.  Moreover, by Pythagoras, $z^2 = 90^2 + 45^2$, so $z = 45\sqrt{5}$.  Thus,
+$$2 \cdot 45 \cdot 100 = 2 \cdot 45 \sqrt{5} \cdot \left. \frac{dz}{dt} \right|_{x = 45},$$
+so 
+$$\left. \frac{dz}{dt} \right|_{x = 45} = \frac{100}{\sqrt{5}} \approx 44.7214 \ \mbox{feet/sec}.$$
+
+For the second question, we still let $x$ represent the ball's position at time $t$, but now we introduce $r$ as the runner's position at time $t$ and let $s$ be the distance between the runner and the ball.  In this setting, as seen in the diagram below,
+\begin{center}
+\includegraphics{figures/3_5_Act4Soln2.eps}
+\end{center}
+$x$, $r$, and $s$ form the sides of a right triangle, so that
+$$x^2 + r^2 = s^2,$$
+by the Pythagorean Theorem.  Differentiating each side with respect to $t$, it follows that the three rates of change are related by the equation
+$$2x \frac{dx}{dt} + 2r \frac{dr}{dt} = 2s \frac{ds}{dt}.$$
+We are given that at the instant $x = 45$, $r = \frac{90}{8}$, so by Pythagoras, $s = \frac{45}{4}\sqrt{17}$.  In addition, at this same instant we know that $\left. \frac{dx}{dt} \right|_{x = 45} = 100$ and $\left. \frac{dr}{dt} \right|_{x = 45} = 30$.  Applying this information,
+$$2 \cdot 45 \cdot 100 + 2 \cdot \frac{45}{4} \cdot 30 = 2 \cdot \frac{45}{4}\sqrt{17} \cdot \left. \frac{ds}{dt} \right|_{x = 45}$$
+and therefore
+$$\left. \frac{ds}{dt} \right|_{x = 45} = \frac{430}{\sqrt{17}} \approx 104.2903 \ \mbox{feet/sec}.$$
+\end{activitySolution}
+\aftera

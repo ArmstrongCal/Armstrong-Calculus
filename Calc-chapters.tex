@@ -1,0 +1,377 @@
+\documentclass[symmetric,justified,marginals=justified,notoc]{tufte-book}
+\usepackage{tufte-11pt}
+\usepackage{lipsum,graphicx,amsfonts,amsmath,amsthm,xcolor}
+\usepackage[shortlabels]{enumitem}
+
+\geometry{footskip=-.75in,marginparwidth=2.5in}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+\makeatletter
+\titleformat{\chapter}%
+  [display]% shape
+  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
+  {\itshape\huge\chaptertitlename~\thechapter}% label
+  {10pt}% vertical separation between label and title body
+  {\huge\rmfamily\itshape}% before the title body
+  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+\makeatother
+
+\titleformat{\section}[block]
+{\bfseries\itshape\LARGE}
+{\thesection \hspace{12pt}}{0em}{}
+
+\titleformat{\subsection}[block]
+{\bfseries\large}
+{\thesubsection}{0em}{}
+
+
+\title{Calculus}
+\author{Jared Schlieper \& Michael Tiemeyer}
+\date{}
+
+\input{pagestyles}
+\pagestyle{mypagestyle}
+\raggedbottom
+
+\newtheoremstyle{mytheoremstyle} % name
+{0pt} % Space above
+{0pt} % Space below
+{} % Body font
+{0pt} % Theorem head  indent amount
+{\bfseries\large} % Theorem head font
+{} % Punctuation after theorem head
+{12pt} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{mytheoremstyle}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definiton}
+
+\newcommand{\definition}[2]{
+\vspace{12pt}
+\noindent\fcolorbox{blue!50}{blue!15}{\fcolorbox{blue!15}{blue!15}{\parbox{3.75in}{\begin{defn}{\bfseries\large#1}\newline\mbox{}\newline#2\end{defn}}}}
+\vspace{12pt}
+}
+
+\newcommand{\theorem}[2]{
+\vspace{12pt}
+\noindent\fcolorbox{green!50}{green!15}{\fcolorbox{green!15}{green!15}{\parbox{3.75in}{\begin{thm}{\bfseries\large#1}\newline\mbox{}\newline#2\end{thm}}}}
+\vspace{12pt}
+}
+
+\newcommand{\keyidea}[2]{
+\vspace{12pt}
+\noindent\fcolorbox{green!50}{green!15}{\fcolorbox{green!15}{green!15}{\parbox{3.75in}{
+{\begin{center}\bfseries\large#1\end{center}}#2}}}
+\vspace{12pt}
+}
+
+\setlength{\fboxsep}{.125in}
+
+\begin{document}
+
+\maketitle
+
+\cleardoublepage
+
+\input{copyright}
+
+\tableofcontents
+
+\chapter{Limits}
+
+\section{Introducing Limits}
+
+\subsection{Introduction}
+
+\marginnote{\lipsum[1]}
+
+\lipsum[6-7]
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{fig01.pdf}
+\caption{$f(x) = \sin(x)$, caption for figure*}
+\end{figure*}
+
+\begin{figure}
+\includegraphics[width=4.25in]{fig01.pdf}
+\caption{$f(x) = \sin(x)$, caption for figure}
+\end{figure}
+
+\begin{marginfigure}
+\includegraphics[width=\marginparwidth]{fig01}
+\caption{$f(x) = \sin(x)$, caption for marginfigure}
+\end{marginfigure}
+
+\keyidea{The Extreme Value Theorem}{
+\lipsum[1]
+}
+
+\section{Defining Limits}
+
+
+\section{Computing Limits}
+
+
+\section{Limits involving infinity}
+
+
+\section{Continuity}
+
+
+\section{Precise definition of a limit}
+
+\chapter{Derivatives}
+
+\section{Definiton of the Derivative}
+
+\lipsum[31-50]
+
+\section{Derivative as a function}
+
+\lipsum[31-50]
+
+\section{Basic Derivative Rules}
+
+\lipsum[31-50]
+
+\section{Product and Quotient Rules}
+
+\lipsum[31-50]
+
+\section{Derivatives of Trigonometric Functions}
+
+\lipsum[31-50]
+
+\section{Chain Rule}
+
+\lipsum[31-50]
+
+\section{Implicit Differentiation}
+
+\lipsum[31-50]
+
+\section{Inverse Functions}	
+\lipsum[31-50]
+
+\section{Logarithmic Differentiation}
+\lipsum[31-50]
+
+
+\chapter{Applications of Derivatives}
+
+ \section{Related Rates}
+ \lipsum[31-50]
+ 
+ \section{Maxima and Minima}
+ \lipsum[31-50]
+ 
+ \section{Global Optimization}
+ \lipsum[31-50]
+ 
+ \section{Applied Optimization}
+ \lipsum[31-50]
+ 
+ \section{Mean Value Theorem}
+ \lipsum[31-50]
+ 
+ \section{Linear Approximation}	
+ \lipsum[31-50]
+ 
+ \section{Newton's method}
+ \lipsum[31-50]
+ 
+ \section{l'Hopital's Rule}
+ \lipsum[31-50]
+
+\chapter{Integration}
+
+	\section{Area under a curve}
+	\lipsum[31-50]
+	
+	\section{Riemann Sums}
+	\lipsum[31-50]
+	
+	\section{Definite Integrals}
+	\lipsum[31-50]
+	
+	\section{Fundamental Theorem of Calculus, part 1}
+	\lipsum[31-50]
+	
+	\section{Antiderivatives and Fundamental Theorem of Calculus, part 2}
+	\lipsum[31-50]
+	
+	\section{Substitution}
+	\lipsum[31-50]
+	
+	\section{Integration by parts}
+	\lipsum[31-50]
+	
+	\section{Trigonometric Integrals}
+	\lipsum[31-50]
+	
+	\section{Trigonometric Substitution}
+	\lipsum[31-50]
+	
+	\section{Partial Fractions}
+	\lipsum[31-50]
+
+	\section{Numerical Integration}
+	\lipsum
+	
+	\section{Improper Integrals}
+	\lipsum[31-50]
+	
+	
+	
+\chapter{Applications of integrals}
+
+	\section{Velocity and Net change}
+	\lipsum[31-50]
+	
+	\section{Area between curves}
+	\lipsum[31-50]
+	
+	\section{Volumes by slicing}
+	\lipsum[31-50]
+	
+	\section{Volumes by shells}
+	\lipsum[31-50]
+
+	\section{Arc Length and Surface Area}
+	\lipsum[31-50]	
+	
+	\section{Physics Problems}
+	\lipsum[31-50]
+	
+	\section{Separable Differential Equations}
+	\lipsum[31-50]
+	
+	\section{Hyperbolic Functions}
+	\lipsum[31-50]
+	
+	
+\chapter{Sequences and Series}
+
+	\section{Introduction}
+	\lipsum[31-50]
+	
+	\section{Sequences}
+	\lipsum[31-50]
+	
+	\section{Series}
+	\lipsum[31-50]
+
+	\section{Divergence, Integral, and Comparison Tests}
+	\lipsum[31-50]	
+	
+	\section{Alternating Series}
+	\lipsum[31-50]
+	
+	\section{Ratio and Root Tests}
+	\lipsum[31-50]
+	
+	
+\chapter{Power Series}
+
+	\section{Introduction}
+	\lipsum[31-50]
+	
+	\section{Writing Functions as Power Series}
+	\lipsum[31-50]
+	
+	\section{Taylor Series}
+	\lipsum[31-50]
+	
+	\section{Working with Taylor Series}
+	\lipsum[31-50]
+
+\chapter{Parametric and Polar Curves}
+
+	\section{Parametric Curves }
+	\lipsum[31-50]
+	
+	\section{Polar Coordinates}
+	\lipsum[31-50]
+	
+	\section{Calculus with Polar coordinates}
+	\lipsum[31-50]
+	
+	\section{Conic Sections}
+	\lipsum[31-50]
+	
+\chapter{Vectors}
+
+	\section{Introduction}
+	\lipsum[31-50]
+	
+	\section{Vector Algebra}
+	\lipsum[31-50]
+	
+	\section{Dot Product}
+	\lipsum[31-50]
+	
+	\section{Cross Product}
+	\lipsum[31-50]
+
+	\section{Lines and Planes}
+	
+	\section{Surfaces}
+	
+	\section{Curvilinear Coordinates}
+	
+	\section{Vector-Valued Functions}
+	
+	\section{Arc Length}
+
+\chapter{Functions of Several Variables}
+
+	\section{Functions of Two or Three Variables}
+	
+	\section{Partial Derivatives}
+	
+	\section{Tangent Plane to a Surface}
+	
+	\section{Directional Derivatives and the Gradient}
+	
+	\section{Maxima and Minima}
+	
+	\section{Unconstrained Optimization: Numerical Methods}
+	
+	\section{Constrained Optimization: Lagrange Multipliers}
+	
+	
+
+\chapter{Multivariable Integration}
+
+	\section{Double Integrals}
+	
+	\section{Double Integrals Over a General Region}
+	
+	\section{Triple Integrals}
+	
+	\section{Numerical Approximation of Multiple Integrals}
+	
+	\section{Change of Variables in Multiple Integrals}
+	
+	\section{Application: Center of Mass}
+	
+	\section{Application: Probability and Expected Value}
+	
+	
+\chapter{Vector Calculus}
+
+	\section{Line Integrals}
+	
+	\section{Properties of Line Integrals}
+	
+	\section{Green's Theorem}
+	
+	\section{Surface Integrals and the Divergence Theorem}
+	
+	\section{Stokes' Theorem}
+	
+	\section{Gradient, Divergence, Curl and Laplacian}
+
+\end{document}

@@ -1,0 +1,27 @@
+\begin{marginfigure}[6cm] %MARGIN FIGURE
+\margingraphics{figures/figcross_area1}
+\caption{Orienting a pyramid along the $x$-axis in Example~\ref{eg:6.1.6}.} \label{F:6.1.Ex6}
+\end{marginfigure}
+
+\begin{example} \label{eg:6.1.6} % EXAMPLE
+Find the volume of a pyramid with a square base of side length $10$ in and a height of $5$ in.
+
+\solution There are many ways to ``orient'' the pyramid along the $x$-axis; Figure~\ref{F:6.1.Ex6} gives one such way, with the pointed top of the pyramid at the origin and the $x$-axis going through the center of the base.
+
+Each cross section of the pyramid is a square; this is a sample differential element. To determine its area $A(x)$, we need to determine the side lengths of the square.
+
+When $x=5$, the square has side length $10$; when $x=0$, the square has side length $0$. Since the edges of the pyramid are lines, it is easy to figure that each cross-sectional square has side length $2x$, giving $A(x) = (2x)^2=4x^2$. We have 
+\begin{align*} 
+V &= \int_0^5 4x^2\ dx\\
+&= \frac43x^3\Big|_0^5 \\
+&=\frac{500}{3}\ \text{in}^3 \approx 166.67\ \text{in}^3.
+\end{align*}
+We can check our work by consulting the general equation for the volume of a pyramid: %(see the back cover under ``Volume of A General Cone''): 
+
+$$\frac13 \times \text{area of base}\times \text{height.}$$
+
+Certainly, using this formula from geometry is faster than our new method, but the calculus-based method can be applied to much more than just cones.
+\end{example}
+
+
+

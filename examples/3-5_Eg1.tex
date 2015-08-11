@@ -1,0 +1,24 @@
+
+
+\begin{example} \label{Ex:3.5.Eg1}
+Consider $f(x) = x^3+5x+5$ on $[-3,3]$. Find $c$ in $[-3,3]$ that satisfies the Mean Value Theorem.
+
+\solution
+The average rate of change of $f$ on $[-3,3]$ is:
+		$$\frac{f(3)-f(-3)}{3-(-3)} = \frac{84}{6} = 14.$$
+		
+We want to find $c$ such that $\fp(c) = 14$. We find $\fp(x) = 3x^2+5$. We set this equal to $14$ and solve for $x$. 
+		\begin{align*}
+		3x^2 +5 &= 14\\
+		x^2  &= 3\\
+		x &= \pm \sqrt{3} \approx \pm 1.732
+		\end{align*}
+		
+We have found $2$ values $c$ in $[-3,3]$ where the instantaneous rate of change is equal to the average rate of change; the Mean Value Theorem guaranteed at least one. In Figure~\ref{F:3.5.Ex1} $f$ is graphed with a dashed line representing the average rate of change; the lines tangent to $f$ at $x=\pm \sqrt{3}$ are also given. Note how these lines are parallel (i.e., have the same slope) as the dashed line.
+
+\end{example}
+
+\begin{marginfigure}[-8cm]
+\margingraphics{figures/figmvt4} %APEX ex83
+\caption{Demonstrating the Mean Value Theorem in Example~\ref{Ex:3.5.Eg1}}\label{F:3.5.Ex1}
+\end{marginfigure}

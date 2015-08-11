@@ -1,0 +1,70 @@
+\begin{activity} \label{8.4.Act5}
+ \ba
+ \item Consider the series $\ds \sum (-1)^k \frac{\ln(k)}{k}$.
+    \begin{itemize}
+    \item[(i)] Does this series converge? Explain.
+
+    \item[(ii)] Does this series converge absolutely? Explain what test you use to determine your answer. 
+
+    \end{itemize}
+
+ \item Consider the series $\ds \sum (-1)^k \frac{\ln(k)}{k^2}$.
+     \begin{itemize}
+    \item[(i)] Does this series converge? Explain.
+
+    \item[(ii)] Does this series converge absolutely? Hint: Use the fact that $\ln(k) < \sqrt{k}$ for large values of $k$ and the compare to an appropriate $p$-series. 
+
+    \end{itemize}
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item 
+        \btl
+        \item By L'Hopital's Rule we have 
+        \[\lim_{k \to \infty} \frac{\ln(k)}{k} = \lim_{k \to \infty} \frac{1}{k} = 0.\]
+        Also, $\frac{d}{dk} \frac{\ln(k)}{k} = \frac{1-ln(k)}{k^2}$ is negative when $k > e$, so the sequence $\left\{ \frac{\ln(k)}{k} \right\}$ ultimately decreases to 0. Since the first few terms in a series are irrelevant to its convergence or divergence, we conclude that the series $\ds \sum (-1)^k \frac{\ln(k)}{k}$ converges by the Alternating Series test.
+
+        \item Note that
+        \begin{align*}
+        \lim_{t \to \infty} \int_{1}^{t} \frac{\ln(x}{x} &= \lim_{t \to \infty} \left. \frac{\ln(x)^2}{2} \right|_1^t \\
+            &= \lim_{t \to \infty} \frac{\ln(t)^2}{2}  \\
+            &= \lim_{t \to \infty} \frac{\ln(t)^2}{2}  \\
+            &= \infty.
+        \end{align*}
+        Since the improper integral diverges, the Integral Test shows that the series $\ds \sum (-1)^k \frac{\ln(k)}{k}$ diverges. So the series $\ds \sum (-1)^k \frac{\ln(k)}{k}$ converges conditionally.
+
+        \etl
+
+    \item
+        \btl
+        \item By L'Hopital's Rule we have
+        \[\lim_{k \to \infty} \frac{\ln(k)}{k^2} = \lim_{k \to \infty} \frac{1}{2k^2} = 0.\]
+        Also,
+        \[\frac{d}{dk} \frac{\ln(k)}{k^2} = \frac{k-2kln(k)}{k^4} = \frac{1-2ln(k)}{k^3}\]
+         is negative when $k > e$, so the sequence $\left\{ \frac{\ln(k)}{k^2} \right\}$ ultimately decreases to 0. Since the first few terms in a series are irrelevant to its convergence or divergence, we conclude that the series $\ds \sum (-1)^k \frac{\ln(k)}{k^2}$ converges by the Alternating Series test.
+
+        \item Notice that
+        \[\lim_{k \to \infty} \frac{ \ln(k) }{ k^{1/2} } = \lim_{k \to \infty} \frac{2}{k^{1/2}} = 0,\]
+        So $\frac{1}{\sqrt{k}}$ dominates $\ln(k)$ and $\ln(k) < sqrt{k}$ for large $k$. It follows that
+        \[\frac{\ln(k)}{k^2} < \frac{ \sqrt{k} }{k^2} = \frac{1}{k^{3/2}}\]
+        for large $k$. Therefore,
+        \[\sum \frac{\ln(k)}{k^2} < \sum \frac{1}{k^{3/2}}\]
+        for large $k$. Since $\ds \sum \frac{1}{k^{3/2}}$ is a $p$-series with $p=\frac{3}{2} > 1$, the series $\ds \sum \frac{1}{k^{3/2}}$ converges. This forces the series $\sum \frac{\ln(k)}{k^2}$ to converge as well. So $\ds \sum (-1)^k \frac{\ln(k)}{k^2}$ converges absolutely.
+        
+        \etl
+\ea
+\end{activitySolution}
+\aftera 

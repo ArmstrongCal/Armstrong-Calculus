@@ -1,0 +1,88 @@
+
+0 550 translate
+
+0 0 0 setrgbcolor
+
+/scale 500 def %scaling factor
+
+/fs 12 def
+
+%series start
+/s1 1 def
+
+/s2 s1 1 2 div sub def
+
+0 0 0 setrgbcolor
+
+%Axis
+s1 scale mul 1.1 mul 0 moveto
+s2 scale mul 0.8 mul 0 lineto
+stroke
+
+0 0 1 setrgbcolor
+
+s1 scale mul 0 3 0 360 arc
+fill
+
+0 0 0 setrgbcolor
+
+/Times-Italic findfont
+fs scalefont
+setfont
+s1 scale mul 3 sub -15 moveto
+(S) show
+/Times findfont
+fs 2 sub scalefont
+setfont
+0 -4 rmoveto
+(1) show
+
+0 0 1 setrgbcolor
+
+s2 scale mul 0 moveto
+s2 scale mul 0 3 0 360 arc
+fill
+
+0 0 0 setrgbcolor
+
+/Times-Italic findfont
+fs scalefont
+setfont
+s2 scale mul 3 sub -15 moveto
+(S) show
+/Times findfont
+fs 2 sub scalefont
+setfont
+0 -4 rmoveto
+(2) show
+
+/s3 s2 1 3 div add def
+
+0 0 1 setrgbcolor
+s3 scale mul 0 moveto
+s3 scale mul 0 3 0 360 arc
+fill
+
+0 0 0 setrgbcolor
+
+/Times-Italic findfont
+fs scalefont
+setfont
+s3 scale mul 3 sub -15 moveto
+(S) show
+/Times findfont
+fs 2 sub scalefont
+setfont
+0 -4 rmoveto
+(3) show
+
+
+/s4 s3 1 4 div sub def
+
+
+0 0 1 setrgbcolor
+s4 scale mul 0 moveto
+s4 scale mul 0 3 0 360 arc
+fill
+
+

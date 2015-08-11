@@ -1,0 +1,36 @@
+\begin{marginfigure}[1cm]
+\margingraphics{figures/figtrigint2.pdf} 
+\caption{A plot of $f(x)$ and $g(x)$ from Example \ref{eg:5.2.2} and the Technology Note.}
+\label{F:5.2_Eg2}
+\end{marginfigure}
+
+\begin{example} \label{eg:5.2.2} % EXAMPLE
+Evaluate $\ds \int\sin^5(x)\cos^9(x)\ dx$.
+
+\solution The powers of both the sine and cosine terms are odd, therefore we can apply the techniques of substitution to either power. We choose to work with the power of the cosine term since the previous example used the sine term's power.
+
+We rewrite $\cos^9(x)$ as
+\begin{align*} \cos^9(x) &= \cos^8(x)\cos(x) \\
+				&= (\cos^2(x))^4\cos(x) \\
+				&= (1-\sin^2(x))^4\cos(x) \\
+				&= (1-4\sin^2(x)+6\sin^4(x)-4\sin^6(x)+\sin^8(x))\cos(x).
+\end{align*}
+
+We rewrite the integral $\ds \int\sin^5(x)\cos^9(x)\ dx$ as 
+$$ \int\sin^5(x)\big(1-4\sin^2(x)+6\sin^4(x)-4\sin^6(x)+\sin^8(x)\big)\cos(x)\ dx.$$
+
+Now substitute and integrate, using $u = \sin(x) $ and $du = \cos(x)\ dx$.
+
+\noindent
+$\ds \int\sin^5(x)\big(1-4\sin^2(x)+6\sin^4(x)-4\sin^6(x)+\sin^8(x)\big)\cos(x)\ dx =$
+
+\noindent
+$\ds \int u^5(1-4u^2+6u^4-4u^6+u^8)\ du = \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\ du$
+
+\noindent
+$ \ds = \frac16u^6-\frac12u^8+\frac35u^{10}-\frac13u^{12}+\frac{1}{14}u^{14}+C $
+
+\noindent
+$ \ds = \frac16\sin^6(x)-\frac12\sin^8(x)+\frac35\sin^{10}(x)-\frac13\sin^{12}(x)+\frac{1}{14}\sin^{14}(x)+C.$
+\end{example}
+

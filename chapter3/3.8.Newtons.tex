@@ -1,0 +1,139 @@
+\section{Newton's Method}\label{S:3.8.Newtons}
+
+\begin{goals}% NEED GOALS
+\item If we are unable to solve an equation algebraically, how can we approximate the solutions of the equation using calculus?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+Solving equations is one of the most important things we do in mathematics, yet we are surprisingly limited in what we can solve analytically.  For instance, equations as simple as $x^5+x+1=0$ or $\cos(x) =x $ cannot be solved by algebraic methods in terms of familiar functions.  Fortunately, there are methods that can give us \textit{approximate} solutions to equations like these.  These methods can usually give an approximation correct to as many decimal places as we like. In Section~\ref{S:1.3.Continuity} we learned about the Bisection Method.  This section focuses on another technique (which generally works faster), called Newton's Method.
+
+\input{previews/3.8.PA1.tex} % PREVIEW ACTIVITY
+
+%-------------------------------------------
+% SUBSECTION NEWTON'S METHOD
+%-------------------------------------------
+\subsection*{Newton's Method}
+
+Newton's Method is built around tangent lines.  The main idea is that if $x$ is sufficiently close to a root of $f(x)$, then the  tangent line to the graph at $(x,f(x))$ will cross the $x$-axis at a point closer to the root than $x$.  
+
+We start Newton's Method with an initial guess about roughly where the root is.  Call this $x_0$. (See Figure~\ref{fig:newt1}-(a).)  Draw the tangent line to the graph at $(x_0,f(x_0))$ and see where it meets the $x$-axis. Call this value $x_1$.  Then repeat the process -- draw the tangent line to the graph at $(x_1, f(x_1))$ and see where it meets the $x$-axis. (See Figure \ref{fig:newt1}-(b).) Call this value $x_2$.  Repeat the process again to get $x_3$, $x_4$, etc.  This sequence of points will often converge rather quickly to a root of $f$.  
+
+\begin{marginfigure}[0cm] % MARGIN FIGURE
+\begin{center}
+\subfloat[]{\includegraphics[scale=.8]{figures/fignewt1a}}
+
+\subfloat[]{\includegraphics[scale=.8]{figures/fignewt1b}}
+
+\subfloat[]{\includegraphics[scale=.8]{figures/fignewt1c}}
+\caption{Demonstrating the geometric concept behind Newton's Method.}\label{fig:newt1}
+\end{center}
+\end{marginfigure}
+
+We can use this \textit{geometric} process to create an \textit{algebraic} process.  Let's look at how we found $x_1$.  We started with the tangent line to the graph at $(x_0,f(x_0))$.  The slope of this tangent line is $\fp(x_0)$ and the equation of the line is
+$$y=\fp(x_0)(x-x_0)+f(x_0).$$
+This line crosses the $x$-axis when $y=0$, and the $x$--value where it crosses is what we called $x_1$. So let $y=0$ and replace $x$ with $x_1$, giving the equation: 
+$$ 0 = \fp(x_0)(x_1-x_0)+f(x_0).$$ 
+Now solve for $x_1$:
+$$x_1=x_0-\frac{f(x_0)}{\fp(x_0)}.$$
+Since we repeat the same geometric process to find $x_2$ from $x_1$, we have
+$$x_2=x_1-\frac{f(x_1)}{\fp(x_1)}.$$
+In general, given an approximation $x_n$, we can find the next approximation, $x_{n+1}$ as follows:
+$$x_{n+1} = x_{n} - \frac{f(x_{n})}{\fp(x_{n})}.$$
+
+We summarize this process as follows.
+
+\concept{Newton's Method} % CONCEPT
+{Let $f$ be a differentiable function on an interval $I$ with a root in $I$. To approximate the value of the root, accurate to $d$ decimal places:\index{Newton's Method}
+\begin{enumerate}
+\item Choose a value $x_0$ as an initial approximation of the root. (This is often done by looking at a graph of $f$.)
+\item	 Create successive approximations iteratively; given an approximation $x_n$, compute the next approximation $x_{n+1}$ as $$x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.$$
+\item Stop the iterations when successive approximations do not differ in the first $d$ places after the decimal point.
+\end{enumerate}
+} % end concept
+
+\marginnote{Newton's Method is not infallible. The sequence of approximate values may not converge, or it may converge so slowly that one is ``tricked'' into thinking a certain approximation is better than it actually is. These issues will be discussed at the end of the section.}
+
+Let's practice Newton's Method with a concrete example.
+
+\input{examples/3-8_Eg1.tex} % EXAMPLE
+
+We can automate this process on a calculator that has an \verb+Ans+ key that returns the result of the previous calculation.  Start by pressing \verb+1+ and then \texttt{Enter}. (We have just entered our initial guess, $x_0=1$.)  Now  compute 
+$$\text{\tt Ans} - \frac{f(\text{\tt Ans})}{\fp(\text{\tt Ans})}$$ 
+by entering the following and repeatedly press the \texttt{Enter} key:
+\begin{center}
+\verb+Ans-(Ans^3-Ans^2-1)/(3*Ans^2-2*Ans)+
+\end{center}
+Each time we press the \texttt{Enter} key, we are finding the successive approximations, $x_1$, $x_2$, \dots, and each one is getting closer to the root.  In fact, once we get past around $x_7$ or so, the approximations don't appear to be changing.  They actually are changing, but the change is far enough to the right of the decimal point that it doesn't show up on the calculator's display.  When this happens, we can be pretty confident that we have found an accurate approximation.
+
+Using a calculator in this manner makes the calculations simple; many iterations can be computed very quickly. In general, one would usually run Newton's Method in this way, finding approximations until the difference between two successive approximations is less than some prescribed tolerance, maybe $10^{-10}$, whatever is necessary for the problem at hand.
+
+\input{examples/3-8_Eg2.tex} % EXAMPLE
+
+If you know how to program, you can translate the following pseudocode into your favorite language to perform the computation in this problem.
+\begin{center}
+\begin{verbatim}
+x = .75
+while true
+    oldx = x
+    x = x - (cos(x)-x)/(-sin(x)-1)
+    print x
+    if abs(x-oldx) < .0000000001
+        break
+\end{verbatim}
+\end{center}
+
+This code calculates $x_1$, $x_2$, etc., storing each result in the variable \texttt{x}.  The previous approximation is stored in the variable \texttt{oldx}.  We continue looping until the difference between two successive approximations, \texttt{abs(x-oldx)}, is less than some small tolerance, in this case,
+\texttt{.0000000001}.
+
+%--------------------------------------------------------------------
+% SUBSECTION CONVERGENCE OF NEWTON'S METHOD
+%--------------------------------------------------------------------
+\subsection{Convergence of Newton's Method}
+
+What should one use for the initial guess, $x_0$?  Generally, the closer to the actual root the initial guess is, the better.  However, some initial guesses should be avoided.  For instance, consider Example~\ref{Ex:3.8.Eg1} where we sought the root to $f(x) = x^3-x^2-1$.  Choosing  $x_0=0$ would have been a particularly poor choice. Consider Figure~\ref{fig:newt2a}, where $f(x)$ is graphed along with its tangent line at $x=0$. Since $\fp(0)=0$, the tangent line is horizontal and does not intersect the $x$--axis. Graphically, we see that Newton's Method fails.
+
+\begin{marginfigure}[-13cm] % MARGIN FIGURE
+\margingraphics{figures/fignewt2a}
+\caption{A graph of $f(x) = x^3-x^2-1$, showing why an initial approximation of $x_0=0$ with Newton's Method fails.}\label{fig:newt2a}
+\end{marginfigure}
+
+We can also see analytically that it fails. Since $$x_1 = 0 -\frac{f(0)}{\fp(0)}$$ and $\fp(0)=0$, we see that $x_1$ is not well defined.  
+
+This problem can also occur if, for instance, it turns out that $\fp(x_5)=0$. Adjusting the initial approximation $x_0$ will likely ameliorate the problem.
+
+It is also possible for Newton's Method to not converge while each successive approximation is well defined. Consider $f(x) = x^{1/3}$, as shown in Figure~\ref{fig:newt4}. It is clear that the root is $x=0$, but let's approximate this with $x_0=0.1$. Figure \ref{fig:newt4}-(a) shows graphically the calculation of $x_1$; notice how it is farther from the root than $x_0$. Figures \ref{fig:newt4}-(b) and -(c) show the calculation of $x_2$ and $x_3$, which are even farther away; our successive approximations are getting worse. (It turns out that in this particular example, each successive approximation is twice as far from the true answer as the previous approximation.)
+
+\begin{marginfigure}[-10cm] % MARGIN FIGURE
+\begin{center}
+\subfloat[]{\includegraphics[scale=.75]{figures/fignewt4a}}
+
+\subfloat[]{\includegraphics[scale=.75]{figures/fignewt4b}}
+
+\subfloat[]{\includegraphics[scale=.75]{figures/fignewt4c}}
+\caption{Newton's Method fails to find a root of $f(x) = x^{1/3}$, regardless of the choice of $x_0$.}\label{fig:newt4}
+\end{center}
+\end{marginfigure}
+
+There is no ``fix'' to this problem; Newton's Method simply will not work and another method must be used.
+
+While Newton's Method does not always work, it does work ``most of the time,'' and it is generally very fast. Once the approximations get close to the root, Newton's Method can as much as double the number of correct decimal places with each successive approximation. A course in Numerical Analysis will introduce the reader to more iterative root finding methods, as well as give greater detail about the strengths and weaknesses of Newton's Method.
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary} % NEED SUMMARY
+\item Derivatives and tangent lines can be used to approximate the solutions of an equation.  Create successive approximations iteratively; given an approximation $x_n$, compute the next approximation $x_{n+1}$ as $$x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.$$
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/3-8.Newtons(Ex)} 
+
+\cleardoublepage

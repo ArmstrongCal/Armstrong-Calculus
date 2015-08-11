@@ -1,0 +1,112 @@
+\begin{marginfigure}[8cm] % MARGIN FIGURE
+\margingraphics{figures/7_5_lake_michigan.eps}
+\caption{Plot of $\frac{dP}{dt}$ vs. $P$. } \label{F:6.7.Ex3-1}
+\end{marginfigure}
+
+\begin{example} \label{eg:6.7.3} % EXAMPLE
+In the Great Lakes region, rivers flowing into the lakes carry a great
+deal of pollution in the form of small pieces of plastic averaging $1$
+millimeter in diameter.  In order to understand how the amount of
+plastic in Lake Michigan is changing, construct a model for how this type pollution has built up in the lake.
+
+
+\solution First, some basic facts about Lake Michigan.
+\begin{itemize}
+  \item The volume of the lake is
+    $5\cdot10^{12}$ cubic meters.
+  \item Water flows into the lake at a rate of
+    $5\cdot10^{10}$ cubic meters per year.  It flows out of the lake
+    at the same rate.
+  \item Each cubic meter flowing
+    into the lake contains roughly $3\cdot10^{-8}$ cubic meters of
+    plastic pollution.
+\end{itemize}
+
+Let's denote the amount of pollution in the lake by $P(t)$, where $P$
+is measured in cubic meters of plastic and $t$ in years.  Our goal
+is to describe the rate of change of this function;  in other
+words, we want to develop a differential equation describing $P(t)$.
+
+First, we will measure how $P(t)$ increases due to pollution flowing
+into the lake.  We know that $5\cdot10^{10}$ cubic meters of water
+enters the lake every year and each cubic meter of water contains
+$3\cdot10^{-8}$ cubic meters of pollution.  Therefore, pollution
+enters the lake at the rate of
+$$ \left(5\cdot 10^{10} \frac{m^3 \mbox{\ water}}{\mbox{year}}\right) \cdot \left(3\cdot10^{-8} \frac{m^3 \mbox{\ plastic}}{m^3 \mbox{\ water}} \right) = 1.5\cdot 10^3$$
+cubic meters of plastic per year.
+
+Second, we will measure how $P(t)$ decreases due to pollution flowing
+out of the lake.  If the total amount of pollution is $P$ cubic
+meters and the volume of Lake Michigan is $5\cdot 10^{12}$ cubic
+meters, then the concentration of plastic pollution in Lake Michigan is
+$$
+\frac{P}{5\cdot10^{12}} \quad \hbox{cubic meters of plastic per cubic meter of water}.
+$$
+Since $5\cdot10^{10}$ cubic meters of water flow out each year,and we assume that each cubic meter of water that flows out carries with it the plastic pollution it contains, then
+the plastic pollution leaves the lake at the rate of
+$$ \left(\frac{P}{5\cdot10^{12}} \frac{m^3 \mbox{\ plastic}}{m^3 \mbox{\ water}} \right) \cdot \left(5\cdot10^{10} \frac{m^3 \mbox{\ water}}{\mbox{year}} \right)=\frac{P}{100} $$
+cubic meters of plastic per year.
+
+The total rate of change of $P$ is thus the difference between the rate at which
+pollution enters the lake minus the rate at which pollution leaves the
+lake;  that is,
+\begin{eqnarray*}
+\frac{dP}{dt} & = &1.5\cdot10^{3}-\frac{P}{100} \\
+                   & = & \frac{1}{100}(1.5\cdot10^{5} - P).
+\end{eqnarray*}
+
+We have now found a differential equation that describes the rate
+at which the amount of pollution is changing.  To better understand the
+behavior of $P(t)$, we now apply some
+of the techniques we have recently developed.
+
+Since this is an autonomous differential equation, we can sketch
+$dP/dt$ as a function of $P$ and then construct a slope field, as shown in Figure~\ref{F:6.7.Ex3-1} and Figure \ref{F:6.7.Ex3-2}.
+
+These plots both show that $P=1.5\cdot10^5$ is a stable equilibrium.  Therefore,
+we should expect that the amount of pollution in Lake Michigan will
+stabilize near $1.5\cdot10^5$ cubic meters of pollution.
+
+Next, assuming that there is initially no pollution in the lake, we will
+solve the initial value problem
+$$
+\frac{dP}{dt} = \frac{1}{100}(1.5\cdot10^{5} - P), \ P(0) = 0.
+$$
+Separating variables, we find that
+$$
+\frac1{1.5\cdot10^5-P} \frac{dP}{dt} = \frac1{100}.
+$$
+Integrating with respect to $t$, we have 
+$$  \int \frac1{1.5\cdot10^5-P} \frac{dP}{dt}~dt = \int \frac1{100}~dt,$$
+and thus changing variables on the left and antidifferentiating on both sides, we find that
+\begin{eqnarray*}
+  \int \frac{dP}{1.5\cdot10^5-P} &=& \int \frac1{100}~dt \\
+  -\ln|1.5\cdot10^5 - P| & = & \frac1{100}t + C
+\end{eqnarray*}
+Finally, multiplying both sides by $-1$ and using the definition of the logarithm, we find that
+\begin{equation} \label{E:7.5.Ex1C}  1.5\cdot10^5 - P = C e^{-t/100}.
+\end{equation}
+This is a good time to determine the constant $C$.  Since $P =
+0$ when $t=0$, we have
+$$
+1.5\cdot 10^5 - 0 = Ce^0 = C.
+$$
+In other words, $C=1.5\cdot10^5$. 
+
+Using this value of $C$ in Equation~(\ref{E:7.5.Ex1C}) and solving for $P$, we arrive at the solution
+$$ P(t) = 1.5\cdot10^5(1-e^{-t/100}).$$
+Superimposing the graph of $P$ on the slope field we saw in Figure \ref{F:6.7.Ex3-1} and Figure \ref{F:6.7.Ex3-2}, we see, as shown in Figure~\ref{F:6.7.Ex3-3}.
+
+We see that, as expected, the amount of plastic pollution stabilizes around
+$1.5\cdot10^5$ cubic meters.
+\end{example}
+
+\begin{marginfigure}[-16cm] % MARGIN FIGURE
+\margingraphics{figures/7_5_slope_field.eps}
+\caption{The slope field for the differential equation $\frac{dP}{dt} = \frac{1}{100}(1.5\cdot10^{5} - P)$.} \label{F:6.7.Ex3-2}
+\end{marginfigure}
+
+\begin{marginfigure}[-4cm] % MARGIN FIGURE
+\margingraphics{figures/7_5_solution.eps}
+\caption{The solution $P(t)$ and the slope field for the differential equation $\frac{dP}{dt} = \frac{1}{100}(1.5\cdot10^{5} - P)$.} \label{F:6.7.Ex3-3}
+\end{marginfigure}

@@ -1,0 +1,36 @@
+\begin{activity} \label{A:2.5.5}  
+Let $h(x) = \sec(x)$ and recall that $\ds \sec(x) = \frac{1}{\cos(x)}$.
+\ba
+	\item What is the domain of $h$?
+	\item Use the quotient rule to develop a formula for $h'(x)$ that is expressed completely in terms of $\sin(x)$ and $\cos(x)$.
+	\item How can you use other relationships among trigonometric functions to write $h'(x)$ only in terms of $\tan(x)$ and $\sec(x)$?
+	\item What is the domain of $h'$?  How does this compare to the domain of $h$? 
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item For what values of $x$ is $\cos(x) = 0$?
+	\item Don't forget that $\frac{d}{dx}[1] = 0$.
+	\item Consider rewriting $\frac{\sin(x)}{\cos^2(x)}$ as $\frac{1}{\cos(x)} \cdot \frac{\sin(x)}{\cos(x)}$.
+	\item Observe that $\cos(x)$ is still present in the denominator of $h'(x)$. 
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Remember that one value of $x$ for which $\cos(x) = 0$ is $x = \frac{\pi}{2}$.  What are the others?
+	\item Don't forget that $\frac{d}{dx}[1] = 0$, and be careful with your signs.
+	\item Consider rewriting $\frac{\sin(x)}{\cos^2(x)}$ as $\frac{1}{\cos(x)} \cdot \frac{\sin(x)}{\cos(x)}$.
+	\item Observe that $\cos(x)$ is still present in the denominator of $h'(x)$. 
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item $h(x) = \sec(x)$ is defined for all $x$ for which $\cos(x) \ne 0$.  Hence the domain of $h$ is all real numbers $x$ such that $x \ne \frac{k\pi}{2}$, where $k = \pm 1, \pm 2, \ldots$.
+	\item By the quotient rule,
+	$$h'(x) = \frac{0 - 1  (-\sin(x))}{\cos^2(x)} = \frac{\sin(x)}{\cos^2(x)}.$$
+	\item Observe that $h'(x) = \frac{\sin(x)}{\cos^2(x)} = \frac{1}{\cos(x)} \cdot \frac{\sin(x)}{\cos(x)},$ so
+	$$h'(x) = \sec(x) \tan(x).$$
+	\item The derivative $h'(x)$ is, like $h(x)$, defined for all values of $x$ for which $\cos(x) \ne 0$.  Therefore, $h$ and $h'$ have the same domain:  all real numbers $x$ such that $x \ne \frac{k\pi}{2}$, where $k = \pm 1, \pm 2, \ldots$.
+\ea
+\end{activitySolution}
+\aftera

@@ -1,0 +1,25 @@
+\begin{marginfigure}[6cm]
+\margingraphics{figs/5/improperfgc.pdf} %EXAMPLE 196 APEX
+\caption{A graph of $f(x)=\frac{1}{x}$ and $g(x)= \frac{1}{\sqrt{x^2+2x+5}}$ in Example \ref{eg:5.5.5}}
+\label{F:5-5_Eg5}
+\end{marginfigure}
+
+\begin{example} \label{eg:5.5.5} % EXAMPLE
+Determine the convergence of $\ds \int_3^{\infty} \frac{1}{\sqrt{x^2+2x+5}}\ dx$.
+
+\solution
+As $x$ gets large, the square root function with the quadratic inside will begin to behave much like $y=x$. So we compare $\ds\frac{1}{\sqrt{x^2+2x+5}}$ to $\ds\frac1x$ with the Limit Comparison Test:
+
+$$
+\lim_{x\to\infty} \frac{1/\sqrt{x^2+2x+5}}{1/x} = \lim_{x\to\infty}\frac{x}{\sqrt{x^2+2x+5}}.$$
+
+The immediate evaluation of this limit returns $\infty/\infty$, an indeterminate form. Using l'H\^opital's Rule seems appropriate, but in this situation, it does not lead to useful results. (We encourage the reader to employ l'H\^opital's Rule at least once to verify this.)
+
+The trouble is the square root function. To get rid of it, we employ the following fact: If $\ds \lim_{x\to c} f(x) = L$, then $\ds\lim_{x\to c} f(x)^2 = L^2.$ (This is true when either $c$ or $L$ is $\infty$.) So we consider now the limit
+$$\lim_{x\to\infty} \frac{x^2}{x^2+2x+5}.$$ 
+This converges to $1$, meaning the original limit also converged to $1$.  Note that the converse of the previous fact is not true in general, i.e., if $\ds \lim_{x\to c} f(x)^2 = L^2$, then $\ds\lim_{x\to c} f(x) \ne L.$
+
+As $x$ gets very large, the function $\frac{1}{\sqrt{x^2+2x+5}}$ looks very much like $\frac1x.$ Since we know that $\int_3^{\infty} \frac1x\ dx$ diverges, by the Limit Comparison Test we know that $\int_3^\infty\frac{1}{\sqrt{x^2+2x+5}}\ dx$ also diverges. Figure \ref{F:5-5_Eg5} graphs $f(x)=1/\sqrt{x^2+2x+5}$ and $f(x)=1/x$, illustrating that as $x$ gets large, the functions become indistinguishable.
+
+
+\end{example}

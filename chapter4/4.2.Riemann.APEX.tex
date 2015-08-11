@@ -1,0 +1,220 @@
+\section{Riemann Sums} \label{S:4.2.Riemann}
+
+\begin{goals}
+\item How can we use a Riemann sum to estimate the area between a given curve and the horizontal axis over a particular interval?
+\item What are the differences among left, right, middle, and random Riemann sums?
+\item What is sigma notation and how does this enable us to write Riemann sums in an abbreviated form?
+\end{goals}
+
+%----------------------------------
+% SUBSECTION INTRODUCTION
+%----------------------------------
+\subsection*{Introduction}
+
+\begin{marginfigure}[3in] % MARGIN FIGURE
+\margingraphics{figs/4/4-2_Intro.pdf}
+\caption{A velocity function that is sometimes negative.} \label{fig:4.2_Intro}
+\end{marginfigure}
+
+In Section~\ref{S:4.1.VelocityDistance}, we learned that if we have a moving object with velocity function $v$, whenever $v(t)$ is positive, the area between $y = v(t)$ and the $t$-axis over a given time interval tells us the distance traveled by the object over that time period; in addition, if $v(t)$ is sometimes negative and we view the area of any region below the $t$-axis as having an associated negative sign, then the sum of these signed areas over a given interval tells us the moving object's change in position over the time interval.
+
+For instance, for the velocity function given in Figure~\ref{fig:4.2_Intro}, if the areas of shaded regions are $A_1$, $A_2$, and $A_3$ as labeled, then the total distance $D$ traveled by the moving object on $[a,b]$ is 
+\[D = A_1 + A_2 + A_3,\]
+while the total change in the object's position on $[a,b]$ is 
+\[s(b) - s(a) = A_1 - A_2 + A_3.\]
+Because the motion is in the negative direction on the interval where $v(t) < 0$, we subtract $A_2$ when determining the object's total change in position.
+
+Of course, finding $D$ and $s(b)-s(a)$ for the situation given in Figure~\ref{fig:4.2_Intro} presumes that we can actually find the areas represented by $A_1$, $A_2$, and $A_3$.  In most of our work in Section~\ref{S:4.1.VelocityDistance}, such as in Activities~\ref{A:4.1.2} and~\ref{A:4.1.3}, we worked with velocity functions that were either constant or linear, so that by finding the areas of rectangles and triangles, we could find the area bounded by the velocity function and the horizontal axis exactly.  But when the curve that bounds a region is not one for which we have a known formula for area, we are unable to find this area exactly.  Indeed, this is one of our biggest goals in Chapter~\ref{CH:4}: to learn how to find the exact area bounded between a curve and the horizontal axis for as many different types of functions as possible.  
+
+To begin, we expand on the ideas in Activity~\ref{A:4.1.1}, where we encountered a nonlinear velocity function and approximated the area under the curve using four and eight rectangles, respectively.  In the following preview activity, we focus on three different options for deciding how to find the heights of the rectangles we will use.
+
+\input{previews/4.2.PA1} % PREVIEW ACTIVITY
+
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figs/4/apex_5-3_Area1.pdf}
+%\caption{A graph of $f(x) = 4x-x^2$. What is the area of the shaded region?} \label{fig:apex_5-3_Area1}
+%\end{marginfigure}
+%
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figs/4/apex_5-3_Area1Approx.pdf}
+%\caption{Approximating the area under $y=4x-x^2$ on $[0,4]$ using rectangles. The heights of the rectangles are determined using different methods.} \label{fig:apex_5-3_Area1Approx}
+%\end{marginfigure}
+%
+%%A fundamental calculus technique is to first answer a given problem with an approximation, then refine that approximation to make it better, then use limits in the refining process to find the exact answer. That is exactly what we will do here.
+%%
+%%Consider the region given in Figure \ref{fig:apex_5-3_Area1}, which is the area under $y=4x-x^2$ on $[0,4]$. What is the signed area of this region? %-- i.e., what is $\int_0^4(4x-x^2)\ dx$?
+%%
+%%We start by approximating. We can surround the region with a rectangle with height and width of 4 and find the area is approximately 16 square units. This is obviously an \textit{over approximation}; we are including area in the rectangle that is not under the parabola. % do we need a picture?
+%%
+%%We have an approximation of the area, using one rectangle. How can we refine our approximation to make it better? The key to this section is this answer: \textit{use more rectangles.}
+%%
+%%Let's use 4 rectangles of equal width of 1. This \textit{partitions} the interval $[0,4]$ into 4 \textit{subintervals}, $[0,1]$, $[1,2]$, $[2,3]$ and $[3,4]$. On each subinterval we will draw a rectangle.
+%
+%There are three common ways to determine the height of these rectangles: the \textbf{Left Hand Rule}, the \textbf{Right Hand Rule}, and the \textbf{Midpoint Rule}. The \textbf{Left Hand Rule} says to evaluate the function at the left--hand endpoint of the subinterval and make the rectangle that height. In Figure \ref{fig:apex_5-3_Area1Approx}, the rectangle drawn on the interval $[2,3]$ has height determined by the Left Hand Rule; it has a height of $f(2)$. (The rectangle is labeled ``LHR.'')\index{Left Hand Rule}\index{Right Hand Rule}\index{Midpoint Rule}
+%
+%%\mfigure{.5}{Approximating the area under $y=4x-x^2$ on $[0,4]$ using rectangles. The heights of the rectangles are determined using different rules.}{fig:rie1b}{figures/figrie1b}
+%
+%The \textbf{Right Hand Rule} says the opposite: on each subinterval, evaluate the function at the right endpoint and make the rectangle that height. In the figure, the rectangle drawn on $[0,1]$ is drawn using $f(1)$ as its height; this rectangle is labeled ``RHR.''.
+%
+%The \textbf{Midpoint Rule} says that on each subinterval, evaluate the function at the midpoint and make the rectangle that height. The rectangle drawn on $[1,2]$ was made using the Midpoint Rule, with a height of $f(1.5)$. That rectangle is labeled ``MPR.''
+%
+%These are the three most common rules for determining the heights of approximating rectangles, but one is not forced to use one of these three methods. The rectangle on $[3,4]$ has a height of approximately $f(3.53)$, very close to the Midpoint Rule. It was chosen so that the area of the rectangle is \textit{exactly} the area of the region under $f$ on $[3,4]$. (Later you'll be able to figure how to do this, too.)
+%
+%The following example will approximate the value of the area under $y=4x-x^2$ on $[0,4]$ using these rules.
+
+\input{examples/4-2_Eg1}
+
+%-------------------------------------
+% SUBSECTION SIGMA NOTATION
+%-------------------------------------
+\subsection*{Sigma Notation}
+
+It is apparent from several different problems we have considered that sums of areas of rectangles is one of the main ways to approximate the area under a curve over a given interval.  Intuitively, we expect that using a larger number of thinner rectangles will provide a way to improve the estimates we are computing.  As such, we anticipate dealing with sums with a large number of terms.  To do so, we introduce the use of so-called \emph{sigma notation}\index{sigma notation}, named for the Greek letter $\Sigma$, which is the capital letter $S$ in the Greek alphabet.
+
+For example, say we are interested in the sum
+$$1 + 2 + 3 + \cdots + 100,$$
+which is the sum of the first 100 natural numbers.  Sigma notation provides a shorthand notation that recognizes the general pattern in the terms of the sum.  It is equivalent to write
+$$\sum_{k=1}^{100} k =  1 + 2 + 3 + \cdots + 100.$$
+We read the symbol $\ds \sum_{k=1}^{100} k$ as ``the sum from $k$ equals 1 to 100 of $k$.''  The variable $k$ is usually called the index of summation, and the letter that is used for this variable is immaterial. 
+
+Suppose we wish to add up a list of numbers $a_1$, $a_2$, $a_3$, \ldots, $a_9$. Instead of writing \[ a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9, \]
+we use summation notation and write 
+\[ \sum_{i=1}^9 a_i. \]
+Again, the capital sigma represents the term ``sum.'' The index of summation in this example is $i$. By convention, the index takes on only the integer values between (and including) the lower and upper bounds. 
+
+Each summand in sigma notation involves a function of the index; for example,
+\begin{eqnarray*}
+\sum_{k=1}^{10} (k^2 + 2k) & = & (1^2 + 2\cdot 1) + (2^2 + 2\cdot 2) + (3^2 + 2\cdot 3) \\
+& & + \cdots + (10^2 + 2\cdot 10),
+\end{eqnarray*}
+and more generally,
+$$\sum_{k=1}^n f(k) = f(1) + f(2) + \cdots + f(n).$$
+Sigma notation allows us the flexibility to easily vary the function being used to track the pattern in the sum, as well as to adjust the number of terms in the sum simply by changing the value of $n$.  We test our understanding of this new notation in the following activity.
+
+\input{activities/4.2.Act1} % ACTIVITY
+
+It might seem odd to stress a new, concise way of writing summations only to write each term out as we add them up. It is. Therefore, we give some properties of summations that allow us to work with them without writing individual terms. 
+
+\definition{Properties of Summations\index{summation!properties}}{
+\begin{enumerate}
+\item	$\ds \sum_{i=1}^n c = c\cdot n$, where $c$ is a constant.
+\item	$\ds \sum_{i=m}^n (a_i\pm b_i) = \sum_{i=m}^n a_i \pm \sum_{i=m}^n b_i$
+\end{enumerate}
+\begin{multicols}{2}
+\begin{enumerate}[resume]
+
+\item	$\ds \sum_{i=1}^n c\cdot a_i = c\cdot\sum_{i=1}^n a_i$
+\item	$\ds \sum_{i=m}^j a_i + \sum_{i=j+1}^n  a_i = \sum_{i=m}^n a_i$
+\item	$\ds \sum_{i=1}^n i = \frac{n(n+1)}2$
+\item	$\ds \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}6$
+\item	$\ds \sum_{i=1}^n i^3 = \left(\frac{n(n+1)}2\right)^2$
+\end{enumerate}
+\end{multicols}
+$\left.\right.$
+}\pagebreak
+
+\input{examples/4-2_Eg2}
+
+%%----------------------------------
+%% SUBSECTION RIEMANN SUMS
+%%----------------------------------
+%\subsection*{Riemann Sums}
+%
+%Consider again the area under $y=4x-x^2$ on $[0,4]$. We will approximate this area using 16 equally spaced subintervals and the Right Hand Rule in Example \ref{ex_rie7}. Before doing so, it will pay  to do some careful preparation.\index{Riemann Sum}
+%
+%%\mfigure{.5}{Dividing $[0,4]$ into 16 equally spaced subintervals.}{fig:rie5}{figures/figrie5}
+%
+%Figure \ref{fig:rie5} shows a number line of $[0,4]$ divided into 16 equally spaced subintervals. We denote $0$ as $x_1$; we have marked the values of $x_5$, $x_9$, $x_{13}$ and $x_{17}$. We could mark them all, but the figure would get crowded. While it is easy to figure that $x_{10} = 2.25$, in general, we want a method of determining the value of $x_i$ without consulting the figure. Consider:
+%	%\begin{center}\myincludegraphics{figures/figrie5a}\end{center}
+%	%$$x_i = x_1 + (i-1)\Delta x. \text{TIKZ}$$
+%So $x_{10} = x_1 + 9(4/16) = 2.25.$
+%
+%If we had partitioned $[0,4]$ into 100 equally spaced subintervals, each subinterval would have length $\Delta x=4/100 = 0.04$. We could compute $x_{32}$ as $$x_{32} = x_1 + 31(4/100) = 1.24.$$ (That was far faster than creating a sketch first.)
+%
+%Given any subdivision of $[0,4]$, the first subinterval is $[x_1,x_2]$; the second is $[x_2,x_3]$; the $i^\text{ th}$ subinterval is $[x_i,x_{i+1}]$. 
+%
+%When using the Left Hand Rule, the height of the $i^\text{ th}$ rectangle will be $f(x_i)$. 
+%
+%When using the Right Hand Rule, the height of the $i^\text{ th}$ rectangle will be $f(x_{i+1})$. 
+%
+%When using the Midpoint Rule, the height of the $i^\text{ th}$ rectangle will be $\ds f\left(\frac{x_i+x_{i+1}}2\right)$. 
+%
+%Thus approximating the area under $y=4x-x^2$ on $[0,4]$ with 16 equally spaced subintervals can be expressed as follows:\vskip 5pt
+%
+%\noindent \textbf{Left Hand Rule:} $L_{16} = \ds \sum_{i=1}^{16} f(x_i)\Delta x$ \vskip 5pt
+%
+%\noindent \textbf{Right Hand Rule:} $R_{16} = \ds \sum_{i=1}^{16} f(x_{i+1})\Delta x$\vskip 5pt
+%
+%\noindent \textbf{Midpoint Rule:} $M_{16}\ds \sum_{i=1}^{16} f\left(\frac{x_i+x_{i+1}}2\right)\Delta x$
+%\index{Left Hand Rule}\index{Right Hand Rule}\index{Midpoint Rule}
+
+%\input{examples/4-2_Eg3}
+
+%\input{activities/4.2.Act2} % ACTIVITY
+%
+%Before the above example, we stated what the summations for the Left Hand, Right Hand and Midpoint Rules looked like. Each had the same basic structure; the only difference was at what values to evaluate $f$. All three are examples of an even more general construction, named after mathematician Georg Friedrich Bernhard Riemann.
+%
+%\definition{Riemann Sum}
+%{Let $f$ be defined on the closed interval $[a,b]$ and let $\Delta x$ be a partition of $[a,b]$, with \index{Riemann Sum}
+%	$$a=x_1 < x_2 < \ldots < x_n < x_{n+1}=b.$$
+%Let $\Delta x_i$ denote the length of the $i^\text{ th}$ subinterval $[x_i,x_{i+1}]$ and let $c_i$ denote any value in the $i^\text{ th}$ subinterval.
+%
+%The sum $$\sum_{i=1}^n f(c_i)\Delta x_i$$  is a \textbf{Riemann sum} of $f$ on $[a,b]$.}
+%
+%In this general form, the subintervals do not have be of equal length, and one can choose a point $c_i$ inside each subinterval any way they choose (and not just the left endpoint, or the midpoint, etc.) Figure \ref{fig:riedef} shows the approximating rectangles of a Riemann sum of the area under $y=4x-x^2$ on $[0,4]$. (This particular approximation is of little use; clearly the width and heights of the rectangles were not chosen ``well.'')
+%
+%%\mfigure{.55}{An example of a general Riemann sum to approximate the area under $y=4x-x^2$ on $[0,4]$.}{fig:riedef}{figures/figriedef}
+%
+%``Usually'' Riemann sums are calculated using one of the three methods we have introduced. The uniformity of construction  makes computations easier. Before working another example, let's summarize some of what we have learned in a convenient way.
+%
+%\concept{Riemann Sum Concepts}{Let $A$ be the area under the curve $f(x)$. Consider the approximation $A \approx \sum_{i=1}^n f(c_i)\Delta x_i.$ 
+%
+%\begin{enumerate}
+%\item	When the $n$ subintervals have equal length, $\ds \Delta x_i = \Delta x = \frac{b-a}n.$
+%\item		The $i^\text{ th}$ term of the partition is $x_i = a + (i-1)\Delta x$. (This makes $x_{n+1} = b$.)
+%\item		The Left Hand Rule summation is: $\ds \sum_{i=1}^n f(x_i)\Delta x$.
+%\item		The Right Hand Rule summation is: $\ds \sum_{i=1}^n f(x_{i+1})\Delta x$.
+%\item		The Midpoint Rule summation is: $\ds \sum_{i=1}^n f\left(\frac{x_i+x_{x+1}}{2}\right)\Delta x$.
+%\end{enumerate}
+%%\textit{\small (continued $\ldots$)}
+%}
+%
+\pagebreak
+\input{examples/4-2_Eg4}
+
+%
+%Notice in the previous example that while we used 10 equally spaced intervals, the number ``10'' didn't play a big role in the calculations until the very end. Mathematicians love to abstract ideas; let's approximate another region using $n$ subintervals, where we do not specify a value of $n$ until the very end.
+\pagebreak
+\input{examples/4-2_Eg5}
+
+%The result is an amazing, easy to use formula. To approximate the area with 10 equally spaced subintervals and the Right Hand Rule, set $n=10$ and compute $$A \approx \frac{32}{3}\left(1-\frac{1}{10^2}\right) = 10.56.$$
+%Recall how earlier we approximated the area with 4 subintervals; with $n=4$, the formula gives 10, our answer as before.
+%
+%It is now easy to approximate the area with 1,000,000 subintervals!  Hand-held calculators will round off the answer a bit prematurely giving an answer of $10.66666667$. (The actual answer is $10.666666666656$.)
+%
+%We now take an important leap. Up to this point, our mathematics has been limited to geometry and algebra (finding areas and manipulating expressions). Now we apply \textit{calculus}. For any \textit{finite} $n$, we know that the area, $A$, between $f(x)=4x-x^2$ and the $x$ axis is $$A \approx \frac{32}{3}\left(1-\frac{1}{n^2}\right).$$ Both common sense and high--level mathematics tell us that as $n$ gets large, the approximation gets better. In fact, if we take the \textit{limit} as $n\rightarrow \infty$, we get the \textit{exact area}. That is, 
+%\begin{align*}
+%A &= \lim_{n\rightarrow \infty} \frac{32}{3}\left(1-\frac{1}{n^2}\right) \\
+%									&= \frac{32}{3}\left(1-0\right)\\
+%									&= \frac{32}{3} = 10.\overline{6}
+%\end{align*}
+%
+%
+%\input{activities/4.2.Act3} % ACTIVITY
+%
+%%------------
+%% SUMMARY
+%%------------
+%\begin{summary}
+%\item A Riemann sum is simply a sum of products of the form $f(x_i^*) \triangle x$ that estimates the area between a positive function and the horizontal axis over a given interval.  If the function is sometimes negative on the interval, the Riemann sum estimates the difference between the areas that lie above the horizontal axis and those that lie below the axis.
+%
+%\item The three most common types of Riemann sums are left, right, and middle sums, plus we can also work with a more general, random Riemann sum.  The only difference among these sums is the location of the point at which the function is evaluated to determine the height of the rectangle whose area is being computed in the sum.  For a left Riemann sum, we evaluate the function at the left endpoint of each subinterval, while for right and middle sums, we use right endpoints and midpoints, respectively.
+%
+%\item The left, right, and middle Riemann sums are denoted $L_n$, $R_n$, and $M_n$, with formulas
+%$$L_n = f(x_0) \triangle x + f(x_1) \triangle x + \cdots + f(x_{n-1}) \triangle x = \sum_{i = 0}^{n-1} f(x_i) \triangle x,$$
+%$$R_n = f(x_1) \triangle x + f(x_2) \triangle x + \cdots + f(x_{n}) \triangle x = \sum_{i = 1}^{n} f(x_i) \triangle x,$$
+%$$M_n = f(\overline{x}_1) \triangle x + f(\overline{x}_2) \triangle x + \cdots + f(\overline{x}_{n}) \triangle x = \sum_{i = 1}^{n} f(\overline{x}_i) \triangle x,$$
+%where $x_0 = a$, $x_i = a + i\triangle x$, and $x_n = b$, using $\triangle x = \frac{b-a}{n}$.  For the midpoint sum, $\overline{x}_{i} = (x_{i-1} + x_i)/2$.
+%\end{summary}
+
+\cleardoublepage

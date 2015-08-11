@@ -1,0 +1,29 @@
+\begin{marginfigure}[-3cm]
+\margingraphics{figures/2_8_Infty.eps} %graph of 1/x 
+\caption{Observing limit as $x \to \infty$ in Example \ref{Ex:1.4.Eg5}.}\label{fig:1.4.Eg5}
+\end{marginfigure}
+
+\begin{margintable} %not sure if scalebox is needed
+\begin{center}
+\scalebox{1.25}{
+	\begin{tabular}[b]{r|l} 
+	$\epsilon$ & $N$ \\ 
+	\hline $1$ & $1$ \\ 
+	$0.2$ & $5$ \\ 
+	$0.1$ & $10$ \\ 
+	$0.05$ & $20$ \\ 
+	$0.01$ & $100$ \\ 
+	\end{tabular}
+} % end scalebox 
+\end{center}
+\caption{Values of $\epsilon$ and corresponding values of $N$.} \label{T:1-4_Eg5}
+\end{margintable}
+
+\begin{example} \label{Ex:1.4.Eg5}
+Show $\ds \lim_{x \to \infty}\frac{1}{x} = 0$ as shown in Figure~\ref{fig:1.4.Eg5}.
+
+\solution By the precise definition of limits at infinity, given $\epsilon>0$, we need to find $N$ such that if $x>N$ then $\lvert \frac{1}{x} - 0 \rvert < \epsilon$.  Since $x$ is approcahing $\infty$, we may assume $x>0$. Then $\frac{1}{x}<\epsilon$ and thus $x>\frac{1}{\epsilon}$. Let $N=\frac{1}{\epsilon}$. If $x>N$ then $\lvert \frac{1}{x} - 0 \rvert < \epsilon$, which is what we wanted to show.  So we may say $\ds \lim_{x \to \infty} \frac{1}{x}=0$.
+If we choose smaller values for $\epsilon$, we will need bigger values for $N$ but the inequality will still hold. Table~\ref{T:1-4_Eg5} shows different values of $\epsilon$ and the corresponding values of $N$. 
+
+
+\end{example}

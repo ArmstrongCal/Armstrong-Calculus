@@ -1,0 +1,43 @@
+\begin{activity} \label{8.6.Act2} Our goal in this activity is to find a power series expansion for $\ds f(x) = \frac{1}{1+x^2}$ centered at $x=0$. 
+
+While we could use the methods of Section~\ref{S:8.5.Taylor} and differentiate $f(x) = \ds \frac{1}{1+x^2}$ several times to look for patterns and find the Taylor series for $f(x)$, we seek an alternate approach because of how complicated the derivatives of $f(x)$ quickly become.
+\ba
+\item What is the Taylor series expansion for $g(x) = \frac{1}{1-x}$? What is the interval of convergence of this series?
+
+\item How is $g(-x^2)$ related to $f(x)$? Explain, and hence substitute $-x^2$ for $x$ in the power series expansion for $g(x)$. Given the relationship between $g(-x^2)$ and $f(x)$, how is the resulting series related to $f(x)$?
+
+\item For which values of $x$ will this power series expansion for $f(x)$ be valid? Why?
+
+
+
+\ea
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+    \ba
+    \item Recall that
+\[g(x) = \frac{1}{1-x} = \sum_{k=0}^{\infty} x^k\]
+for $-1 < x < 1$.
+    \item Substituting $-x^2$ for $x$ in the power series expansion for $g(x)$ gives
+\begin{align*}
+f(x^2) &= g(-x^2) \\
+    &= \frac{1}{1-(-x^2)} \\
+    &= \sum_{k=0}^{\infty} \left(-x^2\right)^k \\
+    &= \sum_{k=0}^{\infty} (-1)^k x^{2k}.
+\end{align*}]
+
+    \item This power series expansion for $f(x)$ will be valid as long as $-1 < (-x)^2 < 1$ or for $-1 < x < 1$. 
+    \ea
+\end{activitySolution}
+\aftera 

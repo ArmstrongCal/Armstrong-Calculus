@@ -1,0 +1,21 @@
+\begin{marginfigure}[2cm]
+\margingraphics{figures/figconc3} %APEX ex89 p.145
+\caption{A graph of $S(t)$ in Example \ref{Ex:3.2.Eg4}, modeling the sale of a product over time. }
+\label{F:3.2.Eg4}
+\end{marginfigure}
+
+\begin{marginfigure}[0cm]
+\margingraphics{figures/figconc3b} %APEX ex89 p.145
+\caption{A graph of $S(t)$ and $S'(t)$ in Example~\ref{Ex:3.2.Eg4}.}
+\label{F:3.2.Eg4b}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.2.Eg4}
+The sales of a certain product over a three-year span are modeled by $S(t)= t^4-8t^2+20$, where $t$ is the time in years, shown in Figure \ref{F:3.2.Eg4}.  Over the first two years, sales are decreasing.  Find the point at which sales are decreasing at their greatest rate.
+
+\solution We want to maximize the rate of decrease, which is to say, we want to find where $S'$ has a minimum.  To do this, we find where $S''$ is $0$.  We find $S'(t)=4t^3-16t$ and $S''(t)=12t^2-16$.  Setting $S''(t)=0$ and solving, we get $t=\sqrt{4/3}\approx 1.16$ (we ignore the negative value of $t$ since it does not lie in the domain of our function $S$).
+
+This is both the inflection point and the point of maximum decrease.  This is the point at which things first start looking up for the company.  After the inflection point, it will still take some time before sales start to increase, but at least sales are not decreasing quite as quickly as they had been.
+
+A graph of $S(t)$ and $S'(t)$ is given in Figure \ref{F:3.2.Eg4b}. When $S'(t)<0$, sales are decreasing; note how at $t\approx 1.16$, $S'(t)$ is minimized. That is, sales are decreasing at the fastest rate at $t\approx 1.16$.  On the interval of $(1.16,2)$, $S$ is decreasing but concave up, so the decline in sales is ``leveling off.''
+\end{example}

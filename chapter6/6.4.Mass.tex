@@ -1,0 +1,178 @@
+\section{Density, Mass, and Center of Mass} \label{S:6.4.Mass}
+
+\begin{goals}
+\item How are mass, density, and volume related?  
+\item How is the mass of an object with varying density computed?
+\item What is the center of mass of an object, and how are definite integrals used to compute it?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+We have seen in several different circumstances how studying the units on the integrand and variable of integration enables us to better understand the meaning of a definite integral.  For instance, if $v(t)$ is the velocity of an object moving along an axis, measured in feet per second, while $t$ measures time in seconds, then both the definite integral and its Riemann sum approximation,
+$$\int_a^b v(t) \, dt \approx \sum_{i=1}^n v(t_i) \triangle t,$$
+have their overall units given by the product of the units of $v(t)$ and $t$: 
+\begin{center}(feet/sec)$\cdot$(sec) = feet.
+\end{center}
+Thus, $\int_a^b v(t) \, dt$ measures the total change in position (in feet) of the moving object.  
+
+This type of unit analysis will be particularly helpful to us in what follows.  To begin, in the following preview activity we consider two different definite integrals where the integrand is a function that measures how a particular quantity is distributed over a region and think about how the units on the integrand and the variable of integration indicate the meaning of the integral.
+
+\input{previews/6.4.PA1} % PREVIEW
+
+%---------------------------
+% SUBSECTION DENSITY
+%---------------------------
+\subsection*{Density} \index{density}
+
+The \emph{mass} \index{mass} of a quantity, typically measured in metric units such as grams or kilograms, is a measure of the amount of a quantity.  In a corresponding way, the \emph{density} of an object measures the distribution of mass per unit volume.  For instance, if a brick has mass $3$ kg and volume $0.002$ m$^3$, then the density of the brick is 
+$$\frac{3 \mbox{kg}}{0.002 \mbox{m}^3} = 1500 \frac{\mbox{kg}}{\mbox{m}^3}.$$
+As another example, the mass density of water is $1000$ kg/m$^3$.  Each of these relationships demonstrate the following general principle.  
+
+\concept{Density, Mass, \& Volume}{ % CONCEPT
+For an object of constant density $d$, with mass $m$ and volume $V$, 
+$$d = \frac{m}{V}, \ \mbox{or} \ m = d \cdot V.$$
+} % end concept
+
+But what happens when the density is not constant?
+
+If we consider the formula $m = d \cdot V$, it is reminiscent of two other equations that we have used frequently in recent work:  for a body moving in a fixed direction, distance = rate $\cdot$ time, and, for a rectangle, its area is given by $A = l \cdot w$.  These formulas hold when the principal quantities involved, such as the rate the body moves and the height of the rectangle, are \emph{constant}.  When these quantities are not constant, we have turned to the definite integral for assistance.  The main idea in each situation is that by working with small slices of the quantity that is varying, we can use a definite integral to add up the values of small pieces on which the quantity of interest (such as the velocity of a moving object) are approximately constant.
+
+For example, in the setting where we have a nonnegative velocity function that is not constant, over a short time interval $\triangle t$ we know that the distance traveled is approximately $v(t) \triangle t$, since $v(t)$ is almost constant on a small interval, and for a constant rate, distance = rate $\cdot$ time.  Similarly, if we are thinking about the area under a nonnegative function $f$ whose value is changing, on a short interval $\triangle x$ the area under the curve is approximately the area of the rectangle whose height is $f(x)$ and whose width is $\triangle x$:  $f(x) \triangle x$.  Both of these principles are represented visually in Figure~\ref{F:6.3.VelArea}.  
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/6_3_VelArea.eps}
+\caption{At left, estimating a small amount of distance traveled, $v(t) \triangle t$, and at right, a small amount of area under the curve, $f(x) \triangle x$.} \label{F:6.3.VelArea}
+\end{marginfigure}
+
+In a similar way, if we consider the setting where the density of some quantity is not constant, the definite integral enables us to still compute the overall mass of the quantity.  Throughout, we will focus on problems where the density varies in only one dimension, say along a single axis, and think about how mass is distributed relative to location along the axis.  
+
+Let's consider a thin bar of length $b$ that is situated so its left end is at the origin, where $x = 0$, and assume that the bar has constant cross-sectional area of $1$ cm$^2$.  We let the function $\rho(x)$ represent the mass density function of the bar, measured in grams per cubic centimeter.  That is, given a location $x$, $\rho(x)$ tells us approximately how much mass will be found in a one-centimeter wide slice of the bar at $x$.
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/6_3_Bar.eps}
+\caption{A thin bar of constant cross-sectional area $1$ cm$^2$ with density function $\rho(x)$ g/cm$^3$.} \label{F:6.3.Bar}
+\end{marginfigure}
+
+If we now consider a thin slice of the bar of width $\triangle x$, as pictured in Figure~\ref{F:6.3.Bar}, the volume of such a slice is the cross-sectional area times $\triangle x$.  Since the cross-sections each have constant area $1$ cm$^2$, it follows that the volume of the slice is $1 \triangle x$ cm$^3$.  Moreover, since mass is the product of density and volume (when density is constant), we see that the mass of this given slice is approximately
+$$\mbox{mass}_{\mbox{slice}} \approx \rho(x) \ \frac{\mbox{g}}{\mbox{cm}^3} \cdot 1 \triangle x \ \mbox{cm}^3 = \rho(x) \cdot \triangle x \ \mbox{g}.$$
+
+Hence, for the corresponding Riemann sum (and thus for the integral that it approximates),
+$$\sum_{i=1}^n \rho(x_i) \triangle x \approx \int_0^b \rho(x) \, dx,$$
+we see that these quantities measure the mass of the bar between $0$ and $b$.   (The Riemann sum is an approximation, while the integral will be the exact mass.)
+
+At this point, we note that we will be focused primarily on situations where mass is distributed relative to horizontal location, $x$, for objects whose cross-sectional area is constant.  In that setting, it makes sense to think of the density function $\rho(x)$ with units ``mass per unit length,'' such as g/cm.  Thus, when we compute $\rho(x) \cdot \triangle x$ on a small slice $\triangle x$, the resulting units are g/cm $\cdot$ cm = g, which thus measures the mass of the slice.  The general principle follows.
+
+\concept{Mass}{ % CONCEPT
+For an object of constant cross-sectional area whose mass is distributed along a single axis according to the function $\rho(x)$ (whose units are units of mass per unit of length), the total mass, $M$ of the object between $x = a$ and $x = b$ is given by
+$$M = \int_a^b \rho(x) \, dx.$$
+} % end concept
+
+\input{examples/6-4_Eg1.tex} %EXAMPLE
+
+\input{activities/6.4.Act1} % ACTIVITY
+
+%-------------------------------------------
+% SUBSECTION WEIGHTED AVERAGES
+%-------------------------------------------
+\subsection*{Weighted Averages}
+
+\begin{margintable}
+\begin{center}
+\begin{tabular}{ | l || c | c | c |}
+   \hline 
+   class & grade & grade points & credits  \\
+   \hline \hline
+   chemistry & B+ & $3.3$ & $5$ \\
+   \hline
+   calculus & A- & $3.7$ & $4$ \\
+   \hline
+   history & B- & $2.7$ & $3$ \\
+   \hline
+   psychology & B- & $2.7$ & $3$ \\
+   \hline
+\end{tabular} 
+\end{center}
+\caption{A college student's semester grades.} \label{T:6.3.grades}
+\end{margintable}
+
+The concept of an average is a natural one, and one that we have used repeatedly as part of our understanding of the meaning of the definite integral.  If we have $n$ values $a_1$, $a_2$, $\ldots$, $a_n$, we know that their average is given by
+$$\frac{a_1 + a_2 + \cdots + a_n}{n},$$
+and for a quantity being measured by a function $f$ on an interval $[a,b]$, the average value of the quantity on $[a,b]$ is
+$$\frac{1}{b-a} \int_a^b f(x) \, dx.$$
+As we continue to think about problems involving the distribution of mass, it is natural to consider the idea of a \emph{weighted} average, \index{weighted average} where certain quantities involved are counted more in the average.
+
+A common use of weighted averages is in the computation of a student's GPA, where grades are weighted according to credit hours.  Let's consider the scenario in Table~\ref{T:6.3.grades}.
+
+If all of the classes were of the same weight (i.e., the same number of credits), the student's GPA would simply be calculated by taking the average
+$$\frac{3.3 + 3.7 + 2.7 + 2.7}{4} = 3.1.$$
+But since the chemistry and calculus courses have higher weights (of $5$ and $4$ credits respectively), we actually compute the GPA according to the weighted average 
+$$\frac{3.3 \cdot 5 + 3.7 \cdot 4 + 2.7 \cdot 3 + 2.7 \cdot 3}{5 + 4 + 3 + 3} = 3.1\overline{6}.$$
+The weighted average reflects the fact that chemistry and calculus, as courses with higher credits, have a greater impact on the students' grade point average.  Note particularly that in the weighted average, each grade gets multiplied by its weight, and we divide by the sum of the weights.
+
+In the following activity, we explore further how weighted averages can be used to find the balancing point of a physical system.
+
+\input{activities/6.4.Act2} % ACTIVITY
+
+%--------------------------------------
+% SUBSECTION CENTER OF MASS
+%--------------------------------------
+\subsection*{Center of Mass} 
+
+In Activity~\ref{A:6.4.2}, we saw that the balancing point of a system of point-masses\footnote{In the activity, we actually used \emph{weight} rather than \emph{mass}.  Since weight is computed by the gravitational constant times mass, the computations for the balancing point result in the same location regardless of whether we use weight or mass, since the gravitational constant is present in both the numerator and denominator of the weighted average.} (such as books on a shelf) is found by taking a weighted average of their respective locations.  In the activity, we were computing the \emph{center of mass} of a system of masses distributed along an axis, which is the balancing point of the axis on which the masses rest.
+
+\definition{Center of Mass}{ % DEFINITION
+For a collection of $n$ masses $m_1$, $\ldots$, $m_n$ that are distributed along a single axis at the locations $x_1$, $\ldots$, $x_n$, the \emph{center of mass} is given by
+$$\overline{x} = \frac{x_1 m_1  + x_2 m_2 + \cdots x_n m_n}{m_1 + m_2 + \cdots + m_n}.$$
+} % end definition
+
+What if we instead consider a thin bar over which density is distributed continuously?  If the density is constant, it is obvious that the balancing point of the bar is its midpoint.  But if density is not constant, we must compute a weighted average.  Let's say that the function $\rho(x)$ tells us the density distribution along the bar, measured in g/cm.  If we slice the bar into small sections, this enables us to think of the bar as holding a collection of adjacent point-masses.  For a slice of thickness $\triangle x$ at location $x_i$, note that the mass of the slice, $m_i$, satisfies $m_i \approx \rho(x_i) \triangle x$.
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/6_3_Bar.eps}
+\caption{A thin bar of constant cross-sectional area with density function $\rho(x)$ g/cm.} \label{F:6.3.Bar2}
+\end{marginfigure}
+
+Taking $n$ slices of the bar, we can approximate its center of mass by 
+$$\overline{x} \approx \frac{x_1 \cdot \rho(x_1) \triangle x + x_2 \cdot \rho(x_2) \triangle x  + \cdots + x_n \cdot \rho(x_n) \triangle x }{\rho(x_1) \triangle x + \rho(x_2) \triangle x + \cdots + \rho(x_n) \triangle x}.$$
+Rewriting the sums in sigma notation, it follows that
+\begin{equation} \label{E:CtrOfM}
+\overline{x} \approx \frac{\sum_{i = 1}^{n} x_i \cdot \rho(x_i) \triangle x}{\sum_{i = 1}^{n} \rho(x_i) \triangle x}.
+\end{equation}
+Moreover, it is apparent that the greater the number of slices, the more accurate our estimate of the balancing point will be, and that the sums in Equation~(\ref{E:CtrOfM}) can be viewed as Riemann sums.  Hence, in the limit as $n \to \infty$, we find that the center of mass is given by the quotient of two integrals.
+
+\concept{Center of Mass}{ % CONCEPT
+For a thin rod of density $\rho(x)$ distributed along an axis from $x = a$ to $x = b$, the center of mass of the rod is given by
+$$\overline{x} = \frac{\int_a^b x \rho(x) \, dx}{\int_a^b \rho(x) \, dx}.$$
+} % end concept
+
+Note particularly that the denominator of $\overline{x}$ is the mass of the bar, and that this quotient of integrals is simply the continuous version of the weighted average of locations, $x$, along the bar.
+
+\input{examples/6-4_Eg2.tex} %EXAMPLE
+
+\input{activities/6.4.Act3} % ACTIVITY
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+  \item For an object of constant density $D$, with volume $V$ and mass $m$, we know that $m = D \cdot V.$
+  \item If an object with constant cross-sectional area (such as a thin bar) has its density distributed along an axis according to the function $\rho(x)$, then we can find the mass of the object between $x = a$ and $x = b$ by
+  $$m = \int_a^b \rho(x) \, dx.$$
+  \item For a system of point-masses distributed along an axis, say $m_1, \ldots, m_n$ at locations $x_1, \ldots, x_n$, the center of mass, $\overline{x}$, is given by the weighted average
+  $$\overline{x} = \frac{\sum_{i=1}^n x_i m_i}{\sum_{i=1}^n m_i}.$$
+  If instead we have mass continuously distributed along an axis, such as by a density function $\rho(x)$ for a thin bar of constant cross-sectional area, the center of mass of the portion of the bar between $x = a$ and $x = b$ is given by
+  $$\overline{x} = \frac{\int_a^b x \rho(x) \, dx}{\int_a^b \rho(x) \, dx}.$$
+  In each situation, $\overline{x}$ represents the balancing point of the system of masses or of the portion of the bar.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/6-4.Density(Ex)} 
+
+\cleardoublepage

@@ -1,0 +1,20 @@
+\begin{example} \label{Ex:3.8.Eg1}
+Approximate the real root of $x^3-x^2-1=0$,  accurate to the first $3$ places after the decimal, using Newton's Method and an initial approximation of $x_0=1$.
+
+\solution To begin, we compute $\fp(x)=3x^2-2x$.  Then we apply the Newton's Method algorithm. 
+\begin{align*}
+x_1&=1-\frac{f(1)}{\fp(1)}=1-\frac{1^3-1^2-1}{3\cdot 1^2-2\cdot 1}=2,\\
+x_2&=2-\frac{f(2)}{\fp(2)}=2-\frac{2^3-2^2-1}{3\cdot 2^2-2\cdot 2}=1.625,\\
+x_3&=1.625-\frac{f(1.625)}{\fp(1.625)} = 1.625-\frac{1.625^3-1.625^2-1}{3\cdot 1.625^2-2\cdot 1.625}\approx 1.48579. \\
+x_4 &= 1.48579 - \frac{f(1.48579)}{\fp(1.48579)} \approx  1.46596\\
+x_5 &= 1.46596 - \frac{f(1.46596)}{\fp(1.46596)} \approx 1.46557
+\end{align*}
+We performed $5$ iterations of Newton's Method to find a root accurate to the first $3$ places after the decimal; our final approximation is $1.465.$ The exact value of the root, to six decimal places, is $1.465571$;  It turns out that our $x_5$ is accurate to more than just $3$ decimal places.
+
+A graph of $f(x)$ is given in Figure~\ref{fig:newt2}. We can see from the graph that our initial approximation of $x_0=1$ was not particularly accurate; a closer guess would have been $x_0=1.5$. Our choice was based on ease of initial calculation, and shows that Newton's Method can be robust enough that we do not have to make a very accurate initial approximation.
+\end{example}
+
+\begin{marginfigure}[-6cm]
+\margingraphics{figures/fignewt2}
+\caption{A graph of $f(x) = x^3-x^2-1$ in Example~\ref{Ex:3.8.Eg1}.}\label{fig:newt2}
+\end{marginfigure}

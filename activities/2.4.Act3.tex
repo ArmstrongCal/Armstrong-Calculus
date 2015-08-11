@@ -1,0 +1,38 @@
+\begin{activity} \label{A:2.4.3}  
+Each of the following questions asks you to use derivatives to answer key questions about functions.  Be sure to think carefully about each question and to use proper notation in your responses.
+\ba
+	\item Find the slope of the tangent line to $h(z) = \sqrt{z} + \frac{1}{z}$ at the point where $z = 4$.
+	\item A population of cells is growing in such a way that its total number in millions is given by the function $P(t) = 2(1.37)^t + 32$, where $t$ is measured in days.  
+	\begin{enumerate}
+	  \item[i.] Determine the instantaneous rate at which the population is growing on day $4$, and include units on your answer.  
+	  \item[ii.] Is the population growing at an increasing rate or growing at a decreasing rate on day $4$?  Explain.
+	\end{enumerate}
+	\item Find an equation for the tangent line to the curve $p(a) = 3a^4 - 2a^3 + 7a^2 - a + 12$ at the point where $a=-1$.
+	\item What is the difference between being asked to find the \emph{slope} of the tangent line (asked in (a)) and the \emph{equation} of the tangent line (asked in (c))?
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	  \item How would $h'(z)$ help you answer the question?
+	  \item Think about finding both $P'(t)$ and $P''(t)$.
+	  \item What two important pieces of information do you need to know to determine the equation of a line?
+	  \item What information do you find in both (a) and (c)?
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	  \item Remember that $h'(a)$ tells us the slope of the tangent line to $y = h(z)$ at the point $(a,h(a))$.
+	  \item Think about how the units on $P'(t)$ are the units of $P$ per unit of $t$.  For the second question, consider the meaning of $P''(t)$.
+	  \item Find both $(-1,p(-1))$ and $p'(-1)$.
+	  \item Note that both questions require you to find the value of the given function's derivative at a particular point.  How is that value used differently in questions (a) and (c)?
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	  \item Note that since $h(z) = z^{1/2} + z^{-1}$, we have $h'(z) = \frac{1}{2}z^{-1/2} - z^{-2}$.  Thus, $h'(4) = \frac{1}{2(4)^{1/2}} - \frac{1}{4^2} = \frac{1}{4} - \frac{1}{16} = \frac{3}{16}.$  Thus, the slope of the tangent line to $h(z)$ at the point where $z = 4$ is $\frac{3}{16}$.
+	  \item For (i.), note that $P'(t) = 2(1.37)^t \ln(1.37)$, and therefore $P'(4) =  2(1.37)^4 \ln(1.37) \approx 2.218$ million cells per day.  For (ii.), we can compute $P''(t)$ and find that $P''(t) = 2(1.37)^t \ln(1.37) \ln(1.37)$ and therefore find that $P''(4) \approx  0.69825$.  Since $P''(4)$ is positive, this tells us that the instantaneous rate of change $P'(t)$ is increasing at $t = 4$, and thus the population is growing at an increasing rate.
+	  \item Given $p(a) = 3a^4 - 2a^3 + 7a^2 - a + 12$, first observe that $p(-1) = 3 + 2 + 7 + 1 + 12 = 25$, so the tangent line will pass through $(-1,25)$.  Further, since $p'(a) = 12a^3 - 6a^2 + 14a - 1$, we have $p'(-1) = -12 - 6 - 14 - 1 = -33$, which is the slope of the tangent line.  The equation of the tangent line is therefore $y - 25 = -33(a+1)$.
+	  \item The biggest difference is that (a) asks for the \emph{slope} of the tangent line, while (c) asks for the \emph{equation} of the tangent line.  The latter requires the slope of the tangent line, but the slope and equation are two different entities.
+\ea
+\end{activitySolution}
+\aftera

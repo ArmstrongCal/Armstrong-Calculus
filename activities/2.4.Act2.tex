@@ -1,0 +1,50 @@
+\begin{activity} \label{A:2.1.2}  Use only the rules for constant, power, and exponential functions, together with the Constant Multiple and Sum Rules,  to compute the derivative of each function below with respect to the given independent variable.  Note well that we do not yet know any rules for how to differentiate the product or quotient of functions.  This means that you may have to do some algebra first on the functions below before you can actually use existing rules to compute the desired derivative formula.  In each case, label the derivative you calculate with its name using proper notation such as $f'(x)$, $h'(z)$, $dr/dt$, etc.
+
+\setlength{\columnsep}{5pt}
+\bmtwo
+\ba
+	  \item $\ds f(x) = x^{5/3} - x^4 + 2^x$
+	  \item $\ds g(x) = 14e^x + 3x^5 - x$
+	  \item $\ds h(z) = \sqrt{z} + \frac{1}{z^4} + 5^z$
+	  \item $\ds r(t) = \sqrt{53} \, t^7 - \pi e^t + e^4$
+	  \item $\ds s(y) = (y^2 + 1)(y^2 - 1)$
+	  \item $\ds q(x) = \ds \frac{x^3 - x + 2}{x}$
+	  \item $\ds p(a) = 3a^4 - 2a^3 + 7a^2 - a + 12$
+\ea
+\emtwo
+
+\end{activity}
+\begin{smallhint}
+\ba
+	  \item Use the sum rule.
+	  \item Use the sum rule together with the constant multiple rule.
+	  \item How can you rewrite $\sqrt{z}$ using exponents?
+	  \item Is $e^4$ a constant or variable?
+	  \item Expand the product before attempting to find the derivative.
+	  \item Rewrite the single fraction as a sum of three fractions, and simplify.
+	  \item Note that ``$a$'' is the independent variable.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	  \item Use the sum rule; think about which functions in the sum are power functions and which are exponential.
+	  \item Use the sum rule together with the constant multiple rule.  Note which functions are exponential and which are powers of $x$.
+	  \item Recall that $\sqrt{z} = z^{1/2}$; also rewrite $\frac{1}{z^4}$ as a power of $z$.
+	  \item Note that $\sqrt{53}$, $\pi$, and $e^4$ are all constants.
+	  \item Expand the product and combine like terms before attempting to find the derivative.
+	  \item Rewrite the single fraction as a sum of three fractions, and simplify.  That is, note that $q(x) = \ds \frac{x^3 - x + 2}{x} = \ds \frac{x^3}{x} - \frac{x}{x} + \frac{2}{x}$
+	  \item Note that ``$a$'' is the independent variable and $p(a)$ is simply a polynomial in $a$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	  \item $f(x) = x^{5/3} - x^4 + 2^x$, so by the sum rule, $f'(x) = \frac{5}{3}x^{2/3} - 4 x^3 + 2^x \ln(2).$
+	  \item $g(x) = 14e^x + 3x^5 - x$, so by the sum and constant multiple rules, $g'(x) = 14e^x + 3 \cdot 5x^4 - 1$.
+	  \item $h(z) = \sqrt{z} + \frac{1}{z^4} + 5^z = z^{1/2} + z^{-4} + 5^z$, thus $h'(z) = \frac{1}{2}z^{-1/2} - 4z^{-5} + 5^z \ln(5)$.
+	  \item Since $r(t) = \sqrt{53} \, t^7 - \pi e^t + e^4$ and $\sqrt{53}$, $\pi$, and $e^4$ are all constants, it follows from the sum and constant multiple rules, as well as the derivative of a constant rule, that $\frac{dr}{dt} = \sqrt{53} \cdot 7 t^6 - \pi e^t$.  (Note particularly that $\frac{d}{dt}[e^4] = 0$ since $e^4$ is constant.
+	  \item $s(y) = (y^2 + 1)(y^2 - 1)= y^4 - 1$, thus $\frac{ds}{dy} = 4y^3$.
+	  \item $q(x) = \ds \frac{x^3 - x + 2}{x} = \ds \frac{x^3}{x} - \frac{x}{x} + \frac{2}{x} = x^2 - 1 + 2x^{-1}$.  Now it follows that $q'(x) = 2x - 2x^{-2}$.
+	  \item $p(a) = 3a^4 - 2a^3 + 7a^2 - a + 12$, so $p'(a) = 12a^3 - 6 a^2 + 14a - 1.$
+\ea
+\end{activitySolution}
+\aftera

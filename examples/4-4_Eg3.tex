@@ -1,0 +1,12 @@
+\begin{example} % EXAMPLE 
+Compute the derivative of $\ds A(x) = \int_{\cos(x)}^5 t^3\ dt.$
+
+\solution Note that $\ds A(x) = -\int_5^{\cos(x)} t^3\ dt$, which is again a composition. We can decompose it as
+\[ y = -\int_5^u t^3 \ dt \quad \mbox{where} \quad u = \cos(x). \]
+Using the Leibniz version of the Chain Rule, we have
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}, \] 
+where
+\[ \frac{dy}{du} = -u^3 \quad \mbox{and} \quad \frac{du}{dx} = -sin(x). \]
+Therefore,
+\[ \frac{dy}{dx} = -u^3 \cdot -sin(x) = \cos^3(x) \cdot \sin(x). \]
+\end{example}

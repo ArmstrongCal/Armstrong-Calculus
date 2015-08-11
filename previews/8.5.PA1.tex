@@ -1,0 +1,68 @@
+\begin{pa} \label{PA:8.5}
+Preview Activity \ref{PA:8.3} showed how we can approximate the number $e$ using linear, quadratic, and other polynomial functions; we then used similar ideas in Preview Activity \ref{PA:8.4} to approximate $\ln(2)$. In this activity, we review and extend the process to find the ``best" quadratic approximation to the exponential function $e^x$ around the origin. Let $f(x) = e^x$ throughout this activity.
+
+\ba
+\item Find a formula for $P_1(x)$, the linearization of $f(x)$ at $x=0$.  (We label this linearization $P_1$ because it is a first degree polynomial approximation.) Recall that $P_1(x)$ is a good approximation to $f(x)$ for values of $x$ close to $0$. Plot $f$ and $P_1$ near $x=0$ to illustrate this fact.
+
+\begin{activitySolution}
+
+We know that
+\[P_1(x) = f(0) + f'(0)x = 1+x.\]
+Since $P_1(0) = f(0) = 1$ and $P'_1(0) = f'(0) = 1$, the graphs of $P_1$ and $f$ agree at $x=a$ and have the same slope at $x=0$ (which means they go in the same direction at $x=0$). This is why $P_1(x)$ is a good approximation to $f(x)$ for values of $x$ close to $0$.
+
+\end{activitySolution}
+
+\item Since $f(x) = e^x$ is not linear, the linear approximation eventually is not a very good one. To obtain better approximations, we want to develop a different approximation that ``bends'' to make it more closely fit the graph of $f$ near $x=0$. To do so, we  add a quadratic term to $P_1(x)$. In other words, we let
+\[P_2(x) = P_1(x) + c_2x^2\]
+for some real number $c_2$. We need to determine the value  of $c_2$ that makes the graph of $P_2(x)$ best fit the graph of $f(x)$ near $x=0$.
+
+Remember that $P_1(x)$ was a good linear approximation to $f(x)$ near $0$; this is because $P_1(0) = f(0)$ and $P'_1(0) = f'(0)$. It is therefore reasonable to seek a value of $c_2$ so that
+\begin{align*}
+P_2(0) &= f(0), \\
+P'_2(0) &= f'(0), \ \mbox{and} \\
+P''_2(0) &= f''(0).
+\end{align*}
+Remember, we are letting $P_2(x) = P_1(x) + c_2x^2$.
+    \begin{itemize}     	
+	\item[(i)] Calculate $P_2(0)$ to show that $P_2(0) = f(0)$.
+
+\begin{activitySolution}
+
+Since
+\[P_2(x) = P_1(x) + c_2(x)^2 = f(0) + f'(0)x + c_2x^2\]
+we have that
+\[P_2(0) = 1 = f(0)\]
+as desired.
+
+\end{activitySolution}
+
+  	\item[(ii)] Calculate $P'_2(0)$ to show that $P'_2(0) = f'(0)$.
+
+\begin{activitySolution}
+
+A simple calculation shows $P'_2(x) = P'1(x) + 2c_2x$. So $P'_2(0) = P'_1(0) = 1 = f'(0)$ as desired.
+
+\end{activitySolution}
+
+   	\item[(iii)] Calculate $P''_2(x)$. Then find a formula for $c_2$ so that $P''_2(0) = f''(0)$.
+
+\begin{activitySolution}
+
+ A simple calculation shows $P''_2(x) = 2c_2$. So $P''_2(0) = 2c_2$. To have $P''_2(0) = f''(0)$ we must have $2c_2 = f''(0)$ or $c_2 = \frac{f''(0)}{2} = \frac{1}{2}$.
+
+\end{activitySolution}
+
+    \item[(iv)] Explain why the condition $P''_2(0) = f''(0)$ will put an appropriate ``bend" in the graph of $P_2$ to make $P_2$ fit the graph of $f$ around $x=0$.
+
+\begin{activitySolution}
+
+The second derivative of a function tells us the concavity of the function. Concavity measures how the slopes of the tangent lines to the graph of the function are changing. This tells us how much bend there is in the graph. So if  $P''_2(0) = f''(0)$, then $P_2$ will have the same bend in it at $x=0$ as $f$ does. This will make the graph of $P_2$ mold to the graph of $f$ around $x=0$.
+
+\end{activitySolution}
+
+    \end{itemize}
+
+\ea
+
+\end{pa}
+\afterpa 

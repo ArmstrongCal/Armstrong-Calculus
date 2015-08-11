@@ -1,0 +1,53 @@
+\begin{activity} \label{A:2.5.2}  
+For each of the following functions, find the function's derivative.  State the rule(s) you use, label relevant derivatives appropriately, and be sure to clearly identify your overall answer. 
+\bmtwo 
+\ba
+	\item $p(r) = 4\sqrt{r^6 + 2e^r}$
+	\item $m(v) = \sin(v^2) \cos(v^3)$
+	\item $\ds h(y) = \frac{\cos(10y)}{e^{4y}+1}$
+	\item $s(z) = 2^{z^2 \sec (z)}$
+	\item $\ds c(x) = \sin(e^{x^2})$
+\ea
+\emtwo
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Use the constant multiple rule first, followed by the chain rule.
+	\item Observe that $m$ is fundamentally a product of composite functions.
+	\item Note that $h$ is a quotient of composite functions.
+	\item The function $s$ is a composite function with outer function $2^z$.
+	\item It is possible for a function to be a composite function with more than two functions in the chain.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Note that $p'(r) = 4\frac{d}{dr}[\sqrt{r^6 + 2e^r}].$  Now use the chain rule to complete the remaining derivative.
+	\item Observe that by the product rule, $m'(v) = \sin(v^2) \frac{d}{dv}[\cos(v^3)] + \cos(v^3) \frac{d}{dv}[\sin(v^2)].$  What rule is needed to execute the remaining two derivatives?
+	\item Note that by the quotient rule,
+	$$h'(y) = \frac{(e^{4y}+1) \frac{d}{dy}[\cos(10y)] - \cos(10y) \frac{d}{dy}[e^{4y}+1]}{(e^{4y}+1)^2}.$$
+	What work remains to find $h'(y)$?
+	\item By the chain rule, $s'(z) = 2^{z^2\sec(z)} \ln(2) \frac{d}{dz}[z^2 \sec(z)]$.  What rule should next be applied?
+	\item If we first apply the chain rule to the outer function (the sine function), note that 
+	$$c'(x) = \cos(e^{x^2}) \frac{d}{dx}[e^{x^2}].$$
+	What rule is needed to differentiate the inner function, $e^{x^2}$?
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item By the constant multiple rule, $p'(r) = 4\frac{d}{dr}[\sqrt{r^6 + 2e^r}].$  Using the chain rule to complete the remaining derivative, we see that
+	$$p'(r) = 4 \frac{1}{2\sqrt{r^6 + 2e^r}} \frac{d}{dr}[r^6 + 2e^r] = \frac{4(6r^5 + 2e^r)}{2\sqrt{r^6 + 2e^r}}.$$
+	\item Observe that by the product rule, $m'(v) = \sin(v^2) \frac{d}{dv}[\cos(v^3)] + \cos(v^3) \frac{d}{dv}[\sin(v^2)].$  Applying the chain rule to differentiate $\cos(v^3)$ and $\sin(v^2)$, we see that 
+	$$m'(v) = \sin(v^2) [-\sin(v^3) \cdot 3v^2] + \cos(v^3) [\cos(v^2) \cdot 2v] = -3v^2 \sin(v^2)\sin(v^3) + 2v \cos(v^3)\cos(v^2).$$ 
+	\item By the quotient rule,
+	$$h'(y) = \frac{(e^{4y}+1) \frac{d}{dy}[\cos(10y)] - \cos(10y) \frac{d}{dy}[e^{4y}+1]}{(e^{4y}+1)^2}.$$
+	Applying the chain rule to differentiate $\cos(10y)$ and $e^{4y}$, it follows
+	$$h'(y) = \frac{(e^{4y}+1) [-10\sin(10y)] - \cos(10y) [4e^{4y}]}{(e^{4y}+1)^2}.$$
+	\item By the chain rule, $s'(z) = 2^{z^2\sec(z)} \ln(2) \frac{d}{dz}[z^2 \sec(z)]$.  Then by the product rule, we find that
+	$$s'(z) = 2^{z^2\sec(z)} \ln(2) [z^2 \sec(z)\tan(z) + \sec(z) \cdot 2z].$$
+	\item If we first apply the chain rule to the outer function (the sine function), note that 
+	$$c'(x) = \cos(e^{x^2}) \frac{d}{dx}[e^{x^2}].$$
+	Next, we again apply the chain rule, but this time to $e^{x^2}$, and get
+	$$c'(x) = \cos(e^{x^2}) [e^{x^2}\cdot 2x].$$
+\ea
+\end{activitySolution}
+\aftera

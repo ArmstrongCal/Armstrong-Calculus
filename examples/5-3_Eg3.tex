@@ -1,0 +1,45 @@
+\begin{example} \label{eg:5.3.3} % EXAMPLE
+
+Evaluate $\ds \int \sqrt{4x^2-1}\ dx$.
+
+\solution
+We start by rewriting the integrand so that it looks like $\sqrt{x^2-a^2}$ for some value of $a$:
+\begin{align*}
+\sqrt{4x^2-1} &= \sqrt{4\left(x^2-\frac14\right)}\\
+		&= 2\sqrt{x^2-\left(\frac12\right)^2}.
+\end{align*}
+So we have $a=1/2$ and set $x= \frac12\sec(\theta)$, and hence $dx = \frac12\sec(\theta)\tan(\theta)\ d\theta$. %The Key Idea also shows that $\sqrt{x^2-1/2^2} = \frac12\tan\theta$. 
+We now rewrite the integral with these substitutions:
+\begin{align*}
+\int \sqrt{4x^2-1}\ dx &= \int 2\sqrt{x^2-\left(\frac12\right)^2}\ dx\\
+			&= \int 2\sqrt{\frac14\sec^2(\theta) - \frac14}\left(\frac12\sec(\theta)\tan(\theta)\right)\ d\theta\\
+			&=\int \sqrt{\frac14(\sec^2(\theta)-1)}\Big(\sec(\theta)\tan(\theta)\Big)\ d\theta\\
+			&=\int\sqrt{\frac14\tan^2(\theta)}\Big(\sec(\theta)\tan(\theta)\Big)\ d\theta\\
+			&=\int \frac12\tan^2(\theta)\sec(\theta)\ d\theta\\
+			&=\frac12\int \Big(\sec^2(\theta)-1\Big)\sec(\theta)\ d\theta\\
+			&=\frac12\int \big(\sec^3(\theta) - \sec(\theta)\big)\ d\theta.
+\end{align*}
+We integrated $\sec^3(\theta)$ in Example~\ref{eg:5.2.4} of Section~\ref{S:5.2.TrigInt}, finding its antiderivatives to be
+$$\int \sec^3(\theta)\ d\theta = \frac12\Big(\sec(\theta)\tan (\theta) + \ln|\sec (\theta)+\tan (\theta)|\Big)+C.$$
+Thus\\
+
+\noindent$ \ds\int \sqrt{4x^2-1}\ dx =\frac12\int \big(\sec^3(\theta) - \sec(\theta)\big)\ d\theta$
+
+\noindent$ \ds= \frac12\left(\frac12\Big(\sec(\theta)\tan (\theta) + \ln|\sec (\theta)+\tan (\theta)|\Big) -\ln|\sec(\theta) + \tan(\theta)|\right) + C$
+
+\noindent$\ds = \frac14\left(\sec(\theta)\tan(\theta) -\ln|\sec(\theta)+\tan(\theta)|\right)+C.$\\
+
+We are not yet done. Our original integral is given in terms of $x$, whereas our final answer, as given, is in terms of $\theta$. We need to rewrite our answer in terms of $x$. With $a=1/2$, and $x=\frac12\sec(\theta)$, the reference triangle in Figure~\ref{fig:trigsub}-(c) shows that 
+$$\tan (\theta) = \sqrt{x^2-1/4}/(1/2) = 2\sqrt{x^2-1/4}\quad \text{and}\quad \sec(\theta) = 2x.$$
+Thus \\
+
+\noindent $\ds \frac14\big(\sec(\theta)\tan(\theta) -\ln\big|\sec(\theta)+\tan(\theta)\big|\big)+C $
+
+\noindent $\ds = \frac14\big(2x\cdot 2\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\big)+C$
+
+\noindent $\ds = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.$\\
+ 
+The final answer is given in the last line above, repeated here:
+$$\int \sqrt{4x^2-1}\ dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.$$
+
+\end{example}

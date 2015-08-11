@@ -1,0 +1,71 @@
+\begin{activity} \label{A:7.2.1}  
+  Let's consider the differential equation 
+$$
+\frac{dy}{dt} = -\frac 12 y(y-4).
+$$
+
+\ba
+\item Make a plot of $\frac{dy}{dt}$ versus $y$.  Looking at the
+  graph, for what values of $y$ does $y$ increase and for what values
+  does it decrease?
+
+  \begin{center}
+    \includegraphics{figures/7.2.Act2.1.eps}
+  \end{center}
+
+\item Identify any equilibrium solutions of this differential equation.
+
+\item Now sketch the slope field for this differential equation.
+
+  \begin{center}
+    \includegraphics{figures/7.2.Act2.2.eps}
+  \end{center}
+
+\item  Sketch the solutions with an initial value in the range $-1\leq
+  y(0)\leq 5$.   
+
+\item  An equilibrium solution $\overline{y}$ is called {\em stable}
+  if nearby 
+  solutions converge to $\overline{y}$.  This means that if the inital
+  condition varies slightly from $\overline{y}$, then
+  $\lim_{t\to\infty}y(t) = \overline{y}$.  
+
+  Conversely, an equilibrium solution $\overline{y}$ 
+  is called {\em unstable} if nearby solutions are pushed away from
+  $\overline{y}$.
+
+  Using your work above, classify the equilibrium solutions you found
+  as either stable or unstable.
+
+\item Suppose that $y(t)$ describes the population of a species of
+  living organisms and that the initial value $y(0)>0$.  What can you
+  say about the eventual fate of this population?  
+
+\item  Remember that an equilibrium solution $\overline{y}$ satisfies
+  $f(\overline{y}) = 0$.  If we graph $dy/dt = f(y)$ as a function of
+  $y$, for which of the following differential equations is
+  $\overline{y}$ a stable equilibrium and for which is it unstable?
+
+  \begin{center}
+    \includegraphics{figures/7.2.Act2.3.eps} \qquad
+    \includegraphics{figures/7.2.Act2.4.eps} 
+  \end{center}
+
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Solutions for each of the prompts above.
+\ea
+\end{activitySolution}
+\aftera

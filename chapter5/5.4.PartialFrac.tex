@@ -1,0 +1,105 @@
+\section{Partial Fractions} \label{S:5.4.PartFrac}
+
+\begin{goals}
+\item How does the method of partial fractions enable any rational function to be antidifferentiated?
+%\item What role have integral tables historically played in the study of calculus and how can a table be used to evaluate integrals such as $\int \sqrt{a^2 + u^2} \, du$?
+%\item What role can a computer algebra system play in the process of finding antiderivatives?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+In the preceding sections, we have learned very specific antidifferentiation techniques:  $u$-substitution, integration by parts, trigonometric integration, and trigonometric substitution.  But we have seen that each only works in very specialized circumstances.  For example, while $\int xe^{x^2} \, dx$ may be evaluated by $u$-substitution and $\int x e^x \, dx$ by integration by parts, neither method provides a route to evaluate $\int e^{x^2} \, dx$.  That fact is not a particular shortcoming of these two antidifferentiation techniques, as it turns out there does not exist an elementary algebraic antiderivative for $e^{x^2}$.  Said differently, no matter what antidifferentiation methods we could develop and learn to execute, none of them will be able to provide us with a simple formula that does not involve integrals for a function $F(x)$ that satisfies $F'(x) = e^{x^2}$.
+
+In this section of the text, our main goals are to better understand some classes of functions that can always be antidifferentiated, as well as to learn some options for so doing.  
+
+\input{previews/5.4.PA1} % PREVIEW ACTIVITY
+
+%------------------------------------------------------------------
+% SUBSECTION THE METHOD OF PARTIAL FRACTIONS
+%------------------------------------------------------------------
+\subsection*{The Method of Partial Fractions} \index{partial fractions}
+
+The method of partial fractions is used to integrate rational functions, and essentially involves reversing the process of finding a common denominator.  For example, suppose we have the function $R(x) = \frac{5x}{x^2 - x - 2}$ and want to evaluate
+$$\int \frac{5x}{x^2-x-2} \, dx.$$
+Thinking algebraically, if we factor the denominator, we can see how $R$ might come from the sum of two fractions of the form $\frac{A}{x-2} + \frac{B}{x+1}.$  In particular, suppose that
+$$\frac{5x}{(x-2)(x+1)} = \frac{A}{x-2} + \frac{B}{x+1}.$$
+Multiplying both sides of this last equation by $(x-2)(x+1)$, we find that
+$$5x = A(x+1) + B(x-2).$$
+Since we want this equation to hold for every value of $x$, we can use insightful choices of specific $x$-values to help us find $A$ and $B$.  Taking $x = -1$, we have
+$$5(-1) = A(0) + B(-3),$$
+and thus $B = \frac{5}{3}$.  Choosing $x = 2$, it follows
+$$5(2) = A(3) + B(0),$$
+so $A = \frac{10}{3}.$
+Therefore, we now know that 
+$$\int \frac{5x}{x^2-x-2} \, dx = \int \frac{10/3}{x-2} + \frac{5/3}{x+1} \, dx.$$
+This equivalent integral expression is straightforward to evaluate, and hence we find that
+$$\int \frac{5x}{x^2-x-2} \, dx = \frac{10}{3} \ln|x-2| + \frac{5}{3}\ln|x+1| + C.$$
+
+It turns out that for any rational function $R(x) = \frac{P(x)}{Q(x)}$ where the degree of the polynomial $P$ is less than the degree of the polynomial $Q$, the method of partial fractions can be used to rewrite the rational function as a sum of simpler rational functions of one of the following forms:
+$$\frac{A}{x-c}, \enskip \frac{A}{(x-c)^n}, \enskip \mbox{or} \enskip \frac{Ax+B}{x^2 + k}$$
+where $A$, $B$, and $c$ are real numbers, and $k$ is a positive real number.  Because each of these basic forms is one we can antidifferentiate, partial fractions enables us to antidifferentiate any rational function.
+
+\marginnote[-4cm]{If the degree of $P$ is greater than or equal to the degree of $Q$, long division may be used to write $R$ as the sum of a polynomial plus a rational function where the numerator's degree is less than the denominator's.}
+
+\concept{Partial Fraction Decomposition} % CONCEPT
+{Let $\ds \frac{p(x)}{q(x)}$ be a rational function, where the degree of $p$ is less than the degree of $q$.\index{integration!partial fraction decomp.}
+\begin{enumerate}[1)]
+	\item	\textbf{Linear Terms:} Let $(x-a)$ divide $q(x)$, where $(x-a)^n$ is the highest power of $(x-a)$ that divides $q(x)$. Then the decomposition of $\frac{p(x)}{q(x)}$ will contain the sum
+	$$\frac{A_1}{(x-a)} + \frac{A_2}{(x-a)^2} + \cdots +\frac{A_n}{(x-a)^n}.$$
+	\item		\textbf{Quadratic Terms:} Let $x^2+bx+c$ divide $q(x)$, where $(x^2+bx+c)^n$ is the highest power of $x^2+bx+c$ that divides $q(x)$. Then the decomposition of $\frac{p(x)}{q(x)}$ will contain the sum 
+	$$\frac{B_1x+C_1}{x^2+bx+c}+\frac{B_2x+C_2}{(x^2+bx+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bx+c)^n}.$$
+	\end{enumerate}
+	To find the coefficients $A_i$, $B_i$ and $C_i$:
+	\begin{enumerate}[1)]
+	\item	Multiply all fractions by $q(x)$, clearing the denominators. Collect like terms.
+	\item		Equate the resulting coefficients of the powers of $x$ and solve the resulting system of linear equations.
+	\end{enumerate}
+	To integrate rational functions of the form  $\ds \frac{1}{a^2 + x^2}$,  use
+	$$\int \frac{1}{a^2 + x^2} = \frac{1}{a} \arctan\left( \frac{x}{a} \right) + c $$
+} % end concept
+
+\input{examples/5-4_Eg1.tex} % EXAMPLE
+
+\input{examples/5-4_Eg2.tex} % EXAMPLE
+
+\input{activities/5.4.Act1.tex} % ACTIVITY
+
+\input{examples/5-4_Eg3.tex} % EXAMPLE
+
+\input{examples/5-4_Eg4.tex} % EXAMPLE
+
+\input{activities/5.4.Act2.tex} % ACTIVITY
+
+Our final example demonstrates how to set up the partial fraction decomposition when the denominator contains each type of factor(a linear factor, a repeated linear factor, a quadratic factor as well as a repeated quadratic factor.
+
+\input{examples/5-4_Eg5.tex} % EXAMPLE
+
+Performing the partial fraction decomposition can be very tedious but is an important technique that will be used to solve differential equations. Problems such as the one in Example \ref{eg:5.4.5} can be decomposed using a computer algebra system.
+A computer algebra system such as \emph{Maple}, \emph{Mathematica}, or \emph{WolframAlpha} can be used to find the partial fraction decomposition of any rational function.  In \emph{WolframAlpha}, entering 
+\begin{quote}
+\texttt{partial fraction 5x/(x\^{}2-x-2)}
+\end{quote}
+results in the output $\ds \frac{5x}{x^2-x-2} = \frac{10}{3(x-2)} + \frac{5}{3(x+1)}.$
+
+%\input{activities/5.5.Act1} % ACTIVITY
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item The method of partial fractions enables any rational function to be antidifferentiated, because any polynomial function can be factored into a product of linear and irreducible quadratic terms.  This allows any rational function to be written as the sum of a polynomial plus rational terms of the form $\frac{A}{(x-c)^n}$ (where $n$ is a natural number) and $\frac{Bx+C}{x^2 + k}$ (where $k$ is a positive real number).
+%\item Until the development of computing algebra systems, integral tables enabled students of calculus to more easily evaluate integrals such as $\int \sqrt{a^2 + u^2} \, du$, where $a$ is a positive real number.  A short table of integrals may be found in Appendix~\ref{C:9.IntegralTable}.
+%\item Computer algebra systems can play an important role in finding antiderivatives, though we must be cautious to use correct input, to watch for unusual or unfamiliar advanced functions that the CAS may cite in its result, and to consider the possibility that a CAS may need further assistance or insight from us in order to answer a particular question.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/5-4.Partial(Ex)} 
+
+\cleardoublepage

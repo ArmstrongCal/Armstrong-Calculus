@@ -1,0 +1,180 @@
+\section{Derivatives and Rates of Change} \label{S:2.1.DerivativePt}
+
+\begin{goals}
+\item How is the average rate of change of a function on a given interval defined, and what does this quantity measure?
+\item How is the instantaneous rate of change of a function at a particular point defined?  How is the instantaneous rate of change linked to average rate of change?
+\item What is the derivative of a function at a given point?  What does this derivative value measure? How do we interpret the derivative value graphically?
+\item How are limits used formally in the computation of derivatives? 
+\item In contexts other than the position of a moving object, what does the derivative of a function measure?
+\item What are the units on the derivative function $f'$, and how are they related to the units of the original function $f$?
+\item What is a central difference, and how can one be used to estimate the value of the derivative at a point from given function data?
+\item Given the value of the derivative of a function at a point, what can we infer about how the value of the function changes nearby?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+An idea that sits at the foundations of calculus is the \emph{instantaneous rate of change} of a function.  This rate of change is always considered with respect to change in the input variable, often at a particular fixed input value.  This is a generalization of the notion of instantaneous velocity and essentially allows us to consider the question "how do we measure how fast a particular function is changing at a given point?"  When the original function represents the position of a moving object, this instantaneous rate of change is precisely velocity, and might be measured in units such as feet per second.  But in other contexts, instantaneous rate of change could measure the number of cells added to a bacteria culture per day, the number of additional gallons of gasoline consumed by going one mile per additional mile per hour in a car's velocity, or the number of dollars added to a mortgage payment for each percentage increase in interest rate.  Regardless of the presence of a physical or practical interpretation of a function, the instantaneous rate of change may also be interpreted geometrically in connection to the function's graph, and this connection is also foundational to many of the main ideas in calculus.
+
+In what follows, we will introduce terminology and notation that makes it easier to talk about the instantaneous rate of change of a function at a point.  In addition, just as instantaneous velocity is defined in terms of average velocity, the more general instantaneous rate of change will be connected to the more general average rate of change.  Recall that for a moving object with position function $s$, its average velocity on the time interval $t = a$ to $t = a+h$ is given by the quotient 
+\[ AV_{[a,a+h]} = \frac{s(a+h)-s(a)}{h}. \]
+In a similar way, we make the following definition for an arbitrary function $y = f(x).$
+
+\definition{Average Rate of Change}{ %DEFINITION
+For a function $f$, the \emph{average rate of change}\index{average rate of change} of $f$ on the interval $[a,a+h]$ is given by the value
+\[ AV_{[a,a+h]} = \frac{f(a+h)-f(a)}{h}. \]
+} % end definition
+
+Equivalently, if we want to consider the average rate of change of $f$ on $[a,b]$, we compute 
+\[ AV_{[a,b]} = \frac{f(b)-f(a)}{b-a}. \]
+It is essential to understand how the average rate of change of $f$ on an interval is connected to its graph.
+
+%\newpage % The figure in the preview activity bleeds onto the previous page.  If it gets `worked out', delete this line.
+
+\input{previews/2.1.PA1} % PREVIEW ACTIVITY 
+
+%-------------------------------------------------
+% SUBSECTION DERIVATIVE AT A POINT
+%-------------------------------------------------
+\subsection*{The Derivative of a Function at a Point}
+
+Just as we defined instantaneous velocity in terms of average velocity, we now define the instantaneous rate of change of a function at a point in terms of the average rate of change of the function $f$ over related intervals.  In addition, we give a special name to "the instantaneous rate of change of $f$ at $a$,"\index{instantaneous rate of change} calling this quantity "the \emph{derivative} of $f$ at $a$," with this value being represented by the shorthand notation $f'(a)$.   Specifically, we make the following definition.
+
+\definition{Derivative at a Point}{ %DEFINITION
+Let $f$ be a function and $x = a$ a value in the function's domain.  We define the \emph{derivative of $f$ with respect to $x$ evaluated at $x = a$}\index{derivative!definition}, denoted $f'(a)$, by the formula
+\[ f'(a) = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}, \]
+provided this limit exists. We say that a function that has a derivative at $x = a$ is \emph{differentiable}\index{differentiable} at $x = a$.
+} % end definition
+
+Aloud, we read the symbol $f'(a)$ as either "$f$-prime at $a$" or "the derivative of $f$ evaluated at $x = a$."  Much of the next several chapters will be devoted to understanding, computing, applying, and interpreting derivatives.  For now, we make the following important notes.
+\begin{itemize}
+	\item The derivative of $f$ at the value $x = a$ is defined as the limit of the average rate of change of $f$ on the interval $[a,a+h]$ as $h \to 0$.  It is possible for this limit not to exist, so not every function has a derivative at every point.
+	\item The derivative is a generalization of the instantaneous velocity of a position function:  when $y = s(t)$ is a position function of a moving body, $s'(a)$ tells us the instantaneous velocity of the body at time $t=a$.
+	\item Because the units on $\frac{f(a+h)-f(a)}{h}$ are ``units of $f$ per unit of $x$,'' the derivative has these very same units.  For instance, if $s$ measures position in feet and $t$ measures time in seconds, the units on $s'(a)$ are feet per second. 
+	\item Because the quantity $\frac{f(a+h)-f(a)}{h}$ represents the slope of the line through $(a,f(a))$ and $(a+h, f(a+h))$, when we compute the derivative we are taking the limit of a collection of slopes of lines, and thus the derivative itself represents the slope of a particularly important line.
+\end{itemize}
+While all of the above ideas are important and we will add depth and perspective to them through additional time and study, for now it is most essential to recognize how the derivative of a function at a given value represents the slope of a certain line.  Thus, we expand upon the last bullet item above.
+
+As we move from an average rate of change to an instantaneous one, we can think of one point as "sliding towards" another.  In particular, provided the function has a derivative at $(a,f(a))$, the point $(a+h,f(a+h))$ will approach $(a,f(a))$ as $h \to 0$.  Because this process of taking a limit is a dynamic one, it can be helpful to use computing technology to visualize what the limit is accomplishing.  While there are many different options\sidenote[][-1in]{For a helpful collection of java applets, consider the work of David Austin of Grand Valley State University at \href{http://gvsu.edu/s/5r}{\texttt{http://gvsu.edu/s/5r}}, and the particularly relevant example at \href{http://gvsu.edu/s/5s}{\texttt{http://gvsu.edu/s/5s}}.  For applets that have been built in Geogebra, a nice example is the work of Marc Renault of Shippensburg University at \href{http://gvsu.edu/s/5p}{\texttt{http://gvsu.edu/s/5p}}, with the example at \href{http://gvsu.edu/s/5q}{\texttt{http://gvsu.edu/s/5q}} being especially fitting for our work in this section.  There are scores of other examples posted by other authors on the internet.}, one of the best is a java applet in which the user is able to control the point that is moving.   See the examples referenced in the footnote here, or consider building your own, perhaps using the fantastic free program Geogebra\sidenote{Available for free download from \href{http://geogebra.org}{\texttt{http://geogebra.org}}.}.
+
+\begin{figure*} % MARGIN FIGURE
+\begin{center}
+\includegraphics{figures/1_3_SecToTanSeq.eps} %figure ACTIVE
+\caption{A sequence of secant lines approaching the tangent line to $f$ at $(a,f(a))$.} \label{fig:2.1.SeqToTanSeq}
+\end{center}
+\end{figure*}
+
+In Figure~\ref{fig:2.1.SeqToTanSeq}, we provide a sequence of figures with several different lines through the points $(a, f(a))$ and $(a+h,f(a+h))$ that are generated by different values of $h$.  These lines (shown in the first three figures in magenta), are often called \emph{secant lines} \index{secant line} to the curve $y = f(x)$.  A secant line to a curve is simply a line that passes through two points that lie on the curve.  For each such line, the slope of the secant line is $m = \frac{f(a+h) - f(a)}{h}$, where the value of $h$ depends on the location of the point we choose.  We can see in the diagram how, as $h \to 0$, the secant lines start to approach a single line that passes through the point $(a,f(a))$.  In the situation where the limit of the slopes of the secant lines exists, we say that the resulting value is the slope of the \emph{tangent line} to the curve.  This tangent line\index{tangent line} (shown in the right-most figure in green) to the graph of $y = f(x)$ at the point $(a,f(a))$ is the line through $(a,f(a))$ whose slope is $m = f'(a)$.  
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figures/1_3_SecToTan.eps} %FIGURE ACTIVE 
+\caption{A sequence of secant lines approaching the tangent line to $f$ at $(a,f(a))$.  At right, we zoom in on the point $(a,f(a))$.  The slope of the tangent line (in green) to $f$ at $(a,f(a))$ is given by $f'(a)$.} \label{fig:2.1.SeqToTan}
+\end{marginfigure}
+
+As we will see in subsequent study, the existence of the tangent line at $x = a$ is connected to whether or not the function $f$ looks like a straight line when viewed up close at $(a,f(a))$, which can also be seen in Figure~\ref{fig:2.1.SeqToTan}, where we combine the four graphs in Figure~\ref{fig:2.1.SeqToTanSeq} into the single one on the left, and then we zoom in on the box centered at $(a,f(a))$, with that view expanded on the right (with two of the secant lines omitted).  Note how the tangent line sits relative to the curve $y = f(x)$ at $(a,f(a))$ and how closely it resembles the curve near $x = a$.
+
+At this time, it is most important to note that $f'(a)$, the instantaneous rate of change of $f$ with respect to $x$ at $x = a$, also measures the slope of the tangent line\index{tangent line!slope} to the curve $y = f(x)$ at $(a,f(a))$.  The following example demonstrates several key ideas involving the derivative of a function.
+
+\input{examples/2-1_Eg1} % EXAMPLE
+
+\input{examples/2-1_Eg3} % EXAMPLE APEX example 31
+
+The following activities will help you explore a variety of key ideas related to derivatives.
+
+\input{activities/2.1.Act1} % ACTIVITY
+
+\input{activities/2.1.Act2} % ACTIVITY  
+
+\newpage
+
+\input{activities/2.1.Act3} % ACTIVITY
+
+%------------------------------------------------------------------
+% SUBSECTION UNITS OF THE DERIVATIVE FUNCTION
+%------------------------------------------------------------------
+\subsection*{Units of the derivative function}
+
+As we now know, the derivative of the function $f$ at a fixed value $x$ is given by
+$$f'(x) = \ds \lim_{h \to 0} \frac{f(x+h)-f(x)}{h},$$  and this value has several different interpretations.  If we set $x = a$, one meaning of $f'(a)$ is  the slope of the tangent line at the point $(a,f(a))$.
+
+In alternate notation, we also sometimes equivalently write $\frac{df}{dx}$ or $\frac{dy}{dx}$ instead of $f'(x)$, and these notations help us to further see the units (and thus the meaning) of the derivative as it is viewed as \emph{the instantaneous rate of change of $f$ with respect to $x$}\index{instantaneous rate of change}.  Note that the units on the slope of the secant line, $\frac{f(x+h)-f(x)}{h}$, are ``units of $f$ per unit of $x$.''  Thus, when we take the limit to get $f'(x)$, we get these same units on the derivative $f'(x)$:  units of $f$ per unit of $x$.  Regardless of the function $f$ under consideration (and regardless of the variables being used), it is helpful to remember that the units on the derivative function are ``units of output per unit of input,'' in terms of the input and output of the original function.
+
+For example, say that we have a function $y = P(t)$, where $P$ measures the population of a city (in thousands) at the start of year $t$ (where $t = 0$ corresponds to $2010$ AD), and we are told that $P'(2) = 21.37$.  What is the meaning of this value?  Well, since $P$ is measured in thousands and $t$ is measured in years, we can say that the instantaneous rate of change of the city's population with respect to time at the start of $2012$ is $21.37$ thousand people per year.  We therefore expect that in the coming year, about $21,370$ people will be added to the city's population.
+
+%----------------------------------------------------
+% SUBSECTION ESTIMATING DERIVATIVES 
+%----------------------------------------------------
+\subsection*{Estimating Derivatives}
+
+An interesting and powerful feature of mathematics is that it can often be thought of both in abstract terms and in applied ones.  For instance, calculus can be developed almost entirely as an abstract collection of ideas that focus on properties of arbitrary functions.  At the same time, calculus can also be very directly connected to our experience of physical reality by considering functions that represent meaningful processes.  We have already seen that for a position function $y = s(t)$, say for a ball being tossed straight up in the air, the ball's velocity at time $t$ is given by $v(t) = s'(t)$, the derivative of the position function.  Further, recall that if $s(t)$ is measured in feet at time $t$, the units on $v(t) = s'(t)$ are feet per second.
+
+In what follows, we investigate several different functions, each with specific physical meaning, and think about how the units on the independent variable, dependent variable, and the derivative function add to our understanding.  To start, we consider the familiar problem of a position function of a moving object.
+
+\input{activities/2.1.Act4} % ACTIVITY
+
+%-----------------------------------------------------------------------------------
+% SUBSECTION TOWARD MORE ACCURATE DERIVATIVE ESTIMATES
+%-----------------------------------------------------------------------------------
+\subsection*{Toward more accurate derivative estimates}
+
+It is also helpful to recall that when we want to estimate the value of $f'(x)$ at a given $x$, we can use the \emph{difference quotient} \index{difference quotient} $\frac{f(x+h)-f(x)}{h}$ with a relatively small value of $h$.  In doing so, we should use both positive and negative values of $h$ in order to make sure we account for the behavior of the function on both sides of the point of interest.  To that end, we consider the following brief example to demonstrate the notion of a \emph{central difference} and its role in estimating derivatives.
+
+\input{examples/2-1_Eg2} % EXAMPLE
+
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\margingraphics{figures/1_5_Ex1.eps}
+\caption{At left, the graph of $y = f(x)$ along with the secant line through $(1,2.5)$ and $(2,3.25)$, the secant line through $(2, 3.25)$ and $(3,3.625)$, as well as the tangent line.  At right, the same graph along with the secant line through $(1,2.5)$ and $(3,3.625)$, plus the tangent line.}\label{fig:2.1.Eg2}
+\end{marginfigure}
+
+The intuitive approach to average the two estimates found in Example~\ref{Ex:2.1.Eg2} is in fact the best possible estimate to $f'(2)$ when we have just two function values for $f$ on opposite sides of the point of interest.  To see why, we think about the diagram in Figure~\ref{fig:2.1.Eg2}, which shows a possible function $y = f(x)$ that satisfies the data given in Example~\ref{Ex:2.1.Eg2}.  On the left, we see the two secant lines with slopes that come from computing the \emph{backward difference} \index{backward difference} $\frac{f(1)-f(2)}{1-2} = 0.75$ and from the \emph{forward difference} \index{forward difference} $\frac{f(3)-f(2)}{3-2} = 0.375.$  Note how the first such line's slope over-estimates the slope of the tangent line at $(2,f(2))$, while the second line's slope underestimates $f'(2)$.  On the right, however, we see the secant line whose slope is given by the \emph{central difference} \index{central difference} 
+\[ \frac{f(3)-f(1)}{3-1} = \frac{3.625-2.5}{2} = \frac{1.125}{2} = 0.5625.\]
+
+Note that this central difference has the exact same value as the average of the forward difference and backward difference (and it is straightforward to explain why this always holds), and moreover that the central difference yields a very good approximation to the derivative's value, in part because the secant line that uses both a point before and after the point of tangency yields a line that is closer to being parallel to the tangent line.  
+
+In general, the central difference approximation to the value of the first derivative is given by 
+$$f'(a) \approx \frac{f(a+h) - f(a-h)}{2h},$$
+and this quantity measures the slope of the secant line to $y = f(x)$ through the points $(a-h, f(a-h))$ and $(a+h, f(a+h))$. Anytime we have symmetric data surrounding a point at which we desire to estimate the derivative, the central difference is an ideal choice for so doing.
+
+The following activities will further explore the meaning of the derivative in several different contexts while also viewing the derivative from graphical, numerical, and algebraic perspectives.
+
+\input{activities/2.1.Act5} %ACTIVITY
+
+\input{examples/2-1_Eg4} %ACTIVITY  %this is a lot of activities we may need to narrow
+
+\input{activities/2.1.Act7} %ACTIVITY
+
+%--------------
+% SUMMARY
+%--------------
+\begin{summary}
+\item The average rate of change of a function $f$ on the interval $[a,b]$ is $\ds \frac{f(b)-f(a)}{b-a}$.  The units on the average rate of change are units of $f$ per unit of $x$, and the numerical value of the average rate of change represents the slope of the secant line between the points $(a,f(a))$ and $(b,f(b))$ on the graph of $y = f(x)$.  If we view the interval as being $[a,a+h]$ instead of $[a,b]$, the meaning is still the same, but the average rate of change is now computed by  $\ds \frac{f(a+h)-f(a)}{h}$.
+
+\item The instantaneous rate of change with respect to $x$ of a function $f$ at a value $x = a$ is denoted $f'(a)$ (read ``the derivative of $f$ evaluated at $a$'' or ``$f$-prime at $a$'') and is defined by the formula
+$$f'(a) = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h},$$
+provided the limit exists.  Note particularly that the instantaneous rate of change at $x = a$ is the limit of the average rate of change on $[a,a+h]$ as $h \to 0$.
+
+\item Provided the derivative $f'(a)$  exists, its value tells us the instantaneous rate of change of $f$ with respect to $x$ at $x = a$, which geometrically is the slope of the tangent line to the curve $y = f(x)$ at the point $(a,f(a))$.  We even say that $f'(a)$ is the \emph{slope of the curve} $y = f(x)$ at the point $(a,f(a))$.
+
+\item Limits are the link between average rate of change and instantaneous rate of change: they allow us to move from the rate of change over an interval to the rate of change at a single point.
+
+%\item Regardless of the context of a given function $y=f(x)$, the derivative always measures the instantaneous rate of change of the output variable with respect to the input variable.
+
+%\item The units on the derivative function $y = f'(x)$ are units of $f$ per unit of $x$.  Again, this measures how fast the output of the function $f$ changes when the input of the function changes.
+
+\item The central difference approximation to the value of the first derivative is given by 
+$$f'(a) \approx \frac{f(a+h) - f(a-h)}{2h},$$
+and this quantity measures the slope of the secant line to $y = f(x)$ through the points $(a-h, f(a-h))$ and $(a+h, f(a+h))$.  The central difference generates a good approximation of the derivative's value any time we have symmetric data surrounding a point of interest.
+
+\item Knowing the derivative and function values at a single point enables us to estimate other function values nearby.  If, for example, we know that $f'(7) = 2$, then we know that at $x = 7$, the function $f$ is increasing at an instantaneous rate of $2$ units of output for every one unit of input.  Thus, we expect $f(8)$ to be approximately $2$ units greater than $f(7)$.  The value is approximate because we don't know that the rate of change stays the same as $x$ changes.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/2-1.Datpoint(Ex)} 
+
+\cleardoublepage

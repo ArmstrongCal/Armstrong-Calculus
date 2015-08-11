@@ -1,0 +1,49 @@
+\begin{activity} \label{8.5.Act4}
+\ba
+\item Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for $f(x) = \frac{1}{1-x}$ centered at $x=0$.
+\item Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for $f(x) = \cos(x)$ centered at $x=0$.
+\item Use the Ratio Test to explicitly determine the interval of convergence of the Taylor series for $f(x) = \sin(x)$ centered at $x=0$.
+\ea
+
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Using the Ratio Test with the $k$th term $\frac{|x|^{2k}}{(2k)!}$ we get
+\begin{align*}
+\lim_{k \to \infty} \frac{ \frac{|x|^{2(k+1)}}{(2(k+1))!} }{ \frac{|x|^{2k}}{(2k)!} } &= \lim_{k \to \infty} \frac{|x|^{2(k+1)}(2k)!}{|x|^{2k}(2(k+1))!} \\
+    &= \lim_{k \to \infty} \frac{|x|^{2}}{(2k+2)(2k+1)} \\
+    &= 0.
+\end{align*}
+So the interval of convergence of the Taylor series for $f(x) = \cos(x)$ centered at $x=0$ is $(-\infty, \infty)$.
+
+    \item Using the Ratio Test with the $k$th term $\frac{|x|^{2k+1}}{(2k+1)!}$ we get
+\begin{align*}
+\lim_{k \to \infty} \frac{ \frac{|x|^{2(k+1)+1}}{(2(k+1)+1)!} }{ \frac{|x|^{2k+1}}{(2k+1)!} } &= \lim_{k \to \infty} \frac{|x|^{2(k+1)+1}(2k+1)!}{|x|^{2k+1}(2(k+1)+1)!} \\
+    &= \lim_{k \to \infty} \frac{|x|^{2}}{(2k+3)(2k+2)} \\
+    &= 0.
+\end{align*}
+So the interval of convergence of the Taylor series for $f(x) = \sin(x)$ centered at $x=0$ is $(-\infty, \infty)$.
+
+    \item Using the Ratio Test with the $k$th term $|x|^{k}$ we get
+\[\lim_{k \to \infty} \frac{ |x|^{k+1} }{ |x|^{k} } = \lim_{k \to \infty} |x| = |x|,\]
+So the series $\ds \sum_{k=0}^{\infty} x^k$ converges absolutely when $|x| < 1$ or for $-1 < x < 1$ and diverges when $|x| > 1$. Since the Ratio Test doesn't tell us what happens when $x=1$, we need to check the endpoints separately.
+\begin{itemize} 
+\item When $x=1$ we have the series $\sum_{k=0}^{\infty} 1$ which diverges since $\lim_{k \to \infty} 1 \neq 0$. 
+\item When $x=-1$ we have the series $\sum_{k=0}^{\infty} (-1)^k$ which diverges since $\lim_{k \to \infty} (-1)^k$ does not exist.  
+\end{itemize}
+Therefore, the interval of convergence of the Taylor series for $f(x) = \frac{1}{1-x}$ centered at $x=0$ is $(-1,1)$.
+\ea
+\end{activitySolution}
+\aftera 

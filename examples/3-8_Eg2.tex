@@ -1,0 +1,26 @@
+\begin{example} \label{Ex:3.8.Eg2}
+Use Newton's Method to approximate a solution to $\cos(x) = x$, accurate to $5$ places after the decimal.
+
+\solution Newton's Method provides a method of solving $f(x) = 0$; it is not (directly) a method for solving equations like $f(x) = g(x)$. However, this is not a problem; we can rewrite the latter equation as $f(x) - g(x)=0$ and then use Newton's Method. 
+
+So we rewrite $\cos(x)=x$ as $\cos(x)-x=0$.  Written this way, we are finding a root of $f(x)=\cos(x)-x$.  We compute $\fp(x)=-\sin{x} - 1$.  Next we need a starting value, $x_0$.  Consider Figure~\ref{fig:newt3}, where $f(x) = \cos(x)-x$ is graphed. It seems that $x_0=0.75$ is pretty close to the root, so we will use that as our $x_0$. (The figure also shows the graphs of $y=\cos(x)$ and $y=x$, drawn in red. Note how they intersect at the same $x$ value as when $f(x) = 0$.)
+
+We now compute $x_1$, $x_2$, etc.  The formula for $x_1$ is 
+$$x_1 = 0.75 - \frac{\cos(0.75)-0.75}{-\sin(0.75)-1}\approx 0.7391111388.$$
+To $10$ decimal places, this gives $.7391111388$.  Apply Newton's Method again to find $x_2$:
+$$x_2 = 0.7391111388 - \frac{\cos(0.7391111388)-0.7391111388}{-\sin(0.7391111388)-1}\approx 0.7390851334.$$
+We can continue this way, but it is really best to automate this process.  On a calculator with an Ans key, we would start by pressing $0.75$, then \texttt{Enter}, inputting our initial approximation. We then enter:
+$$\text{\tt Ans} - {\tt (cos(Ans)-Ans)/(-sin(Ans)-1)}$$ 
+
+Repeatedly pressing the \texttt{Enter} key gives successive approximations.  We quickly find:
+\begin{align*}
+x_3 &= 0.7390851332\\
+x_4 &= 0.7390851332.
+\end{align*}
+Our approximations $x_2$ and $x_3$ did not differ for at least the first $5$ places after the decimal, so we could have stopped. However, using our calculator in the manner described is easy, so finding $x_4$ was not hard. It is interesting to see how we found an approximation, accurate to as many decimal places as our calculator displays, in just $4$ iterations.
+\end{example}
+
+\begin{marginfigure}[-6cm]
+\margingraphics{figures/fignewt3}
+\caption{A graph of $f(x)=\cos x-x$ used to find an initial approximation of its root.}\label{fig:newt3}
+\end{marginfigure}

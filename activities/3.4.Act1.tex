@@ -1,0 +1,38 @@
+\begin{activity} \label{A:3.4.1} A soup can in the shape of a right circular cylinder is to be made from two materials.  The material for the side of the can costs \$$0.015$ per square inch and the material for the lids costs \$$0.027$ per square inch.  Suppose that we desire to construct a can that has a volume of $16$ cubic inches.  What dimensions minimize the cost of the can?
+\ba
+	\item Draw a picture of the can and label its dimensions with appropriate variables.
+	\item Use your variables to determine expressions for the volume, surface area, and cost of the can.
+	\item Determine the total cost function as a function of a single variable.  What is the domain on which you should consider this function?
+	\item Find the absolute minimum cost and the dimensions that produce this value.
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Note that both the radius and the height of the can are variable.
+	\item Remember that volume is the area of the base times the height, while surface are can be thought of in terms of the area of the two lids, plus the area of the ``side'' of the can.
+	\item Use the fact that $V = 16$ to write one of the variables in terms of the other to get the cost as a function of a single variable.
+	\item Differentiate the total cost function and find its critical value(s) first.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Note that both the radius and the height of the can are variable.
+	\item Remember that volume is the area of the base times the height, while surface are can be thought of in terms of the area of the two lids, plus the area of the ``side'' of the can.  The side of the can has the shape of a rectangle (think about cutting the cylinder vertically and unrollling it).  The cost of the can is directly related to surface area.  For instance, the cost of the lids is $2 \cdot 0.027 \cdot$(area of one lid).
+	\item Use the fact that $V = 16$ to write one of the variables in terms of the other to get the cost as a function of a single variable.
+	\item Differentiate the total cost function and find its critical value(s) first.  Use either the first or second derivative test to justify your conclusion.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item We let $r$ be the radius of the base of the cylindrical can and $h$ be its height.
+	\item Volume is the area of the base times the height, so $V = \pi r^2 h$.  Surface area is the area of the lids plus the area of the side, the latter of which is a rectangle with height $h$ and width the perimeter of the base.  Hence, $S = 2 \pi r^2 + 2 \pi r h$.  Finally, the total cost is the cost of the lids plus the cost of the sides, which is
+	$$C = 2 \pi r^2 \cdot 0.027 + 2 \pi r h \cdot 0.015.$$
+	\item Because the volume is fixed at 16 cubic inches, we know that $16 =  \pi r^2 h$.  Solving for $h$, $h = \frac{16}{\pi r^2}$.  Substituting this expression for $h$ in the formula for total cost, we now have that
+	$$C = 2 \pi r^2 \cdot 0.027 + 2 \pi r \left( \frac{16}{\pi r^2} \right) \cdot 0.015 = 0.054 \pi r^2 + 0.48 \frac{1}{r} .$$
+	With $C(r) = 0.054 \pi r^2 + 0.48 \frac{1}{r}$, we note that the only constraint on $r$ is that $r > 0$, hence this is the domain on which we seek to minimize $C$.
+	\item Noting that $C'(r) = 0.108 \pi r - 0.48 \frac{1}{r^2}$, we set $C'(r) = 0$ and solve for $r$ to find that 
+	$$0.108 \pi r = \frac{0.48}{r^2},$$
+	so that $r^3 = \frac{0.48}{0.108 \pi} \approx 1.41471$, from which it follows that $r = \sqrt[3]{ \frac{0.48}{0.108 \pi} } \approx 1.12259$ is the only critical value of $C$.
+	At this point, we can use either the first or second derivative test to justify that $C$ has an absolute minimum at $r = 1.12259$.  We choose to use the second derivative test; note that $C''(r) = 0.108 \pi + 0.96 \frac{1}{r^3}$, which is always positive for $r > 0$, hence $C$ is always concave up on the relevant domain ($r > 0$), which makes $r = \sqrt[3]{ \frac{0.48}{0.108 \pi} } \approx 1.12259$ where the absolute minimum of $C$ occurs.  In addition, we note that since $h = \frac{16}{\pi r^2}$, the corresponding $h$ value is $h \approx 4.041337$, and the overall minimum cost is $C(1.12259) \approx 0.64137$.
+\ea\end{activitySolution}
+\aftera

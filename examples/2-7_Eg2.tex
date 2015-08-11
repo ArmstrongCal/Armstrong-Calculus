@@ -1,0 +1,30 @@
+\begin{marginfigure}[8cm]
+\margingraphics{figures/figimplicit2} %APEX Example 66
+\caption{The function $\sin(y)+y^3 = 6-x^3$ and its tangent line at the point $(\sqrt[3]{6},0)$.}\label{fig:2.7.eg2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:2.7.Eg2}
+Find the equation of the line tangent to the curve of the implicitly defined function $\sin(y) + y^3=6-x^3$ at the point $(\sqrt[3]6,0)$.
+
+\solution We start by taking the derivative of both sides (thus maintaining the equality.) We have :
+$$ \frac{d}{dx}\Big(\sin(y) + y^3\Big)=\frac{d}{dx}\Big(6-x^3\Big).$$
+The right hand side is easy; it returns $-3x^2$. 
+
+The left hand side requires more consideration. We take the derivative term--by--term, and we can see that 
+$$\frac{d}{dx}\Big(\sin(y)\Big) = \cos(y) \cdot y'.$$ 
+%The derivative of $\sin(y)$ is $\cos(y)y'$.  The reason for this is the chain rule. Since $y$ itself depends on $x$, the term $\sin(y)$ is really a function inside of a function, $y$ being a function of $x$.
+(Note that we used $y'$ instead of $dy/dx$ to notate the derivative of $y$.  It does not matter which notation we use, but if you choose to use $y'$, don't let it become $y^1$!) We apply the same process to the $y^3$ term. 
+$$\frac{d}{dx}\Big(y^3\Big) = \frac{d}{dx}\Big((y)^3\Big) = 3(y)^2\cdot y'.$$
+%Similarly, the derivative of $y^3$ is $3y^2y'$.  
+Putting this together with the right hand side, we have
+$$\cos(y)y'+3y^2y' = -3x^2.$$
+Now solve for $y'$.
+\begin{align*}
+\cos(y)y'+3y^2y' 	&= -3x^2\\
+\big(\cos(y)+3y^2\big)y' &=	-3x^2\\
+y'&= \frac{-3x^2}{\cos(y)+3y^2}
+\end{align*}
+We find the slope of the tangent line at the point  $(\sqrt[3]6,0)$ by substituting $\sqrt[3]6$ for $x$ and $0$ for $y$. Thus at the point $(\sqrt[3]6,0)$, we have the slope as $$y' = \frac{-3(\sqrt[3]{6})^2}{\cos(0) + 3\cdot0^2} = \frac{-3\sqrt[3]{36}}{1} \approx -9.91.$$
+
+Therefore the equation of the tangent line to the implicitly defined function $\sin(y) + y^3=6-x^3$ at the point $(\sqrt[3]{6},0)$ is $$y = -3\sqrt[3]{36}(x-\sqrt[3]{6})+0 \approx -9.91x+18.$$ The curve and this tangent line are shown in Figure \ref{fig:2.7.eg2}.
+\end{example}

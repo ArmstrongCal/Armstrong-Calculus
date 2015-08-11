@@ -1,0 +1,23 @@
+\begin{pa} \label{PA:7.1}
+Let's imagine a object in motion with its position given by the
+function $x(t)$, where $x$ is measured in feet and $t$ in seconds.  We
+determine that the velocity is $v(t) = 4t + 1$ feet per second.
+\ba
+\item How much does the position change over the time interval
+  $[0,4]$?
+\item Does this give you enough information to determine $x(4)$, the
+  position at time $t=4$?  If so, what is $x(4)$?  If not, what
+  additional information would you need to know to determine $x(4)$?
+\item Suppose you are told that the object's initial position $x(0) =
+  7$.  Determine $x(2)$, the object's position 2 seconds later.
+\item If you are told instead that the object's initial position is
+  $x(0) = 3$, what is $x(2)$?
+\item If all we know is the velocity $v(t)=4t+1$, is it possible that the
+  object's position at all times is $x(t) = 2t^2 + t$?  Explain how
+  you know.
+\item Are there other possibilities for $x(t)$?  If so, what are they?  
+\item If we know the initial position $x(0)$, how many possibilities
+  are there for $x(t)$?
+\ea
+\end{pa} 
+\afterpa

@@ -1,0 +1,33 @@
+
+\begin{example} \label{eg:6.5.7} % EXAMPLE
+A rectangular swimming pool is 20 ft wide and has a 3 ft ``shallow end'' and a 6 ft ``deep end.'' It is to have its water pumped out to a point 2 ft above the current top of the water. 
+The cross--sectional dimensions of the water in the pool are given in Figure \ref{F:6.5.Pool1}; note that the dimensions are for the water, not the pool itself. Compute the amount of work performed in draining the pool.
+
+\solution
+For the purposes of this problem we choose to set $y=0$ to represent the bottom of the pool, meaning the top of the water is at $y=6$. 
+
+Figure \ref{F:6.5.Pool2} shows the pool oriented with this $y$-axis, along with 2 differential elements as the pool must be split into two different regions. 
+
+The top region lies in the $y$-interval of $[3,6]$, where the length of the differential element is $25$ ft as shown. As the pool is 20 ft wide, this differential element represents a this slice of water with volume $V(y) = 20\cdot25\cdot dy$.  The water is to be pumped to a height of $y=8$, so the height function is $h(y) = 8-y$. The work done in pumping this top region of water is 
+$$W_t = 62.4\int_3^6 500(8-y)\ dy = 327,600 \text{ ft--lb}.$$
+
+The bottom region lies in the $y$-interval of $[0,3]$; we need to compute the length of the differential element in this interval.
+
+One end of the differential element is at $x=0$ and the other is along the line segment joining the points $(10,0)$ and $(15,3)$. The equation of this line is $y= 3/5(x-10)$; as we will be integrating with respect to $y$, we rewrite this equation as $x=5/3y+10$. So the length of the differential element is a difference of $x$-values: $x=0$ and $x=5/3y+10$, giving a length of $x=5/3y+10$. 
+
+Again, as the pool is 20 ft wide, this differential element  represents a thin slice of water with volume $V(y) = 20\cdot(5/3y+10)\cdot dy$; the height function is the same as before at $h(y)=8-y$. The work performed in emptying this part of the pool is
+$$W_b = 62.4\int_0^3 20(5/3y+10)(8-y)\ dy = 299,520\ \text{ft--lb}.$$
+The total work in emptying the pool is 
+$$W = W_b+W_t = 327,600+299,520 = 627,120\ \text{ft--lb}.$$		
+Notice how the emptying of the bottom of the pool performs almost as much work as emptying the top. The top portion travels a shorter distance but has more water. In the end, this extra water produces more work.
+\end{example}
+
+\begin{marginfigure}[-24cm] % MARGIN FIGURE
+\margingraphics{figures/figpump4}
+\caption{The cross--section of a swimming pool filled with water in Example \ref{eg:6.5.7}.} \label{F:6.5.Pool1}
+\end{marginfigure}
+
+\begin{marginfigure}[-12cm] % MARGIN FIGURE
+\margingraphics{figures/figpump4b}
+\caption{Orienting the pool and showing differential elements for Example \ref{eg:6.5.7}.} \label{F:6.5.Pool2}
+\end{marginfigure}

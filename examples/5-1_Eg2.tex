@@ -1,0 +1,22 @@
+\begin{example} \label{eg:5.1.2} % EXAMPLE
+Evaluate $\displaystyle \int x e^x\,dx$.
+
+\solution
+The integrand contains an algebraic term ($x$) and an exponential term ($e^x$). Let $u$ be the algebraic term, so we choose $u=x$ and $dv=e^x\,dx$.  Then $du=dx$ and $v=e^x$ as indicated by the tables below. It is generally useful to make a small table of these values.
+
+%\begin{center}
+\begin{tabular}{llcll} \\
+$u= x$ & $v=\text{?}$ & & $u= x$ & $v=e^x$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=e^x\ dx$ & &  $du= dx$ & $dv=e^x\ dx$ \\
+\end{tabular}
+%\end{center}
+
+\vspace{.25cm}
+
+We see $du$ is simpler than $u$, while there is no change in going from $dv$ to $v$.  This is good.  The Integration by Parts formula gives
+$$\int x e^x\,dx = xe^x - \int e^x\,dx.$$
+The integral on the right is simple; our final answer is
+$$\int xe^x\ dx = xe^x - e^x + C.$$
+Note again how the antiderivatives contain a product term.
+\end{example}

@@ -1,0 +1,279 @@
+\section{An Introduction to Differential Equations} \label{S:6.6.DEIntro}
+
+\begin{goals}
+\item What is a differential equation and what kinds of information can it tell us?
+\item How do differential equations arise in the world around us?
+\item What do we mean by a solution to a differential equation?
+\item What is a slope field and how can we use a slope field to obtain qualitative information about the solutions of a differential equation?
+\item What are stable and unstable equilibrium solutions of an autonomous differential equation? 
+\end{goals} 
+
+%---------------------------------------------
+% SUBSECTION INTRODUCTION
+%---------------------------------------------
+\subsection*{Introduction}
+
+In previous chapters, we have seen that a function's derivative tells us the rate at which the function is changing.  More recently, the Fundamental Theorem of Calculus helped us to determine the total change of a function over an interval when we know the function's rate of change.  For instance, an object's velocity tells us the rate of change of that object's position.  By integrating the velocity over a time interval, we may determine by how much the position changes over that time interval.  In particular, if we know where the object is at the beginning of that interval, then we have enough information to accurately predict where it will be at the end of the interval. 
+
+In this section, we will introduce the concept of \emph{differential equations} and explore this idea in more depth.  Simply said, a differential equation is an equation that provides a description of a function's derivative, which means that it tells us the function's rate of change.  Using this information, we would like to learn as much as possible about the function itself.  For instance, we would ideally like to have an algebraic description of the function.  
+
+\input{previews/6.6.PA1} %PREVIEW 
+
+%-------------------------------------------------------------
+% SUBSECTION DIFFERENTIAL EQUATIONS
+%-------------------------------------------------------------
+\subsection*{What is a differential equation?} \index{differential equation} 
+
+A differential equation is an equation that describes the derivative, or derivatives, of a function that is unknown to us.  For instance, the equation
+$$ \frac{dy}{dx} = x \sin(x) $$
+is a differential equation since it describes the derivative of a function $y(x)$ that is unknown to us.
+
+As many important examples of differential equations involve quantities that change in time, the independent variable in our discussion will frequently be time $t$. For instance, in the preview activity, we considered the differential equation
+$$ \frac{ds}{dt} = 4t + 1. $$
+Knowing the velocity and the starting position of the object, we were able to find the position at any later time.
+
+Because differential equations describe the derivative of a function, they give us information about how that function changes.  Our goal will be to take this information and use it to predict the value of the function in the future; in this way, differential equations provide us with something like a crystal ball.
+
+Differential equations arise frequently in our every day world.  For instance, you may hear a bank advertising:
+
+\begin{quote}{\em Your money will grow at a 3\% annual interest rate with us.}\end{quote}
+
+This innocuous statement is really a differential equation.  Let's translate:  $A(t)$ will be amount of money you have in your account at time $t$.  On one hand, the rate at which your money grows is the derivative $dA/dt$.  On the other hand, we are told that this rate is $0.03 A$.  This leads to the differential equation
+$$ \frac{dA}{dt} = 0.03 A. $$
+
+This differential equation has a slightly different feel than the previous equation $\frac{ds}{dt} = 4t+1$.  In the earlier example, the rate of change depends only on the independent variable $t$, and we may find $s(t)$ by integrating the velocity $4t+1$.   In the banking example, however, the rate of change depends on the dependent variable $A$, so we'll need some new techniques in order to find $A(t)$.  
+
+\input{activities/6.6.Act1} %ACTIVITY
+
+Differential equations may be classified based on certain characteristics they may possess.  Indeed, you may see many different types of differential equations in a later course in differential equations.  For now, we would like to introduce a few terms that are used to describe differential equations.
+
+A {\em first-order} differential equation\index{differential equation!first order} is one in which only the first derivative of the function occurs.  For this reason,
+$$ \frac{dv}{dt} = 1.5-0.5v $$
+is a first-order equation while
+$$ \frac{d^2 y}{dt^2} = -10y $$
+is a second-order equation.
+
+A differential equation is {\em autonomous}\index{autonomous} \index{differential equation!autonomous} if the independent variable does not  appear in the description of the derivative.  For instance,
+$$ \frac{dv}{dt} = 1.5-0.5v $$
+is autonomous because the description of the derivative $dv/dt$ does not depend on time.   The equation
+$$ \frac{dy}{dt} = 1.5t - 0.5y, $$
+however, is not autonomous.
+
+%-------------------------------------------------------------------
+% SUBSECTION DE IN THE WORLD AROUND US
+%-------------------------------------------------------------------
+\subsection*{Differential equations in the world around us}
+
+As we have noted, differential equations give a natural way to describe phenomena we see in the real world.  For instance, physical principles are frequently expressed as a description of how a quantity changes.  A good example is Newton's Second Law, an important physcial principle that says:  
+
+\begin{quote} {\em The product of an object's mass and acceleration equals the force applied to it.} \end{quote}
+
+For instance, when gravity acts on an object near the earth's surface, it exerts a force equal to $mg$, the mass of the object times the gravitational constant $g$.  We therefore have 
+\begin{eqnarray*} 
+ma & = & mg, \ \mbox{or} \\
+\quad \frac{dv}{dt} & = & g,
+\end{eqnarray*}
+where $v$ is the velocity of the object, and $g = 9.8$ meters per second squared.  Notice that this physical principle does not tell us what the object's velocity is, but rather how the object's velocity changes.  
+
+\input{activities/6.6.Act2} %ACTIVITY
+
+The point of this activity is to demonstrate how differential equations model processes in the real world.  In this example, two factors are influencing the velocities:  gravity and wind resistance. The differential equation describes how these factors influence the rate of change of the objects' velocities.
+
+%---------------------------------------------
+% SUBSECTION SOLVING DE
+%---------------------------------------------
+\subsection*{Solving a differential equation} \index{differential equation!solution}
+
+We have said that a differential equation is an equation that describes the derivative,  or derivatives, of a function that is unknown to us.  By a {\em   solution} to a differential equation, we mean simply a function that satisfies this description.
+
+For instance, the first differential equation we looked at is 
+$$ \frac{ds}{dt} = 4t+1, $$
+which describes an unknown function $s(t)$.  We may check that $s(t) = 2t^2+t$ is a solution because it satisfies this description.  Notice that $s(t) = 2t^2+t+4$ is also a solution.
+
+If we have a candidate for a solution, it is straightforward to check whether it is a solution or not.  Before we demonstrate, however, let's consider the same issue in a simpler context. Suppose we are given the equation $2x^2 - 2x = 2x+6$ and asked whether $x=3$ is a solution.  To answer this question, we could rewrite the variable $x$ in the equation with the symbol $\Box$:
+$$ 2\Box^2 - 2\Box = 2\Box + 6. $$
+To determine whether $x=3$ is a solution, we can investigate the value of each side of the equation separately when the value $3$ is placed in $\Box$ and see if indeed the two resulting values are equal.  Doing so, we observe that 
+$$2\Box^2 - 2\Box = 2\cdot3^2 - 2\cdot3 = 12,$$
+and
+$$2\Box + 6 = 2\cdot3 + 6 = 12.$$
+Therefore, $x=3$ is indeed a solution.
+
+We will do the same thing with differential equations.  Consider the differential equation 
+\begin{eqnarray*}
+\frac{dv}{dt} & = & 1.5 - 0.5v, \ \mbox{or} \\
+\quad \frac{d\Box}{dt} & = & 1.5 - 0.5\Box.
+\end{eqnarray*}
+Let's ask whether $v(t) = 3 - 2e^{-0.5t}$ is a solution\footnote{At this time, don't worry about why we chose this function;  we will learn techniques for finding solutions to differential equations soon enough.  }.  Using this formula for $v$, observe first that
+$$\frac{dv}{dt} =  \frac{d\Box}{dt}  = \frac{d}{dt}[3 - 2e^{-0.5t}] = -2e^{-0.5t} \cdot (-0.5) = e^{-0.5t}$$
+and
+$$1.5 - 0.5v = 1.5 - 0.5\Box= 1.5 - 0.5(3 - 2e^{-0.5t}) = $$
+$$1.5 - 1.5 + e^{-0.5t} = e^{-0.5t}.$$
+Since $\frac{dv}{dt}$ and $1.5 - 0.5v$ agree for all values of $t$ when $v = 3-2e^{-0.5t}$, we have indeed
+found a solution to the differential equation.
+
+\input{activities/6.6.Act3} %ACTIVITY
+
+This activity shows us something interesting.  Notice that the differential equation has infinitely many solutions, which are parameterized by the constant $C$ in $v(t) = 3+Ce^{-0.5t}$.  In Figure~\ref{F:7.1.family}, we see the graphs of these solutions for a few values of $C$,  as labeled.
+
+\begin{marginfigure}[3cm] % MARGIN FIGURE
+\margingraphics{figures/7_1_family.eps}
+\caption{The family of solutions to the differential equation $\frac{dv}{dt} = 1.5 - 0.5v$.} \label{F:7.1.family} 
+\end{marginfigure}
+
+Notice that the value of $C$ is connected to the initial value of the velocity $v(0)$, since $v(0) = 3+C$.  In other words, while the differential equation describes how the velocity changes as a function of the velocity itself, this is not enough information to determine the velocity uniquely:  we also need to know the initial velocity.  For this reason, differential equations will typically have infinitely many solutions, one corresponding to each initial value.  We have seen this phenomenon before, such as when given the velocity of a moving object $v(t)$, we were not able to uniquely determine the object's position unless we also know its initial position.
+
+If we are given a differential equation and an initial value for the unknown function, we say that we have an {\em initial value problem.} For instance,
+$$   \frac{dv}{dt} = 1.5-0.5v, \ v(0) = 0.5 $$
+is an initial value problem.  In this situation, we know the value of $v$ at one time and we know how $v$ is changing.  Consequently, there should be exactly one function $v$ that satisfies the initial value problem.
+
+%This demonstrates the following important general property of initial value problems.
+%
+%\concept{Initial Value Problems}{
+%    Initial value problems that are ``well behaved'' have exactly one
+%    solution, which exists in some interval around the initial point.
+%} % end concept
+%
+%We won't worry about what ``well behaved'' means---it is a technical
+%condition that will be satisfied by all the differential equations we
+%consider. 
+
+%---------------------------------------------
+% SUBSECTION SLOPE FIELDS
+%---------------------------------------------
+\subsection{Slope Fields} \index{Slope Fields}
+
+We may sketch the solution to an initial value problem if we know an appropriate collection of tangent lines.  Because we may use a given differential equation to determine the slope of the tangent line at any point of interest, by plotting a useful collection of these, we can get an accurate sense of how certain solution curves must behave.
+
+Let's investigate the differential equation $\ds \frac{dy}{dt} = t-2.$ If $t=0$, this equation says that $dy/dt = 0-2=-2$.  Note that this value holds regardless of the value of $y$.  We will therefore sketch tangent lines for several values of $y$ and $t=0$ with a slope of $-2$; see Figure~\ref{F:6.6_SF1}.  
+
+\begin{marginfigure}[-4cm] %MARGINFIGURE
+\begin{center}
+\includegraphics{figures/7_2_field_0.eps}
+\end{center}
+\caption{Beginnings of the slope field for $\ds \frac{dy}{dt} = t-2.$. }
+\label{F:6.6_SF1}
+\end{marginfigure}
+
+Let's continue in the same way:  if $t=1$, the differential equation tells us that $dy/dt = 1-2=-1$, and this holds regardless of the value of $y$.  We now sketch tangent lines for several values of $y$ and $t=1$ with a slope of $-1$; see Figure~\ref{F:6.6_SF1}-(a).
+
+%\begin{marginfigure} %MARGINFIGURE
+%\begin{center}
+%\subfloat[]{\includegraphics{figures/7_2_field_1.eps}}
+%
+%\subfloat[]{\includegraphics{figures/7_2_field_3.eps}}
+%
+%\subfloat[]{\includegraphics{figures/7_2_field_23a.eps}}
+%\end{center}
+%\caption{Generating the slope field for $\ds \frac{dy}{dt} = t-2.$.}
+%\label{F:6.6_SF2}
+%\end{marginfigure}
+
+Similarly, we see that when $t=2$, $dy/dt = 0$ and when $t=3$, $dy/dt=1$.  We may therefore add to our growing collection of tangent line plots; see Figure~\ref{F:6.6_SF1}-(b). In this figure, you may see the solutions to the differential equation emerge.  However, for the sake of clarity, we will add more tangent lines to provide the more complete picture shown in Figure~\ref{F:6.6_SF2}-(c).
+
+\begin{figure*} %MARGINFIGURE
+\begin{flushright}
+\subfloat[]{\includegraphics{figures/7_2_field_1.eps}}
+\hspace{.5cm}
+\subfloat[]{\includegraphics{figures/7_2_field_3.eps}}
+\hspace{.5cm}
+\subfloat[]{\includegraphics{figures/7_2_field_23a.eps}}
+\end{flushright}
+\caption{Generating the slope field for $\ds \frac{dy}{dt} = t-2.$.}
+\label{F:6.6_SF2}
+\end{figure*}
+
+Figure~\ref{F:6.6_SF2}-(c) is called a {\em slope field}\index{slope field} for the differential equation, allows us to sketch solutions of the differential equation.  Here, we will begin with the initial value $y(0) = 1$ and start sketching the solution by following the tangent line, as shown in Figure~\ref{F:6.6_SF6}.
+
+%\begin{marginfigure} %MARGINFIGURE
+%\margingraphics{figures/7_2_field_30.eps}
+%\caption{Sketching a solution curve for $\ds \frac{dy}{dt} = t-2.$. }
+%\label{F:6.6_SF5}
+%\end{marginfigure}
+
+We then continue using this principle:  whenever the solution passes through a point at which a tangent line is drawn, that line is tangent to the solution.  Doing so leads us to the following sequence of images.
+
+\begin{figure*} % MARGIN FIGURE
+\begin{flushright}
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\includegraphics{figures/7_2_field_30.eps}}
+\hspace{.25cm}
+\subfloat{\includegraphics{figures/7_2_field_31.eps}}
+\hspace{.25cm}
+\subfloat{\includegraphics{figures/7_2_field_32.eps}}
+\hspace{.25cm}
+\subfloat{\includegraphics{figures/7_2_field_33.eps}}
+\end{flushright}
+\caption{Sketching a solution curve for $\ds \frac{dy}{dt} = t-2.$.}
+\label{F:6.6_SF6}
+\end{figure*}
+
+In fact, we may draw solutions for any possible initial value, and doing this for several different initial values for $y(0)$ results in the graphs shown in Figure~\ref{F:6.6_SF7}.
+ 
+Just as we have done for the most recent example with $\frac{dy}{dt} = t-2$, we can construct a slope field for any differential equation of interest.  The slope field provides us with visual information about how we expect solutions to the differential equation to behave.
+
+\begin{marginfigure} %MARGINFIGURE
+\begin{center}
+\includegraphics{figures/7_2_field_4.eps}
+\end{center}
+\caption{Several solution curves for $\ds \frac{dy}{dt} = t-2.$. }
+\label{F:6.6_SF7}
+\end{marginfigure}
+
+\input{activities/6.6.Act4} %ACTIVITY
+
+%-----------------------------------------------------------
+% SUBSECTION EQUILIBRIUM SOLUTIONS
+%-----------------------------------------------------------
+\subsection*{Equilibrium solutions and stability} 
+
+As our work in Activity~\ref{A:6.6.4} demonstrates, first-order autonomous
+solutions may have solutions that are constant.  In fact, these are
+quite easy to detect by inspecting the differential equation $dy/dt =
+f(y)$:  constant solutions necessarily have a zero derivative so 
+$dy/dt = 0 = f(y)$.  
+
+For example, in Activity~\ref{A:6.6.4}, we considered the
+equation
+$$
+\frac{dy}{dt} = f(y)=-\frac12(y-4).
+$$
+Constant solutions are found by setting $f(y) = -\frac12(y-4) = 0$,
+which we immediately see implies that $y = 4$.  
+
+Values of $y$ for which $f(y) = 0$ in an autonomous differential equation $\frac{dy}{dt} = f(y)$ are usually called or {\em equilibrium solutions} \index{equilibrium solution} of the differential
+equation.  
+
+\input{activities/6.6.Act5} %ACTIVITY
+
+%---------------------------------------------
+% SUMMARY
+%---------------------------------------------
+\begin{summary}
+\item A differential equation is simply an equation that describes the
+  derivative(s) of an unknown function.
+\item Physical principles, as well as some everyday situations, often
+  describe how a quantity changes, which 
+  lead to differential equations.
+\item A solution to a differential equation is a function whose
+  derivatives satisfy the equation's description.  Differential
+  equations typically have infinitely many solutions, 
+  parameterized by the initial values.
+\item A slope field is a plot created by graphing the tangent lines of
+  many different solutions to a differential equation.
+\item Once we have a slope field, we may sketch the graph of solutions
+  by drawing a curve that is always tangent to the lines in the slope
+  field. 
+\item Autonomous differential equations sometimes have constant
+  solutions that we call 
+  equilibrium solutions.  These may be classified as stable or
+  unstable, depending on the behavior of nearby solutions.  
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/6-6.DEIntro(Ex)} 
+
+\cleardoublepage

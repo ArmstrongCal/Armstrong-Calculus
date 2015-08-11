@@ -1,0 +1,31 @@
+\begin{example} \label{Ex:2.3.Eg3}
+Find the first four derivatives of $f(x) = 4x^2$.
+
+\solution Using the limit definition of the derivative, we compute the first derivative as
+\begin{align*}
+f'(x) & = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+& = \lim_{h \to 0} \frac{4(x+h)^2 - 4x^2}{h} = \lim_{h \to 0} \frac{4(x^2 + 2xh + h^2) - 4x^2}{h} \\
+&= \lim_{h \to 0} \frac{4x^2 + 8xh + 4h^2 - 4x^2}{h} = \lim_{h \to 0} \frac{8xh + 4h^2}{h} \\
+&= \lim_{h \to 0} \frac{h(8x + 4h)}{h} = \lim_{h \to 0} 8x + 4h = 8x.
+\end{align*}
+
+We compute the second derivative as
+\begin{align*}
+f''(x) &= \lim_{h \to 0} \frac{f'(x+h) - f'(x)}{h} \\
+&= \lim_{h \to 0} \frac{8(x+h) - 8x}{h} = \lim_{h \to 0} \frac{8x + 8h - 8x}{h} \\
+&= \lim_{h \to 0} \frac{8h}{h} = \lim_{h \to 0} 8 = 8.
+\end{align*}
+
+We compute the third derivative as
+\begin{align*}
+f'''(x) &= \lim_{h \to 0} \frac{f''(x+h) - f''(x)}{h} \\
+&= \lim_{h \to 0} \frac{8 - 8}{h} = \lim_{h \to 0} \frac{0}{h} = 0.
+\end{align*}
+
+We compute the fourth derivative as
+\begin{align*}
+f^{(4)}(x) &= \lim_{h \to 0} \frac{f'''(x+h) - f'''(x)}{h} \\
+&= \lim_{h \to 0} \frac{0 - 0}{h} = \lim_{h \to 0} \frac{0}{h} = 0.
+\end{align*}
+
+\end{example}

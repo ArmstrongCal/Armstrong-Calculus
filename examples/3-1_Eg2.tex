@@ -1,0 +1,39 @@
+\begin{example} \label{Ex:3.2.Eg1}
+Water streams out of a faucet at a rate of $2$ in$^3$/s onto a flat surface at a constant rate, forming a circular puddle that is $1/8$ in deep. 
+\begin{enumerate}[1)]
+\item At what rate is the area of the puddle growing?
+\item At what rate is the radius of the circle growing?
+\end{enumerate}
+
+\solution 
+\begin{enumerate}[1)]
+\item We can answer this question two ways: using ``common sense'' or related rates. The common sense method states that the volume of the puddle is growing by $2$ in$^3$/s, where 
+	\begin{center} volume of puddle $=$ area of circle $\times$ depth.\end{center}
+Since the depth is constant at $1/8$ in, the area must be growing by 16 in$^2$/s.
+
+This approach reveals the underlying related--rates principle. Let $V$ and $A$ represent the Volume and Area of the puddle. We know $V= A\times \frac18$. Take the derivative of both sides with respect to $t$, employing implicit differentiation.
+\begin{align*}
+V &= \frac18A\\
+\frac{d}{dt}\big(V\big) &= \frac{d}{dt}\left(\frac18A\right)\\
+\frac{dV}{dt} &=	\frac18\frac{dA}{dt}
+\end{align*} 
+Since $\frac{dV}{dt} = 2$, we know $2 = \frac18\frac{dA}{dt}$, and hence $\frac{dA}{dt} = 16$. The area is growing by $16$ in$^2$/s.
+
+\item		To start, we need an equation that relates what we know to the radius. We just learned something about the surface area of the circular puddle, and we know $A = \pi r^2$. We should be able to learn about the rate at which the radius is growing with this information. 
+
+Implicitly derive both sides of $A=\pi r^2$ with respect to $t$:
+\begin{align*}
+	A 	&= \pi r^2 \\
+	\frac{d}{dt}\big(A\big) &= \frac{d}{dt}\big(\pi r^2\big)\\
+	\frac{dA}{dt} &= 2\pi r\frac{dr}{dt}
+\end{align*}
+
+Our work above told us that $\frac{dA}{dt} = 16$ in$^2$/s. Solving for $\frac{dr}{dt}$, we have $$\frac{dr}{dt} = \frac{8}{\pi r}.$$
+
+Note how our answer is not a number, but rather a function of $r$. In other words, \textit{the rate at which the radius is growing depends on how big the circle already is.} If the circle is very large, adding $2$ in$^3$ of water will not make the circle much bigger at all. If the circle is dime--sized, adding the same amount of water will make a radical change in the radius of the circle.
+
+In some ways, our problem was (intentionally) ill--posed. We need to specify a current radius in order to know a rate of change. When the puddle has a radius of $10$ in, the radius is growing at a rate of $$
+\frac{dr}{dt} = \frac{8}{10\pi} = \frac{4}{5\pi} \approx 0.25\text{ in/s}.$$
+ 
+\end{enumerate}
+\end{example}

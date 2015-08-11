@@ -1,0 +1,23 @@
+\begin{marginfigure}[6cm]
+\margingraphics{figures/figconcline1} %APEX EX 87
+\caption{A number line determining the concavity of $f$ in Example \ref{Ex:2.3.Eg2}.}\label{F:2.3.Eg2-1}
+\end{marginfigure}
+
+\begin{marginfigure}[1cm]
+\margingraphics{figures/figconc1} %APEX EX 87
+\caption{A graph of $f(x)$ used in Example \ref{Ex:2.3.Eg2}.}\label{F:2.3.Eg2-2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:2.3.Eg2}
+Let $f(x)=x^3-3x+1$. Find the intervals on which $f$ is concave up/down.
+
+\solution We first find the values where $f$ is neither increasing or decreasing.  Given $f'(x)=3x^2-3$ and $f''(x)=6x$, then $f''(x) = 0$ only when $x=0$. Notice that $f''$ is never undefined.
+
+Since an interval was not specified for us to consider, we consider the entire domain of $f$, which is $(-\infty,\infty)$. We use a process similar to the one used in Example~\ref{Ex:2.3.Eg1} to determine the intervals where $f$ is increasing/decreasing. Thus break the whole real line into two subintervals based on the value where the second derivative is zero: $(-\infty,0)$ and $(0,\infty)$. \\
+
+\noindent\textbf{Subinterval 1}, $(-\infty,0)$:\quad Picking any value $c<0$, we can easily see that $f''(c)<0$; so $f$ is concave down on $(-\infty,0)$. \\
+
+\noindent\textbf{Subinterval 2}, $(0, \infty)$:\quad  Picking any value $c>0$, we can easily see that $f''(c)>0$; so $f$ is concave up on $(0,\infty)$. \\
+
+The number line in Figure \ref{F:2.3.Eg2-1} illustrates the process of determining concavity; Figure \ref{F:2.3.Eg2-1} shows a graph of $f$ in blue and $f''(x)$ in red, confirming our results. Notice how $f$ is concave down precisely when $f''(x)<0$ and concave up when $f''(x)>0$.
+\end{example}

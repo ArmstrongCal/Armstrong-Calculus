@@ -1,0 +1,28 @@
+\setcounter{chapter}{-1}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+%\titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+
+\makeatletter
+\titleformat{\chapter}% command
+ [display]% shape
+ {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
+ {\itshape\huge\chaptertitlename~\thechapter}% label
+ {10pt}% vertical separation between label and title body
+ {\huge\rmfamily\itshape}% before the title body
+ [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+\makeatother
+
+\titleformat{\section} % command
+[block] % shape
+{\checkoddpage
+\ifthenelse{\boolean{oddpage}}{}{\newpage}\begin{fullwidth} \bfseries\itshape\LARGE} % format
+{\thesection \hspace{12pt}} % label
+{0em} % separation
+{} % before-code
+[\end{fullwidth}] % after-code
+
+\titleformat{\subsection}[block]
+{\bfseries\large}
+{\thesubsection}{0em}{}

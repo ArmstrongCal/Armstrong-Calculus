@@ -1,0 +1,27 @@
+\begin{example} \label{eg:5.1.1} % EXAMPLE
+Evaluate the indefinite integral
+$$\int x\cos(x) \, dx$$
+using Integration by Parts.
+
+\solution Whenever we are trying to integrate a product of basic functions through Integration by Parts, we are presented with a choice for $u$ and $dv$.  In the current problem, we can either let $u = x$ and $dv = \cos(x) \, dx$, or let $u = \cos(x)$ and $dv = x \, dx$.  While there is not a universal rule for how to choose $u$ and $dv$, a good guideline is this:  do so in a way that $\int v \, du$ is at least as simple as the original problem $\int u \, dv$.  
+
+In this setting, this leads us to choose $u = x$ and $dv = \cos(x) \, dx$, from which it follows that $du = 1 \, dx$ and $v = \sin(x)$. 
+
+\begin{tabular}{llcll} \\
+$u= x$ & $v=\text{?}$ & & $u= x$ & $v=\sin x$ \\
+ && $\Rightarrow$ && \\
+$du= \text{?}$ & $dv=\cos x\ dx$ & &  $du= 1\ dx$ & $dv=\cos x\ dx$ \\
+\end{tabular}
+
+\vspace{.25cm}
+
+With this substitution, the rule for Integration by Parts tells us that
+$$\int x \cos(x) \, dx = x \sin(x) - \int \sin(x) \cdot 1 \, dx.$$
+At this point, all that remains to do is evaluate the (simpler) integral $\int \sin(x) \cdot 1 \, dx.$  Doing so, we find
+$$\int x \cos(x) \, dx = x \sin(x) - (-\cos(x)) + C = x\sin(x) + \cos(x) + C.$$
+
+\end{example}
+
+\marginnote[-4cm]{Observe that if we considered the alternate choice, and let $u = \cos(x)$ and $dv = x \, dx$, then $du = -\sin(x) \, dx$ and $v = \frac{1}{2}x^2$, from which we would write
+$$\int x\cos(x) \, dx = \frac{1}{2}x^2 \cos(x) - \int \frac{1}{2}x^2 (-\sin(x)) \, dx.$$
+Thus we have replaced the problem of integrating $x \cos(x)$ with that of integrating $\frac{1}{2}x^2 \sin(x)$; the latter is clearly more complicated, which shows that this alternate choice is not as helpful as the first choice.}

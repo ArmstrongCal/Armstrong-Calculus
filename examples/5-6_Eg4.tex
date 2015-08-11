@@ -1,0 +1,35 @@
+\begin{marginfigure}[4cm] %MARGIN FIGURE
+\includegraphics{figures/fignum7a} %Example 138 APEX
+\caption{Graphing $f''(x)$ in Example \ref{eg:5.6.4} to help establish error bounds.}
+\label{F:5-6-EG4a}
+\end{marginfigure}
+
+\begin{marginfigure}[2cm] %MARGIN FIGURE
+\includegraphics{figures/fignum7b} %Example 136 APEX
+\caption{Graphing $f\,^{(4)}(x)$ in Example \ref{eg:5.6.4} to help establish error bounds.}
+\label{F:5-6-EG4b}
+\end{marginfigure}
+
+
+\begin{example} \label{eg:5.6.4} % EXAMPLE
+Find the error bounds when approximating $\ds \int_0^1 e^{-x^2}\ dx$ using the Trapezoidal Rule and $5$ subintervals, and using Simpson's Rule with $4$ subintervals.
+
+\solution \noindent \textbf{Trapezoidal Rule with $n=5$:}
+
+We start by computing the $2^\text{nd}$ derivative of $f(x) = e^{-x^2}$: $$\fpp(x) = e^{-x^2}(4x^2-2).$$ Figure \ref{F:5-6-EG4a} shows a graph of $\fpp(x)$ on $[0,1]$. It is clear that the largest value of $\fpp$, in absolute value, is $2$. Thus we let $M=2$ and apply the error formula.
+
+$$E_T = \frac{(1-0)^3}{12\cdot 5^2}\cdot 2 = 0.00\overline{6}.$$
+
+Our error estimation formula states that our approximation of $0.7445$ found in Example \ref{eg:5.6.2} is within $0.0067$ of the correct answer, hence we know that
+$$0.7445-0.0067 = .7378 \leq \int_0^1e^{-x^2}\ dx \leq 0.7512 = 0.7445 + 0.0067.$$ We had earlier computed the exact answer, correct to $4$ decimal places, to be $0.7468$.\\
+
+\noindent\textbf{Simpson's Rule with $n=4$:}
+
+We start by computing the $4^\text{th}$ derivative of $f(x) = e^{-x^2}$: $$f\,^{(4)}(x) = e^{-x^2}(16x^4-48x^2+12).$$ Figure \ref{F:5-6-EG4b} shows a graph of $f\,^{(4)}(x)$ on $[0,1]$. It is clear that the largest value of $f\,^{(4)}$, in absolute value, is $12$. Thus we let $M=12$ and apply the error formula.
+
+$$E_s = \frac{(1-0)^5}{180\cdot 4^4}\cdot 12 = 0.00026.$$
+
+Our error estimation formula states that our approximation of $0.7468\overline{3}$ found in Example \ref{eg:5.6.3} is within $0.00026$ of the correct answer, hence we know that
+$$0.74683-0.00026 = .74657 \leq \int_0^1e^{-x^2}\ dx \leq 0.74709 = 0.74683 + 0.00026.$$ 
+\end{example}
+

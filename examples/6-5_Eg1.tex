@@ -1,0 +1,22 @@
+
+
+\begin{example} \label{eg:6.5.1} % EXAMPLE
+Consider a trapezoid-shaped dam that is 60 feet wide at its base and 90 feet wide at its top, and assume the dam is 25 feet tall with water that rises to within 5 feet of the top of its face.  Water weighs 62.5 pounds per cubic foot.  How much force does the water exert against the dam?
+
+\solution First, we sketch a picture of the dam, as shown in Figure~\ref{F:6.4.DamEx}.  Note that, as in problems involving the work to pump out a tank, we let the positive $x$-axis point down.
+
+It is essential to use the fact that pressure is constant at a fixed depth.  Hence, we consider a slice of water at constant depth on the face, such as the one shown in the figure.  First, the approximate area of this slice is the area of the pictured rectangle.  Since the width of that rectangle depends on the variable $x$ (which represents the how far the slice lies from the top of the dam), we find a formula for the function $y = f(x)$ that determines one side of the face of the dam.  Since $f$ is linear, it is straightforward to find that $y = f(x) = 45 - \frac{3}{5}x$.  Hence, the approximate area of a representative slice is
+$$A_{\mbox{\small{slice}}} = 2 f(x) \triangle x = 2 (45 - \frac{3}{5}x) \triangle x.$$
+At any point on this slice, the depth is approximately constant, and thus the pressure can be considered constant.  In particular, we note that since $x$ measures the distance to the top of the dam, and because the water rises to within 5 feet of the top of the dam, the depth of any point on the representative slice is approximately $(x-5)$.  Now, since pressure is given by $P = 62.4d$, we have that at any point on the representative slice
+$$P_{\mbox{\small{slice}}} = 62.4(x-5).$$
+Knowing both the pressure and area, we can find the force the water exerts on the slice.  Using $F = PA$, it follows that 
+$$F_{\mbox{\small{slice}}} = P_{\mbox{\small{slice}}} \cdot A_{\mbox{\small{slice}}} = 62.4(x-5) \cdot 2 (45 - \frac{3}{5}x) \triangle x.$$
+Finally, we use a definite integral to sum the forces over the appropriate range of $x$-values.  Since the water rises to within 5 feet of the top of the dam, we start at $x = 5$ and slice all the way to the bottom of the dam, where $x = 30$.  Hence,
+$$F = \int_{x=5}^{x=30} 62.4(x-5) \cdot 2 (45 - \frac{3}{5}x) \, dx.$$
+Using technology to evaluate the integral, we find $F \approx 1.248 \times 10^6$ pounds.
+\end{example}
+
+\begin{marginfigure}[-24cm] % MARGIN FIGURE
+\margingraphics{figures/6_4_DamEx.eps}
+\caption{A trapezoidal dam that is 25 feet tall, 60 feet wide at its base, 90 feet wide at its top, with the water line 5 feet down from the top of its face.} \label{F:6.4.DamEx}
+\end{marginfigure}

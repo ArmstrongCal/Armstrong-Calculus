@@ -1,0 +1,34 @@
+\begin{activity}  \label{A:0.2.2}
+Each of the following questions concern  $s(t) = 64 - 16(t-1)^2$, the position function from Preview Activity \ref{PA:0.2}.
+\ba
+	\item Compute the average velocity of the ball on the time interval $[1.5,2]$.  What is different between this value and the average velocity on the interval $[0,0.5]$?
+	\item Use appropriate computing technology to estimate the instantaneous velocity of the ball at $t = 1.5$.  Likewise, estimate the instantaneous velocity of the ball at $t = 2$.  Which value is greater?
+	\item How is the sign of the instantaneous velocity of the ball related to its behavior at a given point in time?  That is, what does positive instantaneous velocity tell you the ball is doing?  Negative instantaneous velocity?
+	\item Without doing any computations, what do you expect to be the instantaneous velocity of the ball at $t = 1$?  Why?
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Remember to use the formula for average velocity from above:  $AV_{[a,b]} = \frac{s(b)-s(a)}{b-a}$.  Think carefully about whether certain quantities are positive or negative.
+	\item To estimate the instantaneous velocity at $t = 1.5$, consider average velocities on the intervals $[1.499,1.5]$ and $[1.5,1.501]$.
+	\item Think about whether the ball is rising or falling.
+	\item What is the average velocity of the ball on small intervals that contain $t = 0$?
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item $AV_{[1.5,2]} = \frac{s(2)-s(1.5)}{2-1.5}$.  Your result should be negative since $s(2) < s(1.5)$.
+	\item To estimate the instantaneous velocity at $t = 1.5$, consider average velocities on the intervals $[1.499,1.5]$ and $[1.5,1.501]$.
+	\item You should find in (a) that the instantaneous velocity at $t = 1.5$ is negative, while earlier we found that the instantaneous velocity at $t = 0.5$ is positive.  How are these signs connected to whether the ball is rising or falling?
+	\item Think about the line through the points $(0.999,s(0.999))$ and $(1,s(1))$ will look like given the ``special'' role of $(1,s(1))$ on the graph of $s(t)$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item $AV_{[1.5,2]} = \frac{s(2)-s(1.5)}{2-1.5} = -24$ ft/sec.  We note that this average velocity is negative, and in fact is the opposite of the average velocity of 24 ft/sec on the interval $[0,0.5]$.
+	\item Since $AV_{[1.499,1.5]} = -15.984$ and $AV_{[1.5, 1.501]} = -16.016$, it appears that the instantaneous velocity of the ball at $t = 1.5$ is approximately $-16$ ft/sec.  Similar computations show that at $t = 2$, it appears the instantaneous velocity is about $-32$ ft/sec.  Note that $-16>-32$, so the instantaneous velocity at $t = 1.5$ is greater because it is ``less negative.'' Asking which number is ``greater'' is different from asking which number is ``more negative.''
+	\item When the ball is rising, its instantaneous velocity is positive, while when the ball is falling, its instantaneous velocity is negative.
+	\item Note that $(1,s(1))$ is the vertex of the parabola given by $s(t)$.  At this point, the ball is neither rising nor falling.  On intervals of the form $[a,1]$, where $a < 1$, the average velocity of the ball is positive; on intervals of form $[1,b]$, where $b > 1$, the average velocity is positive.  Hence we expect the instantaneous velocity of the ball at the moment $t = 1$ to be zero.
+\ea
+\end{activitySolution}
+\aftera

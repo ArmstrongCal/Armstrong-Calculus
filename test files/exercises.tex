@@ -1,0 +1,63 @@
+\documentclass[symmetric,justified,marginals=justified,notoc]{tufte-book}
+\usepackage{lipsum,amsfonts,amsmath,amsthm,xcolor,tikz,multicol}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{mdframed}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+
+\mdfdefinestyle{exercisestyle}{
+	linecolor=black,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	linewidth=.75pt,
+	innermargin=0in,
+	outermargin=-2in,
+	frametitle={\large Exercises},
+	frametitleaboveskip=12pt
+}
+
+\mdfdefinestyle{exercise2style}{
+	hidealllines=true,
+	innermargin=0in,
+	outermargin=-2in,
+	frametitle={\large Exercises},
+	frametitleaboveskip=12pt
+}
+
+
+%----------------------
+% BEGIN DOCUMENT
+%----------------------
+\begin{document}
+
+\begin{mdframed}[style=exercisestyle]
+\lipsum
+\end{mdframed}
+
+
+\pagebreak
+
+\subsection*{Exercises}
+
+\begin{fullwidth}
+
+\begin{multicols}{2}[Evaluate the following limits]
+\begin{enumerate}[1)]
+\item 1
+\item 2
+\item a
+\item 4
+\item b
+\item 3
+\end{enumerate}
+\end{multicols}
+
+\end{fullwidth}
+
+\end{document}
+%-------------------
+% END DOCUMENT
+%-------------------

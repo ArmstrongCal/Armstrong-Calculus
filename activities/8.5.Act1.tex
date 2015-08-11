@@ -1,0 +1,51 @@
+\begin{activity} \label{8.5.Act1}
+\ba
+\item Find the 4th order Taylor polynomial for
+\[f(x) = \frac{1}{1+x}\]
+centered at $x = 0$.
+
+\item Find the 3rd order Taylor polynomial for
+\[f(x) = \sqrt(1 + x)\]
+ centered at $x = 3$.
+
+ \ea
+
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item The first four derivatives of $f$ at $x=0$ are as follows:
+\begin{align*}
+f(x) &= \frac{1}{1+x} & \hspace{0.5in} & f(0) &= 1 \\
+f'(x) &= -\frac{1}{(1+x)^2} & \hspace{0.5in} & f'(0) &= -1 \\
+f''(x) &= \frac{2}{(1+x)^3} & \hspace{0.5in} & f''(0) &= 2 \\
+f^{(3)}(x) &= -\frac{6}{(1+x)^4} & \hspace{0.5in} & f^{(3)}(0) &= -6 \\
+f^{(4)}(x) &= \frac{24}{(1+x)^5} & \hspace{0.5in} & f^{(4)}(0) &= 24 \\
+\end{align*}
+and so the 4th order Taylor polynomial for $f$ centered at $x=0$ is 
+\[f(0) + f'(0)x + \frac{f''(0)}{2} x^2 + \frac{f^{(3)}(0)}{3!} x^3 + \frac{f^{(4)}(0)}{4!} x^4 = 1 - x + x^2 - x^3 + x^4.\]
+
+\item The first three derivatives of $f$ at $x=3$ are as follows:
+\begin{align*}
+f(x) &= \sqrt{1+x} & \hspace{0.5in} & f(3) &= 2 \\
+f'(x) &= \frac{1}{2(1+x)^{1/2}} & \hspace{0.5in} & f'(3) &= \frac{1}{4} \\
+f''(x) &= -\frac{1}{4(1+x)^{3/2}} & \hspace{0.5in} & f''(3) &= -\frac{1}{32} \\
+f^{(3)}(x) &= \frac{3}{(8(1+x)^{5/2}} & \hspace{0.5in} & f^{(3)}(3) &= \frac{3}{256} \\
+\end{align*}
+and so the 3rd order Taylor polynomial for $f$ centered at $x=3$ is
+\[f(3) + f'(3)(x-3) + \frac{f''(3)}{2} (x-3)^2 + \frac{f^{(3)}(3)}{3!} (x-3)^3 = 2 + \frac{1}{4} (x-3) - \frac{1}{512} (x-3)^2 + \frac{1}{16} (x-3)^3.\]
+
+\ea
+\end{activitySolution}
+\aftera 

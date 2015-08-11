@@ -1,0 +1,129 @@
+\section{Epsilon-Delta Definition of a Limit} \label{S:1.4.precise}
+
+\begin{goals}
+\item What do we mean by saying "arbitrarily close"?
+\item What is the precise definition of a \emph{limit}?
+\item What are $\epsilon$ and $\delta$ and how do they help in determining the value of the limit of a function at a point?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+Recall our definition of a limit of a function from Section~\ref{S:1.1.Limits}.
+
+\definition{The Limit of a Function}{ %DEFINITION 
+Given a function $f$, a fixed input $x = a$, and a real number $L$, we say that \emph{$f$ has limit\index{limit!definition} $L$ as $x$ approaches $a$}, and write
+\[ \lim_{x \to a} f(x) = L \]
+provided that we can make $f(x)$ as close to $L$ as we like by taking $x$ sufficiently close (but not equal) to $a$.  If we cannot make $f(x)$ as close to a single value as we would like as $x$ approaches $a$, then we say that \emph{$f$ does not have a limit as $x$ approaches $a$.}
+} % end definition
+
+The problem with this definition is that the words "approaches" and "close" are not exact.  In what way does the variable $x$ approach $a$? How "close" do $x$ and $y$ have to be to $a$ and $L$, respectively? Finally, what determines "sufficiently close"? The precise definition we describe in this section comes from formalizing our original definition.  A quick restatement gets us closer to what we want:
+
+\begin{description}
+\item ``If $x$ is within a certain \textit{tolerance level} of $a$, then the corresponding value $y=f(x)$ is within a certain \textit{tolerance level} of $L$.''
+\end{description}
+
+The accepted notation for the $x$-tolerance is the lowercase Greek letter delta, or $\delta$, and the $y$-tolerance is lowercase epsilon, or $\epsilon$. One more rephrasing nearly gets us to the actual definition:
+
+\begin{description}
+\item ``If $x$ is within $\delta$ units of $a$, then the corresponding value of $y$ is within $\epsilon$ units of $L$.''
+\end{description}
+
+Note that this means (let the "$\longrightarrow$" represent the word "implies"):
+$\ds a - \delta < x < a + \delta \longrightarrow L - \epsilon < y < L + \epsilon$ or  $\ds |x - a| < \delta \longrightarrow  |y - L| < \epsilon$. The point is that $\delta$ and $\epsilon$, being tolerances, can be any positive (but typically small) values.  Finally, we have the formal definition of the limit with the notation  seen in the previous section.
+
+\definition{The Limit of a Function $f$} %DEFINITION 
+{Let $f$ be a function defined on an open interval containing $a$. The notation $$\displaystyle \lim_{x\rightarrow a} f(x) = L,$$ read as ``the limit of $f(x)$, as $x$ approaches $a$, is $L$,'' 
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
+whenever $|x - a| < \delta$, we have $|f(x) - L| < \epsilon$.\index{limit!definition}
+}% end definition
+
+Mathematicians often enjoy writing ideas without using any words. Here is the wordless definition of the limit:
+{\small \[ \ds \lim_{x \to a} f(x) = L \iff \forall \ \epsilon > 0, \exists \ \delta > 0 \ \mbox{s.t.} \ |x - a| < \delta \longrightarrow |f(x) - L| < \epsilon. \]}
+There is an emphasis here that we may have passed over before.  In the definition, the $y$-tolerance $\epsilon$ is given \textit{first} and then the limit will exist {\em if} we can find an $x$-tolerance $\delta$ that works.  
+
+It is time for an example.  Note that the explanation is long, but it will take you through all steps necessary to understand the ideas.
+
+\input{examples/1-4_Eg1.tex} %EXAMPLE
+ 
+If you are thinking this process is long, you would be right.  The previous example is also a bit unsatisfying in that $\sqrt{4}=2$; why work so hard to prove something so obvious? Many $\epsilon-\delta$ proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non--obvious examples are even harder.  That is why theorems about limits are so useful! After doing a few more $\epsilon$--$\delta$ proofs, you will really appreciate the analytical "short cuts" we previously discussed. 
+
+\input{examples/1-4_Eg2.tex} %EXAMPLE
+
+\input{examples/1-4_Eg3.tex} %EXAMPLE
+
+We note that we could actually show that $\ds \lim_{x \to a} e^x = e^a$ for any constant $a$.  We do this by factoring out $e^a$ from both sides, leaving us to show $\ds \lim_{x \to a} e^{x-a} = 1$ instead.  By using the substitution $y=x-a$, this reduces to showing $\lim_{y \to 0} e^y = 1 $ which we just did in the last example.  As an added benefit, this shows that in fact the function $f(x)=e^x$ is \textit{continuous} at all values of $x$.
+
+%-----------------------------------------------------
+% SUBSECTION LIMITS INVOLVING INFINITY
+%-----------------------------------------------------
+\subsection*{Limits involving infinity}
+
+In the graph of $\ds f(x)= \frac{1}{x^2}$ shown in Figure~\ref{fig:oneoverxsquaredb}, we see that near $0$, the function explodes, getting larger and larger, heading off to positive infinity.
+
+\begin{marginfigure}[1cm]
+\margingraphics{figures/figoneoverxsquared} %APEX limits with infinity
+\caption{Graph of $f(x) = 1/x^2$. }\label{fig:oneoverxsquaredb}
+\end{marginfigure}
+
+Recall from Section~\ref{S:1.2.Infinity} that in a case like this, we write
+\[ \lim_{x \to 0} \frac{1}{x^2}=\infty. \]
+We can make this notion precise as follows:
+
+\definition{Limit of Infinity, $\infty$} %DEFINITON
+{We say $\ds \lim_{x\rightarrow c} f(x)=\infty$ if for every $M>0$ there exists $\delta>0$ such that if $0<|x-c|<\delta$ then $f(x)\geq M$. %\index{limit!of infinity}  
+}
+
+This is just like the $\epsilon$--$\delta$ definition of a limit above.  In that definition, given any (small) value $\epsilon$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$) then $f(x)$ is guaranteed to be within $\epsilon$ of $f(c)$.  Here, given any (large) value $M$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$), then $f(x)$ will be at least as large as $M$.  In other words, if we get close enough to $c$, then we can make $f(x)$ as large as we want.  We can define limits equal to $-\infty$ in a similar way.
+
+Once again note that by saying $\ds \lim_{x\to c}f(x) = \infty$ we are implicitly stating that \textit{the} limit of $f(x)$, as $x$ approaches $c$, \textit{does not exist.} A limit only exists when $f(x)$ approaches an actual numeric value. We use the concept of limits that approach infinity because they are helpful and descriptive. 
+
+\input{examples/1-4_Eg4.tex} %EXAMPLE
+
+%-----------------------------------------------------
+% SUBSECTION LIMITS INVOLVING INFINITY
+%-----------------------------------------------------
+\subsection*{Limits at infinity}
+
+Let's again consider $f(x) =\frac{1}{x^2}$, as shown in Figure \ref{fig:oneoverxsquaredb}. Note that as $x$ gets very large, $f(x)$ gets very, very close to zero. We represent this concept with notation such as
+\[ \lim_{x \to \infty} \frac1{x^2}=0, \]
+and give the following precise definition.
+
+%\begin{marginfigure}[1cm]
+%\margingraphics{figures/figoneoverxsquared} %APEX limits with infinity
+%\caption{Graph of $f(x) = 1/x^2$. }\label{fig:oneoverxsquared}
+%\end{marginfigure}
+
+\definition{Limits at Infinity} %\label{precise.limit.infinity}
+{\begin{enumerate}
+\item We say $\ds\lim_{x\rightarrow\infty} f(x)=L$ if for every $\epsilon>0$ there exists $N>0$ such that if $x\geq N$, then $|f(x)-L|<\epsilon$.\index{limit!at infinity} 
+
+\item We say $\ds\lim_{x\rightarrow-\infty} f(x)=L$ if for every $\epsilon>0$ there exists $N<0$ such that if $x\leq N$, then $|f(x)-L|<\epsilon$.
+\end{enumerate}
+}
+
+This says that $f$ is sufficiently close to $L$ whenever $x$ is sufficiently large. In other words, if $x$ is greater than some number $N$ then $f(x)$ is between $L-\epsilon$ and $L+\epsilon$. If a smaller $\epsilon$ is chosen, a larger value of $N$ may be required. 
+
+\input{examples/1-4_Eg5.tex} %EXAMPLE
+
+\vspace{2cm}
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item We now have definitions of limit that do not include arbitrary measures such as ``approaches'' or ``sufficiently close to''.
+
+ \item The precise definitions given in this section are used to prove the Limit Laws we gave in Section~\ref{S:1.1.Limits}.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/1-4.Precise(Ex)} 
+
+\cleardoublepage

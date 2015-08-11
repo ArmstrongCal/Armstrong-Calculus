@@ -1,0 +1,34 @@
+\begin{marginfigure}[5cm]
+\margingraphics{figures/figopt1b} %APEX ex100 
+\caption{A sketch of the enclosure in Example~\ref{Ex:3.4.Eg1} } \label{F:3.4.Ex1}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.4.Eg1}
+A man has $100$ feet of fencing, a large yard, and a small dog. He wants to create a rectangular enclosure for his dog with the fencing that provides the maximal area. What dimensions provide the maximal area?
+
+\solution One can likely guess the correct answer -- that is great. We will proceed to show how calculus can provide this answer in a context that proves this answer is correct.
+
+It helps to make a sketch of the situation. Our enclosure is sketched twice in Figure~\ref{F:3.4.Ex1}, either with green grass and nice fence boards or as a simple rectangle. Either way, drawing a rectangle forces us to realize that we need to know the dimensions of this rectangle so we can create an area function -- after all, we are trying to maximize the area.
+
+We let $x$ and $y$ denote the lengths of the sides of the rectangle. Clearly, $$\text{Area}=xy.$$
+
+We do not yet know how to handle functions with $2$ variables; we need to reduce this down to a single variable. We know more about the situation: the man has $100$ feet of fencing. By knowing the perimeter of the rectangle must be $100$, we can create another equation: $$\text{Perimeter} = 100 = 2x+2y.$$
+
+We now have $2$ equations and $2$ unknowns. In the latter equation, we solve for $y$:
+$$y = 50-x.$$ Now substitute this expression for $y$ in the area equation:
+$$ \text{Area} = A(x) = x(50-x).$$ Note we now have an equation of one variable; we can truly call the Area a function of $x$. 
+
+This function only makes sense when $0 < x < 50$, otherwise we get negative values of area. So we find the extreme values of $A(x)$ on the interval $[0,50]$. 
+
+To find the critical points, we take the derivative of $A(x)$ and set it equal to $0$, then solve for $x$.
+\begin{align*}
+A(x) &= x(50-x) \\
+&= 50x-x^2 \\
+A'(x) 	&= 50-2x
+\end{align*}
+We solve $50-2x=0$ to find $x=25$; this is the only critical point. We evaluate $A(x)$ at the endpoints of our interval and at this critical point to find the extreme values; in this case, all we care about is the maximum.
+
+Clearly $A(0)=0$ and $A(50)=0$, whereas $A(25) = 625 \text{ft}^2$. This is the maximum. Since we earlier found $y = 50-x$, we find that $y$ is also $25$. Thus the dimensions of the rectangular enclosure with perimeter of $100$ ft. with maximum area is a square, with sides of length $25$ ft.
+
+
+\end{example}

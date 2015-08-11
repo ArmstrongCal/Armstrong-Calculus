@@ -1,0 +1,21 @@
+\begin{example} % EXAMPLE
+Find a formula that approximates $\ds \int_{-2}^3 (5x+2) \ dx$ using $R_n$; then take the limit as $n \to \infty$ to find the exact area.
+
+\solution We have $\ds \Delta x = \frac{3 - (-2)}{n} = \frac{5}{n}$ and $\ds x_i = -2 + \frac{5}{n}i$,
+and we construct the Riemann sum and compute its value using summation formulas.
+\begin{align*}
+\int_{-2}^3 (5x+2) \ dx & \approx \sum_{i=1}^{n} f(x_i) \Delta x \\
+&=	\sum_{i=1}^{n} f(-2 + i \Delta x )\Delta x \\
+&=	\sum_{i=1}^{n} \big( 5 (-2 + i \Delta x ) + 2 \big) \Delta x \\
+&=	\Delta x \sum_{i=1}^{n} \left[ \left( 5 \Delta x \right) i - 8 \right] \\
+&=	\Delta x \left[ 5 \Delta x \sum_{i=1}^{n} (i) - \sum_{i=1}^{n}8 \right] \\
+&= \frac{5}{n} \left[ \frac{25}{n} \cdot \frac{n(n+1)}{2} - 8 \cdot n \right]  \\
+&= \frac{125n(n+1)}{2n^2} - 40.
+\end{align*}
+
+%\marginfigure{.55}{Approximating $\int_{-2}^3 (5x+2)\ dx$ using the Midpoint Rule and 10 evenly spaced subintervals in Example \ref{ex_rie8}.}{fig:rie8}{figures/figrie8}
+% this picture needs corrected
+
+Taking the limit we get 
+\[ \int_{-2}^{3} (5x+2) \; dx = \lim_{n \to \infty} \frac{125n(n+1)}{2n^2} - 40 = \frac{45}{2}. \]
+\end{example}

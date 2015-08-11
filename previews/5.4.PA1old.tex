@@ -1,0 +1,34 @@
+\begin{pa} \label{PA:5.4}
+In Section~\ref{S:2.3.ProdQuot}, we developed the Product Rule and studied how it is employed to differentiate a product of two functions.  In particular, recall that if $f$ and $g$ are differentiable functions of $x$, then
+$$\frac{d}{dx} \left[ f(x) \cdot g(x)  \right] = f(x) \cdot g'(x) + g(x) \cdot f'(x).$$ 
+\ba
+	\item For each of the following functions, use the Product Rule to find the function's derivative.  Be sure to label each derivative by name (e.g., the derivative of $g(x)$ should be labeled $g'(x)$).
+	\be
+		\item[i.] $g(x) = x\sin(x)$
+		\item[ii.] $h(x) = xe^x$
+		\item[iii.] $p(x) = x\ln(x)$
+		\item[iv.] $q(x) = x^2 \cos(x)$
+		\item[v.] $r(x) = e^x \sin(x)$
+	\ee
+	\item Use your work in (a) to help you evaluate the following indefinite integrals.  Use differentiation to check your work.
+	\be
+		\item[i.] $\ds \int xe^x + e^x \, dx$
+		\item[ii.] $\ds \int e^x(\sin(x) + \cos(x)) \, dx$
+		\item[iii.] $\ds \int 2x\cos(x) - x^2 \sin(x) \, dx$
+		\item[iv.] $\ds \int x\cos(x) + \sin(x) \, dx$
+		\item[v.] $\ds \int 1 + \ln(x) \, dx$
+	\ee
+	\item Observe that the examples in (b) work nicely because of the derivatives you were asked to calculate in (a).  Each integrand in (b) is precisely the result of differentiating one of the products of basic functions found in (a).  To see what happens when an integrand is still a product but not necessarily the result of differentiating an elementary product, we consider how to evaluate 
+	$$\int x\cos(x) \, dx.$$
+	\be
+		\item[i.] First, observe that 
+		$$\frac{d}{dx} \left[ x\sin(x) \right] = x\cos(x) + \sin(x).$$
+		Integrating both sides indefinitely and using the fact that the integral of a sum is the sum of the integrals, we find that
+		$$\int \left(\frac{d}{dx} \left[ x\sin(x) \right] \right) \, dx = \int  x\cos(x) \, dx +  \int \sin(x) \, dx.$$
+		In this last equation, evaluate the indefinite integral on the left side as well as the rightmost indefinite integral on the right.
+		\item[ii.] In the most recent equation from (i.), solve the equation for the expression $\int x \cos(x) \, dx$.
+		\item[iii.] For which product of basic functions have you now found the antiderivative?
+	\ee
+\ea
+\end{pa} 
+\afterpa

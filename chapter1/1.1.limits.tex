@@ -1,0 +1,236 @@
+\section{The notion of limit} \label{S:1.1.Limits}
+
+\begin{goals}
+\item What is the behavior of a function arbitrarily close to, but not necessarily at, a specific point?
+\item What is the mathematical notion of \emph{limit} and what role do limits play in the study of functions?
+\item What is the meaning of the notation $\ds \lim_{x \to a} f(x) = L$?
+\item How do we go about determining the value of the limit of a function at a point?
+\item How does the notion of limit allow us to move from average velocity to instantaneous velocity?
+\end{goals}
+
+%-----------------------------------
+% SUBSECTION INTRODUCTION
+%-----------------------------------
+\subsection*{Introduction}
+
+Functions are at the heart of mathematics: a function is a process or rule that associates each individual input to exactly one corresponding output.  Students learn in courses prior to calculus that there are many different ways to represent functions, including through formulas, graphs, tables, and even words.  For example, the squaring function can be thought of in any of these ways.  In words, the squaring function takes any real number $x$ and computes its square.  The formulaic and graphical representations go hand in hand, as $y = f(x) = x^2$ is one of the simplest curves to graph.  Finally, we can also partially represent this function through a table of values, essentially by listing some of the ordered pairs that lie on the curve, such as  $(-2,4)$, $(-1,1)$, $(0,0)$, $(1,1)$, and $(2,4)$.
+
+Functions are especially important in calculus because they often model important phenomena -- the location of a moving object at a given time, the rate at which an automobile is consuming gasoline at a certain velocity, the reaction of a patient to the size of a dose of a drug -- and calculus can be used to study how these output quantities change in response to changes in the input variable.  Moreover, thinking about concepts like average and instantaneous velocity leads us naturally from an initial function to a related, sometimes more complicated function.  As one example of this, think about the falling ball whose position function is given by $s(t) = 64 - 16t^2$ and the average velocity of the ball on the interval $[1,x]$.  Observe that
+\[ AV_{[1,x]} = \frac{s(x) - s(1)}{x-1} = \frac{(64-16x^2) - (64-16)}{x-1} = \frac{16 - 16x^2}{x-1}. \]
+Now, two things are essential to note:  this average velocity depends on $x$ (indeed, $AV_{[1,x]}$ is a function of $x$), and our most focused interest in this function occurs near $x = 1$, which is where the function is not defined.  Said differently, the function $g(x) = \frac{16 - 16x^2}{x-1}$ tells us the average velocity of the ball on the interval from $t = 1$ to $t = x$, and if we are interested in the instantaneous velocity of the ball when $t = 1$, we'd like to know what happens to $g(x)$ as $x$ gets closer and closer to $1$.  At the same time, $g(1)$ is not defined, because it leads to the quotient $0/0$.
+
+This is where the idea of \emph{limits} comes in.  By using a limit, we'll be able to allow $x$ to get arbitrarily close, but not equal, to $1$ and fully understand the behavior of $g(x)$ near this value.  We'll develop key language, notation, and conceptual understanding in what follows, but for now we consider a preliminary activity that uses the graphical interpretation of a function to explore points on a graph where interesting behavior occurs.
+
+\input{previews/1.1.PA1} %ACTIVITY
+
+%-----------------------------------------------------------------
+% SUBSECTION THE AVERAGE VALUE OF A FUNCTION
+%-----------------------------------------------------------------
+\subsection*{The Idea of a Limit}
+
+Limits can be thought of as a way to study the tendency or trend of a function as the input variable approaches a fixed value, or even as the input variable increases or decreases without bound.  Here, we focus on what it means to say that ``a function $f$ has limit $L$ as $x$ approaches $a$.''  To begin, we think about a recent example.
+
+In Preview Activity \ref{PA:1.1}, you saw that for the given function $g$, as $x$ gets closer and closer (but not equal) to $0$, $g(x)$ gets as close as we want to the value $4$.  At first, this may feel counterintuitive, because the value of $g(0)$ is $1$, not $4$.  By their very definition, limits regard the behavior of a function \emph{arbitrarily close to} a fixed input, but the value of the function \emph{at} the fixed input does not matter.  More formally\footnote{What follows here is not what mathematicians consider the formal definition of a limit.  To be completely precise, it is necessary to quantify both what it means to say ``as close to $L$ as we like'' and ``sufficiently close to $a$.''  That can be accomplished through what is traditionally called the epsilon-delta definition of limits, which will be covered in Section \ref{S:1.4.precise}.}, we say the following.
+
+\definition{The Limit of a Function}{ %DEFINITION
+Given a function $f$, a fixed input $x = a$, and a real number $L$, we say that \emph{$f$ has limit\index{limit!definition} $L$ as $x$ approaches $a$}, and write
+\[ \lim_{x \to a} f(x) = L \]
+provided that we can make $f(x)$ as close to $L$ as we like by taking $x$ sufficiently close (but not equal) to $a$.  If we cannot make $f(x)$ as close to a single value as we would like as $x$ approaches $a$, then we say that \emph{$f$ does not have a limit as $x$ approaches $a$.}
+} % end definition
+
+For the function $g$ pictured in Figure \ref{fig:1.1.PA1}, we can make the following observations:  
+\[ \ds \lim_{x \to -1} g(x) = 3, \ \ds \lim_{x \to 0} g(x) = 4, \ \mbox{and} \ \ds \lim_{x \to 2} g(x) = 1, \] 
+but $g$ does not have a limit as $x \to 1$.  When working graphically, it suffices to ask if the function approaches a single value from each side of the fixed input, while understanding that the function value right at the fixed input is irrelevant.  This reasoning explains the values of the first three stated limits.  In a situation such as the jump in the graph of $g$ at $x = 1$, the issue is that if we approach $x = 1$ from the left, the function values tend to get as close to $3$ as we'd like, but if we approach $x = 1$ from the right, the function values get as close to $2$ as we'd like, and there is no single number that all of these function values approach.  This is why the limit of $g$ does not exist at $x = 1$.
+
+For any function $f$, there are typically three ways to answer the question ``does $f$ have a limit at $x = a$, and if so, what is the limit?''  The first is to reason graphically as we have just done with the example from Preview Activity \ref{PA:1.1}.  If we have a formula for $f(x)$, there are two additional possibilities:  (1) evaluate the function at a sequence of inputs that approach $a$ on either side, typically using some sort of computing technology, and ask if the sequence of outputs seems to approach a single value; (2) use the algebraic form of the function to understand the trend in its output as the input values approach $a$.  The first approach only produces an approximation of the value of the limit, while the latter can often be used to determine the limit exactly.  The following examples demonstrate the  approaches of using a table and graph to evaluate limits.
+
+\input{examples/1-1_Eg1} % EXAMPLE
+
+\input{examples/1-1_Eg2} % EXAMPLE
+
+\input{activities/1.1.Act1} % ACTIVITY
+
+An important lesson to take from Example~\ref{Ex:1.1.Eg2} is that both graphs and tables can be misleading when determining the value of a limit.  While a table of values is useful for investigating the possible value of a limit, we should also use other tools to confirm the value, if we think the table suggests the limit exists.
+
+%-----------------------------------------------------------------------
+% SUBSECTION IDENTIFYING WHEN LIMITS DO NOT EXIST
+%-----------------------------------------------------------------------
+\subsection{Identifying When Limits Do Not Exist}
+
+As we have seen in Example~\ref{Ex:1.1.Eg2}, a function may not have a limit for all values of $x$. That is, we cannot say $\ds \lim_{x\to a}f(x)=L$ for some numbers $L$ for all values of $a$, for there may not be a number that $f(x)$ is approaching. There are three ways in which a limit may fail to exist. \index{limit!does not exist}
+\begin{enumerate}[1)]
+\item The function $f(x)$ may approach different values on either side of $a$.
+\item The function may grow without upper or lower bound as $x$ approaches $a$.
+\item The function may oscillate as $x$ approaches $a$, which we saw in Example~\ref{Ex:1.1.Eg2}.
+\end{enumerate}
+
+\input{examples/1-1_Eg5} % EXAMPLE
+
+\input{examples/1-1_Eg6} % EXAMPLE
+
+%----------------------------------------------------------------------------
+% SUBSECTION COMPUTING LIMITS
+%----------------------------------------------------------------------------
+\subsection{Computing Limits} 
+
+Thus far, our method of finding a limit is making a really good approximation either graphically or numerically.  Later, we will cover the precise method of $\epsilon$--$\delta$ proofs\footnote{See Section~\ref{S:1.4.precise} for more on the precise definition of a limit.} which can be quite cumbersome. Now, we will cover a series of laws which allow us to find limits analytically. 
+
+Suppose that $\ds \lim_{x\to 2} f(x)=2$ and $\ds \lim_{x\to 2} g(x) = 3$. What is \newline $\ds \lim_{x\to 2}(f(x)+g(x))$? Intuition tells us that the limit should be $5$, as we wish limits to behave in a nice way. The following concept states that already established limits do behave nicely.
+
+\concept{Limit Laws}{\small % CONCEPT
+Let $b$, $c$, $L$ and $K$ be real numbers, let $n$ be a positive integer, and let $f$ and $g$ be functions with the following limits: \index{limit!properties}
+\[ \lim_{x \to c}f(x) = L \text{\ and\ } \lim_{x\to c} g(x) = K. \]
+The following limits hold.
+\begin{enumerate}[1)]
+\item \parbox{80pt}{Constants:} $\ds \lim_{x\to c} b = b$
+\item \parbox{80pt}{Identity: } $\ds \lim_{x\to c} x = c$
+\item \parbox{80pt}{Sums/Differences:} $\ds \lim_{x\to c}(f(x)\pm g(x)) = L\pm K$
+\item \parbox{80pt}{Scalar Multiples:}	$\ds \lim_{x\to c} b\cdot f(x) = bL$
+\item \parbox{80pt}{Products:} $\ds \lim_{x\to c} f(x)\cdot g(x) = LK$
+\item \parbox{80pt}{Quotients:} $\ds \lim_{x\to c} f(x)/g(x) = L/K$, ($K\neq 0)$
+\item \parbox{80pt}{Powers:} 	$\ds \lim_{x\to c} f(x)^n = L^n$
+\item \parbox{80pt}{Roots:} \parbox[t]{185pt}{$\ds \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}$ \qquad \small (if $n$ is even then $L$ must be greater than $0$.)}
+\item \parbox{80pt}{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to: 
+\[ \lim_{x\to c}f(x) = L \text{\ and\ } \lim_{x\to L} g(x) = K.\] 
+Then $\ds \lim_{x\to c}g(f(x)) = K$.}
+\end{enumerate}
+} % end concept
+
+\input{examples/1-1_Eg3} %EXAMPLE
+
+Notice that in the last part of the previous example, we have
+\[ \lim_{x \to 2} p(x) = p(2) = 9,\]
+meaning that we could have evaluated the limit simply by directly substituting the value of $a$ into the function.  That is possible because the function $p(x)$ is {\em continuous}\sidenote{See Section~\ref{S:1.3.Continuity} for more on the notion of continuity.}, which means that the limit of the function at any point is equal to its function value.
+
+From Example~\ref{Ex:1.1.Eg1}, we can evaluate the limit $\ds \lim_{x \to -1} \frac{4-x^2}{x+2}$ by evaluating the function at $x = -1$:
+\[ \lim_{x \to -1} \frac{4-x^2}{x+2} = \frac{4 - (-1)^2}{-1 + 2} = \frac{4-1}{1} = 3. \]
+Or from Example~\ref{Ex:1.1.Eg2}, we can evaluate the limit $\ds \lim_{x \to 3} \sin \left( \frac{\pi}{x} \right)$ by evaluating the function at $x = 3$:
+\[ \lim_{x \to 3} \sin \left( \frac{\pi}{x} \right) = \sin \left( \frac{\pi}{3} \right) = \frac{\sqrt{3}}{2}. \]
+This method is quite important and is stated again for emphasis.
+
+\concept{Direct Substitution} % CONCEPT
+{If $f$ is a continuous function and $a$ is in the domain of $f$, then 
+\[ \lim_{x \to a} f(x) = f(a) \] 
+} %end concept
+
+For $f(x)$ in Example~\ref{Ex:1.1.Eg1}, the situation is more complicated when $x \to -2$ since $f(-2)$ is not defined.  If we attempt to evaluate the limit using direct substitution, we observe that 
+\[ \lim_{x \to -2} \frac{4-x^2}{x+2} = \frac{4 - (-2)^2}{-2 + 2} = \frac{4-4}{-2+2} = \frac{0}{0}. \]
+We call $0/0$ an \emph{indeterminate form}\index{indeterminate}, or mathematical gibberish, and it tells us nothing about the limit---it could exist, it could not exist, we just don't know.  We simply observe that it tells us there is somehow more work to do.  From the table and graph of Example~\ref{Ex:1.1.Eg1}, it appears that $f$ should have a limit of $4$ at $x = -2$.  To see algebraically why this is the case, let's work directly with the form of $f(x)$.  Observe that
+\begin{eqnarray*}
+\lim_{x \to -2} f(x) & = & \lim_{x \to -2} \frac{4-x^2}{x+2} \\
+& = & \lim_{x \to -2} \frac{(2-x)(2+x)}{x+2}. \\
+\end{eqnarray*}
+At this point, it is important to observe that since we are taking the limit as $x \to -2$, we are considering $x$ values that are close, but not equal, to $-2$.  Since we never actually allow $x$ to equal $-2$, the quotient $\frac{2+x}{x+2}$ has value 1 for every possible value of $x$.  Thus, we can simplify the most recent expression above, and now find that
+\[ \lim_{x \to -2} \frac{4-x^2}{x+2} = \lim_{x \to -2} \frac{(2-x)(2+x)}{x+2} = \lim_{x \to -2} (2-x). \]
+Because $2-x$ is simply a linear function, this limit is now easy to determine, and its value clearly is $4$.  Thus, from several points of view we've seen that $\ds\lim_{x \to -2} f(x) = 4.$
+
+\input{activities/1.1.Act2} % ACTIVITY
+
+The section could have been titled ``Using Known Limits to Find Unknown Limits.'' By knowing certain limits of functions, we can find limits involving sums, products, powers, etc., of these functions. We further the development of such comparative tools with the Squeeze Theorem, a clever and intuitive way to find the value of some limits. 
+
+Suppose we have functions $f$, $g$ and $h$ where $g$ always takes on values between $f$ and $h$; that is, for all $x$ in an interval, 
+\[ f(x) \leq g(x) \leq h(x). \] 
+If $f$ and $h$ have the same limit at $c$, and $g$  is always ``squeezed'' between them, then $g$ must have the same limit as well. That is what the Squeeze Theorem states.
+
+\concept{Squeeze Theorem} % CONCEPT
+{Let $f$, $g$ and $h$ be functions on an open interval $I$ containing $c$ such that for all $x$ in $I$, $f(x)\leq g(x) \leq h(x)$. If 
+\[ \lim_{x\to c} f(x) = L = \lim_{x\to c} h(x),\] 
+then 
+\[ \lim_{x\to c} g(x) = L.\] \index{limit!Squeeze Theorem}\index{Squeeze Theorem}
+} % end concept
+
+It can take some work to figure out appropriate functions by which to ``squeeze'' the given function you are trying to evaluate a limit of. However, that is generally the only place work is necessary; the theorem makes the ``evaluating the limit part'' very simple. %We use the Squeeze Theorem in the following example to prove that $\ds \lim_{x\to 0} \frac{\sin(x)}{x} = 1$.
+
+\input{examples/1-1_Eg9} % EXAMPLE
+
+\input{activities/1.1.Act5} % ACTIVITY
+
+%------------------------------------------
+% SUBSECTION ONE-SIDED LIMITS
+%------------------------------------------
+\subsection*{One-Sided Limits}
+
+In this section, we explored the three ways in which limits of functions failed to exist: 
+\begin{enumerate}[1)]
+\item The function approached different values from the left and right,
+\item The function grows without bound, and 
+\item The function oscillates as $x$ approaches $a$.
+\end{enumerate}
+	
+Now we explore in depth the concepts behind item \#1 by introducing the \textit{one-sided limit}. We begin with  definitions that are very similar to the definition of the limit given earlier, but the notation is slightly different.
+
+\definition{One-Sided Limits}{ % DEFINTION
+\textbf{Left-Sided Limit:} \index{limit!one sided}\index{limit!right sided}\index{limit!left sided} Let $f$ be a function defined on an open interval containing $a$. The notation 
+\[ \lim_{x \to a^-} f(x) = L \] 
+is read as ``the limit of $f(x)$ as $x$ approaches $a$ from the left is $L$,'' or ``the \textit{left-sided limit of $f$ at $a$ is L}''.\\
+
+\noindent\textbf{Right-Sided Limit:} Let $f$ be a function defined on an open interval containing $a$. The notation 
+\[ \lim_{x \to a^+} f(x) = L \] 
+is read as ``the limit of $f(x)$ as $x$ approaches $a$ from the right is $L$,'' or ``the \textit{right-sided limit of $f$ at $a$ is L}''.
+} % end definition
+
+Practically speaking, when evaluating a left-hand limit, we consider only values of $x$ ``to the left of $a$,'' i.e., where $x<a$. The admittedly imperfect notation $x \to a^-$ is used to imply that we look at values of $x$ to the left of $a$. The notation has nothing to do with positive or negative values of either $x$ or $a$. 
+
+A similar statement holds for evaluating right-hand limits; there we consider only values of $x$ to the right of $a$, i.e., $x>a$. We can use the Limit Laws given earlier to help us evaluate these limits; we just restrict our view to one side of $a$.
+
+\input{examples/1-1_Eg7} % EXAMPLE
+
+Note how the left and right-hand limits were different; this, of course, causes the two-sided limit to not exist. The following theorem states what is fairly intuitive: the two-sided limit exists precisely when the left and right-hand limits are equal.
+
+\concept{Limits and One Sided Limits} % CONCEPT
+{Let $f$ be a function defined on an open interval $I$ containing $a$. \index{limit!does not exist} Then 
+\[ \lim_{x \to a}f(x) = L\] 
+if, and only if, 
+\[ \lim_{x \to a^-}f(x) = L \quad \text{and} \quad \lim_{x \to a^+}f(x) = L.\]
+} % end concept
+
+The phrase ``if, and only if'' means the two statements are \textit{equivalent}: they are either both true or both false. If the limit equals $L$, then the left and right hand limits both equal $L$. If the limit is not equal to $L$, then at least one of the left and right-hand limits is not equal to $L$ (it may not even exist).
+
+One thing to consider is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree.
+
+\input{examples/1-1_Eg8} % EXAMPLE
+
+This concludes a rather lengthy introduction to the notion of limits.  It is important to remember that our primary motivation for considering limits of functions comes from our interest in studying the rate of change of a function.  To that end, we close this section by revisiting our previous work with average and instantaneous velocity and highlighting the role that limits play. 
+
+%-----------------------------------------------------
+% SUBSECTION INSTANTANEOUS VELOCITY
+%-----------------------------------------------------
+\subsection*{Instantaneous Velocity}
+
+Suppose that we have a moving object whose position at time $t$ is given by a function $s$.  We know that the average velocity of the object on the time interval $[a,b]$ is $AV_{[a,b]} = \frac{s(b)-s(a)}{b-a}.$  We define the \emph{instantaneous velocity} \index{instantaneous velocity} at $a$ to be the limit of average velocity as $b$ approaches $a$.  Note particularly that as $b \to a$, the length of the time interval gets shorter and shorter (while always including $a$).  In Section~\ref{S:2.1.DerivativePt}, we will introduce a helpful shorthand notation to represent the instantaneous rate of change.  For now, we will write $IV_{t=a}$ for the instantaneous velocity at $t = a$, and thus
+$$IV_{t=a} = \lim_{b \to a} AV_{[a,b]} = \lim_{b \to a} \frac{s(b)-s(a)}{b-a}.$$
+Equivalently, if we think of the changing value $b$ as being of the form $b = a + h$, where $h$ is some small number, then we may instead write
+$$IV_{t=a} = \lim_{h \to 0} AV_{[a,a+h]} = \lim_{h \to 0} \frac{s(a+h)-s(a)}{h}.$$
+Again, the most important idea here is that to compute instantaneous velocity\index{instantaneous velocity}, we take a limit of average velocities as the time interval shrinks.  Two different activities offer the opportunity to investigate these ideas and the role of limits further. \\
+
+\input{activities/1.1.Act3} % ACTIVITY
+
+The closing activity of this section asks you to make some connections among average velocity, instantaneous velocity, and slopes of certain lines.
+\newpage
+\input{activities/1.1.Act4} % ACTIVITY
+
+%\begin{authornote}
+%This is an author note.
+%\end{authornote}
+
+%--------------
+% SUMMARY
+%--------------
+\begin{summary}
+\item Limits enable us to examine trends in function behavior near a specific point.  In particular, taking a limit at a given point asks if the function values nearby tend to approach a particular fixed value.
+
+\item When we write $\ds \lim_{x \to a} f(x) = L$, we read this as saying ``the limit of $f$ as $x$ approaches $a$ is $L$,'' and this means that we can make the value of $f(x)$ as close to $L$ as we want by taking $x$ sufficiently close (but not equal) to $a$.
+
+\item If we desire to know $\ds \lim_{x \to a} f(x)$ for a given value of $a$ and a known function $f$, we can estimate this value from the graph of $f$ or by generating a table of function values that result from a sequence of $x$-values that are closer and closer to $a$.  If we want the exact value of the limit, we need to work with the function algebraically and see if we can use familiar properties of known, basic functions to understand how different parts of the formula for $f$ change as $x \to a$. 
+
+\item The instantaneous velocity of a moving object at a fixed time is found by taking the limit of average velocities of the object over shorter and shorter time intervals that all contain the time of interest.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/1-1.Limits(Ex)} 
+
+\cleardoublepage

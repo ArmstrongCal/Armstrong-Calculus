@@ -1,0 +1,43 @@
+\begin{activity}  \label{A:1.1.5}
+In this activity, we prove $\ds \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} = 1$ using the squeeze theorem.  
+\ba
+	\item Draw the part of the unit circle that lies in the first quadrant. Place a point on the circle in the first quadrant and label it $(x,y)$.
+	\item Draw the line connecting the origin to the point $(x,y)$ on the same graph. Label the angle between the line and the $x-axis$ as $\theta$.
+	\item Find the area of the sector of the unit circle subtended by $\theta$ that you drew above.
+	\item Draw a vertical line from the point $(x,y)$ to the $x$-axis. This will form a right triangle. \label{small}
+	\item Find the area of the triangle in (\ref{small}) in terms of $\theta$. You will need to use trig functions. 
+	\item Draw a line on the picture connecting the points $(1,0)$ and $(1,1)$. This will also form a right triangle. \label{large}
+	\item Find the area of the triangle in (\ref{large}). You will need to use trig functions.
+	\item What is the relationship between the three areas you found? Write this as an inequality.
+	\item Write this inequality so that it involves the function $\frac{\sin(\theta)}{\theta}$.
+	\item Now apply the squeeze theorem to get the result.
+\ea
+\end{activity}
+
+%\begin{marginfigure}
+%\margingraphics{figs/1/figSqueeze1.pdf}
+%\caption{The unit circle and related triangles.}\label{fig:1-1_Eg4}
+%\end{marginfigure}
+
+\begin{activitySolution}
+	We begin by considering the unit circle. Each point on the unit circle has coordinates $(\cos (\theta),\sin (\theta))$ for some angle $\theta$ as shown in Figure~\ref{fig:1-1_Eg4}. Using similar triangles, we can extend the line from the origin through the point to the point $(1,\tan (\theta))$, as shown. (Here we are assuming that $0 \leq \theta \leq \pi/2$. Later we will show that we can also consider $\theta \leq 0$.)
+
+The area of the large triangle is $\frac{1}{2} \tan(\theta)$; the area of the sector is $\theta/2$; the area of the triangle contained inside the sector is $\frac{1}{2} \sin(\theta)$. It is then clear from the diagram that 
+\[ \frac{\tan (\theta)}{2} \geq \frac{\theta}{2} \geq \frac{\sin (\theta)}{2}.\]
+
+Multiply all terms by $\ds \frac{2}{\sin(\theta)}$, giving 
+\[ \frac{1}{\cos(\theta)} \geq \frac{\theta}{\sin (\theta)} \geq 1.\]
+
+Taking reciprocals reverses the inequalities, giving 
+\[ \cos (\theta) \leq \frac{\sin(\theta)}{\theta} \leq 1.\]
+These inequalities hold for all values of $\theta$ near 0, even negative values, since $\cos (-\theta) = \cos(\theta)$ and $\sin (-\theta) = -\sin (\theta)$.
+
+Now take the limit of everything as $\theta \to 0$.
+
+\[ \lim_{\theta \to 0} \cos (\theta) \leq \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} \leq \lim_{\theta \to 0}  1 \]
+\[ \cos 0 \leq \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} \leq  1 \]
+\[ 1 \leq \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} \leq  1 \]
+
+By the Squeeze Theorem, $\ds \lim_{\theta \to 0} \frac{\sin(\theta)}{\theta}=1$.
+\end{activitySolution}
+\aftera

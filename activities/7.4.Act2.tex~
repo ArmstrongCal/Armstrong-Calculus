@@ -1,0 +1,41 @@
+\begin{activity} \label{A:7.4.1}  
+  Suppose that a cup of coffee is initially at a temperature of
+  105$^\circ$ and is placed in a 75$^\circ$ room.  Newton's law of
+  cooling says that 
+  $$
+  \frac{dT}{dt} = -k(T-75),
+  $$ 
+  where $k$ is a constant of proportionality.
+
+\ba
+\item Suppose you measure that the coffee is cooling at one degree per
+  minute at the time the coffee is brought into the room.  Determine
+  the value of the constant $k$.
+
+\item Find all the solutions of this differential equation.
+
+\item What happens to all the solutions as $t\to\infty$?  Explain how
+  this agrees with your intuition.
+
+\item What is the temperature of the cup of coffee after 20 minutes?
+
+\item How long does it take for the coffee to cool down to 80$^\circ$?
+
+\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Solutions for each of the prompts above.
+\ea
+\end{activitySolution}
+\aftera

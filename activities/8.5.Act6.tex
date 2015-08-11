@@ -1,0 +1,54 @@
+\begin{activity} \label{8.5.Act6}
+\ba
+\item Show that the Taylor series centered at 0 for $\cos(x)$ converges to $\cos(x)$ for every real number $x$.
+\item Next we consider the Taylor series for $e^x$.
+    \begin{itemize}
+    \item[(i)] Show that the Taylor series centered at 0 for $e^x$ converges to $e^x$ for every nonnegative value of $x$.
+    \item[(ii)] Show that the Taylor series centered at 0 for $e^x$ converges to $e^x$ for every negative value of $x$.
+    \item[(iii)] Explain why the Taylor series centered at 0 for $e^x$ converges to $e^x$ for every real number $x$. Recall that we earlier showed that the Taylor series centered at 0 for $e^x$ converges for all $x$, and we have now completed the argument that the Taylor series for $e^x$ actually converges to $e^x$ for all $x$.
+    \end{itemize}
+\item Let $P_n(x)$ be the $n$th order Taylor polynomial for $e^x$ centered at 0. Find a value of $n$ so that $P_n(5)$ approximates $e^5$ correct to 8 decimal places.
+\ea
+
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Since the derivatives of $\cos(x)$ are all either $\pm \cos(x)$ or $\pm \sin(x)$, we see that all of the derivatives of $\cos(x)$ are bounded above by 1. If $P_n(x)$ is the $n$th order Taylor polynomial for $\cos(x)$, then for any $x$ we have 
+\[\left|P_n(x) - f(x)\right| \leq (1)\frac{|x|^{n+1}}{(n+1)!}.\]
+Since 
+\[\lim_{n \to \infty} \frac{|x|^{n+1}}{(n+1)!} = 0,\]
+we conclude that $P_n(x) \to f(x)$ as $n \to \infty$ for all $x$ and the Taylor series for $\cos(x)$ converges to $\cos(x)$ for every real number $x$.
+\item
+    \bal
+    \item Let $c$ be a nonnegative number. The derivatives of $e^x$ are all equal to $e^x$. Now $e^x$ is an increasing function so $e^x < e^c$ for all $x$ in the interval $[0,c]$. So if $P_n(x)$ is the $n$th order Taylor polynomial centered at 0 for $e^x$, then for any $x$ in $[0,c]$ we have
+\[\left|P_n(x) - f(x)\right| \leq 1\frac{e^c|x|^{n+1}}{(n+1)!}.\]
+Since
+\[\lim_{n \to \infty} e^c\frac{|x|^{n+1}}{(n+1)!} = e^c\lim_{n \to \infty} \frac{|x|^{n+1}}{(n+1)!} = 0,\]
+we conclude that $P_n(x) \to f(x)$ as $n \to \infty$ for all nonnegative $x$. 
+    \item Let $c$ be a negative number. The derivatives of $e^x$ are all equal to $e^x$. Now $e^x$ is an increasing function so $e^x < 1$ for all $x$ in the interval $[c,0]$. So if $P_n(x)$ is the $n$th order Taylor polynomial centered at 0 for $e^x$, then for any $x$ in $[c,0]$ we have
+\[\left|P_n(x) - f(x)\right| \leq 1\frac{(1)|x|^{n+1}}{(n+1)!}.\]
+Since
+\[\lim_{n \to \infty} \frac{|x|^{n+1}}{(n+1)!} = 0,\]
+we conclude that $P_n(x) \to f(x)$ as $n \to \infty$ for all negative $x$. 
+    \item Since the Taylor series centered at 0 for $e^x$ converges to $e^x$ for all nonnegative and all negative numbers, we conclude that the Taylor series centered at 0 for $e^x$ converges to $e^x$ for all real numbers $x$.
+    \eal
+
+\item Since $e^x$ is increasing on $[0,5]$ we know that $e^x < e^5$ on $[0,5]$. Now $e^5 < 243$, so 
+\[\left|P_n(5) - e^5\right| \leq 243\frac{|5|^{n+1}}{(n+1)!}.\]
+We want a value of $n$ that makes this error term less than $10^{-8}$. Testing various values of $n$ gives us 
+\[243\frac{|5|^{28+1}}{(28+1)!} \approx 5.119146745 \times 10^{-9}\]
+so we can choose $n=28$. A computer algebra system shows that $P_{28}(5) \approx 148.413159102551$ while $e^5 \approx 148.413159102577$ and we can see that these two approximations agree to 8 decimal places.
+\ea
+\end{bighint}
+\begin{activitySolution}
+
+
+\end{activitySolution}
+\aftera 

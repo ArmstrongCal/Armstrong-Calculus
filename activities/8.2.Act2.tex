@@ -1,0 +1,56 @@
+\begin{activity} \label{8.2.Act2} Let $r > 0$ and $a$ be real numbers and let
+\[S = a+ar+ar^2 + \cdots ar^{n-1} + \cdots \]
+be an infinite geometric series. For each positive integer $n$, let
+\[S_n = a+ar+ar^2 + \cdots + ar^{n-1}.\]
+Recall that
+\[S_n = a\frac{1-r^n}{1-r}.\]
+\ba
+\item What should we allow $n$ to approach in order to have $S_n$ approach $S$?
+
+\item What is the value of  $\ds \lim_{n \to \infty} r^n$ for
+\begin{itemize}
+\item $|r| > 1$?
+\item $|r| < 1$?
+\end{itemize}
+Explain.
+
+
+
+\item If $|r| < 1$, use the formula for $S_n$ and your observations in (a) and (b) to explain why $S$ is finite and find a resulting formula for $S$.
+
+
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item It is the case that
+\[S = \lim_{n \to \infty} S_n.\]
+    \item 
+\begin{itemize}
+\item If $r > 1$, then $\ds \lim_{n \to \infty} r^n = \infty$.
+\item If $0 < r < 1$, then $\ds \lim_{n \to \infty} r^n = 0$.
+\end{itemize}
+    \item Since
+\[S = \lim_{n \to \infty} S_n = \lim_{n \to \infty} a\frac{1-r^n}{1-r}\]
+and
+\[\lim_{n \to \infty} r^n = 0\]
+for $0 < r < 1$, we conclude that
+\[S = \lim_{n \to \infty} a\frac{1-r^n}{1-r} = \frac{a}{1-r}\]
+when $0 < r < 1$.
+
+
+\ea
+\end{activitySolution}
+\aftera 

@@ -1,0 +1,12 @@
+\begin{example} % EXAMPLE
+Using the FTC and the Chain Rule, compute the derivative of $\ds A(x) = \int_2^{x^2} \ln(t) \ dt$.
+
+\solution Noticing that this function is a composition, we can decompose it as
+\[ y = \int_2^u \ln(t) \ dt \quad \mbox{where} \quad u = x^2. \]
+Using the Leibniz version of the Chain Rule, we have
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}, \] 
+where
+\[ \frac{dy}{du} = \ln(u) \quad \mbox{and} \quad \frac{du}{dx} = 2x. \]
+Therefore,
+\[ \frac{dy}{dx} = \ln(u) \cdot 2x = \ln \left( x^2 \right) \cdot 2x. \]
+\end{example}

@@ -1,0 +1,15 @@
+\begin{example} \label{eg:4.6.sub8} 
+Evaluate $\ds \int_0^{\pi/2} \sin(x) \cos(x) \ dx$.
+
+\solution
+We saw the corresponding indefinite integral in Example \ref{eg:4.6.usub3}. In that example we set $u = \sin(x)$ but stated that we could have let $u = \cos(x)$. For variety, we do the latter here.
+
+Let $u = g(x) = \cos(x)$, giving $du = -\sin(x) \ dx$. The new upper bound is $g(\pi/2) = 0$; the new lower bound is $g(0) = 1$. Note how the lower bound is actually larger than the upper bound now. We have
+\begin{align*}
+\int_0^{\pi/2} \sin(x) \cos(x)\ dx &= \int_1^0 u \ (-1) du \\
+&= \int_1^0 -u \ du \quad \text{\scriptsize (switch bounds \& change sign)}\\
+&=	\int_0^1 u \ du\\
+&= \frac{1}{2} u^2 \Big|_0^1\\
+&= 1/2.
+\end{align*}
+\end{example}

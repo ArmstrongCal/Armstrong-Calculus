@@ -1,0 +1,19 @@
+\begin{example} \label{Ex:2.2.Eg2}
+Let $\ds f(x) = \frac{1}{x+1}$. Find $f'(x)$.
+
+\solution We again apply the definition of the derivative.
+\begin{align*}
+f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}\\
+&=	\lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \intertext{Now find a common denominator then subtract; pull $1/h$ out front to facilitate reading.}
+&= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
+&=	\lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
+&=	\lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
+&=	\lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)} \\
+&= \frac{-1}{(x+1)(x+1)}\\
+&= \frac{-1}{(x+1)^2}
+\end{align*}
+	
+So $\ds f'(x) = \frac{-1}{(x+1)^2}$. To practice our notation, we could also state 
+\[ \ds \frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}. \]
+\end{example}
+

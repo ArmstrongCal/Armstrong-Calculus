@@ -1,0 +1,25 @@
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-3_EckApplet.pdf}
+\caption{A left Riemann sum with 5 subintervals for the function $f(x) = \frac{3}{1+x^2}$ on the interval $[-5,5]$.  The value of the sum is $L_5 = 7.43076923$.} \label{fig:4-3_EckApplet}
+\end{marginfigure}
+
+\begin{marginfigure}[1cm] % MARGIN FIGURE
+\margingraphics{figs/4/4-3_EckApplet2.pdf}
+\caption{A left Riemann sum with 5 subintervals for the function $f(x) = 2x+1$ on the interval $[1,4]$.  The value of the sum is $L_5 = 16.2$.} \label{fig:4-3_EckApplet2}
+\end{marginfigure}
+
+\begin{pa} \label{PA:4.3}
+Consider the applet found at \href{http://gvsu.edu/s/aw}{\texttt{http://gvsu.edu/s/aw}}.  There, you will initially see the situation shown in Figure~\ref{fig:4-3_EckApplet}.
+
+Observe that we can change the window in which the function is viewed, as well as the function itself.  Set the minimum and maximum values of $x$ and $y$ so that we view the function on the window where $1 \le x \le 4$ and $-1 \le y \le 12$, where the function is $f(x) = 2x + 1$ (note that you need to enter ``\texttt{2*x+1}'' as the function's formula).  You should see the updated figure shown in Figure~\ref{fig:4-3_EckApplet2}.
+
+Note that the value of the Riemann sum of our choice is displayed in the upper left corner of the window.  Further, by updating the value in the ``Intervals'' window and/or the ``Method'', we can see the different value of the Riemann sum that arises by clicking the ``Compute!'' button.
+\ba
+	\item Update the applet so that the function being considered is $f(x) = 2x+1$ on $[1,4]$, as directed above.  For this function on this interval, compute $L_{n}$, $M_{n}$,  $R_{n}$ for $n = 10$, $n = 100$, and $n = 1000$.  What do you conjecture is the exact area bounded by $f(x) = 2x+1$ and the $x$-axis on $[1,4]$?
+	\item Use basic geometry to determine the exact area bounded by $f(x) = 2x+1$ and the $x$-axis on $[1,4]$.
+	\item Based on your work in (a) and (b), what do you observe occurs when we increase the number of subintervals used in the Riemann sum?
+	\item Update the applet to consider the function $f(x) = x^2 + 1$ on the interval $[1,4]$ (note that you will want to increase the maximum value of $y$ to at least $17$, and you need to enter ``\texttt{x\^{}2 + 1}'' for the function formula).  Use the applet to compute $L_{n}$, $M_{n}$,  $R_{n}$ for $n = 10$, $n = 100$, and $n = 1000$.  What do you conjecture is the exact area bounded by $f(x) = x^2+1$ and the $x$-axis on $[1,4]$?
+	\item Why can we not compute the exact value of the area bounded by $f(x) = x^2+1$ and the $x$-axis on $[1,4]$ using a formula like we did in (b)?
+\ea
+\end{pa} 
+\afterpa

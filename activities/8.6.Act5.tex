@@ -1,0 +1,60 @@
+\begin{activity} \label{8.6.Act5} Our theorem about integrating and differentiating series term by term tells us that the resulting power series converges absolutely on the interior of the interval of convergence of the original series, but does not tell us what happens at the endpoints. The question of what happens at the endpoints can be tricky, but the following result can be quite useful.
+
+\vspace*{5pt}
+\nin \framebox{\hspace*{3 pt}
+\parbox{6.25 in}{
+\textbf{Abel's Limit Theorem. } Suppose $f(x)$ has a power series expansion
+\[f(x) = \sum_{k=0}^{\infty} c_kx^k\]
+on an interval $(-r,r)$ for some positive real number $r$. If $f$ is continuous at $x=r$ (or $x=-r$) and if the series converges at $x=r$ (or $x=-r$), then the power series converges to $f(r)$ at $x=r$ (or $f(-r)$ at $x=-r$).
+} \hspace*{3 pt}}
+\vspace*{1pt}
+
+\ba
+\item We have already shown that $\arctan(x)$ has the power series expansion
+\begin{equation} \label{eq:A8.6.4_arctan}
+\sum_{k=0}^{\infty} (-1)^k\frac{x^{2k+1}}{2k+1}
+\end{equation}
+on $(-1,1)$. Use Abel's Limit Theorem to show that the power series expansion is also valid at $x=-1$ and $x=1$.
+\item Conclude from part (a) the series expansion for $\frac{\pi}{4}$ we investigated in Exercise 1 of Section \ref{S:8.4.Alternating_Series}
+\item Verify the Taylor series for $\ln(2)$ that we introduced in Preview Activity \ref{PA:8.4}. Hint: Use the result of Activity \ref{8.6.Act4} and Abel's Limit Theorem.
+\ea
+
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item The arctangent function is continuous everywhere, so all we need do is determine if the series in (\ref{eq:A8.6.4_arctan}) converges at $x=-1$ and $x=1$.
+\begin{itemize}
+\item When $x=-1$ the series in (\ref{eq:A8.6.4_arctan}) becomes
+\[\sum_{k=0}^{\infty} (-1)^k\frac{(-1)^{2k+1}}{2k+1} = \sum_{k=0}^{\infty} (-1)^{k+1}\frac{1}{2k+1}.\]
+Since the sequence $\frac{1}{2k+1}$ decreases to $0$, the series $\sum_{k=0}^{\infty} (-1)^k\frac{(-1)^{2k+1}}{2k+1}$ converges by the Alternating Series Test.
+\item When $x=1$ the series in (\ref{eq:A8.6.4_arctan}) becomes
+\[\sum_{k=0}^{\infty} (-1)^k\frac{1}{2k+1}\]
+which also converges by the Alternating Series Test.
+\end{itemize}
+So the power series in (\ref{eq:A8.6.4_arctan}) converges to $\arctan(x)$ for all $x$ in the interval $[-1,1]$.
+
+    \item Notice that when $x=1$ equation (\ref{eq:A8.6.4_arctan}) yields
+    \[\frac{\pi}{4} = \arctan(1) = \sum_{k=0}^{\infty} (-1)^k\frac{1}{2k+1}\]
+    which verifies the series expansion for $\frac{\pi}{4}$ we investigated in Exercise 1 of Section \ref{S:8.4.Alternating_Series}.
+
+    \item In Activity \ref{8.6.Act4} we saw that
+       \[\ln(1+x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{k+1}}{k+1}.\]
+    for $-1 < x < 1$. Now $\ln(1+x)$ is continuous at $x=1$ and when $x=1$ the series for $\ln(1+x)$ becomes
+    \[\sum_{k=0}^{\infty} (-1)^k \frac{1}{k+1}.\]
+    Since the sequence $\frac{1}{k+1}$ decreases to 0, the series $\ds \sum_{k=0}^{\infty} (-1)^k \frac{1}{k+1}$ converges by the Alternating Series Test. Thus, Abel's Limit Theorem shows that
+    \[\ln(2) = \sum_{k=0}^{\infty} (-1)^k \frac{1}{k+1}\]
+    which is exactly the Taylor series for $\ln(2)$ that we introduced in Preview Activity \ref{PA:8.4}. 
+\ea
+
+\end{activitySolution}
+\aftera 

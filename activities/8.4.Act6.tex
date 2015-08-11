@@ -1,0 +1,119 @@
+\begin{activity} \label{8.4.Act6}  For (a)-(j), use appropriate tests to determine the convergence or divergence of the following series. Throughout, if a series is a convergent geometric series, find its sum.
+\ba
+\item $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k-2}}$
+	
+\item $\ds \sum_{k=1}^{\infty} \ \frac{k}{1+2k}$
+
+\item $\ds \sum_{k=0}^{\infty} \ \frac{2k^2+1}{k^3+k+1}$
+
+\item $\ds \sum_{k=0}^{\infty} \ \frac{100^k}{k!}$ 
+
+\item $\ds \sum_{k=1}^{\infty} \ \frac{2^k}{5^k}$
+
+\item $\ds \sum_{k=1}^{\infty} \ \frac{k^3-1}{k^5+1}$
+
+\item $\ds \sum_{k=2}^{\infty} \ \frac{3^{k-1}}{7^k}$
+
+\item $\ds \sum_{k=2}^{\infty} \ \frac{1}{k^k}$
+
+\item $\ds \sum_{k=1}^{\infty} \ \frac{(-1)^{k+1}}{\sqrt{k+1}}$
+
+\item $\ds \sum_{k=2}^{\infty} \ \frac{1}{k \ln(k)}$
+
+\item Determine a value of $n$ so that the $n$th partial sum $S_n$ of the alternating series $\ds \sum_{n=2}^{\infty} \frac{(-1)^n}{\ln(n)}$ approximates the sum to within 0.001.
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+\item For large values of $k$, $\frac{2}{\sqrt{k-2}}$ looks like $\frac{2}{\sqrt{k}}$. We will use the Limit Comparison Test to compare these two series:
+\begin{align*}
+\lim_{k \to \infty} \frac{\frac{2}{\sqrt{k-2}}}{\frac{2}{\sqrt{k}}} &= \lim_{k \to \infty} \frac{\sqrt{k}}{\sqrt{k-2}} \\
+    &= \lim_{k \to \infty} \sqrt{\frac{1}{1-\frac{2}{k}}} \\
+    &= 1.
+\end{align*}
+Since this limit is a positive constant, we know that the two series $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k-2}}$ and $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k}}$ either both converge or both diverge. Now $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k}} = 2\sum_{k=3}^{\infty} \ \frac{1}{k^{1/2}}$ is constant times a $p$-series with $p=\frac{1}{2}$, so $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k}}$ diverges. Therefore, $\ds \sum_{k=3}^{\infty} \ \frac{2}{\sqrt{k-2}}$ diverges as well.
+	
+\item Note that
+\[ \lim_{k \to \infty} \frac{k}{1+2k} = \lim_{k \to \infty} \frac{k}{2k} = \frac{1}{2},\]
+so the Divergence Test shows that $\ds \sum_{k=1}^{\infty} \ \frac{k}{1+2k}$ diverges.
+
+\item For large values of $k$, $\frac{2k^2+1}{k^3+k+1}$ looks like $\frac{2}{k}$. We will use the Limit Comparison Test to compare these two series:
+\begin{align*}
+\lim_{k \to \infty} \frac{\frac{2k^2+1}{k^3+k+1}}{\frac{2}{k}} &= \lim_{k \to \infty} \frac{(2k^2+1)k}{2(k^3+k+1)} \\
+    &= \lim_{k \to \infty} \frac{2 + \frac{1}{k^2}}{2+\frac{1}{k^2}+\frac{1}{k^3}} \\
+    &= 1.
+\end{align*}
+Since this limit is a positive constant, we know that the two series $\ds \sum_{k=1}^{\infty} \ \frac{2k^2+1}{k^3+k+1}$ and $\ds \sum_{k=1}^{\infty} \ \frac{2}{k}$ either both converge or both diverge. Now $\ds \sum_{k=1}^{\infty} \ \frac{2}{k} = 2\sum_{k=1}^{\infty} \ \frac{1}{k}$ is constant times a $p$-series with $p=1$, so $\ds \sum_{k=1}^{\infty} \ \frac{2}{k}$ diverges. Therefore, $\ds \sum_{k=0}^{\infty} \ \frac{2k^2+1}{k^3+k+1}$ diverges as well.
+
+\item Series that involve factorials are good candidates for the Ratio Test:
+\begin{align*}
+\lim_{k \to \infty} \frac{\frac{100^{k+1}}{(k+1)!}}{\frac{100^k}{k!}} &= \lim_{k \to \infty} \frac{100^{k+1}k!}{100^k(k+1)!} \\
+    &= \lim_{k \to \infty} \frac{100}{k+1} \\
+    &= 0.
+\end{align*}
+Since this limit is 0, the Ratio Test tells us that the series $\ds \sum_{k=0}^{\infty} \ \frac{100^k}{k!}$ converges.
+
+\item Notice that $\ds \sum_{k=1}^{\infty} \ \frac{2^k}{5^k} = \sum_{k=1}^{\infty} \ \left(\frac{2}{5}\right)^k$ is a geometric series with ratio $\frac{2}{5}$. Let's write out the first few terms to identify the value of $a$:
+\[ \sum_{k=1}^{\infty} \ \left(\frac{2}{5}\right)^k = \frac{2}{5} + \left(\frac{2}{5}\right)^2 + \left(\frac{2}{5}\right)^3 + \cdots = \left(\frac{2}{5}\right)\left[ 1 + \frac{2}{5} + \left(\frac{2}{5}\right)^2 + \cdots \right].\]
+So $a = \frac{2}{5}$. Since the ratio of this geometric series is between $-1$ and 1, the series converges. The sum of the series is
+\[ \sum_{k=1}^{\infty} \ \frac{2^k}{5^k} = \left(\frac{2}{5}\right) \left(\frac{1}{1-\frac{2}{5}} \right) = \left(\frac{2}{5}\right)\left(\frac{5}{3}\right) = \frac{2}{3}.\]
+
+\item For large values of $n$, $\frac{k^3-1}{k^5+1}$ looks like $\frac{k^3}{k^5}=\frac{1}{k^2}$. We will use the Limit Comparison Test to compare $\ds \sum_{k=1}^{\infty} \ \frac{k^3-1}{k^5+1}$ and $\ds \sum_{k=1}^{\infty} \ \frac{1}{k^2}$:
+\begin{align*}
+\lim_{k \to \infty} \frac{\frac{k^3-1}{k^5+1}}{\frac{1}{k^2}} &= \lim_{k \to \infty} \frac{k^5-k^2}{k^5+1} \\
+    &= \lim_{k \to \infty} \frac{1-\frac{1}{k^3}}{1+\frac{1}{k^5}} \\
+    &= 1.
+\end{align*}
+Since this limit is 1, we know that the two series $\ds \sum_{k=1}^{\infty} \ \frac{k^3-1}{k^5+1}$ and $\ds \sum_{k=1}^{\infty} \ \frac{1}{k^2}$ either both converge or both diverge. Now $\ds \sum_{k=1}^{\infty} \ \frac{1}{k^2}$ is a $p$-series with $p=2$, so $\ds \sum_{k=1}^{\infty} \ \frac{1}{k^2}$ converges. Therefore, $\ds \sum_{k=1}^{\infty} \ \frac{k^3-1}{k^5+1}$ converges as well.
+
+\item This series looks geometric, but to be sure let's write out the first few terms of this series:
+\[ \sum_{k=2}^{\infty} \ \frac{3^{k-1}}{7^k} = \frac{3}{7^2} + \frac{3^2}{7^3} + \frac{3^3}{7^4} + \cdots = \left( \frac{3}{7^2} \right) \left[1 + \frac{3}{7} + \left( \frac{3}{7} \right)^2 + \left( \frac{3}{7} \right)^3 + \cdots \right].\]
+So $\ds \sum_{k=2}^{\infty} \ \frac{3^{k-1}}{7^k}$ is a geometric series with $a = \frac{3}{49}$ and $r = \frac{3}{7}$. Since the ratio of this geometric series is between $-1$ and 1, the series converges. The sum of the series is
+\begin{align*}
+\sum_{k=2}^{\infty} \ \frac{3^{k-1}}{7^k} &= \left(\frac{3}{49}\right) \left(\frac{1}{1-\frac{3}{7}} \right) \\
+    &= \left(\frac{3}{49}\right)\left(\frac{7}{4}\right) \\
+    &= \frac{3}{28}.
+\end{align*}
+
+\item $\ds \sum_{k=2}^{\infty} \ \frac{1}{k^k}$
+
+\item This series is an alternating series of the form $\ds \sum_{k=1}^{\infty} (-1)^{k+1} a_k$ with $a_k = \frac{1}{\sqrt{k+1}}$. Since
+\[\ds \lim_{k \to \infty} \frac{1}{\sqrt{k+1}} = 0\]
+and $\frac{1}{\sqrt{k+1}}$ decreases to 0, the Alternating Series Test shows that $\ds \sum_{k=1}^{\infty} \ \frac{(-1)^{k+1}}{\sqrt{k+1}}$ converges.
+
+\item For this example we will use the Integral Test with the substitution $w = \ln(x)$, $dw = \frac{1}{x} \ dx$:
+\begin{align*}
+\displaystyle \int_2^{\infty} \frac{1}{x \ln(x)} \ dx &= \lim_{b \to \infty} \int_2^b \frac{1}{x \ln(x)} \ dx \\
+	&= \displaystyle \lim_{b \to \infty} \int_{\ln(2)}^{\ln(b)} \frac{1}{w} \ dw \\
+	&= \displaystyle \lim_{b \to \infty} \ln(w) \bigm|_{\ln(2)}^{\ln(b)}  \\
+	&= \displaystyle \lim_{b \to \infty} \left[ \ln(\ln(b)) - \ln(\ln(2)) \right]  \\
+	&= \infty.
+\end{align*}
+Since $\ds \int_2^{\infty} \frac{1}{x \ln(x)} \ dx$ diverges, we conclude $\ds \sum_{k=2}^{\infty} \ \frac{1}{k \ln(k)}$ diverges.
+
+\item First note that the terms $\frac{1}{\ln(k)}$ decrease to $0$, so the Alternating Series Test shows that the alternating series $\ds \sum_{k=2}^{\infty} \frac{(-1)^k}{\ln(k)}$ converges. Let $S = \ds \sum_{k=2}^{\infty} \frac{(-1)^k}{\ln(k)}$ and let $S_n$ be the $n$th partial sum of this series. Recall that
+\[|S_n - S| < |S_n - S_{n+1}| = a_{n+1}\]
+where $a_{n+1} = \frac{1}{\ln(n+1)}$. If we can find a value of $n$ so that $a_{n+1} < 0.001$, then $|S_n - S| < 0.001$ as desired. Now
+\begin{align*}
+a_{n+1} &< 0.001 \\
+\frac{1}{\ln(n+1)} &< 0.001 \\
+\ln(n+1) &> 1000 \\
+n+1 &> e^{1000} \\
+n &> e^{1000}-1.
+\end{align*}
+So if we choose $n = e^{1000}$, then $S_n$ approximates the sum of the series to within 0.001. Notice that $e^{1000} \approx 1.97 \times 10^{434}$ is a very large number. This shows that the series $\ds \sum_{k=2}^{\infty} \frac{(-1)^k}{\ln(k)}$ converges very slowly.
+
+\ea
+\end{activitySolution}
+\aftera 

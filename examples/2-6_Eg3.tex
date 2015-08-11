@@ -1,0 +1,31 @@
+\begin{example} \label{Ex:2.6.Eg3}
+Find a formula for the derivative of $h(t) = 3^{t^2 + 2t}\sec^4(t)$. 
+
+\solution We first observe that the most basic structure of $h$ is that it is the product of two functions:  $h(t) = a(t) \cdot b(t)$ where $a(t) = 3^{t^2 + 2t}$ and $b(t) = \sec^4(t)$.  Therefore, we see that we will need to use the product rule to differentiate $h$.  When it comes time to differentiate $a$ and $b$ in their roles in the product rule, we observe that since each is a composite function, the chain rule will be needed.  We therefore begin by working separately to compute $a'(t)$ and $b'(t)$.
+
+Writing $a(t) = f(g(t)) = 3^{t^2 + 2t}$, and finding the derivatives of $f$ and $g$, we have
+\begin{center}
+\begin{tabular}{lcl}
+$f(t) = 3^t$ & \hspace{0.5in} & $g(t) = t^2 + 2t$ \\
+$f'(t) = 3^t \ln(3)$ & \hspace{0.5in} & $g'(t) = 2t+1$ \\
+$f'(g(t)) = 3^{t^2 + 2t}\ln(3)$ & \hspace{0.5in} & \ \\
+\end{tabular}
+\end{center}
+Thus, by the chain rule, it follows that $a'(t) = f'(g(t))g'(t) = 3^{t^2 + 2t}\ln(3) (2t+1).$
+
+Turning next to $b$, we write $b(t) = r(s(t)) = \sec^4(t)$ and find the derivatives of $r$ and $g$.  Doing so, 
+\begin{center}
+\begin{tabular}{lcl}
+$r(t) = t^4$ & \hspace{0.5in} & $s(t) = \sec(t)$ \\
+$r'(t) = 4t^3$ & \hspace{0.5in} & $s'(t) = \sec(t)\tan(t)$ \\
+$r'(s(t)) = 4\sec^3(t)$ & \hspace{0.5in} & \ \\
+\end{tabular}
+\end{center}
+By the chain rule, we now know that 
+\[ b'(t) = r'(s(t))s'(t) = 4\sec^3(t)\sec(t)\tan(t) = 4 \sec^4(t) \tan(t). \]
+
+Now we are finally ready to compute the derivative of the overall function $h$.  Recalling that $h(t) = 3^{t^2 + 2t}\sec^4(t)$, by the product rule we have
+$$h'(t) = 3^{t^2 + 2t} \frac{d}{dt}[\sec^4(t)] + \sec^4(t) \frac{d}{dt}[3^{t^2 + 2t}].$$
+From our work above with $a$ and $b$, we know the derivatives of $3^{t^2 + 2t}$ and $\sec^4(t)$, and therefore
+$$h'(t) = 3^{t^2 + 2t} 4\sec^4(t) \tan(t) + \sec^4(t) 3^{t^2 + 2t}\ln(3) (2t+2).$$
+\end{example}

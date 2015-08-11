@@ -1,0 +1,35 @@
+\begin{marginfigure}[-1cm]
+\margingraphics{figures/figextval6} %APEX ex80 
+\caption{A graph of $f(x)=\cos(x^2)$ on $[-2,2]$ as in Example \ref{Ex:3.3.Eg4}. } \label{F:3.3.Ex4}
+\end{marginfigure}
+
+\begin{margintable}
+\begin{center}
+\scalebox{1.25}{
+\begin{tabular}{cc} 
+$x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} 
+$-2$ & $-0.65$ \\ 
+$-\sqrt{\pi}$ & $-1$ \\
+$0$ & $1$\\
+$\sqrt{\pi}$ & $-1$ \\
+$2$ & $-0.65$
+\end{tabular}
+} % end scalebox
+\end{center}
+\caption{Finding the extreme values of $f(x)= \cos (x^2)$ in Example \ref{Ex:3.3.Eg4}.} \label{T:3.3.Ex4}
+\end{margintable}
+
+\begin{example} \label{Ex:3.3.Eg4}
+Find the extrema of  $f(x) = \cos (x^2)$ on $[-2,2]$.
+
+\solution
+We again our approach to find extrema. Evaluating $f$ at the endpoints of the interval gives: $f(-2) = f(2) = \cos (4) \approx -0.6536.$ We now find the critical values of $f$.
+
+Applying the Chain Rule, we find $\fp(x) = -2x\sin (x^2)$. Set $\fp(x) = 0$ and solve for $x$ to find the critical values of $f$. 
+
+We have $\fp(x) = 0$ when $x = 0$ and when $\sin (x^2) = 0$. In general, $\sin(t) = 0$ when $t = \ldots -2\pi, -\pi, 0, \pi, \ldots$ Thus $\sin (x^2) = 0$ when $x^2 = 0, \pi, 2\pi, \ldots$ ($x^2$ is always positive so we ignore $-\pi$, etc.) So $\sin (x^2)=0$ when $x= 0, \pm \sqrt{\pi}, \pm\sqrt{2\pi}, \ldots$. The only values to fall in the given interval of $[-2,2]$ are $-\sqrt{\pi}$ and $\sqrt{\pi}$, approximately $\pm 1.77$.
+
+We again construct a table of important values in Table~\ref{T:3.3.Ex4}. In this example we have $5$ values to consider: $x= 0, \pm 2, \pm\sqrt{\pi}$. 
+
+From the table it is clear that the maximum value of $f$ on $[-2,2]$ is $1$; the minimum value is $-1$. The graph in Figure \ref{F:3.3.Ex4} confirms our results.
+\end{example}

@@ -1,0 +1,29 @@
+\begin{example} \label{eg:5.3.2} % EXAMPLE
+
+Evaluate $\ds \int \frac{1}{\sqrt{5+x^2}}\ dx.$
+
+\solution We recognize $a=\sqrt{5}$ and  set $x= \sqrt{5}\tan(\theta)$. This makes $dx = \sqrt{5}\sec^2(\theta)\ d\theta$. We will use the fact that $\sqrt{5+x^2} = \sqrt{5+5\tan^2(\theta)} = \sqrt{5\sec^2(\theta)} = \sqrt{5}\sec(\theta).$ Substituting, we have:
+\begin{align*}
+\int \frac{1}{\sqrt{5+x^2}}\ dx &= \int \frac{1}{\sqrt{5+5\tan^2(\theta)}}\sqrt{5}\sec^2(\theta)\ d\theta \\
+			&= \int \frac{\sqrt{5}\sec^2(\theta)}{\sqrt{5}\sec(\theta)} \ d\theta\\
+			&= \int \sec(\theta)\ d\theta\\
+			&= \ln\big|\sec(\theta)+\tan(\theta)\big|+C.
+\end{align*}
+While the integration steps are over, we are not yet done. The original problem was stated in terms of $x$, whereas our answer is given in terms of $\theta$. We must convert back to $x$.
+
+The reference triangle given in Figure~\ref{fig:trigsub}-(b) helps. With $x=\sqrt{5}\tan(\theta)$, we have 
+$$\tan(\theta) = \frac x{\sqrt{5}}\quad \text{and}\quad \sec(\theta) = \frac{\sqrt{x^2+5}}{\sqrt{5}}.$$
+This gives
+\begin{align*}
+\int \frac{1}{\sqrt{5+x^2}}\ dx &= \ln\big|\sec(\theta)+\tan(\theta)\big|+C \\
+     &= \ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C.
+\end{align*}
+We can leave this answer as is, or we can use a logarithmic identity to simplify it. Note:
+\begin{align*}
+\ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C &= \ln\left|\frac{1}{\sqrt{5}}\big(\sqrt{x^2+5}+ x\big)\right|+C \\
+   &= \ln\left|\frac{1}{\sqrt{5}}\right| + \ln\big|\sqrt{x^2+5}+ x\big|+C\\
+	&=	\ln\big|\sqrt{x^2+5}+ x\big|+C,
+\end{align*}
+where the $\ln\big(1/\sqrt{5}\big)$ term is absorbed into the constant $C$.
+
+\end{example}

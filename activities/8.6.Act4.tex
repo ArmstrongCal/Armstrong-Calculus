@@ -1,0 +1,32 @@
+\begin{activity} \label{8.6.Act4}
+Find a power series expansion for $\ln(1+x)$ centered at $x=0$ and determine its interval of convergence. ({\bf Hint}: Use the Taylor series expansion for $\ds \frac{1}{1+x}$ centered at $x=0$.)
+
+
+
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+ Using the Taylor series
+    \[\frac{1}{1-x} = \sum_{k=0}^{\infty} x^k\]
+    for $-1 < x < 1$ we have that 
+    \[\frac{1}{1+x} = \sum_{k=0}^{\infty} (-1)^k x^k.\] 
+    Integrating the left and right sides of this last equation gives us 
+    \[\ln(1+x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{k+1}}{k+1} + C\]
+    for $-1 < x < 1$. Since $\ln(1) = 0$ we have that 
+    \[0 = \sum_{k=0}^{\infty} (-1)^k \frac{0^{k+1}}{k+1} + C\]
+    and so $C = 0$. We conclude that 
+    \[\ln(1+x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{k+1}}{k+1}.\]
+    for $-1 < x < 1$. 
+    
+\end{activitySolution}
+\aftera

@@ -1,0 +1,89 @@
+%\mtable{.55}{Plots of sequences in Example \ref{ex_seq7}.}{fig:seq7}{%
+%\begin{tabular}{c}
+%\myincludegraphics{figures/figseq7a}\\
+%(a)\rule[-25pt]{0pt}{10pt}\\ 
+%\myincludegraphics{figures/figseq7b}\\
+%(b)\rule[-25pt]{0pt}{10pt}\\ 
+%\myincludegraphics{figures/figseq7c}\\
+%(c)\\
+%\end{tabular}
+%}
+%\mfigure{.6}{A plot of $\{a_n\} = \{n^2/n!\}$ in Example \ref{ex_seq7}.}{fig:seq7d}{figures/figseq7d}
+
+\begin{marginfigure}[3cm] % MARGIN FIGURE
+\subfloat[]{\margingraphics{figures/figseq7a}}
+
+\subfloat[]{\margingraphics{figures/figseq7b}}
+
+\subfloat[]{\margingraphics{figures/figseq7c}}
+\caption{Plots of sequences in Example~\ref{eg:7.1.6}.}
+\label{fig:seq7}
+\end{marginfigure}
+
+\begin{example} \label{eg:7.1.6} % EXAMPLE
+Determine the monotonicity of the following sequences.
+
+\begin{enumerate}[1)]
+\item $\ds \{a_n\} = \left\{\frac{n+1}n\right\}$
+\item	$\ds \{a_n\} = \left\{\frac{n^2+1}{n+1}\right\}$	
+\item $\ds \{a_n\} = \left\{\frac{n^2-9}{n^2-10n+26}\right\}$
+\item	$\ds \{a_n\} = \left\{\frac{n^2}{n!}\right\}$	
+\end{enumerate}
+
+\solution In each of the following, we will examine $a_{n+1}-a_n$. If $a_{n+1}-a_n >0$, we conclude that $a_n<a_{n+1}$ and hence the sequence is increasing. If $a_{n+1}-a_n<0$, we conclude that $a_n>a_{n+1}$ and the sequence is decreasing. Of course, a sequence need not be monotonic and perhaps neither of the above will apply.
+
+We also give a scatter plot of each sequence. These are useful as they suggest a pattern of monotonicity, but analytic work should be done to confirm a graphical trend.
+
+\begin{enumerate}[1)]
+\item	
+\begin{align*}
+a_{n+1}-a_n &= \frac{n+2}{n+1} - \frac{n+1}{n} \\		
+&= \frac{(n+2)(n)-(n+1)^2}{(n+1)n} \\
+&=	\frac{-1}{n(n+1)} \\
+&<0 \quad\text{ for all $n$.}
+\end{align*}
+				
+Since $a_{n+1}-a_n<0$ for all $n$, we conclude that the sequence is decreasing.
+
+\item	
+\begin{align*}	
+a_{n+1}-a_n &= \frac{(n+1)^2+1}{n+2} - \frac{n^2+1}{n+1} \\		
+&= \frac{\big((n+1)^2+1\big)(n+1)- (n^2+1)(n+2)}{(n+1)(n+2)}\\
+&=	\frac{n^2+4n+1}{(n+1)(n+2)} \\
+&> 0 \quad \text{ for all $n$.}
+\end{align*}
+					
+Since $a_{n+1}-a_n>0$ for all $n$, we conclude the sequence is increasing.
+
+\item We can clearly see in Figure \ref{fig:seq7}-(c), where the sequence is plotted, that it is not monotonic. However, it does seem that after the first 4 terms it is decreasing. To understand why, perform the same analysis as done before:
+\begin{align*}
+a_{n+1}-a_n &= \frac{(n+1)^2-9}{(n+1)^2-10(n+1)+26} - \frac{n^2-9}{n^2-10n+26} \\		
+&= \frac{n^2+2n-8}{n^2-8n+17}-\frac{n^2-9}{n^2-10n+26}\\
+&= \frac{(n^2+2n-8)(n^2-10n+26)-(n^2-9)(n^2-8n+17)}{(n^2-8n+17)(n^2-10n+26)}\\
+&= \frac{-10n^2+60n-55}{(n^2-8n+17)(n^2-10n+26)}.
+\end{align*}
+
+We want to know when this is greater than, or less than, $0$, therefore we are only concerned with the numerator. Using the quadratic formula, we can determine that $-10n^2+60n-55=0$ when $n\approx 1.13, 4.87$. So for $n<1.13$, the sequence is decreasing. Since we are only dealing with the natural numbers, this means that $a_1 > a_2$.
+
+Between $1.13$ and $4.87$, i.e., for $n=2$, $3$ and $4$, we have that $a_{n+1}>a_n$ and the sequence is increasing. (That is, when $n=2$, $3$ and $4$, the numerator $-10n^2+60n+55$ from the fraction above is $>0$.)
+
+When $n> 4.87$, i.e, for $n\geq 5$, we have that $-10n^2+60n+55<0$, hence $a_{n+1}-a_n<0$, so the sequence is decreasing.
+
+In short, the sequence is simply not monotonic. However, it is useful to note that for $n\geq 5$, the sequence is monotonically decreasing. 
+
+\item Again, the plot in Figure \ref{fig:seq7d} shows that the sequence is not monotonic, but it suggests that it is monotonically decreasing after the first term. We perform the usual analysis to confirm this.
+\begin{align*}	
+a_{n+1}-a_n &= \frac{(n+1)^2}{(n+1)!} - \frac{n^2}{n!} \\
+&= \frac{(n+1)^2-n^2(n+1)}{(n+1)!} \\
+&=	\frac{-n^3+2n+1}{(n+1)!}
+\end{align*}
+					
+When $n=1$, the above expression is $>0$; for $n\geq 2$, the above expression is $<0$. Thus this sequence is not monotonic, but it is monotonically decreasing after the first term.
+\end{enumerate}
+\end{example}
+
+\begin{marginfigure}[-6cm] % MARGIN FIGURE
+\margingraphics{figures/figseq7d}
+\caption{Plots of sequences in Example~\ref{eg:7.1.6}.}
+\label{fig:seq7d}
+\end{marginfigure}

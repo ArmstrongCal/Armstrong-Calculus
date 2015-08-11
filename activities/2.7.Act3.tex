@@ -1,0 +1,65 @@
+\begin{activity} \label{A:2.7.3}  
+  For each of the following curves, use implicit differentiation to find $dy/dx$, $d^2y/dx^2$, and determine the equation of the tangent line at the given point.
+  	\ba
+		\item $x^3 - y^3 = 6xy$, \ \ $(-3,3)$
+		\item $\sin(y) + y = x^3 + x$, \ \ $(0,0)$
+		\item $x e^{-xy} = y^2$, \ \ $(0.571433,1)$
+	\ea
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Note that $\frac{d}{dx}[6xy]$ requires the product rule.
+	\item With $y$ being a function of $x$, $\frac{d}{dx}[\sin(y)]$ requires the chain rule.
+	\item To calculate $\frac{d}{dx}[x e^{-xy}]$, first use the product rule and temporarily defer computing $\frac{d}{dx}[e^{-xy}]$.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Note that $\frac{d}{dx}[6xy]$ requires the product rule; don't forget to use the chain rule for $\frac{d}{dx}[y^3]$.
+	\item With $y$ being a function of $x$, $\frac{d}{dx}[\sin(y)]$ requires the chain rule.
+	\item To calculate $\frac{d}{dx}[x e^{-xy}]$, first use the product rule; when you compute compute $\frac{d}{dx}[e^{-xy}]$, note that this uses the chain rule and that differentiating the inner function will again use the product rule.
+\ea
+\end{bighint}
+\begin{activitySolution}
+	\ba
+		\item Differentiating with respect to $x$,
+		$$\frac{d}{dx}[x^3 - y^3] = \frac{d}{dx}[6xy],$$
+		so that by the chain and product rules we have
+		$$3x^2 - 3y^2 \frac{dy}{dx} = 6x\frac{dy}{dx}+ 6y.$$
+		Rearranging to get all terms with $\frac{dy}{dx}$ on the same side, it follows that
+		$$-3y^2 \frac{dy}{dx} - 6x\frac{dy}{dx} = 6y-3x^2,$$
+		and thus
+		$$\frac{dy}{dx}(-3y^2 - 6x) = 6y-3x^2.$$
+		Finally, we have established that 
+		$$\frac{dy}{dx} = \frac{6y-3x^2}{-3y^2 - 6x},$$
+		so evaluating at
+		 $(-3,3)$, we have
+		 $\left. \frac{dy}{dx} \right|_{(-3,3)} = \frac{6(3)-3(-3)^2}{-3(3)^2 - 6(3)} = -1.$
+		 Thus, the tangent line has equation $y - 3 = -1(x+3).$
+		\item After differentiating with respect to $x$, we have
+		 $$\cos(y) \frac{dy}{dx} + \frac{dy}{dx} = 3x^2 + 1.$$
+		 Taking the usual steps to solve for $\frac{dy}{dx}$, we find that
+		 $$\frac{dy}{dx} = \frac{3x^2 + 1}{\cos(y) + 1}.$$
+		 Evaluating the slope of the tangent line at
+		 $(0,0)$, we have
+		 $\left. \frac{dy}{dx} \right|_{(0,0)} = \frac{1}{2},$
+		 and thus the tangent line at $(0,0)$ has equation $y = \frac{1}{2}x$.		
+		\item When we differentiate both sides with respect to $x$, 
+		$$\frac{d}{dx}[x e^{-xy}] = \frac{d}{dx}[y^2],$$
+		we first observe that the product rule is needed on the left and the chain rule on the right.  Applying those rules, we have
+		$$x\frac{d}{dx}[e^{-xy}] + e^{-xy} = 2y\frac{dy}{dx}.$$
+		Next, we apply the chain rule to differentiate $e^{-xy}$, which yields
+		$$xe^{-xy}\frac{d}{dx}[-xy] + e^{-xy} = 2y\frac{dy}{dx}.$$
+		Finally, to complete the process of differentiation, we use the product rule and get
+		$$xe^{-xy}(-x\frac{dy}{dx} - y) + e^{-xy} = 2y\frac{dy}{dx}.$$
+		To solve for $\frac{dy}{dx}$, we first expand to have
+		$$-x^2e^{-xy}\frac{dy}{dx} - xye^{-xy} + e^{-xy} = 2y\frac{dy}{dx},$$
+		and then the usual algebraic work may be done to deduce that
+		$$\frac{dy}{dx} = \frac{-xye^{-xy} + e^{-xy}}{x^2e^{-xy}+2}.$$
+		Evaluating at the point
+		$(0.571433,1)$, it follows that the slope of the tangent line is
+		$$\left. \frac{dy}{dx} \right|_{(0.571433,1)} = \frac{-0.571433 e^{-0.571433} + e^{-0.571433}}{(0.571433)^2e^{-0.571433}+2} \approx 0.110794.$$
+		Thus, the tangent line is given by $y - 1 = 0.110794(x - 0.571433)$. 
+	\ea
+\end{activitySolution}
+\aftera

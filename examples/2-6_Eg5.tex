@@ -1,0 +1,59 @@
+\begin{example} \label{Ex:2.6.Eg5}
+Find the derivatives of the following functions:
+\begin{enumerate}[1)]
+\item $y = \sec(3x)$
+%\item $y= e^{3x}$
+%\item $y = \sin{2x}$
+\item $y= \sqrt{4x^3-2x^2}$
+\item $y = e^{-x^2}$
+\end{enumerate}
+
+\solution
+\begin{enumerate}[1)]
+\item Consider $y = \sec(3x)$. Recognize that this is a composition of functions, where $f(x) = \sec x$ and $g(x) = 3x$. Thus 
+\[ y' = f'(g(x))\cdot g'(x) = \sec(3x)\tan(3x)\cdot 3 = 3\sec(3x)\tan(3x).\] 
+Using the Leibniz notation to differentiate this function, we first rewrite
+\[ y = \sec(u) \quad \mbox{where} \quad u = 3x. \]
+Their individual respective derivatives are
+\[ \frac{dy}{du} = \sec(u) \tan(u) \quad \mbox{and} \quad \frac{du}{dx} = 3; \]
+therefore,
+\begin{align*}
+\frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\
+&= \sec(u) \tan(u) \cdot 3 \\
+&= 3\sec(3x)\tan(3x).
+\end{align*}
+		
+\item Recognize that $y = \sqrt{4x^3-2x^2}$ is the composition of $f(x) = \sqrt{x}$ and $g(x) = 4x^3-2x^2$. Also, recall that 
+$$\frac{d}{dx}\Big(\sqrt{x}\Big) = \frac{1}{2\sqrt{x}}.$$ 
+This leads us to:
+\begin{align*}
+y' &= \frac{1}{2\sqrt{4x^3-2x^2}} \cdot (12x^2-4x) \\
+&= \frac{12x^2-4x}{2\sqrt{4x^3-2x^2}}= \frac{4x(3x-1)}{2\sqrt{4x^3-2x^2}} \\
+&= \frac{2x(3x-1)}{\sqrt{4x^3-2x^2}}.
+\end{align*}
+Using the Leibniz notation to differentiate this function, we first rewrite
+\[ y = \sqrt{u} \quad \mbox{where} \quad u = 4x^3-2x^2. \]
+Their individual respective derivatives are
+\[ \frac{dy}{du} = \frac{1}{2}u^{-1/2} \quad \mbox{and} \quad \frac{du}{dx} = 12x^2 - 4x; \]
+therefore,
+\begin{align*}
+\frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\
+&= \frac{1}{2\sqrt{u}} \cdot 12x^2-4x \\
+&= \frac{2x(3x-1)}{\sqrt{4x^3-2x^2}}.
+\end{align*}
+		
+\item Recognize  that $y = e^{-x^2}$ is the composition of $f(x) = e^x$ and $g(x) = -x^2$. Remembering that $f'(x) = e^x$, we have 
+$$y' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.$$
+Using the Leibniz notation to differentiate this function, we first rewrite
+\[ y = e^{u} \quad \mbox{where} \quad u = -x^2. \]
+Their individual respective derivatives are
+\[ \frac{dy}{du} = e^u \quad \mbox{and} \quad \frac{du}{dx} = -2x; \]
+therefore,
+\begin{align*}
+\frac{dy}{dx} &= \frac{dy}{du} \cdot \frac{du}{dx} \\
+&= e^u \cdot (-2x) \\
+&= (-2x)e^{-x^2}.
+\end{align*}
+\end{enumerate}
+
+\end{example}

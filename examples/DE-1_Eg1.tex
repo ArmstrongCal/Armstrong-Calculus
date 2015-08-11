@@ -1,0 +1,24 @@
+%\begin{marginfigure} % MARGIN FIGURE
+%\margingraphics{figures/6_4_DamEx.eps}
+%\caption{A trapezoidal dam that is 25 feet tall, 60 feet wide at its base, 90 feet wide at its top, with the water line 5 feet down from the top of its face.} \label{F:6.4.DamEx}
+%\end{marginfigure}
+
+\begin{example} \label{eg:DE.1.1} % EXAMPLE
+Suppose there are 100 bacteria at time $0$ and $200$ bacteria after $10$ seconds. How many bacteria will there be 1 minute from time $0$?
+
+\solution First, we have to solve the equation $$ \frac{dP}{dt} = kP.$$ We claim that a solution is given by $$ P(t) = Ce^{kt},$$ where $C$ is a constant. To check our claim, we take the derivative of $P(t)$ with respect to $t$.
+\[ \frac{dp}{dt} = Cke^{kt} = kP\]
+So our claim is correct. 
+
+We do not know $C$ or $k$ but we can use the given information. At time $0$, we have $P=100$, or $P(0)=100$. Similarly, we have $P(10)=200$. Thus,
+\[100 = P(0) = Ce^{k \cdot 0} = C \]
+and
+\[ 200 = P(10) = 100e^{k \cdot 10} \]
+Solving for $k$, we have $k=\frac{\ln (2)}{10}$ and $P(t) = 100e^{\frac{t \ln (2)}{10}}$. At $t=60$, the number of bacteria is $P(60) = 100e^{\frac{60 \ln (2)}{10}} \approx 6400$ bacteria. 
+
+Does this mean that there must be exactly
+$6400$ bacteria on the plate at $60$ seconds? No! We have made assumptions that might not be exactly true.
+But if our assumptions are reasonable, then there will be approximately $6400$ bacteria. Also note
+that in real life $P$ is a discrete quantity, not a real number. However, our model has no problem
+saying that for example at $61$ seconds, $P(61) \approx  6859.35$.
+\end{example}

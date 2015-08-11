@@ -1,0 +1,37 @@
+\begin{activity} \label{A:2.3.1}  Use the product rule to answer each of the questions below.  Throughout, be sure to carefully label any derivative you find by name.  That is, if you're given a formula for $f(x)$, clearly label the formula you find for $f'(x)$.  It is not necessary to algebraically simplify any of the derivatives you compute.
+\ba
+	\item Let $m(w)=3w^{17} 4^w$.  Find $m'(w)$.
+	\item Let $h(t) = (\sin(t) + \cos(t))t^4$.  Find $h'(t)$.
+	\item Determine the slope of the tangent line to the curve $y = f(x)$ at the point where $a = 1$ if $f$ is given by the rule $f(x) = e^x \sin(x)$.
+	\item Find the tangent line approximation $L(x)$ to the function $y = g(x)$ at the point where $a = -1$ if $g$ is given by the rule $g(x) = (x^2 + x) 2^x$.
+\ea
+
+\end{activity}
+\begin{smallhint}
+\ba
+	\item Let the first function be $3w^{17}$.
+	\item Let the first function be $(\sin(t) + \cos(t))$.
+	\item Remember that the slope of the tangent line to $y = f(x)$ at $(a,f(a))$ is given by $f'(a)$.
+	\item Remember that $L(x) = g(a) + g'(a)(x-a).$
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Let the first function be $3w^{17}$ and the second function be $4^w$.
+	\item Let the first function be $(\sin(t) + \cos(t))$ and the second function be $t^4$.
+	\item Remember that the slope of the tangent line to $y = f(x)$ at $(a,f(a))$ is given by $f'(a)$.
+	\item Remember that $L(x) = g(a) + g'(a)(x-a).$  In differentiating $g$, let the first function be $(x^2 + x)$.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item By the product rule, 
+	$$m'(w) = 3w^{17} \cdot 4^w \ln(4) + 4^w \cdot 3w^17.$$ 
+	\item By the product rule, 
+	$$h'(t) = (\sin(t) + \cos(t)) \cdot 4t^3 + t^4 \cdot (\cos(t) - \sin(t)).$$ 
+	\item To determine the slope of the tangent line at $a = 1$, we want to find $f'(1)$.  Since $f(x) = e^x \sin(x)$, the product rule tells us that $f'(x) = e^x \cdot \cos(x) + \sin(x) \cdot e^x$.  Thus, $f'(1) = e^1 \cdot \cos(1) + \sin(1) \cdot e^1 = e(\cos(1) + \sin(1)) \approx 3.756$.
+	\item First, observe that $g(-1) = ((-1)^2 - 1) \cdot 2^{-1} = 0$.  Further, by the product rule, $g'(x) = (x^2 + x) \cdot 2^x \ln(2) + 2^x \cdot (2x + 1)$, and therefore $g'(-1) = ((-1)^2 - 1) \cdot 2^{-1} \ln(2) + 2^{-1} \cdot (2(-1) + 1) = 0 + \frac{1}{2}(-1) = -\frac{1}{2}.$  Therefore,
+	$$L(x) = g(-1) + g'(-1)(x+1) = 0 - \frac{1}{2}(x+1) = -\frac{1}{2}(x+1).$$
+\ea
+\end{activitySolution}
+\aftera

@@ -1,0 +1,71 @@
+\begin{activity} \label{8.3.Act8} Consider the series defined by
+\begin{equation} \label{eq:8.3_ratio_example}
+\sum_{k=1}^{\infty} \frac{2^k}{3^k-k}.
+\end{equation}
+This series is not a geometric series, but this activity will illustrate how we might compare this series to a geometric one. Recall that a series $\sum a_k$ is geometric if the ratio $\frac{a_{k+1}}{a_k}$ is always the same. For the series in (\ref{eq:8.3_ratio_example}), note that $a_k = \frac{2^k}{3^k-k}$.
+\ba
+\item  To see if $\sum \frac{2^k}{3^k-k}$ is comparable to a geometric series, we analyze the ratios of successive terms in the series. Complete Table \ref{T:8.3.3_ratio_test}, listing your calculations to at least 8 decimal places.
+\begin{table}[ht]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|p{2in}}
+$k$   & $\frac{a_{k+1}}{a_k}$ \\
+5   & \\
+10   &  \\
+20   &  \\
+21   &  \\
+22   &  \\
+23  & \\
+24   &  \\
+25   &  \\
+\end{tabular}
+\label{T:8.3.3_ratio_test}
+\caption{Ratios of successive terms in the series $\sum \frac{2^k}{3^k-k}$}
+\end{center}
+\end{table}
+
+\item Based on your calculations in Table \ref{T:8.3.3_ratio_test}, what can we say about the ratio $\frac{a_{k+1}}{a_k}$ if $k$ is large?
+
+\item Do you agree or disagree with the statement: ``the series $\sum \frac{2^k}{3^k-k}$ is approximately geometric when $k$ is large''? If not, why not? If so, do you think the series $\sum \frac{2^k}{3^k-k}$ converges or diverges? Explain.
+
+
+
+\ea
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+\ba
+	\item Ratios of successive summands in the series are shown (to 10 decimal places) in the following table. 
+%\begin{table}[ht]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|p{2in}}
+$k$   & $\frac{a_{k+1}}{a_k}$ \\
+5   & 0.6583679115 \\
+10   & 0.6665951585 \\
+20   & 0.6666666642 \\
+21   & 0.6666666658 \\
+22   & 0.6666666664  \\
+23  & 0.6666666666 \\
+24   & 0.6666666666 \\
+25   & .6666666667 \\
+\end{tabular}
+%\label{T:8.3.3_ratio_test_b}
+%\caption{Ratios of successive summands in the series $\sum \frac{2^k}{3^k-k}$}
+\end{center}
+%\end{table}
+    \item The calculations in the table in part (a) seem to indicate that the ratio $\frac{a_{k+1}}{a_k}$ is roughly $\frac{2}{3}$ when $k$ is large.
+    \item Since $\frac{a_{k+1}}{a_k} \approx \frac{2}{3}$ for large $k$, the series $\sum \frac{2^k}{3^k-k}$ is approximately the same as $\sum \left(\frac{2}{3}\right)^k$ when $k$ is large. So the series $\sum \frac{2^k}{3^k-k}$ is approximately geometric with ratio $\frac{2}{3}$ when $k$ is large. Since the series $\sum \left(\frac{2}{3}\right)^k$ converges because the ratio is less than 1, we expect that the series $\sum \frac{2^k}{3^k-k}$ will also converge.
+\ea
+\end{activitySolution}
+\aftera 

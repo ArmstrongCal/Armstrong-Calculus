@@ -1,0 +1,111 @@
+%
+% This package adjusts the font sizes and spacing for large-print readers.
+%
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+
+\ProvidesPackage{tufte-largeprint}[2012/09/15 v1.0.0 Large-print Tufte styles]
+
+
+%
+% Adjust the font sizes and leading
+%
+
+\renewcommand\Huge{\@setfontsize\Huge{40}{48}}
+\renewcommand\huge{\@setfontsize\huge{36}{40}}
+\renewcommand\LARGE{\@setfontsize\LARGE{28}{32}}
+\renewcommand\Large{\@setfontsize\Large{24}{28}}
+\renewcommand\large{\@setfontsize\large{22}{26}}
+\renewcommand\normalsize{%
+   \@setfontsize\normalsize{18}{22}%
+   \abovedisplayskip 15\p@ \@plus4\p@ \@minus8\p@
+   \abovedisplayshortskip \z@ \@plus4\p@
+   \belowdisplayshortskip 8\p@ \@plus4\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\normalbaselineskip=22pt
+\normalsize
+\renewcommand\small{%
+   \@setfontsize\small{16}{18}%
+   \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 7\p@ \@plus4\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 10\p@ \@plus4\p@ \@minus6\p@
+               \parsep 5\p@ \@plus2\p@ \@minus\p@
+               \itemsep \parsep}
+   \belowdisplayskip \abovedisplayskip
+}
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize{14}{16}%
+   \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 9\p@ \@plus3\p@ \@minus5\p@
+               \parsep 4.5\p@ \@plus2\p@ \@minus\p@
+               \itemsep \parsep}
+   \belowdisplayskip \abovedisplayskip
+}
+\renewcommand\scriptsize{\@setfontsize\scriptsize{12}{14}}
+\renewcommand\tiny{\@setfontsize\tiny{10}{14}}
+
+
+%
+% Indentation spacing
+%
+
+\setlength{\parindent}{1.5em}%
+\setlength{\parskip}{0pt}%
+\setlength{\RaggedRightRightskip}{\z@ plus 0.08\hsize}
+
+% Paragraph indentation and separation for normal text
+\def\@tufte@reset@par{%
+  \setlength{\RaggedRightParindent}{1.5em}%
+  \setlength{\JustifyingParindent}{1.5em}%
+  \setlength{\parindent}{1.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\def\@tufte@margin@par{%
+  \setlength{\RaggedRightParindent}{1em}%
+  \setlength{\JustifyingParindent}{1em}%
+  \setlength{\parindent}{1em}%
+  \setlength{\parskip}{0pt}%
+}
+
+
+\setlength\leftmargini   {1.5em}
+\setlength\leftmarginii  {1.5em}
+\setlength\leftmarginiii {1.5em}
+\setlength\leftmarginiv  {1.5em}
+\setlength\leftmarginv   {1.5em}
+\setlength\leftmarginvi  {1.5em}
+\setlength\labelsep      {1em}
+\setlength\labelwidth    {\leftmargini}
+\addtolength\labelwidth{-\labelsep}
+
+%
+% Adjust the page margins
+%
+
+\geometry{letterpaper,left=1in,top=1in,headsep=\baselineskip,textwidth=26pc,marginparsep=2pc,marginparwidth=12pc,textheight=28\baselineskip,headheight=\baselineskip}%
+
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \geometry{a4paper,left=24.8mm,top=27.4mm,headsep=\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=32\baselineskip,headheight=\baselineskip}
+}{}
+
+% TODO: adjust for A5 paper, too
+
+%
+% Prevent a bunch of line overruns by allowing sloppier paragraphs
+%
+
+\sloppy
+
+%
+% That's it!
+%
+\endinput

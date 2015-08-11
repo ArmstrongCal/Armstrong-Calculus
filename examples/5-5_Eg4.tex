@@ -1,0 +1,17 @@
+\begin{marginfigure}[4cm]
+\margingraphics{figs/5/improperfgb} %EXAMPLE 195b APEX
+\caption{A graph of $f(x)=\frac{1}{\sqrt{x^2-x}}$ and $g(x)= \frac{1}{x}$ in Example \ref{eg:5.5.4}}
+\label{F:5-5_Eg4}
+\end{marginfigure}
+
+\begin{example} \label{eg:5.5.4} % EXAMPLE
+Determine the convergence of the following improper integral:
+$\ds  \int_{-1}^1\frac{1}{\sqrt{x^2-x}}\ dx.$
+
+\solution
+Note that for large values of $x$, $\ds \frac{1}{\sqrt{x^2-x}} \approx \frac{1}{\sqrt{x^2}} =\frac{1}{x}$. We know from Activity \ref{A:5.5.4} that  $\ds \int_3^\infty \frac1x\ dx$ diverges, so we seek to compare the original integrand to $1/x$.
+
+It is easy to see that when $x>0$, we have $x = \sqrt{x^2} > \sqrt{x^2-x}$. Taking reciprocals reverses the inequality, giving $$\frac1x < \frac1{\sqrt{x^2-x}}.$$
+
+We conclude that since $\ds\int_3^\infty\frac1x\ dx$ diverges, $\ds\int_3^\infty\frac1{\sqrt{x^2-x}}\ dx$ diverges as well. Figure \ref{F:5-5_Eg4} illustrates this.
+\end{example}

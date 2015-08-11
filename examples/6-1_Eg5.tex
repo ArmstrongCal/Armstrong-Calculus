@@ -1,0 +1,15 @@
+\begin{example} \label{eg:6.1.5} % EXAMPLE
+Find the volume of the solid of revolution generated when the finite region $S$ that lies between $y = x^2$ and $y = x$ is revolved about the line $y = -1$.
+
+\solution 
+Graphing the region between the two curves in the first quadrant between their points of intersection ($(0,0)$ and $(1,1)$) and then revolving the region about the line $y = -1$, we see the solid shown in Figure~\ref{F:6.2.Ex4}.  Each slice of the solid perpendicular to the axis of revolution is a washer, and the radii of each washer are governed by the curves $y = x^2$ and $y = x$.  But we also see that there is one added change:  the axis of revolution adds a fixed length to each radius.  In particular, the inner radius of a typical slice, $r(x)$, is given by $r(x) = x^2 + 1$, while the outer radius is $R(x) = x+1$.  Therefore, the volume of a typical slice is
+$$V_{\mbox{\small{slice}}} = \pi[ R(x)^2 - r(x)^2 ] \triangle x = \pi \left[ (x+1)^2 - (x^2 + 1)^2 \right] \triangle x.$$
+Finally, we integrate to find the total volume, and 
+$$V = \int_0^1  \pi \left[ (x+1)^2 - (x^2 + 1)^2 \right] \, dx = \frac{7}{15} \pi.$$
+\end{example}
+
+\begin{marginfigure}[-10cm] %MARGIN FIGURE
+\margingraphics{figures/6_2_Ex4.eps}
+\caption{The solid of revolution described in Example~\ref{eg:6.1.5}.} \label{F:6.2.Ex4}
+\end{marginfigure}
+

@@ -1,0 +1,132 @@
+\section{Limits involving infinity}\label{S:1.2.Infinity}
+
+\begin{goals}
+\item What does it mean to say that $\ds \lim_{x \to \infty} f(x) = L$ and $\ds \lim_{x \to a} f(x) = \infty$?
+\item What is the connection between limits involving infinity and the asymptotes of a function?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection{Introduction}
+
+\begin{marginfigure}[2.25in]
+\margingraphics{figures/2_8_Infty.eps}
+\caption{The graph of $f(x) = \frac{1}{x}$.} \label{fig:2.8.Infty}
+\end{marginfigure}
+
+The concept of infinity\index{infinity}, denoted $\infty$, arises naturally in calculus, like it does in much of mathematics.  It is important to note from the outset that $\infty$ is a concept, but not a number itself.  Indeed, the notion of $\infty$ naturally invokes the idea of limits.  Consider, for example, the function $f(x) = \frac{1}{x}$, whose graph is pictured in Figure~\ref{fig:2.8.Infty}.
+
+We note that $x = 0$ is not in the domain of $f$, so we may naturally wonder what happens as $x \to 0$.  As $x \to 0^+$, we observe that $f(x)$ \emph{increases without bound}.  That is, we can make the value of $f(x)$ as large as we like by taking $x$ closer and closer (but not equal) to $0$, while keeping $x > 0$.  This is a good way to think about what infinity represents:  a quantity is tending to infinity if there is no single number that the quantity is always less than. 
+
+Recall that when we write $\ds \lim_{x \to a} f(x) = L$, this means that we can make $f(x)$ as close to $L$ as we'd like by taking $x$ sufficiently close (but not equal) to $a$.  We thus expand this notation and language to include the possibility that either $L$ or $a$ can be $\infty$.  For instance, for $f(x) = \frac{1}{x}$, we now write
+$$\lim_{x \to 0^+} \frac{1}{x} = \infty,$$
+by which we mean that we can make $\frac{1}{x}$ as large as we like by taking $x$ sufficiently close (but not equal) to $0$.  When we write the limit is equal to $\infty$ or $-\infty$, we call that limit an {\em infinite limit}.
+
+Note that we are not saying the limit exists.  It doesn't since the function does not approach a single, unique real number as $x \to 0^+$.  We just give a special designation for a limit that does not exist because the function grows without bound in the positive or negative direction. 
+
+In a similar way, we naturally write
+$$\lim_{x \to \infty} \frac{1}{x} = 0,$$
+since we can make $\frac{1}{x}$ as close to $0$ as we'd like by taking $x$ sufficiently large (i.e., by letting $x$ increase without bound).  This limit does exist because $0$ is a single, unique real number.
+
+In general, we understand the notation $\ds \lim_{x \to a} f(x) = \infty$ to mean that we can make $f(x)$ as large as we'd like by taking $x$ sufficiently close (but not equal) to $a$, and the notation $\ds \lim_{x \to \infty} f(x) = L$ to mean that we can make $f(x)$ as close to $L$ as we'd like by taking $x$ sufficiently large.  This notation applies to left- and right-hand limits, plus we can also use limits involving $-\infty$.  For example, returning to Figure~\ref{fig:2.8.Infty} and $f(x) = \frac{1}{x}$, we can say that
+$$\lim_{x \to 0^-} \frac{1}{x} = -\infty \ \ \mbox{and} \ \ \lim_{x \to -\infty} \frac{1}{x} = 0.$$
+Finally, we write
+$$\lim_{x \to \infty} f(x) = \infty$$
+when we can make the value of $f(x)$ as large as we'd like by taking $x$ sufficiently large.  For example, $$\lim_{x \to \infty} x^2 = \infty.$$
+
+\input{previews/1.2.PA1} % PREVIEW ACTIVITY
+
+Note particularly that limits involving infinity identify \emph{vertical} and \emph{horizontal asymptotes} \index{asymptote} \index{asymptote!vertical} \index{asymptote!horizontal} of a function.  If $\ds \lim_{x \to a} f(x) = \infty$, then $x = a$ is a vertical asymptote of $f$, while if $\ds \lim_{x \to \infty} f(x) = L$, then $y = L$ is a horizontal asymptote of $f$.  Similar statements can be made using $-\infty$, as well as with left- and right-hand limits as $x \to a^-$ or $x \to a^+$.
+
+%---------------------------------------
+% SUBSECTION INFINITE LIMITS
+%---------------------------------------
+\subsection*{Infinite Limits}
+
+We can easily determine if $\ds \lim_{x \to a} f(x)$ is an infinite limit by observing the graph of $f(x)$.  But what if we have no graph?  How do we determine if $\ds \lim_{x \to a} f(x)$ is an infinite limit or not?
+
+In Section~\ref{S:1.1.Limits}, we learned the method of Direct Substitution to evaluate limits.  Now, we can use that method to determine if a limit is an infinite limit.  Certainly, if
+\[ \lim_{x \to a} f(x) = f(a) = \pm \infty, \]
+then we have an infinite limit.  However, we may also have an infinite limit if
+\[ \lim_{x \to a} f(x) = f(a) = \frac{\mbox{a nonzero real number}}{0} \ . \]
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/1/figoneoverxsquared.pdf}
+\caption{Graphing $f(x) = 1/x^2$ for values of $x$ near 0.}\label{fig:oneoverxsquared}
+\end{marginfigure}
+
+Consider $f(x) = 1/x^2$ as shown in Figure~\ref{fig:oneoverxsquared} and $\ds \lim_{x \to 0} f(x)$. Note that if evaluate $f(0)$, we have
+\[ f(0) = \frac{1}{0^2} = \frac{1}{0}. \]
+But also observe in the graph how, as $x$ approaches $0$ from both the left and the right, $f(x)$ grows without bound. So we can state that 
+\[ \lim_{x \to 0} \frac{1}{x^2}=\infty.\]
+
+Consider $f(x) = 1/x$ as shown in Figure~\ref{fig:2.8.Infty} one more time.  Again, if we evaluate $f(0)$, then we have
+\[ f(0) = \frac{1}{0}, \]
+but observing the graph, we see that the function grows without bound in different directions from the left and right.  Since that happens, we do not give a special designation to this limit and simply say that the limit as $x \to 0$ does not exist, i.e.,
+\[ \lim_{x \to 0} \frac{1}{x} = \enskip \mbox{Does Not Exist.} \]
+
+So we can determine if we have an infinite limit when by Direct Substitution, we have $f(a) = \frac{\mbox{a nonzero real number}}{0}$ and then comparing the individual left- and right-sided limits.  If they're the same, then we give the appropriate special designation.  If not, then we simply say the limit does not exist.
+
+\input{examples/1-2_Eg1} % EXAMPLE
+
+\input{examples/1-2_Eg2} % EXAMPLE
+
+\input{activities/1.2.Act1} % ACTIVITY
+
+%-------------------------------------------
+% SUBSECTION LIMITS AT INFINITY
+%-------------------------------------------
+\subsection{Limits at Infinity}
+
+In precalculus classes, it is common to study the \emph{end behavior} of certain families of functions, by which we mean the behavior of a function as $x \to \infty$ and as $x \to -\infty$, or the limit of the function as $x \to \infty$ and as $x \to -\infty$.
+
+For polynomial functions of the form 
+\[ p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots a_1 x + a_0,\] 
+the limit at infinity, or end behavior, depends on the sign of $a_n$ and whether the highest power $n$ is even or odd.  If $n$ is even and $a_n$ is positive, then $\ds \lim_{x \to \infty} p(x) = \infty$ and $\ds \lim_{x \to -\infty} p(x) = \infty$, as in the plot of $g$ in Figure~\ref{fig:1-2_Enda}.  If instead $a_n$ is negative, then $\ds \lim_{x \to \infty} p(x) = -\infty$ and $\ds \lim_{x \to -\infty} p(x) = -\infty$.  In the situation where $n$ is odd, then either $\ds \lim_{x \to \infty} p(x) = \infty$ and $\ds \lim_{x \to -\infty} p(x) = \infty$ (which occurs when $a_n$ is positive, as in the graph of $f$ in Figure~\ref{fig:1-2_Enda}), or $\ds \lim_{x \to \infty} p(x) = \infty$ and $\ds \lim_{x \to -\infty} p(x) = \infty$ (when $a_n$ is negative).
+
+\begin{marginfigure}[-7cm] % MARGIN FIGURE
+\margingraphics{figs/1/1-2_Enda.pdf}
+\caption{The graphs of $f(x) = x^3 - 16x$ and $g(x) = x^4 - 16x^2-8$.}\label{fig:1-2_Enda}
+\end{marginfigure}
+
+\begin{marginfigure} % MARGIN FIGURE
+\margingraphics{figs/1/1-2_Endb.pdf}
+\caption{The graph of $f(x) =\sin(x)$.}\label{fig:1-2_Endb}
+\end{marginfigure}
+
+A function can fail to have a limit as $x \to \infty$.  For example, consider the plot of the sine function at right in Figure~\ref{fig:1-2_Endb}.  Because the function continues oscillating between $-1$ and $1$ as $x \to \infty$, we say that $\ds \lim_{x \to \infty} \sin(x)$ does not exist.
+
+Finally, it is straightforward to analyze the behavior of any rational function as $x \to \infty$.  Consider, for example, the function 
+\[ q(x) =  \frac{3x^2 - 4x + 5}{7x^2 + 9x - 10}. \]
+Note that both $(3x^2 - 4x + 5) \to \infty$ as $x \to \infty$ and $(7x^2 + 9x - 10) \to \infty$ as $x \to \infty$.  Here we say that $\ds \lim_{x \to \infty} q(x)$ has indeterminate form $\ds \frac{\infty}{\infty}$, much like we did when we encountered limits of the form $\ds \frac{0}{0}$.  We can determine the value of this limit through a standard algebraic approach.  Multiplying the numerator and denominator each by $\frac{1}{x^2}$, we find that
+\begin{eqnarray*}
+\lim_{x \to \infty} q(x) & = & \lim_{x \to \infty} \frac{3x^2 - 4x + 5}{7x^2 + 9x - 10} \cdot \frac{\frac{1}{x^2}}{\frac{1}{x^2}} \\
+& = & \lim_{x \to \infty} \frac{3 - 4\frac{1}{x} + 5\frac{1}{x^2}}{7 + 9\frac{1}{x} - 10\frac{1}{x^2}} \\
+& = & \frac{3}{7}
+\end{eqnarray*}
+since $\frac{1}{x^2} \to 0$ and $\frac{1}{x} \to 0$ as $x \to \infty$.  This shows that the rational function $q$ has a horizontal asymptote at $y = \frac{3}{7}$.  A similar approach can be used to determine the limit of any rational function as $x \to \infty$.
+
+\input{activities/1.2.Act2} % ACTIVITY
+
+%-------------
+% SUMMARY
+%-------------
+\begin{summary}
+\item With respect to the standard notation of a limit
+\[ \lim_{x \to a} f(x) = L, \]
+we can let express limits where either the value $a$ or $L$ grows without bound in the positive or negative directions.
+
+\item The notions of {\em vertical and horizontal asymptotes} are directly connected to infinite limits and limits at infinity respectively.
+
+\item The {\em end behavior} of a function is directly connected to limits at infinity.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/1-2.Infinity(Ex)} 
+
+\cleardoublepage

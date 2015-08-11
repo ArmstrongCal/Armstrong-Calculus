@@ -1,0 +1,16 @@
+\begin{marginfigure}[8cm]
+\margingraphics{figures/fignolimit2} %APEX limit infinity example
+\caption{Observing infinite limit as $x\to 1$ in Example \ref{Ex:1.4.Eg4}.}\label{fig:1.4.Eg4}
+\end{marginfigure}
+
+\begin{example} \label{Ex:1.4.Eg4}
+Find $\ds \lim_{x \to 1}\frac1{(x-1)^2}$ as shown in Figure~\ref{fig:1.4.Eg4}
+
+\solution In Example~\ref{Ex:1.2.Eg1} of Section~\ref{S:1.2.Infinity}, by inspecting values of $x$ close to $1$ we concluded that this limit does not exist.  That is, it cannot equal any real number.  But the limit could be infinite.  And in fact, we see that the function does appear to be growing larger and larger, as $f(.99)=10^4$, $f(.999)=10^6$, $f(.9999)=10^8$.  A similar thing happens on the other side of $1$.  In general, let a ``large'' value $M$ be given. Let $\delta=1/\sqrt{M}$. If $x$ is within $\delta$ of $1$, i.e., if $|x-1|<1/\sqrt{M}$, then:
+\begin{align*}
+|x-1| &< \frac{1}{\sqrt{M}} \\
+(x-1)^2 &< \frac{1}{M}\\
+\frac{1}{(x-1)^2} &> M,
+\end{align*}
+which is what we wanted to show.  So we may say $\ds \lim_{x \to 1}1/{(x-1)^2}=\infty$.
+\end{example}

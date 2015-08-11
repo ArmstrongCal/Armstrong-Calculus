@@ -1,0 +1,19 @@
+\begin{example} \label{Ex:3.6.Eg4}
+A steel ball bearing is to be manufactured with a diameter of 2cm. The manufacturing process has a tolerance of $\pm 0.1$ mm in the diameter. Given that the density of steel is about $7.85$ g/cm$^3$, estimate the propagated error in the mass of the ball bearing.
+
+\solution The mass of a ball bearing is found using the equation mass = volume $\times$ density. In this situation the mass function is a product of the radius of the ball bearing, hence it is $m = 7.85\frac43\pi r^3$. The differential of the mass is $$dm = 31.4\pi r^2 dr.$$ The radius is to be $1$ cm; the manufacturing tolerance in the radius is $\pm 0.05$ mm, or $\pm 0.005$ cm. The propagated error is approximately:
+\begin{align*}
+\Delta m & \approx dm \\
+&= 31.4\pi (1)^2 (\pm 0.005) \\
+&= \pm 0.493\text{ g}
+\end{align*}
+Is this error significant? It certainly depends on the application, but we can get an idea by computing the \textit{relative error}. The ratio between amount of error to the total mass is
+\begin{align*}
+\frac{dm}{m} &= \pm \frac{0.493}{7.85\frac43\pi} \\
+&=\pm \frac{0.493}{32.88}\\
+&=\pm 0.015,
+\end{align*}
+or $\pm 1.5$\%. 
+
+We leave it to the reader to confirm this, but if the diameter of the ball was supposed to be $10$ cm, the same manufacturing tolerance would give a propagated error in mass of $\pm12.33$ g, which corresponds to a \textit{percent error} of $\pm0.188$\%. While the amount of error is much greater ($12.33 > 0.493$), the percent error is much lower.
+\end{example}

@@ -1,0 +1,23 @@
+\begin{activity} \label{8.4.Act3}  Determine the number of terms it takes to approximate the sum of the convergent alternating series
+\[\sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k^4}\]
+ to within 0.0001. %(Although we will not prove it, it turns out that $\ds \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k^4} = \frac{7}{720} \pi^4$.)
+\end{activity}
+
+\begin{smallhint}
+\ba
+	\item Small hints for each of the prompts above.
+\ea
+\end{smallhint}
+\begin{bighint}
+\ba
+	\item Big hints for each of the prompts above.
+\ea
+\end{bighint}
+\begin{activitySolution}
+	First note that the sequence $\ds \left\{\frac{1}{k^4}\right\}$ decreases to 0, so the series $\ds \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k^4}$ converges by the Alternating Series Test. Let $S$ be the sum $\ds \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k^4}$ and $S_n$ the $n$th partial sum of the series. We know that 
+\[|S - S_n| < a_{n+1} = \frac{1}{(n+1)^4}.\]
+So we only need to determine the value of $n$ so that 
+\[\frac{1}{(n+1)^4} < 0.0001.\]
+This happens when $(n+1)^4 < 10000$ or when $n+1 > 10$. So $n = 10$ will do. A computer algebra system gives $S_{10} \approx 0.9469925924$ while $\frac{7}{720} \pi^4 \approx 0.9470328299$. These do agree to $0.0001$. 
+\end{activitySolution}
+\aftera 

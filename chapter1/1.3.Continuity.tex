@@ -1,0 +1,126 @@
+\section{Continuity} \label{S:1.3.Continuity}
+
+\begin{goals}
+\item What does it mean to say that a function $f$ is continuous at $x = a$?  What role do limits play in determining whether or not a function is continuous at a point?
+\item What properties do continuous functions have? 
+\item How can we use continuous functions?
+\end{goals}
+
+%--------------------------------------
+% SUBSECTION INTRODUCTION
+%--------------------------------------
+\subsection*{Introduction}
+
+In Section~\ref{S:1.1.Limits}, we learned about how the concept of limits can be used to study the trend of a function near a fixed input value.  As we study such trends, we are fundamentally interested in knowing how well-behaved the function is at the given point, say $x = a$.  In this present section, we aim to expand our perspective and develop language and understanding to quantify how the function acts and how its value changes near a particular point.  Beyond thinking about whether or not the function has a limit $L$ at $x = a$, we will also consider the value of the function $f(a)$ and how this value is related to $\ds \lim_{x \to a} f(x)$.  Throughout,  we will build on and formalize ideas that we have encountered in several settings.
+
+We begin to consider these issues through the following preview activity that asks you to consider the graph of a function with a variety of interesting behaviors.
+
+\input{previews/1.3.PA1} % ACTIVITY 
+
+%---------------------------------------
+% SUBSECTION CONTINUITY
+%---------------------------------------
+\subsection*{Being continuous at a point} \index{continuous}
+
+Intuitively, a function is continuous if we can draw it without ever lifting our pencil from the page.  Alternatively, we might say that the graph of a continuous function has no jumps or holes in it.  We first consider three specific situations in Figure~\ref{fig:1-3_Con} where all three functions have a limit at $a = 1$, and then work to make the idea of continuity more precise.
+
+\begin{marginfigure} % MARGIN FIGURE
+\captionsetup[subfigure]{labelformat=empty}
+\subfloat{\margingraphics{figs/1/1-3_Cona.pdf}}
+
+\subfloat{\margingraphics{figs/1/1-3_Conb.pdf}}
+
+\subfloat{\margingraphics{figs/1/1-3_Conc.pdf}}
+\caption{Functions $f$, $g$, and $h$ that demonstrate subtly different behaviors at $a = 1$.}
+\label{fig:1-3_Con}
+\end{marginfigure}
+
+Note that  $f(1)$ is not defined, which leads to the resulting hole in the graph of $f$ at $a = 1$.  We will naturally say that $f$ is \emph{not continuous at $a = 1$}.  For the next function $g$ in in Figure~\ref{fig:1-3_Con}, we observe that while $\ds \lim_{x \to 1} g(x) = 3$, the value of $g(1) = 2$, and thus the limit does not equal the function value.  Here, too, we will say that $g$ is \emph{not continuous}, even though the function is defined at $a = 1$.  Finally, the function $h$ appears to be the most well-behaved of all three, since at $a = 1$ its limit and its function value agree.  That is,
+\[ \lim_{x \to 1} h(x) = 3 = h(1). \]
+With no hole or jump in the graph of $h$ at $a = 1$, we desire to say that $h$ is \emph{continuous} there.
+
+More formally, we make the following definition.
+
+\definition{Continuity}{ % DEFINITION
+A function $f$ is \emph{continuous} \index{continuous at $x = a$} provided that
+\begin{itemize}
+\item $f$ has a limit as $x \to a$,
+\item $f$ is defined at $x = a$, and
+\item $\ds \lim_{x \to a} f(x) = f(a).$
+\end{itemize}
+A function $f$ is \emph{continuous} on an open interval I if $f$ is continuous at $c$ for all c in I. 
+
+\begin{center}{\large {\bf Continuity at Endpoints}}\end{center}
+
+A function $f$ is continuous at a left-endpoint, $a$, of a closed interval $[a,b]$, or {\em continuous from the right}, if
+\[ \lim_{x \to a^+} f(x) = f(a), \]
+and $f$ is continuous at a right-endpoint, $b$, of a closed interval $[a,b]$, or {\em continuous from the left}, if
+\[ \lim_{x \to b^-} f(x) = f(b), \]
+}% end definition
+
+Conditions (a) and (b) are technically contained implicitly in (c), but we state them explicitly to emphasize their individual importance.  In words, (c) essentially says that a function is continuous at $x = a$ provided that its limit as $x \to a$ exists and equals its function value at $x = a$.  Thus, continuous functions are particularly nice:  to evaluate the limit of a continuous function at a point, all we need to do is evaluate the function.
+
+\input{examples/1-3_Eg1} % EXAMPLE 20 1.5 APEX
+
+Let's now consider $p(x) = x^2 - 2x + 3$.  It can be proved that every polynomial is a continuous function at every real number, and thus if we would like to know                                                                                 $\lim_{x \to 2} p(x)$, we simply compute
+$$\lim_{x \to 2} (x^2 - 2x + 3) = 2^2 - 2 \cdot 2 + 3 = 3.$$
+This route of substituting an input value to evaluate a limit works anytime we know the function being considered is continuous.  Besides polynomial functions, all exponential functions and the sine and cosine functions are continuous at every point, as are many other familiar functions and combinations thereof.  
+
+\input{examples/1-3_Eg2} % EXAMPLE 23 1.5 APEX
+
+\input{activities/1.3.Act1} % ACTIVITY 1.20 in AC 1.7
+
+\input{activities/1.3.Act2} % ACTIVITY 
+
+%----------------------------------------------------------
+% SUBSECTION INTERMEDIATE VALUE THEOREM
+%----------------------------------------------------------
+\subsection*{Intermediate Value Theorem}
+
+This intuitive notion of continuity does help us understand another important concept as follows. Suppose $f$ is defined on $[1,2]$ and $f(1) = -10$ and $f(2) = 5$. If $f$ is continuous on $[1,2]$ (i.e., its graph can be sketched as a continuous line from $(1,-10)$ to $(2,5)$) then we know intuitively that somewhere on $[1,2]$ $f$ must be equal to $-9$, and $-8$, and $-7,\ -6,\ \ldots,\ 0,\ 1/2,$ etc. In short, $f$ takes on all \textit{intermediate} values between $-10$ and $5$. It may take on more values; $f$ may actually equal 6 at some time, for instance, but we are guaranteed all values between $-10$ and $5$. 
+
+While this notion seems intuitive, it is not trivial to prove and its importance is profound. Therefore the concept is stated in the form of a theorem.
+
+\concept{Intermediate Value Theorem}{% CONCEPT
+Let $f$ be a continuous function on $[a,b]$ and, without loss of generality, let $f(a) < f(b)$. Then for every value $y$, where $f(a) < y < f(b)$, there is a value $c$ in $[a,b]$ such that $f(c) = y$. 
+}% end concept
+
+One important application of the Intermediate Value Theorem is root finding. Given a function $f$, we are often interested in finding values of $x$ where $f(x) = 0$. These roots may be very difficult to find exactly. Good approximations can be found through successive applications of this theorem. Suppose through direct computation we find that $f(a) <0 $ and $f(b)>0$, where $a<b$. The Intermediate Value Theorem states that there is a $c$ in $[a,b]$ such that $f(c) = 0$. The theorem does not give us any clue as to where that value is in the interval $[a,b]$, just that it exists. 
+
+There is a technique that produces a good approximation of $c$. Let $d$ be the midpoint of the interval $[a,b]$ and consider $f(d)$. There are three possibilities:
+\begin{enumerate}[1)]
+\item $f(d) = 0$ -- we got lucky and stumbled on the actual value. We stop as we found a root.
+\item $f(d) <0$ Then we know there is a root of $f$ on the interval $[d,b]$ -- we have halved the size of our interval, hence are closer to a good approximation of the root.
+\item $f(d) >0$ Then we know there is a root of $f$ on the interval $[a,d]$ -- again,we have halved the size of our interval, hence are closer to a good approximation of the root.
+\end{enumerate}
+	
+Successively applying this technique is called the \emph{Bisection Method} \index{Bisection Method} of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.
+
+\input{examples/1-3_Eg3.tex} % EXAMPLE
+
+It is a simple matter to extend the Bisection Method to solve similar problems to $f(x) = 0$. For instance, we can solve $f(x) = 1$. This may seem obvious, but to many it is not. It actually works very well to define a new function $g$ where $g(x) = f(x) - 1$. Then use the Bisection Method to solve $g(x)=0$.  
+
+Similarly, given two functions $f$ and $g$, we can use the Bisection Method to solve $f(x) = g(x)$. Once again, create a new function $h$ where $h(x) = f(x)-g(x)$ and solve $h(x) = 0$. 
+
+\input{activities/1.3.Act3} % ACTIVITY 
+
+%--------------
+% SUMMARY
+%--------------
+\begin{summary}
+%\item A function $f$ has limit $L$ as $x \to a$ if and only if $f$ has a left-hand limit at $x = a$, has a right-hand limit at $x = a$, and the left- and right-hand limits are equal.  Visually, this means that there can be a hole in the graph at $x = a$, but the function must approach the same single value from either side of $x = a$.
+\item A function $f$ is continuous at $x = a$ whenever $f(a)$ is defined, $f$ has a limit as $x \to a$, and the value of the limit and the value of the function agree.  This guarantees that there is not a hole or jump in the graph of $f$ at $x = a$.
+
+\item We can use the Intermediate Value Theorem to determine if there may be a root of a continuous function on a closed interval.
+%\item A function $f$ is differentiable at $x = a$ whenever $f'(a)$ exists, which means that $f$ has a tangent line at $(a,f(a))$ and thus $f$ is locally linear at the value $x = a$.  Informally, this means that the function looks like a line when viewed up close at $(a,f(a))$ and that there is not a corner point or cusp at $(a,f(a))$. 
+%\item Of the three conditions discussed in this section (having a limit at $x = a$, being continuous at $x = a$, and being differentiable at $x = a$), the strongest condition is being differentiable, and the next strongest is being continuous.  In particular, if $f$ is differentiable at $x = a$, then $f$ is also continuous at $x = a$, and if $f$ is continuous at $x = a$, then $f$ has a limit at $x = a$.
+\end{summary}
+
+\clearpage
+
+%--------------
+% EXERCISES
+%--------------
+\input{exercises/1-3.Continuity(Ex)} 
+
+\cleardoublepage

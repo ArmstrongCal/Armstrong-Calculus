@@ -1,0 +1,12 @@
+\begin{example} \label{Ex:2.1.Eg2}
+Suppose that $y = f(x)$ is a function for which three values are known:  $f(1) = 2.5$, $f(2) = 3.25$, and $f(3) = 3.625$.  Estimate $f'(2)$.
+
+\solution We know that $\ds f'(2) = \lim_{h \to 0} \frac{f(2+h) - f(2)}{h}$.  But since we don't have a graph for $y = f(x)$ nor a formula for the function, we can neither sketch a tangent line nor evaluate the limit exactly.  We can't even use smaller and smaller values of $h$ to estimate the limit.  Instead, we have just two choices:  using $h = -1$ or $h = 1$, depending on which point we pair with $(2,3.25)$.
+
+So, one estimate is
+$$f'(2) \approx \frac{f(1)-f(2)}{1-2} = \frac{2.5-3.25}{-1} = 0.75.$$
+The other is
+$$f'(2) \approx \frac{f(3)-f(2)}{3-2} = \frac{3.625-3.25}{1} = 0.375.$$
+Since the first approximation looks only backward from the point $(2,3.25)$ and the second approximation looks only forward from $(2,3.25)$, it makes sense to average these two values in order to account for behavior on both sides of the point of interest.  Doing so, we find that
+$$f'(2) \approx \frac{0.75 + 0.375}{2} = 0.5625.$$
+\end{example}

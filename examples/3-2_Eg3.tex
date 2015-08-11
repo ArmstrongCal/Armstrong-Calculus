@@ -1,0 +1,39 @@
+\begin{marginfigure}[6cm]
+\margingraphics{figures/3_1_signchart2.eps} %Active p.157
+\caption{The first derivative sign chart for $f$ when $f'(x) = 3x^4 - 9x^2 = 3x^2(x^2-3)$ in Example \ref{Ex:3.2.Eg3}.}
+\label{F:3.2.signchart2}
+\end{marginfigure}
+
+\begin{example} \label{Ex:3.2.Eg3}
+Let $f(x)$ be a function whose first derivative is $f'(x) = 3x^4 - 9x^2$.  Construct both first and second derivative sign charts for $f$, fully discuss where $f$ is increasing and decreasing and concave up and concave down, identify all relative extreme values, and sketch a possible graph of $f$.
+
+\solution Since we know $f'(x) = 3x^4 - 9x^2$, we can find the critical values of $f$ by solving $3x^4 - 9x^2 = 0$.  Factoring, we observe that
+$$0 = 3x^2(x^2 - 3) = 3x^2(x+\sqrt{3})(x-\sqrt{3}),$$
+so that $x = 0, \pm\sqrt{3}$ are the three critical values of $f$.  It then follows that the first derivative sign chart for $f$ is given in Figure~\ref{F:3.2.signchart2}.
+
+Thus, $f$ is increasing on the intervals $(-\infty, -\sqrt{3})$ and $(\sqrt{3}, \infty)$, while $f$ is decreasing on $(-\sqrt{3},0)$ and $(0, \sqrt{3})$.  Note particularly that by the first derivative test, this information tells us that $f$ has a local maximum at $x = -\sqrt{3}$ and a local minimum at $x = \sqrt{3}$.  While $f$ also has a critical value at $x = 0$, neither a maximum nor minimum occurs there since $f'$ does not change sign at $x = 0$.
+
+Next, we move on to investigate concavity.  Differentiating $f'(x) = 3x^4 - 9x^2$, we see that $f''(x) = 12x^3 - 18x$.  Since we are interested in knowing the intervals on which $f''$ is positive and negative, we first find where $f''(x) = 0$.  Observe that
+$$0 = 12x^3 - 18x = 12x\left(x^2 - \frac{3}{2}\right) = 12x\left(x+\sqrt{\frac{3}{2}}\right)\left(x-\sqrt{\frac{3}{2}}\right),$$
+which implies that $x = 0, \pm\sqrt{\frac{3}{2}}$.  Building a sign chart for $f''$ in the exact same way we do so for $f'$, we see the result shown in Figure~\ref{F:3.2.signchart3}.
+
+Therefore, $f$ is concave down on the intervals $\left( -\infty, -\sqrt{\frac{3}{2}} \right)$ and $\left( 0, \sqrt{\frac{3}{2}} \right)$, and concave up on $\left( 0, \sqrt{\frac{3}{2}} \right)$ and $\left( \sqrt{\frac{3}{2}}, \infty \right)$.
+
+Putting all of the above information together, we now see a complete and accurate possible graph of $f$ in Figure~\ref{F:3.2.Eg3}.  
+
+The point $A = (-\sqrt{3}, f(-\sqrt{3}))$ is a local maximum, as $f$ is increasing prior to $A$ and decreasing after; similarly, the point $E = (\sqrt{3}, f(\sqrt{3}))$ is a local minimum.  Note, too, that $f$ is concave down at $A$ and concave up at $B$, which is consistent both with our second derivative sign chart and the second derivative test.  At points $B$ and $D$, concavity changes, as we saw in the results of the second derivative sign chart in Figure~\ref{F:3.2.signchart3}.  Finally, at point $C$, $f$ has a critical value with a horizontal tangent line, but neither a maximum nor a minimum occurs there since $f$ is decreasing both before and after $C$.  It is also the case that concavity changes at $C$.
+
+While we completely understand where $f$ is increasing and decreasing, where $f$ is concave up and concave down, and where $f$ has relative extremes, we do not know any specific information about the $y$-coordinates of points on the curve.  For instance, while we know that $f$ has a local maximum at $x = -\sqrt{3}$, we don't know the value of that maximum because we do not know $f(-\sqrt{3})$.  Any vertical translation of our sketch of $f$ in Figure~\ref{F:3.2.Eg3} would satisfy the given criteria for $f$.
+\end{example}
+
+\begin{marginfigure}[-18cm]
+\margingraphics{figures/3_1_signchart3.eps} %Active p.157
+\caption{The second derivative sign chart for $f$ when $f'(x) = 3x^4 - 9x^2 = 3x^2(x^2-3)$ in Example \ref{Ex:3.2.Eg3}.}
+\label{F:3.2.signchart3}
+\end{marginfigure}
+
+\begin{marginfigure}[-7cm]
+\margingraphics{figures/3_1_Ex2.eps} %Active p.158
+\caption{A possible graph of the function $f$ in Example \ref{Ex:3.2.Eg3}.}
+\label{F:3.2.Eg3}
+\end{marginfigure}

@@ -1,0 +1,24 @@
+\begin{example} \label{eg:5.4.3} % EXAMPLE
+Use partial fraction decomposition to integrate $\ds \int \frac{x^3}{(x-5)(x+3)}\ dx$.
+
+\solution Partial fraction decomposition presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that $$\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.$$
+We can rewrite the new rational function as:
+$$\frac{19x+30}{(x-5)(x+3)} = \frac{A}{x-5} + \frac{B}{x+3}$$ for appropriate values of $A$ and $B$. Clearing denominators, we have 
+
+\begin{align*}
+19x+30 &= A(x+3) + B(x-5)\\
+			&= (A+B)x + (3A-5B).
+\intertext{This implies that:}
+19&= A+B \\
+30&= 3A-5B.\\
+\intertext{Solving this system of linear equations gives}
+125/8 &=A\\
+27/8 &=B.
+\end{align*}
+
+We can now integrate.
+\begin{align*}
+\int \frac{x^3}{(x-5)(x+3)}\ dx &= \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\ dx \\
+&= \frac{x^2}2 + 2x + \frac{125}{8}\ln|x-5| + \frac{27}8\ln|x+3| + C.
+\end{align*}
+\end{example}
